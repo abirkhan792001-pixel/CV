@@ -1,0 +1,93 @@
+#!/usr/bin/env node
+/**
+ * Renders cv.html -> Abir_Khan_CV.pdf (A4) and verifies it fits ONE page.
+ *
+ * The one-page rule is a hard requirement for this application, so it is
+ * enforced here rather than eyeballed: the script measures the natural
+ * content height, compares it against the A4 box, and exits non-zero with
+ * a millimetre-accurate overflow figure when it does not fit.
+ *
+ *   node build.mjs            build + check
+ *   node build.mjs --png      also write a preview PNG for visual QA
+ */
+
+import { chromium } from 'playwright';
+import { pathToFileURL } from 'node:url';
+import { writeFile } from 'node:fs/promises';
+import path from 'node:path';
+
+const ROOT     = path.dirname(new URL(import.meta.url).pathname);
+const SRC      = path.join(ROOT, 'cv.html');
+const PDF_OUT  = path.join(ROOT, 'Abir_Khan_CV.pdf');
+const PNG_OUT  = path.join(ROOT, 'preview.png');
+
+const A4_H_MM  = 297;
+const MM_PER_PX = 25.4 / 96;          // CSS px -> mm at the 96dpi print base
+
+const wantPng = process.argv.includes('--png');
+
+const browser = await chromium.launch();
+const page = await browser.newPage({
+  viewport: { width: 794, height: 1123 },   // A4 @96dpi
+  deviceScaleFactor: 2,
+});
+
+await page.goto(pathToFileURL(SRC).href, { waitUntil: 'load' });
+await page.emulateMedia({ media: 'print' });
+await page.evaluate(() => document.fonts.ready);
+
+/* ---- measure natural content height (min-height defeats scrollHeight) ---- */
+const metrics = await page.evaluate(() => {
+  const el = document.querySelector('.page');
+  const prev = el.style.minHeight;
+  el.style.minHeight = '0';
+  void el.offsetHeight;                     // force reflow
+  const contentPx = el.getBoundingClientRect().height;
+  el.style.minHeight = prev;
+  void el.offsetHeight;
+  const todos = document.querySelectorAll('.todo').length;
+  return { contentPx, todos };
+});
+
+const contentMm = metrics.contentPx * MM_PER_PX;
+const fits      = contentMm <= A4_H_MM + 0.5;   // 0.5mm rounding tolerance
+const deltaMm   = Math.abs(contentMm - A4_H_MM);
+
+await page.pdf({
+  path: PDF_OUT,
+  format: 'A4',
+  printBackground: true,
+  margin: { top: '0', right: '0', bottom: '0', left: '0' },
+});
+
+if (wantPng) {
+  await page.emulateMedia({ media: 'screen' });
+  const el = await page.$('.page');
+  await el.screenshot({ path: PNG_OUT });
+}
+
+await browser.close();
+
+/* ---------------------------- report ---------------------------- */
+const pad = (s) => String(s).padEnd(15);
+console.log('');
+console.log(`  ${pad('output')} ${path.relative(process.cwd(), PDF_OUT)}`);
+console.log(`  ${pad('content height')} ${contentMm.toFixed(1)} mm  of  ${A4_H_MM} mm (A4)`);
+
+if (fits) {
+  console.log(`  ${pad('one page')} \x1b[32mOK\x1b[0m — ${deltaMm.toFixed(1)} mm headroom left`);
+} else {
+  console.log(`  ${pad('one page')} \x1b[31mOVERFLOW\x1b[0m — ${deltaMm.toFixed(1)} mm too tall`);
+}
+
+if (metrics.todos > 0) {
+  console.log(`  ${pad('placeholders')} \x1b[33m${metrics.todos} unfilled\x1b[0m — not ready to send`);
+} else {
+  console.log(`  ${pad('placeholders')} \x1b[32mnone\x1b[0m`);
+}
+console.log('');
+
+if (!fits) {
+  console.error('Trim content, or reduce --fs-base / --lh / section margins in cv.html.');
+  process.exit(1);
+}
