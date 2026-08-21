@@ -12,11 +12,11 @@
    ============================================================ */
 
 :root{
-  --ink:        #16191d;   /* primary text                        */
-  --ink-soft:   #454c55;   /* bullets / body                      */
-  --muted:      #6b7480;   /* dates, secondary meta               */
-  --rule:       #c9cfd6;   /* hairlines                           */
-  --accent:     #9b1c24;   /* restrained nod to E.ON red          */
+  --ink:        #16191d;
+  --ink-soft:   #454c55;
+  --muted:      #6b7480;
+  --rule:       #c9cfd6;
+  --accent:     #9b1c24;   /* restrained nod to E.ON red */
 
   --page-w:     210mm;
   --page-h:     297mm;
@@ -46,31 +46,20 @@ body{
   padding:var(--margin-y) var(--margin-x);
   margin:0 auto;
   background:#fff;
-  position:relative;
 }
 
 /* ---------- header ---------------------------------------- */
 
 .name{
-  font-size:22pt;
-  font-weight:700;
-  letter-spacing:-0.014em;
-  color:var(--ink);
-  line-height:1.05;
+  font-size:22pt; font-weight:700; letter-spacing:-0.014em;
+  color:var(--ink); line-height:1.05;
 }
-
 .tagline{
-  margin-top:2.5pt;
-  font-size:9.4pt;
-  font-weight:600;
-  color:var(--accent);
-  letter-spacing:0.005em;
+  margin-top:2.5pt; font-size:9.4pt; font-weight:600;
+  color:var(--accent); letter-spacing:0.005em;
 }
-
 .contact{
-  margin-top:4pt;
-  font-size:8.9pt;
-  color:var(--muted);
+  margin-top:4pt; font-size:8.9pt; color:var(--muted);
   font-variant-numeric:lining-nums;
 }
 .contact a{ color:inherit; text-decoration:none; }
@@ -81,126 +70,62 @@ body{
 section{ margin-top:9.5pt; }
 
 h2{
-  font-size:8.1pt;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.11em;
-  color:var(--accent);
-  padding-bottom:2pt;
-  border-bottom:0.6pt solid var(--rule);
+  font-size:8.1pt; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.11em; color:var(--accent);
+  padding-bottom:2pt; border-bottom:0.6pt solid var(--rule);
   margin-bottom:5pt;
 }
 
-.summary{
-  font-size:9.4pt;
-  color:var(--ink-soft);
-  text-align:justify;
-  hyphens:auto;
-}
+.summary{ font-size:9.4pt; color:var(--ink-soft); text-align:justify; hyphens:auto; }
 
 /* ---------- entries --------------------------------------- */
 
 .entry{ margin-bottom:6.5pt; }
 .entry:last-child{ margin-bottom:0; }
 
-.entry-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:8pt;
-}
+.entry-head{ display:flex; justify-content:space-between; align-items:baseline; gap:8pt; }
 
-.role{
-  font-size:9.9pt;
-  font-weight:700;
-  color:var(--ink);
-  letter-spacing:-0.004em;
-}
-
+.role{ font-size:9.9pt; font-weight:700; color:var(--ink); letter-spacing:-0.004em; }
 .org{ font-weight:400; color:var(--ink-soft); }
 .org::before{ content:" — "; color:var(--muted); }
 
 .when{
-  font-size:8.7pt;
-  color:var(--muted);
-  white-space:nowrap;
-  font-variant-numeric:lining-nums;
-  flex-shrink:0;
+  font-size:8.7pt; color:var(--muted); white-space:nowrap;
+  font-variant-numeric:lining-nums; flex-shrink:0;
 }
 
-.sub{
-  font-size:8.9pt;
-  font-style:italic;
-  color:var(--muted);
-  margin-top:0.5pt;
-}
+.sub{ font-size:8.9pt; font-style:italic; color:var(--muted); margin-top:0.5pt; }
 
 ul{ list-style:none; margin-top:2.5pt; }
 
 li{
-  position:relative;
-  padding-left:8.5pt;
-  margin-bottom:1.6pt;
-  text-align:justify;
-  hyphens:auto;
+  position:relative; padding-left:8.5pt; margin-bottom:1.6pt;
+  text-align:justify; hyphens:auto;
 }
-
 li::before{
-  content:"";
-  position:absolute;
-  left:1.5pt;
-  top:0.42em;
-  width:2.6pt;
-  height:2.6pt;
-  border-radius:50%;
-  background:var(--rule);
+  content:""; position:absolute; left:1.5pt; top:0.42em;
+  width:2.6pt; height:2.6pt; border-radius:50%; background:var(--rule);
 }
-
 li strong{ font-weight:600; color:var(--ink); }
 
 /* ---------- skills grid ----------------------------------- */
 
-.grid{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:2.4pt 9pt;
-  align-items:baseline;
-}
-
-.grid dt{
-  font-weight:700;
-  color:var(--ink);
-  font-size:8.9pt;
-  white-space:nowrap;
-}
-
+.grid{ display:grid; grid-template-columns:auto 1fr; gap:2.4pt 9pt; align-items:baseline; }
+.grid dt{ font-weight:700; color:var(--ink); font-size:8.9pt; white-space:nowrap; }
 .grid dd{ color:var(--ink-soft); }
 
 /* ---------- placeholders ---------------------------------- */
-/* Deliberately loud: an unfilled field must never reach a
-   recruiter unnoticed. Remove .todo styling once complete.   */
 
 .todo{
-  background:#fff2a8;
-  box-shadow:0 0 0 1pt #e0c200;
-  border-radius:1.5pt;
-  color:#5c4a00;
-  font-style:normal;
-  padding:0 1.5pt;
+  background:#fff2a8; box-shadow:0 0 0 1pt #e0c200; border-radius:1.5pt;
+  color:#5c4a00; font-style:normal; padding:0 1.5pt;
 }
 
 /* ---------- print ----------------------------------------- */
 
 @page{ size:A4; margin:0; }
-
-@media print{
-  html{ background:#fff; }
-  .page{ margin:0; box-shadow:none; }
-}
-
-@media screen{
-  .page{ box-shadow:0 2px 18px rgba(0,0,0,.35); margin:18px auto; }
-}
+@media print{ html{ background:#fff; } .page{ margin:0; box-shadow:none; } }
+@media screen{ .page{ box-shadow:0 2px 18px rgba(0,0,0,.35); margin:18px auto; } }
 </style>
 </head>
 <body>
@@ -208,147 +133,106 @@ li strong{ font-weight:600; color:var(--ink); }
 
   <header>
     <div class="name">Abir Khan</div>
-    <!-- Tagline: the single highest-leverage line on the page. It should
-         say "energy + consulting-grade problem solving" in under 90 chars. -->
-    <div class="tagline">Energy SaaS &middot; Founders Associate &middot; <span class="todo">«M.Sc. field, e.g. Management &amp; Technology»</span></div>
+    <div class="tagline">Founder&rsquo;s Associate @ SCAILE &middot; Nova SBE</div>
     <div class="contact">
-      <span class="todo">«city, country»</span><span class="sep">|</span><a href="mailto:abir@scaile.tech">abir@scaile.tech</a><span class="sep">|</span><span class="todo">«+49 ...»</span><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">linkedin.com/in/khan-abir</a>
+      <span class="todo">«city»</span><span class="sep">|</span><a href="mailto:abir@scaile.tech">abir@scaile.tech</a><span class="sep">|</span><span class="todo">«phone»</span><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">linkedin.com/in/khan-abir</a>
     </div>
   </header>
 
-  <!-- ============================================================
-       PROFILE — 2 lines maximum. Must land, in this order:
-       (1) final-year M.Sc. / recent grad, (2) hands-on ENERGY
-       experience, (3) structured problem solving, (4) DE + EN.
-       These are the four things E.ON's posting screens on.
-       ============================================================ -->
+  <!-- PROFILE: two lines. Leads with the four things E.ON screens on —
+       academic record, hands-on operating experience, structured problem
+       solving, DE+EN. NOTE: the energy claim is deliberately NOT made here
+       until the SCAILE-vs-energy question is resolved. -->
   <section>
     <h2>Profile</h2>
     <p class="summary">
-      <span class="todo">«Final-year M.Sc. «field» student at «university»»</span> with hands-on operating experience in
-      <span class="todo">«energy SaaS domain — e.g. flexibility, grid, metering, retail energy»</span>, where I
-      <span class="todo">«one concrete, quantified outcome»</span>. Fluent in German and English, and drawn to ECON for the
-      chance to work the commercial and technical sides of the energy transition in one team.
+      <span class="todo">«Final-year M.Sc. «programme»»</span> at Nova SBE and Founder&rsquo;s Associate at SCAILE, a Munich
+      AI-search startup, where I own <span class="todo">«workstream»</span> end to end. I move comfortably between
+      commercial and technical work, have built and run an international programme from scratch, and want to
+      apply that to the economics of the energy transition. Fluent in English and <span class="todo">«German level»</span>.
     </p>
   </section>
 
-  <!-- ============================================================
-       EDUCATION — first, because E.ON gates on "outstanding
-       academic record". Lead with grade if it is strong.
-       ============================================================ -->
+  <!-- EDUCATION first: E.ON gates on "outstanding academic record". -->
   <section>
     <h2>Education</h2>
 
     <div class="entry">
       <div class="entry-head">
-        <div class="role">M.Sc. <span class="todo">«Programme»</span><span class="org"><span class="todo">«University»</span></span></div>
+        <div class="role">M.Sc. <span class="todo">«programme»</span><span class="org">Nova School of Business and Economics, Lisbon</span></div>
         <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
       </div>
-      <div class="sub">Grade: <span class="todo">«e.g. 1.4 / top 10%»</span> &nbsp;·&nbsp; Focus: <span class="todo">«energy economics, strategy, ...»</span></div>
-      <ul>
-        <li><span class="todo">«Thesis / scholarship / exchange semester — keep only if it signals energy, analytics or international exposure»</span></li>
-      </ul>
+      <div class="sub">Grade: <span class="todo">«grade / rank»</span> &nbsp;·&nbsp; Focus: <span class="todo">«relevant courses»</span></div>
     </div>
 
     <div class="entry">
       <div class="entry-head">
-        <div class="role">B.Sc. <span class="todo">«Programme»</span><span class="org"><span class="todo">«University»</span></span></div>
+        <div class="role"><span class="todo">«B.Sc. programme»</span><span class="org"><span class="todo">«university»</span></span></div>
         <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
       </div>
       <div class="sub">Grade: <span class="todo">«grade»</span></div>
     </div>
   </section>
 
-  <!-- ============================================================
-       EXPERIENCE — reverse chronological. TCG removed per brief.
-       Bullets: action verb -> what you did -> quantified result.
-       Bias every bullet toward energy-domain judgement, client/
-       stakeholder work, and structured analysis.
-       ============================================================ -->
+  <!-- EXPERIENCE. TCG removed per brief. -->
   <section>
     <h2>Professional Experience</h2>
 
     <div class="entry">
       <div class="entry-head">
-        <div class="role">Founders Associate<span class="org"><span class="todo">«Company»</span>, energy SaaS</span></div>
+        <div class="role">Founder&rsquo;s Associate<span class="org">SCAILE, Munich</span></div>
         <div class="when"><span class="todo">«MM/YYYY – present»</span></div>
       </div>
-      <div class="sub"><span class="todo">«City»</span> &nbsp;·&nbsp; <span class="todo">«stage — e.g. Seed, ~15 FTE»</span></div>
+      <div class="sub">Seed-stage B2B SaaS — AI-search visibility for enterprise brands</div>
       <ul>
-        <li><span class="todo">«Own a P&amp;L-adjacent workstream: what you owned, for whom, and the number that moved»</span></li>
-        <li><span class="todo">«A commercial win — pipeline, pricing, GTM or a named utility/industrial customer landed»</span></li>
-        <li><span class="todo">«An analytical piece — market sizing, tariff/flexibility model, build-vs-buy — and the decision it drove»</span></li>
-        <li><span class="todo">«Cross-functional delivery — worked across product/eng/commercial to ship X»</span></li>
+        <li><span class="todo">«What you own end to end — the workstream, who it serves, and the number that moved»</span></li>
+        <li><span class="todo">«A commercial result — pipeline built, customers landed, revenue or retention moved»</span></li>
+        <li><span class="todo">«An analytical piece — market sizing, pricing model, build-vs-buy — and the decision it drove»</span></li>
+        <li><span class="todo">«Cross-functional delivery across product / engineering / GTM»</span></li>
       </ul>
     </div>
 
     <div class="entry">
       <div class="entry-head">
-        <div class="role"><span class="todo">«Role»</span><span class="org"><span class="todo">«Company»</span></span></div>
+        <div class="role"><span class="todo">«role»</span><span class="org"><span class="todo">«company — the one replacing TCG»</span></span></div>
         <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
       </div>
       <ul>
-        <li><span class="todo">«Bullet — prioritise anything consulting-flavoured or energy-adjacent»</span></li>
+        <li><span class="todo">«Bullet — lead with anything consulting-flavoured or energy-adjacent»</span></li>
         <li><span class="todo">«Bullet with a quantified outcome»</span></li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div class="role"><span class="todo">«Role»</span><span class="org"><span class="todo">«Company»</span></span></div>
-        <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
-      </div>
-      <ul>
-        <li><span class="todo">«Single strongest bullet — compress older roles to one line each»</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- ============================================================
-       LEADERSHIP — HackNation (MIT × TUM) lives here. E.ON asks
-       for "highly communicative within a team"; this is the
-       evidence. Quantify scale: participants, partners, budget.
-       ============================================================ -->
+  <!-- LEADERSHIP: HackNation. Details below are verified from public
+       sources (hack-nation.ai, MIT RAISE, Devpost). Only the TUM angle
+       and your specific role still need confirming. -->
   <section>
     <h2>Leadership &amp; Initiative</h2>
 
     <div class="entry">
       <div class="entry-head">
-        <div class="role">Organiser, HackNation<span class="org">MIT &times; Technical University of Munich</span></div>
-        <div class="when"><span class="todo">«MM/YYYY»</span></div>
-      </div>
-      <ul>
-        <li>Co-organised <span class="todo">«MIT-affiliated hackathon»</span> in partnership with TUM, coordinating <span class="todo">«N»</span> participants, <span class="todo">«N»</span> partner organisations and a <span class="todo">«€X»</span> budget across two institutions and time zones.</li>
-        <li><span class="todo">«Second bullet — sponsor/stakeholder management, or an energy/climate track you ran»</span></li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div class="role"><span class="todo">«Society / volunteering / competition»</span><span class="org"><span class="todo">«Organisation»</span></span></div>
+        <div class="role">Organiser<span class="org">Hack-Nation Global AI Hackathon, in collaboration with the MIT Sloan AI Club</span></div>
         <div class="when"><span class="todo">«YYYY»</span></div>
       </div>
+      <ul>
+        <li>Helped run a <strong>24-hour global AI build sprint</strong> drawing engineers from MIT, Harvard, Stanford and <strong>60+ countries</strong>, with $28k in prizes and $160k in partner API credits from OpenAI, Cursor and Lovable.</li>
+        <li><span class="todo">«Your specific remit + the TUM side — what you owned: partners, participants, logistics, a track you ran»</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ============================================================
-       SKILLS — Languages first: E.ON explicitly requires fluent
-       German AND English. Make it impossible to miss.
-       ============================================================ -->
   <section>
     <h2>Skills &amp; Languages</h2>
     <dl class="grid">
       <dt>Languages</dt>
-      <dd><strong>German</strong> <span class="todo">«C1 / fluent»</span> &nbsp;·&nbsp; <strong>English</strong> <span class="todo">«C2 / fluent»</span><span class="todo">« · other languages»</span></dd>
+      <dd><strong>English</strong> <span class="todo">«level»</span> &nbsp;·&nbsp; <strong>German</strong> <span class="todo">«level — E.ON requires fluent»</span><span class="todo">« · others»</span></dd>
 
       <dt>Analytical</dt>
-      <dd><span class="todo">«Excel/financial modelling, SQL, Python, Power BI/Tableau — strongest first»</span></dd>
+      <dd><span class="todo">«financial modelling, SQL, Python, BI — strongest first»</span></dd>
 
-      <dt>Energy domain</dt>
-      <dd><span class="todo">«e.g. flexibility markets, tariff design, grid economics, PPAs, EU energy regulation»</span></dd>
-
-      <dt>Certifications</dt>
-      <dd><span class="todo">«only if genuinely relevant — otherwise delete this row to buy space»</span></dd>
+      <dt>Interests</dt>
+      <dd><span class="todo">«energy-transition topics you can actually discuss in an interview»</span></dd>
     </dl>
   </section>
 
