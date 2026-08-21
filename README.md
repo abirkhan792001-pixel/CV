@@ -66,7 +66,31 @@ Two more things worth biasing toward, given who reads this:
 - **Client/stakeholder surface.** Anything where you had to persuade, align, or
   present to someone outside your own team.
 
+## What changed from the source CVs
+
+Built from the six tailored CVs in this repo (Accenture Strategy was the most
+current source). Deltas for the E.ON version:
+
+- **Trariti Consulting Group (TCG) removed**, as briefed. SCAILE takes its slot.
+- **Hack-Nation added** under Leadership. Scale figures (24-hour sprint, MIT /
+  Harvard / Stanford, 60+ countries) are from public sources — hack-nation.ai
+  and MIT RAISE — not invented.
+- **Biome's energy line promoted to its lead bullet.** "Sourced ESG and
+  energy-transition deals" is the single strongest genuine energy signal in the
+  history, so it leads rather than sitting third.
+- **Net-Zero coursework pulled forward** in Education for the same reason.
+- **Profile rewritten** against E.ON's screening criteria, closing on why ECON
+  specifically rather than consulting generally.
+
+## Two things to verify before sending
+
+1. **German is B1.** E.ON's posting asks for *fluent English and German*. The CV
+   states B1 honestly — do not inflate it, since ECON interviews partly in
+   German. Consider addressing it directly in the cover letter.
+2. **Nova SBE end date.** The Accenture CV says 12.2026; the DHL CV says
+   01.2027. This version uses 12.2026. Pick one and make it consistent
+   everywhere.
+
 ## Status
 
-Content is **placeholder only** — every `«guillemet»` field still needs the real
-facts. `npm run build` will keep telling you how many are left.
+No placeholders remain — `npm run build` reports zero and confirms one page.
