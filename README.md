@@ -134,16 +134,17 @@ appear the same way everywhere. The tailoring moves for E.ON:
   dropping anything else. Location is **London, United Kingdom** — three of the
   source CVs say *London, UK* and two say *United Kingdom*; this takes the city
   from the majority and spells the country out to match the rest of the page.
-- **The founder entry's second bullet is a build, not a business model.** It
-  used to describe the revenue model — a paid audit converting into SaaS with
-  shared flexibility revenue — which read like any B2B startup and left the
-  entry with two analysis bullets and nothing made. It now reads *"Prototyped
-  an AI audit of German electricity bills that prices **EnEfG and §14a EnWG**
-  savings, sold as SaaS with **flexibility upside**"*, which keeps the
-  commercial model and adds the two things it was missing: something built, and
-  the German energy regulation behind the pricing. That regulation is the
-  hardest-to-fake energy signal on the page and the thing E.ON screens for.
-  Sixteen phrasings were measured; the one-line ceiling here is ~128 characters.
+- **The founder entry's second bullet claims analysis, not a build.** It has been
+  through three versions. An arrow chain (audit → SaaS → flexibility revenue
+  share) read as a slide rather than a CV line. A rewrite to *"Prototyped an AI
+  audit of German electricity bills…"* fixed the register but broke the facts —
+  the venture is in research, nothing is built. It now reads *"Priced a paid
+  audit against the savings German SMEs can claim under **EnEfG and §14a
+  EnWG**, with SaaS and **flexibility upside**"*, which keeps the regulatory
+  grounding and the full commercial model while claiming only the analytical
+  work actually done. Pricing a product against a quantified regulatory saving
+  is what a research-phase founder does; prototyping is not.
+
 - **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
   support the fund's energy-transition thesis" is the single strongest genuine
   energy signal in the history, so it goes first rather than third.
