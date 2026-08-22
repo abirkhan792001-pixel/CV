@@ -107,8 +107,11 @@ appear the same way everywhere. Two tailoring moves for E.ON:
 
 Elsewhere on the page:
 
-- **Net-Zero coursework** is pulled to the front of the Nova bullet. It is real —
-  it appears in the DHL CV's coursework list.
+- **The coursework list is gone**, replaced by the Master's Work Project with
+  the European Commission. Coursework titles are weak evidence — everyone on
+  the programme took them. A Commission-partnered project on EU climate-finance
+  allocation with a renewables focus is the strongest energy signal on the
+  page, and it is work only this candidate did.
 - **The M&A competition line** was cut, leaving only *Top 3 nationwide,
   National Case Study Challenge (out of 15,000 participants)*. The field size
   does more work than a second, smaller placing.
