@@ -24,54 +24,81 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **285.2 mm of 297 mm, one page, 11.8 mm headroom.**
+Current state: **288.7 mm of 297 mm, one page, 8.3 mm headroom.** Not enough to
+restore Impact Consulting (~14.5 mm) — anything sizeable added needs something
+else removed.
 
 ## The template
 
-Matched to the source CVs (Accenture / Allianz / Siemens), which are set in
-Times New Roman:
+Formatting is matched to `Abir_H._Khan_CV_Lio.pdf`, measured out of that PDF with
+PyMuPDF rather than eyeballed. Every value in `cv.html` carrying a mm or pt figure
+is a number taken from it.
 
 | | |
 |---|---|
-| Type | **Liberation Serif** — metrically identical to Times New Roman, SIL OFL, subset and vendored in `assets/fonts/` so builds are reproducible offline |
-| Accent | `--navy: #1f4e79` — top rule, name, section headers and their underlines |
+| Type | **Liberation Serif** — metrically identical to Times New Roman (what the source uses), SIL OFL, vendored in `assets/fonts/` so builds are reproducible offline |
+| Navy | `#0c447c` — measured rgb(12,68,124); top bar, name, section headers and rules |
+| Link | `#0563c1` — measured rgb(5,99,193), underlined |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
-| Photo | `assets/photo.jpg`, top-right at 28 × 36 mm — extracted from the Accenture Strategy PDF, kept at its native 237:304 ratio so it isn't stretched. The header text is centred against it, as in the source CVs |
-| Sizing | **One size for everything except the name.** The source CVs set contact line, tagline, section headers, org/role rows and bullets all at the same size |
+| Photo | `assets/photo.jpg`, **35 × 45 mm**, 700×900 px (~508 dpi at that size). Cropped from `assets/photo-source.png` by `scripts/` steps recorded in the commit — see below |
+| Sizing | One size for everything except the name |
 
 ### Measured against the source
 
-Siemens and Allianz are formatted identically to each other, so they make one
-target. Extracted with `pdftotext -bbox` and compared:
-
-| | Siemens / Allianz | This CV |
+| | Lio PDF | This CV |
 |---|---|---|
-| Left / right margin | 19.1 / 19.0 mm | 19.0 / 18.8 mm |
-| First text baseline | 22.6 mm | 22.4 mm |
-| Body glyph height | 10.52 pt | 10.35 pt |
-| Section header glyph | 10.52 pt | 10.35 pt |
-| Name glyph | 18.82 pt | 18.82 pt |
-| Line pitch | 4.23 mm | 4.23 mm |
-| `EDUCATION` at | 57.4 mm | 57.4 mm |
-| Text lines | 52 | 55 |
+| Text left edge | 19.06 mm | 19.06 mm |
+| Bullet glyph | 21.89 mm | 21.89 mm |
+| Bullet text | 25.41 mm | 25.41 mm |
+| Additional-info value column | 50.81 mm | 50.81 mm |
+| Name size / width | 17.04 pt / 60.14 mm | 17.04 pt / 60.20 mm |
+| Photo | 30.16 × 38.63 mm | 34.92 × 44.98 mm — see below |
+| Photo top | 16.02 mm | 15.87 mm |
+| Name top | 22.58 mm | 22.42 mm |
+| Top bar | y 13.38 mm, 1.57 mm | y 13.23 mm, 1.59 mm |
+| Contact separator gaps | 1.70 / 1.68 mm | 1.66 / 1.62 mm |
+| Body size | 9.48 pt | 9.35 pt — see below |
 
-The three extra lines are content, not formatting — this CV carries Hack-Nation
-and a longer Education block than either source.
+Left edges land exactly: 19.06 mm ×30, 21.89 mm ×17, 25.41 mm ×17, 50.81 mm ×7.
 
-Body type is 1.6% under the source's. That is the ceiling: there is a **wrapping
-cliff between 9.35 pt and 9.4 pt** where five work-experience bullets tip onto a
-second line and the page jumps from 288 mm to 312 mm. `--fs-base` is set at
-**9.35 pt** for that reason. Don't nudge it up without re-running the build.
+### Four deliberate differences
+
+1. **Body type is 9.35 pt, not the source's 9.48 pt.** The source's design rule is
+   one line per bullet. Our bullets are longer than its, and there is a cliff
+   between 9.35 and 9.40 pt: at 9.40 pt seven bullets wrap and the page jumps from
+   278.6 mm to 308.7 mm. 9.35 pt is the largest size that preserves the rule.
+   Don't raise it without re-running the build.
+2. **The rules start at the text edge.** In the source they begin 0.46 mm to the
+   left of the text — Word slop. Here all five rules span exactly 19.05–191.82 mm,
+   the same edges as the text.
+3. **The photo is flush right.** In the source it stops 3.44 mm short of the right
+   text edge. Here its right edge sits on 191.82 mm with the rules and the
+   right-aligned location/date column.
+4. **The photo is 35 × 45 mm**, which is neither source's size. The two disagree —
+   Lio uses 30.2 × 38.6, Strategy Consulting 37.7 × 47.1 — so there was no single
+   value to copy. 35 × 45 is the German *Bewerbungsfoto* standard, and its aspect
+   (0.7778) is within 0.2% of the image's native 237/304 = 0.7796, so it crops
+   clean where Strategy's 0.800 would not.
+
+### The Strategy Consulting CV settles the rule question
+
+`Abir H. Khan_CV_Strategy Consulting.pdf` is the same template as Lio — every text
+metric agrees within 0.03 mm (text left 19.09 vs 19.06, name width 60.14 vs 60.14,
+bullet glyph 21.91 vs 21.89, bullet text 25.44 vs 25.41, value column 50.84 vs
+50.81). It differs on one thing that matters: **its rules span 19.05–190.94, sitting
+exactly on its own text edges.** That confirms Lio's 0.46 mm offset is Word slop and
+not intent, which is the basis for difference 2 above. It is a LibreOffice export
+rather than Word, which is also why its top bar is a 4.5 pt stroke rather than a
+filled rectangle — the same 1.59 mm on the page.
 
 One trap worth knowing: `h2` needs an explicit `font-size:1em`. Without it the
-browser's default 1.5em heading size applies and the section headers render
-half again too big — which is wrong for this template, where headers are body
-size.
+browser's default 1.5em heading size applies and the section headers render half
+again too big — wrong for this template, where headers are body size.
 
 ### No photo, if you'd rather
 
-Delete the `<img class="photo">` line in `cv.html`. Everything else reflows —
-the header is a flex row and the left column already sets its own width.
+Delete the `<img class="photo">` line in `cv.html`. Everything else reflows — the
+header is a flex row and the left column already sets its own width.
 
 ## What this CV is optimised for
 
@@ -81,11 +108,11 @@ is mapped to a place on the page:
 | What E.ON asks for | Where it lands |
 |---|---|
 | Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
-| **Initial hands-on experience in consulting and/or the energy industry** | A&M restructuring, plus energy-transition deal sourcing at Biome |
+| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome |
 | **Fluent English *and* German** | First row of Additional Information — see the caveat below |
-| **Highly communicative within a team** | Hack-Nation (MIT × TUM), FitSure, Impact Consulting |
-| Curiosity, "ready to transform the energy industry" | Tagline, Net-Zero coursework, Biome's lead bullet |
-| International experience | MIT × TUM, London, Lisbon, Delhi |
+| **Highly communicative within a team** | Hack-Nation (MIT × TUM), UN Foundation |
+| Curiosity, "ready to transform the energy industry" | Tagline, the Commission thesis, the founder entry, Biome's lead bullet |
+| International experience | MIT × TUM, Lisbon, Delhi, Hyderabad |
 
 Two deliberate choices carried over from the source CVs:
 
@@ -100,7 +127,13 @@ Bullets are taken from the source CVs rather than rewritten, so the same claims
 appear the same way everywhere. Two tailoring moves for E.ON:
 
 - **TCG / Trariti Consulting Group is out**, as briefed. Work experience is
-  SCAILE → A&M → Biome.
+  Stealth → SCAILE → A&M → Biome.
+- **Impact Consulting was cut** to make room for the founder entry. One page is a
+  hard requirement and the new entry costs ~14.5 mm; Impact Consulting was the
+  weakest thing on the page for this application — a 2021–22 student-society
+  engagement benchmarking a micro-fintech, whose consulting signal is already
+  carried far better by A&M. Swapping it back in means dropping UN Foundation
+  instead, which costs the same.
 - **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
   support the fund's energy-transition thesis" is the single strongest genuine
   energy signal in the history, so it goes first rather than third.
@@ -151,23 +184,35 @@ filenames, one document.
 
 ## The skills block is written for ATS
 
-`Core skills`, `Energy transition` and `Technical` replaced the old
-Focus areas / Tools rows. They are deliberately plain noun phrases —
-*Business Case Development*, *Commercial Due Diligence*, *Operating Model
-Transformation* — because that is what a keyword parser matches on. The old
-rows used house phrasing ("Structured Problem Solving", "LLM APIs & prompt
-engineering") that scores nothing against a consulting job description.
+Checked against what E.ON Inhouse Consulting and RWE Consulting actually publish.
+E.ON's own careers copy names *"shaping the digital energy ecosystem"*, *"unlocking
+flexibility for millions of households"*, *"driving GenAI transformation"* and
+*"smarter grids"*, and asks for outstanding academics in Business Administration,
+Economics, Engineering or STEM plus internships in consulting and/or energy. RWE
+Consulting — the RWE Group's in-house consultancy, working with Corporate Strategy
+& Sustainability — names project management, stakeholder management, data analysis
+and problem solving.
 
-Three notes on it:
+Two changes came out of that check:
 
-- **`Energy Markets` is the one term to be ready to defend.** It is a strong
-  ATS keyword for E.ON, but it rests on Net-Zero coursework and ESG deal
-  sourcing rather than direct market experience. Have an answer prepared.
-- **`Generative AI` replaced the tooling detail.** Git, GitHub and Vercel are
-  engineering signals, not consulting ones, and cost keyword space.
-- **The layout parses cleanly.** Text is real text, not an image, and the
-  photo is a separate element an ATS ignores. The two-column header is the
-  only parser risk, and it is the same header the other five CVs use.
+- **Dropped `Commercial Due Diligence` from Core skills.** CDD is transaction-side
+  vocabulary. Neither in-house consultancy does deal-side diligence; they do
+  strategy, transformation and implementation. It scored nothing here. The term
+  still appears where it is genuinely earned — the Biome bullet.
+- **Added `Digital Transformation` and `Generative AI`.** E.ON explicitly names
+  GenAI transformation and the digital energy ecosystem as current work, and the
+  SCAILE role is real evidence for both. `Generative AI` moved up from the
+  Technical row, where it read as a tool rather than a capability.
+
+`Energy transition` stays as a row but was retrimmed to
+**Climate Finance, Renewable Energy, Decarbonisation, Net Zero Strategy** — every
+term now backed by the Commission thesis or the Biome entry. It previously carried
+*ESG and Sustainable Finance* and *Energy Markets*, neither of which the page
+evidences. The row header itself supplies the exact phrase "energy transition" to a
+parser, so the value list does not repeat it.
+
+The layout parses cleanly: text is real text, the photo is a separate element an
+ATS skips, and the two-column header is the same one the other five CVs use.
 
 ## Before sending
 

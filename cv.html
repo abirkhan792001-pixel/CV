@@ -8,26 +8,47 @@
 /* ============================================================
    One-page A4 CV — E.ON Inhouse Consulting (ECON) eCON Academy.
 
-   Built on the same template as the other tailored CVs in this
-   repo: Times-metric serif, navy rules, ORG/location over
-   role/dates, photo top-right. Edit content below; `npm run
-   build` renders the PDF and fails if it spills past one page.
+   Formatting is matched to the Lio CV, measured out of that PDF
+   rather than eyeballed. Every value below that carries a mm or
+   pt figure is a number taken from it; see README for the
+   measured-vs-target table.
+
+   One deliberate difference: the Lio PDF's rules start 0.46mm
+   left of its text and its photo stops 3.44mm short of the right
+   text edge. Both are Word slop. Here the rules, the text and the
+   photo all share exactly the same two edges.
    ============================================================ */
 
 :root{
+  --navy:      #0c447c;   /* measured rgb(12,68,124) — bar, name, headers, rules */
+  --link:      #0563c1;   /* measured rgb(5,99,193)  — hyperlinks */
   --ink:       #000000;
-  --ink-soft:  #1a1a1a;
-  --muted:     #595959;
-  --navy:      #1f4e79;   /* section headers, name, rules */
-  --link:      #1155cc;
 
   --page-w:    210mm;
   --page-h:    297mm;
-  --margin-x:  19mm;
-  --margin-y:  11mm;
 
-  --fs-base:   9.35pt;
-  --lh:        1.2;
+  --pad-t:     13.02mm;   /* -> top bar renders at 13.4mm, as measured */
+  --pad-l:     19.06mm;   /* text left edge */
+  --pad-r:     18.16mm;   /* -> text right edge at 191.84mm */
+  --pad-b:     12mm;
+
+  --fs-base:   9.35pt;    /* largest size that keeps every bullet on ONE line,
+                             which is the source's design rule. The source sets
+                             9.48pt for its own, shorter bullets; between 9.35
+                             and 9.40 seven of ours wrap and the page jumps
+                             278.6mm -> 308.7mm. */
+  --fs-name:   17.04pt;
+  --lh:        1.26;      /* -> ~4.2mm line pitch */
+
+  --bullet-x:  2.83mm;    /* bullet glyph offset from text margin */
+  --bullet-in: 6.35mm;    /* bullet text offset from text margin */
+  --label-col: 31.75mm;   /* Additional Information label column */
+
+  --photo-w:   35mm;      /* German Bewerbungsfoto standard 35x45. Aspect 0.7778
+                             vs the file's native 237/304 = 0.7796, so it crops
+                             clean. Lio uses 30.2x38.6 (leaves a gap under the
+                             photo), Strategy 37.7x47.1 (overhangs its text edge). */
+  --photo-h:   45mm;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -37,85 +58,114 @@ body{
   font-family:'Liberation Serif', 'Times New Roman', Times, serif;
   font-size:var(--fs-base);
   line-height:var(--lh);
-  color:var(--ink-soft);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
 }
 
 .page{
   width:var(--page-w);
   min-height:var(--page-h);
-  padding:var(--margin-y) var(--margin-x);
-  padding-top:calc(var(--margin-y) + 4.2mm); /* seats the header where the source CVs put it */
+  padding:var(--pad-t) var(--pad-r) var(--pad-b) var(--pad-l);
   margin:0 auto;
   background:#fff;
 }
 
 /* ---------- header ---------------------------------------- */
 
-.topbar{ height:2.6pt; background:var(--navy); margin-bottom:7pt; }
+.topbar{ height:1.57mm; background:var(--navy); }
 
-.head{ display:flex; justify-content:space-between; align-items:center; gap:10mm; }
+.head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;      /* photo and text block share a centre line */
+  gap:8mm;
+  margin-top:1.03mm;       /* gap below the bar, measured */
+}
 .head-l{ flex:1 1 auto; min-width:0; }
 
 .name{
-  font-size:17pt; font-weight:700; color:var(--navy);
-  letter-spacing:0.012em; line-height:1.06; text-transform:uppercase;
+  font-size:var(--fs-name);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.1;
+  letter-spacing:0.0475em;  /* tuned so the name measures 60.1mm, as in the source */
+  text-transform:uppercase;
+  white-space:nowrap;
 }
-.contact{ margin-top:2.2pt; color:var(--ink-soft); }
-.contact a{ color:var(--link); text-decoration:underline; }
-.contact .sep{ margin:0 3.5pt; color:var(--muted); }
 
-.tagline{ margin-top:2.2pt; color:var(--ink); }
+.contact{ margin-top:1.6mm; }
+.contact a{ color:var(--link); text-decoration:underline; }
+.contact .sep{ margin:0 4.9pt; }   /* source sets two spaces each side of the pipe */
+
+.tagline{ margin-top:0.7mm; }
 .tagline b{ font-weight:700; }
 
-.visa{ margin-top:1.4pt; font-style:italic; color:var(--muted); }
+.visa{ font-style:italic; }
 
 .photo{
-  width:28mm; height:36mm; object-fit:cover; flex-shrink:0;
-  display:block;
+  width:var(--photo-w);
+  height:var(--photo-h);
+  object-fit:cover;
+  flex-shrink:0;
+  display:block;           /* right edge sits on the text right edge */
 }
 
 /* ---------- sections -------------------------------------- */
 
-section{ margin-top:7pt; }
+section{ margin-top:2.32mm; }
 
 h2{
-  font-size:1em;            /* source CVs run headers at body size, not the UA's 1.5em */
-  font-weight:700; text-transform:uppercase;
-  letter-spacing:0.006em; color:var(--navy);
-  padding-bottom:1.2pt; border-bottom:1.1pt solid var(--navy);
-  margin-bottom:2.6pt;
+  font-size:1em;           /* headers run at body size in this template */
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--navy);
+  padding-bottom:0.55mm;
+  border-bottom:0.34mm solid var(--navy);
+  margin-bottom:1.0mm;
 }
 
 /* ---------- entries --------------------------------------- */
 
-.entry{ margin-bottom:5.2pt; }
+.entry{ margin-bottom:1.97mm; }
 .entry:last-child{ margin-bottom:0; }
 
-.row{ display:flex; justify-content:space-between; align-items:baseline; gap:8pt; }
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:6mm;
+}
 
-.org{ font-weight:700; color:var(--ink); }
+.org{ font-weight:700; }
 .org .note{ font-weight:400; font-style:italic; }
-.loc{ font-weight:700; color:var(--ink); white-space:nowrap; flex-shrink:0; }
+.loc{ font-weight:700; white-space:nowrap; flex-shrink:0; }
 
-.role{ font-style:italic; color:var(--ink-soft); }
-.when{ font-style:italic; color:var(--ink-soft); white-space:nowrap; flex-shrink:0; }
+.role{ font-style:italic; }
+.when{ font-style:italic; white-space:nowrap; flex-shrink:0; }
 
-ul{ list-style:none; margin-top:0.6pt; }
+ul{ list-style:none; }
 
 li{
-  position:relative; padding-left:11pt; margin-bottom:1pt;
+  position:relative;
+  padding-left:var(--bullet-in);
 }
 li::before{
-  content:"\2022"; position:absolute; left:3pt; top:0;
-  color:var(--ink-soft);
+  content:"\2022";
+  position:absolute;
+  left:var(--bullet-x);
+  top:0;
 }
-li b{ font-weight:700; color:var(--ink); }
+li b{ font-weight:700; }
 
 /* ---------- additional information grid ------------------- */
 
-.grid{ display:grid; grid-template-columns:26mm 1fr; gap:1pt 4mm; align-items:baseline; }
-.grid dt{ font-style:italic; color:var(--ink-soft); }
+.grid{
+  display:grid;
+  grid-template-columns:var(--label-col) 1fr;
+  gap:0.7mm 0;
+  align-items:baseline;
+}
+.grid dt{ font-style:italic; }
 
 /* ---------- print ----------------------------------------- */
 
@@ -135,21 +185,15 @@ li b{ font-weight:700; color:var(--ink); }
       <div class="contact">
         Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">LinkedIn</a>
       </div>
-      <!-- Tagline order mirrors E.ON's screening list: academic record,
-           hands-on consulting, energy exposure, on the ground in Germany. -->
       <div class="tagline">
         MSc Finance at <b>Nova SBE (FT #8)</b>; advised <b>Fortune 500</b> leadership on turnaround strategy at
-        <b>A&amp;M</b>; sourced <b>ESG and energy-transition deals</b> in VC; now go-to-market at a Munich startup
+        <b>A&amp;M</b>; sourced <b>energy-transition deals</b> in VC; now founding an <b>AI-energy venture</b> for German SMEs
       </div>
       <div class="visa">No visa sponsorship required (Germany)</div>
     </div>
     <img class="photo" src="./assets/photo.jpg" alt="">
   </header>
 
-  <!-- EDUCATION first: E.ON gates explicitly on academic record.
-       Bullets run standing -> thesis -> competition. The EU Commission
-       thesis replaced the coursework list and is now the page's strongest
-       energy signal. -->
   <section>
     <h2>Education</h2>
 
@@ -164,7 +208,7 @@ li b{ font-weight:700; color:var(--ink); }
       </div>
       <ul>
         <li>Ranked <b>top 10%</b> of the class</li>
-        <li><b>Master's Thesis</b> with the <b>European Commission</b>: EU climate-finance allocation across member states, renewables focus</li>
+        <li><b>Master's Thesis</b> in partnership with the <b>European Commission</b> on how the EU funds renewable energy across member states</li>
         <li><b>Team Lead</b>, Draycott Private Equity Challenge (2026)</li>
       </ul>
     </div>
@@ -185,11 +229,23 @@ li b{ font-weight:700; color:var(--ink); }
     </div>
   </section>
 
-  <!-- WORK EXPERIENCE — copy carried over from the source CVs.
-       TCG stays out per brief. Biome's energy/ESG line is promoted to
-       the lead bullet: strongest genuine energy signal in the history. -->
   <section>
     <h2>Work Experience</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">Stealth AI-Energy Startup</div>
+        <div class="loc">Munich, Germany</div>
+      </div>
+      <div class="row">
+        <div class="role">Founder</div>
+        <div class="when">since 08.2026</div>
+      </div>
+      <ul>
+        <li>Mapped <b>25+ DACH competitors</b> to a <b>~&euro;600M software-only whitespace</b> in energy-intensive SMEs</li>
+        <li>Designed a three-stage entry model: <b>success-fee audit &rarr; SaaS subscription &rarr; flexibility revenue share</b></li>
+      </ul>
+    </div>
 
     <div class="entry">
       <div class="row">
@@ -197,13 +253,13 @@ li b{ font-weight:700; color:var(--ink); }
         <div class="loc">Munich, Germany</div>
       </div>
       <div class="row">
-        <div class="role">Founder's Associate, AI &amp; Go-to-Market</div>
+        <div class="role">Founders Associate, AI &amp; Go-to-Market</div>
         <div class="when">06.2026 - 08.2026</div>
       </div>
       <ul>
-        <li>Advised the founders on <b>positioning and go-to-market strategy</b>, based on market sizing of the AI-search (GEO) space</li>
-        <li>Built and shipped <b>AI agent workflows</b> using Claude Code and LLM APIs, cutting manual reporting effort by <b>~60%</b></li>
-        <li>Created <b>KPI dashboards</b> tracking brand visibility across AI assistants (ChatGPT, Gemini, Perplexity) for client reporting</li>
+        <li>Advised the founders on <b>positioning and go-to-market strategy</b>, backed by a market sizing of <b>AI search visibility</b></li>
+        <li>Automated the team&rsquo;s research and reporting with <b>AI agent workflows</b>, cutting manual effort by <b>~60%</b></li>
+        <li>Managed <b>North American clients</b> end to end, signing and onboarding <b>&gt;$100k ARR</b> in new contracts</li>
       </ul>
     </div>
 
@@ -233,22 +289,20 @@ li b{ font-weight:700; color:var(--ink); }
         <div class="when">06.2023 - 08.2023</div>
       </div>
       <ul>
-        <li>Sourced <b>ESG-focused deals</b> across energy, SaaS, and consumer-tech to support the fund's <b>energy-transition thesis</b></li>
-        <li>Screened <b>3,000+ companies</b> within a <b>~$170M pipeline</b>, assessing market size, competitive dynamics, and scalability risks</li>
-        <li>Supported <b>commercial due diligence</b> with bottom-up revenue build-ups and unit economics (CAC/LTV)</li>
+        <li>Originated deals across energy, SaaS and consumer-tech, aligned to the fund&rsquo;s <b>energy-transition thesis</b></li>
+        <li>Evaluated <b>3,000+ companies</b> within a <b>~$170M pipeline</b> on market size, competitive dynamics and scalability risk</li>
+        <li>Built <b>commercial due diligence</b> models with bottom-up revenue build-ups and unit economics (CAC/LTV)</li>
       </ul>
     </div>
   </section>
 
-  <!-- LEADERSHIP — Hack-Nation added per brief; scale figures are from
-       public sources (hack-nation.ai, MIT RAISE), not invented. -->
   <section>
     <h2>Extracurricular &amp; Leadership</h2>
 
     <div class="entry">
       <div class="row">
         <div class="org">Hack-Nation Global AI Hackathon <span class="note">(MIT Sloan AI Club)</span> &times; TUM</div>
-        <div class="loc">Munich, Germany</div>
+        <div class="loc">Germany</div>
       </div>
       <div class="row">
         <div class="role">Organiser</div>
@@ -261,36 +315,8 @@ li b{ font-weight:700; color:var(--ink); }
 
     <div class="entry">
       <div class="row">
-        <div class="org">FitSure <span class="note">(InsurTech venture, incubated at Shiv Nadar University)</span></div>
-        <div class="loc">Delhi, India</div>
-      </div>
-      <div class="row">
-        <div class="role">Co-Founder</div>
-        <div class="when">01.2023 - 08.2023</div>
-      </div>
-      <ul>
-        <li>Defined the <b>business model and pricing strategy</b> for wearable-based <b>dynamic health premiums</b> in a 3-person team</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row">
-        <div class="org">Impact Consulting</div>
-        <div class="loc">London, UK</div>
-      </div>
-      <div class="row">
-        <div class="role">Consultant</div>
-        <div class="when">08.2021 - 05.2022</div>
-      </div>
-      <ul>
-        <li>Created <b>competitive benchmarking</b> and <b>market entry proposals</b> to support fundraising for a micro-fintech B2C startup</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row">
         <div class="org">United Nations Foundation</div>
-        <div class="loc">Delhi, India</div>
+        <div class="loc">India</div>
       </div>
       <div class="row">
         <div class="role">Associate Member</div>
@@ -309,13 +335,13 @@ li b{ font-weight:700; color:var(--ink); }
       <dd>English (Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
 
       <dt>Core skills</dt>
-      <dd>Strategy Consulting, Business Case Development, Financial Modelling, Market Sizing, Commercial Due Diligence, Cost Reduction, Operating Model Transformation, Project Management, Stakeholder Management, Data Analysis</dd>
+      <dd>Strategy Consulting, Business Case Development, Financial Modelling, Market Sizing, Operating Model Transformation, Cost Reduction, Digital Transformation, Generative AI, Project Management, Stakeholder Management, Data Analysis</dd>
 
       <dt>Energy transition</dt>
-      <dd>Decarbonisation, Net Zero Strategy, ESG and Sustainable Finance, Energy Markets</dd>
+      <dd>Climate Finance, Renewable Energy, Decarbonisation, Net Zero Strategy</dd>
 
       <dt>Technical</dt>
-      <dd>Microsoft Excel, PowerPoint, Power BI, SQL, Python, Generative AI</dd>
+      <dd>Microsoft Excel, PowerPoint, Power BI, SQL, Python</dd>
 
       <dt>Interests</dt>
       <dd>Distance running, swimming, hiking, baking</dd>
