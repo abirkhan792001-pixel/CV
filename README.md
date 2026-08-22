@@ -3,6 +3,10 @@
 A one-page A4 CV, tailored to the [eCON Academy](https://www.eon.com/en/about-us/business-units/eon-inhouse-consulting/econ-academy.html)
 recruiting event run by E.ON Inhouse Consulting.
 
+Rebuilt on the **same template as the other tailored CVs in this repo**, rather
+than the standalone design it used to carry. Work-experience copy is lifted from
+those CVs.
+
 ## Build
 
 ```bash
@@ -20,6 +24,31 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
+Current state: **293.1 mm of 297 mm, one page, 3.9 mm headroom.** That margin is
+thin on purpose — the page is full. Adding a bullet means taking one out, or
+dropping `--fs-base`.
+
+## The template
+
+Matched to the source CVs (Accenture / Allianz / Siemens), which are set in
+Times New Roman:
+
+| | |
+|---|---|
+| Type | **Liberation Serif** — metrically identical to Times New Roman, SIL OFL, subset and vendored in `assets/fonts/` so builds are reproducible offline |
+| Accent | `--navy: #1f4e79` — top rule, name, section headers and their underlines |
+| Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
+| Photo | `assets/photo.jpg`, top-right at 28 × 36 mm — extracted from the Accenture Strategy PDF, kept at its native 237:304 ratio so it isn't stretched |
+
+There is a wrapping cliff between 10.0 pt and 10.2 pt: at 10.2 several bullets
+tip onto a second line and the page jumps from 293 mm to 315 mm. `--fs-base` is
+set at **10 pt** for that reason. Don't nudge it up without re-running the build.
+
+### No photo, if you'd rather
+
+Delete the `<img class="photo">` line in `cv.html`. Everything else reflows —
+the header is a flex row and the left column already sets its own width.
+
 ## What this CV is optimised for
 
 E.ON's own posting for the Academy screens on a short, specific list. Each one
@@ -27,70 +56,73 @@ is mapped to a place on the page:
 
 | What E.ON asks for | Where it lands |
 |---|---|
-| Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, grade on its own line |
-| **Initial hands-on experience in consulting and/or the energy industry** | Founders Associate at an energy SaaS startup, leading the experience section |
-| **Fluent English *and* German** | First row of Skills & Languages, both bolded |
-| **Highly communicative within a team** | Leadership & Initiative — HackNation (MIT × TUM) |
-| Curiosity, "ready to transform the energy industry" | Profile line + the Energy domain skills row |
-| International experience | MIT × TUM collaboration; exchange/thesis line under Education |
+| Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
+| **Initial hands-on experience in consulting and/or the energy industry** | A&M restructuring, plus energy-transition deal sourcing at Biome |
+| **Fluent English *and* German** | First row of Additional Information — see the caveat below |
+| **Highly communicative within a team** | Hack-Nation (MIT × TUM), FitSure, Impact Consulting |
+| Curiosity, "ready to transform the energy industry" | Tagline, Net-Zero coursework, Biome's lead bullet |
+| International experience | MIT × TUM, London, Lisbon, Delhi |
 
-Format notes, all deliberate:
+Two deliberate choices carried over from the source CVs:
 
-- **No photo.** The Academy is an international event (Malmö 2025, Essen 2026)
-  and the application runs in English. A clean international format travels
-  better than the classic German photo CV here.
 - **Education before experience.** Standard for final-year students and recent
   grads, and E.ON gates explicitly on academic record.
-- **Restrained red accent** (`--accent`) nods to E.ON's brand without being
-  costumey. Change one variable to switch it — `#1f3a4d` (deep petrol) is a good
-  neutral alternative.
-- **Justified bullets with hyphenation**, to hold a tight right edge at this
-  information density.
+- **Photo included.** All the source CVs except DHL carry one, and E.ON Inhouse
+  Consulting is a German employer, where the photo CV is still the convention.
 
-## Writing the bullets
+## Where the work-experience copy comes from
 
-The event's core is a live consulting case and structured-problem-solving
-training, so bullets should read the way a consultant would want them to:
+Bullets are taken from the source CVs rather than rewritten, so the same claims
+appear the same way everywhere. Two tailoring moves for E.ON:
 
-> **action verb → what you owned → the number that moved**
+- **TCG / Trariti Consulting Group is out**, as briefed. Work experience is
+  SCAILE → A&M → Biome.
+- **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
+  support the fund's energy-transition thesis" is the single strongest genuine
+  energy signal in the history, so it goes first rather than third.
 
-Concretely, prefer *"Built the tariff model behind a €2.4m flexibility pilot with
-three municipal utilities"* over *"Responsible for financial modelling and
-stakeholder management"*. Ownership and quantification beat scope statements.
+Elsewhere on the page:
 
-Two more things worth biasing toward, given who reads this:
+- **Net-Zero coursework** is pulled to the front of the Nova bullet. It is real —
+  it appears in the DHL CV's coursework list.
+- **The M&A competition line** (2nd place, St. Stephen's College, Delhi
+  University, 2022) also comes from the DHL CV.
+- **Hack-Nation** was added on brief. Scale figures — 24-hour sprint, MIT /
+  Harvard / Stanford, 60+ countries — are from public sources (hack-nation.ai,
+  MIT RAISE), not invented.
 
-- **Energy-domain judgement.** ECON's public cases are e-mobility, heating
-  systems, and flexibility in the energy system. Any bullet that shows you
-  already reason about that market is worth more than a generic business bullet.
-- **Client/stakeholder surface.** Anything where you had to persuade, align, or
-  present to someone outside your own team.
+## Where the source CVs disagree
 
-## What changed from the source CVs
+The six PDFs in this repo contradict each other in four places. This CV takes
+the majority reading each time. Worth settling properly, because a recruiter
+comparing two of your CVs will see the difference:
 
-Built from the six tailored CVs in this repo (Accenture Strategy was the most
-current source). Deltas for the E.ON version:
+| | Says | This CV uses |
+|---|---|---|
+| **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens) | **top 15%** |
+| **Nova end date** | 12.2026 (four CVs) vs 01.2027 (DHL) | **12.2026** |
+| **German** | B1 (Allianz, both Accenture) vs Intermediate (Siemens) vs Basic (DHL) | **B1** |
+| **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens) | **since 06.2026** |
 
-- **Trariti Consulting Group (TCG) removed**, as briefed. SCAILE takes its slot.
-- **Hack-Nation added** under Leadership. Scale figures (24-hour sprint, MIT /
-  Harvard / Stanford, 60+ countries) are from public sources — hack-nation.ai
-  and MIT RAISE — not invented.
-- **Biome's energy line promoted to its lead bullet.** "Sourced ESG and
-  energy-transition deals" is the single strongest genuine energy signal in the
-  history, so it leads rather than sitting third.
-- **Net-Zero coursework pulled forward** in Education for the same reason.
-- **Profile rewritten** against E.ON's screening criteria, closing on why ECON
-  specifically rather than consulting generally.
+One more, which is a wording difference rather than a fact:
 
-## Two things to verify before sending
+- **The A&M creditor bullet.** Three CVs say *"Prepared creditor-negotiation
+  presentations for client leadership"*; Accenture Strategy escalates it to
+  *"Advised C-level client leadership on creditor-negotiation strategy"*. This
+  CV uses the **"Prepared"** wording. Preparing materials for leadership and
+  advising leadership are different claims, and the first one is what three of
+  four CVs commit to.
+
+Also worth knowing: `Abir H. Khan_CV_Siemens Advanta.pdf` and
+`Abir H. Khan_CV_Strategy Consulting.pdf` are **byte-identical** — two
+filenames, one document.
+
+## Before sending
 
 1. **German is B1.** E.ON's posting asks for *fluent English and German*. The CV
    states B1 honestly — do not inflate it, since ECON interviews partly in
-   German. Consider addressing it directly in the cover letter.
-2. **Nova SBE end date.** The Accenture CV says 12.2026; the DHL CV says
-   01.2027. This version uses 12.2026. Pick one and make it consistent
-   everywhere.
-
-## Status
-
-No placeholders remain — `npm run build` reports zero and confirms one page.
+   German. Worth addressing directly in the cover letter.
+2. **Confirm the class rank** (15% vs 10%) and fix it across all six CVs, not
+   just this one.
+3. **Confirm SCAILE is still current.** This CV says "since 06.2026"; the
+   Siemens CV has it ending 08.2026.

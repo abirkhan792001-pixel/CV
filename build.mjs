@@ -45,7 +45,11 @@ const metrics = await page.evaluate(() => {
   const contentPx = el.getBoundingClientRect().height;
   el.style.minHeight = prev;
   void el.offsetHeight;
-  const todos = document.querySelectorAll('.todo').length;
+  // Placeholders are written as «like this» in the markup; also honour an
+  // explicit .todo class. Counting the text is what actually catches an
+  // unfilled field, which a class-only check silently misses.
+  const guillemets = (document.body.innerText.match(/\u00ab[^\u00bb]*\u00bb/g) || []).length;
+  const todos = guillemets + document.querySelectorAll('.todo').length;
   return { contentPx, todos };
 });
 
