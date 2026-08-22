@@ -59,7 +59,8 @@ const deltaMm   = Math.abs(contentMm - A4_H_MM);
 
 await page.pdf({
   path: PDF_OUT,
-  format: 'A4',
+  width: '210mm',          // exact A4. format:'A4' rounds to 210.23 x 297.35mm
+  height: '297mm',         // in Chromium, which a print shop can flag.
   printBackground: true,
   margin: { top: '0', right: '0', bottom: '0', left: '0' },
 });

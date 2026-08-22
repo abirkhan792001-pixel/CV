@@ -13,7 +13,35 @@ those CVs.
 npm install          # installs playwright
 npm run build        # -> Abir_Khan_CV.pdf, with a one-page check
 npm run preview      # also writes preview.png for visual QA
+npm run share        # -> Abir_Hilal_Khan_CV.pdf, the file to actually send
 ```
+
+`npm run share` builds, then runs `scripts/finalise.py` (needs `pymupdf`) to
+produce the copy you hand to a recruiter. It differs from the build output in
+three ways, none of which touch the layout:
+
+- **Document metadata.** Playwright takes the title from `<title>` but exposes
+  nothing else, so Chromium leaves Author, Subject and Keywords empty and stamps
+  itself as Creator. Those fields are what a PDF viewer shows in its title bar,
+  what an email client previews, and what some applicant-tracking systems index.
+- **Exact A4.** Chromium snaps the page to whole device pixels and lands on
+  210.23 × 297.35 mm. The finalise step trims the mediabox to a true
+  595.276 × 841.890 pt. The rightmost text sits at 191.96 mm and the lowest at
+  285.66 mm, so this removes blank margin only — it asserts the page is at least
+  A4 before cropping, and asserts exact A4 after.
+- **Verification.** It asserts one page and every font embedded, then reports
+  photo DPI and selectable word count.
+
+### On "high resolution"
+
+A PDF's text and rules are vector, so they are resolution-independent — they
+print as sharply as the device allows. The only raster element is the photo, at
+**900 × 1157 px placed in a 35 × 45 mm frame = 655 DPI**, against a print
+standard of 300. It is encoded at JPEG quality 95 with 4:4:4 chroma (no
+subsampling), which is what removes the faint artefacts the earlier quality-90
+4:2:0 encode left around the collar and hairline. All five fonts are embedded as
+subsets, so the file renders identically on a machine that has never seen
+Liberation Serif. 317 KB — comfortably emailable.
 
 `build.mjs` measures the rendered content height against the A4 box and **exits
 non-zero if the CV spills onto a second page**, so the one-page requirement is
