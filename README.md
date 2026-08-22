@@ -24,8 +24,9 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **279.7 mm of 297 mm, one page, 17.3 mm headroom.** Still short of
-the ~14.5 mm plus margin that restoring Impact Consulting would need comfortably.
+Current state: **294.2 mm of 297 mm, one page, 2.8 mm headroom.** Tight — the
+headroom left by restoring Impact Consulting is under one line, so any new text
+has to be traded against something already on the page.
 
 ## The template
 
@@ -58,7 +59,7 @@ is a number taken from it.
 | Contact separator gaps | 1.70 / 1.68 mm | 1.66 / 1.62 mm |
 | Body size | 9.48 pt | 9.35 pt — see below |
 
-Left edges land exactly: 19.06 mm ×30, 21.89 mm ×17, 25.41 mm ×17, 50.81 mm ×7.
+Left edges land exactly: 19.06 mm ×31, 21.89 mm ×19, 25.41 mm ×19, 50.81 mm ×5.
 
 ### Four deliberate differences
 
@@ -107,7 +108,7 @@ is mapped to a place on the page:
 | What E.ON asks for | Where it lands |
 |---|---|
 | Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
-| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome |
+| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome, Impact Consulting |
 | **Fluent English *and* German** | First row of Additional Information — see the caveat below |
 | **Highly communicative within a team** | Hack-Nation (MIT × TUM), UN Foundation |
 | Curiosity, "ready to transform the energy industry" | Tagline, the Commission thesis, the founder entry, Biome's lead bullet |
@@ -123,16 +124,26 @@ Two deliberate choices carried over from the source CVs:
 ## Where the work-experience copy comes from
 
 Bullets are taken from the source CVs rather than rewritten, so the same claims
-appear the same way everywhere. Two tailoring moves for E.ON:
+appear the same way everywhere. The tailoring moves for E.ON:
 
 - **TCG / Trariti Consulting Group is out**, as briefed. Work experience is
   Stealth → SCAILE → A&M → Biome.
-- **Impact Consulting was cut** to make room for the founder entry. One page is a
-  hard requirement and the new entry costs ~14.5 mm; Impact Consulting was the
-  weakest thing on the page for this application — a 2021–22 student-society
-  engagement benchmarking a micro-fintech, whose consulting signal is already
-  carried far better by A&M. Swapping it back in means dropping UN Foundation
-  instead, which costs the same.
+- **Impact Consulting is back in**, under Extracurricular & Leadership, after
+  being cut to make room for the founder entry. It costs 14.5 mm and there was
+  17.3 mm going spare once the energy-skills row came out, so it fits without
+  dropping anything else. Location is **London, United Kingdom** — three of the
+  source CVs say *London, UK* and two say *United Kingdom*; this takes the city
+  from the majority and spells the country out to match the rest of the page.
+- **The founder entry's second bullet is a build, not a business model.** It
+  used to describe the revenue model — a paid audit converting into SaaS with
+  shared flexibility revenue — which read like any B2B startup and left the
+  entry with two analysis bullets and nothing made. It now reads *"Prototyped
+  an AI audit of German electricity bills that prices **EnEfG and §14a EnWG**
+  savings, sold as SaaS with **flexibility upside**"*, which keeps the
+  commercial model and adds the two things it was missing: something built, and
+  the German energy regulation behind the pricing. That regulation is the
+  hardest-to-fake energy signal on the page and the thing E.ON screens for.
+  Sixteen phrasings were measured; the one-line ceiling here is ~128 characters.
 - **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
   support the fund's energy-transition thesis" is the single strongest genuine
   energy signal in the history, so it goes first rather than third.
