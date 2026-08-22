@@ -68,7 +68,7 @@ The biggest find in this pass, and it was invisible on the page. The old CSS gav
 every `li` a `position:relative` so the bullet glyph could be absolutely
 positioned. Positioned elements paint in a later phase than normal-flow content,
 so Chromium emitted **every bullet after the rest of the page** in the PDF's text
-stream. An ATS reading stream order — many do — saw this:
+stream. A parser that reads that stream in order saw this:
 
 ```
 ...
@@ -84,11 +84,26 @@ Every achievement orphaned at the end of the document, detached from the employe
 it belongs to, each followed by a stray `•` on its own line. Nothing could be
 attributed to A&M, to Biome, or to any date range.
 
+Which parsers this actually hit, measured on the old file and the new one:
+
+| Extraction mode | Old file | New file |
+|---|---|---|
+| PyMuPDF `get_text()` — stream order | **broken**, 0/4 entries intact | OK |
+| pypdf `extract_text()` | **broken**, 0/4 | OK |
+| PyMuPDF `get_text(sort=True)` | OK | OK |
+| pdfminer.six, default layout analysis | OK | OK |
+| pdfminer.six, `laparams=None` | OK | OK |
+
+So it was not universal: parsers that sort by position recovered, parsers that
+trust stream order did not. That is not a safe bet to take — Apache PDFBox, which
+underpins Tika and a lot of enterprise résumé parsing, has `sortByPosition` **off**
+by default, which is exactly the broken mode.
+
 The fix is a hanging indent built from normal flow — `text-indent` plus an
 inline-block `::before` marker — instead of a positioned one. Document order is
-preserved, and the geometry is unchanged: the glyph still sits at 21.89 mm and
-the bullet text still starts at **exactly 25.41 mm** on all 20 bullets, verified
-at character level. The extracted text now reads straight down the page.
+preserved, so all five modes above now agree, and the geometry is unchanged: the
+glyph still sits at 21.89 mm and the bullet text still starts at **exactly
+25.41 mm** on all 20 bullets, verified at character level.
 
 ### The rest of the ATS checklist
 
@@ -227,9 +242,9 @@ is a number taken from it.
 | Bullet glyph | 21.89 mm | 21.89 mm |
 | Bullet text | 25.41 mm | 25.41 mm |
 | Additional-info value column | 50.81 mm | 50.81 mm |
-| Name size / width | 17.04 pt / 60.14 mm | 17.04 pt / 60.20 mm |
-| Photo top | 16.02 mm | 15.87 mm |
-| Name top | 22.58 mm | 22.42 mm |
+| Name size / width | 17.04 pt / 60.14 mm | 17.04 pt / 60.07 mm |
+| Photo top | 16.02 mm | 15.60 mm |
+| Name top | 22.58 mm | 22.42 mm — CSS box top; the glyph top measures 25.32 mm in both |
 | Top bar | y 13.38 mm, 1.57 mm | y 13.23 mm, 1.59 mm |
 | Body size | 9.48 pt | 9.35 pt — see below |
 
@@ -240,7 +255,8 @@ is a number taken from it.
    largest size that preserves the rule. Don't raise it without re-running the
    build.
 2. **The rules start at the text edge.** In the source they begin 0.46 mm to the
-   left of the text — Word slop. Here all five rules span exactly 19.05–191.82 mm.
+   left of the text — Word slop. Here all four section rules span exactly
+   19.05–191.82 mm.
 3. **The photo is flush right.** In the source it stops 3.44 mm short of the right
    text edge. Here its right edge sits on 191.82 mm with the rules and the
    right-aligned location/date column.
@@ -302,7 +318,7 @@ one document.
 | Left edges | 19.06 mm ×31, 21.89 mm ×20, 50.81 mm ×5 — exact |
 | Right-aligned column | 18 location/date lines flush on 191.84 mm |
 | Nothing crosses the right edge | widest line ends at 191.84 mm |
-| Rules | all 5 span 19.05–191.82 mm, identical |
+| Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
 | Bottom white | 11.34 mm |
 | Em / en dashes | none |
@@ -322,6 +338,23 @@ Three things deliberately left alone:
 - **The `×` in "MIT Sloan AI Club × TUM"** (U+00D7). A naive ATS could mangle it,
   but the keywords either side survive independently.
 
+## Open items the audit surfaced
+
+Neither is a defect; both are judgement calls that belong to the candidate.
+
+- **Nothing on the page demonstrates stakeholder management.** It is one of the
+  four skills RWE Consulting publishes, and it currently appears only as a term in
+  the Core skills row. The evidence exists — *"Led 90+ stakeholder interviews,
+  turning insights into recommendations for a $10M+ revenue product"* is in all six
+  source CVs — but it belongs to the TCG entry, which was cut on brief. Reinstating
+  it costs about 14.6 mm on a page with 0.2 mm spare, so something else would have
+  to come out.
+- **The A&M scenario bullet takes a minority wording.** Five of six source CVs say
+  *"a $9.8M risk-mitigation plan"*; only Accenture Strategy says *"a $9.8M cost and
+  risk-mitigation plan"*, which is what this CV carries. The repo's rule elsewhere
+  is to take the majority reading. Left as-is rather than changed silently, since
+  both wordings are the candidate's own.
+
 ## Before sending
 
 1. **"Full contact details" may mean a postal address.** The posting asks for a CV
@@ -331,10 +364,14 @@ Three things deliberately left alone:
    line is currently 0.6 mm inside the column.
 2. **The 12-month gap will come up.** Have the answer ready; it is the first thing
    a German recruiter will notice on the timeline.
-3. **Deadline 11.09.2026, recruitment code 92869.** Invitations go out by
+3. **`RWE Consulting` sits in the PDF keyword metadata but nowhere on the page.**
+   Harmless — it is an application to RWE — but it is a term present only for
+   matching. Drop it from `scripts/finalise.py` if you would rather the metadata
+   only restate what a reader can see.
+4. **Deadline 11.09.2026, recruitment code 92869.** Invitations go out by
    25 September for the 29 October event in Essen. The code belongs in the portal,
    not on the CV.
-4. **Back-port the corrections to the other five CVs.** Class rank is top 10% and
+5. **Back-port the corrections to the other five CVs.** Class rank is top 10% and
    SCAILE ended 08.2026; the Allianz and Accenture CVs still say top 15% and
    "since 06.2026". They also still carry "Eligible for visa sponsorship" rather
    than "No visa sponsorship required", and all of them still have the bullet

@@ -91,7 +91,9 @@ body{
   font-weight:700;
   color:var(--navy);
   line-height:1.1;
-  letter-spacing:0.0475em;  /* tuned so the name measures 60.1mm, as in the source */
+  letter-spacing:0.0589em;  /* tuned so the name measures 60.1mm, as in the source.
+                               Was 0.0475em, which hit 60.1mm only under the narrow
+                               text rendering the old shipped PDF was built with. */
   text-transform:uppercase;
   white-space:nowrap;
 }
