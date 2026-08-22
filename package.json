@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "preview": "node build.mjs --png"
+    "preview": "node build.mjs --png",
+    "share": "node build.mjs && python3 scripts/finalise.py"
   },
   "devDependencies": {
     "playwright": "^1.56.1"
