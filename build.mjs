@@ -26,7 +26,11 @@ const MM_PER_PX = 25.4 / 96;          // CSS px -> mm at the 96dpi print base
 
 const wantPng = process.argv.includes('--png');
 
-const browser = await chromium.launch();
+// Honour a pre-installed Chromium when the pinned Playwright revision is not
+// downloadable (sandboxes, offline CI). Falls back to Playwright's own build.
+const browser = await chromium.launch(
+  process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}
+);
 const page = await browser.newPage({
   viewport: { width: 794, height: 1123 },   // A4 @96dpi
   deviceScaleFactor: 2,

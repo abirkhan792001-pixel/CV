@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="./assets/fonts/fonts.css">
 <style>
 /* ============================================================
-   One-page A4 CV — E.ON Inhouse Consulting (ECON) eCON Academy.
+   One-page A4 CV — RWE Consulting Careers Day, October 2026.
 
    Formatting is matched to the Lio CV, measured out of that PDF
    rather than eyeballed. Every value below that carries a mm or
@@ -81,7 +81,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;      /* photo and text block share a centre line */
-  gap:8mm;
+  gap:6.5mm;               /* was 8mm: buys the spelled-out LinkedIn URL one line */
   margin-top:1.03mm;       /* gap below the bar, measured */
 }
 .head-l{ flex:1 1 auto; min-width:0; }
@@ -91,7 +91,9 @@ body{
   font-weight:700;
   color:var(--navy);
   line-height:1.1;
-  letter-spacing:0.0475em;  /* tuned so the name measures 60.1mm, as in the source */
+  letter-spacing:0.0589em;  /* tuned so the name measures 60.1mm, as in the source.
+                               Was 0.0475em, which hit 60.1mm only under the narrow
+                               text rendering the old shipped PDF was built with. */
   text-transform:uppercase;
   white-space:nowrap;
 }
@@ -148,15 +150,21 @@ h2{
 
 ul{ list-style:none; }
 
+/* Hanging indent built from normal flow, NOT position:relative. A positioned
+   li paints in a later phase, so Chromium emits every bullet AFTER the rest
+   of the page in the PDF's text stream -- an ATS reading stream order then
+   sees all achievements orphaned at the end, detached from their employer.
+   text-indent + an inline-block marker keeps document order and lands on the
+   same two edges: glyph at --bullet-x, text at --bullet-in. */
 li{
-  position:relative;
   padding-left:var(--bullet-in);
+  text-indent:calc(var(--bullet-x) - var(--bullet-in));
 }
 li::before{
   content:"\2022";
-  position:absolute;
-  left:var(--bullet-x);
-  top:0;
+  display:inline-block;
+  width:calc(var(--bullet-in) - var(--bullet-x));
+  text-indent:0;
 }
 li b{ font-weight:700; }
 
@@ -186,11 +194,11 @@ li b{ font-weight:700; }
     <div class="head-l">
       <div class="name">Abir Hilal Khan</div>
       <div class="contact">
-        Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">LinkedIn</a>
+        Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">linkedin.com/in/khan-abir</a>
       </div>
       <div class="tagline">
-        MSc Finance at <b>Nova SBE (FT #8)</b>; advised <b>Fortune 500</b> leadership on turnaround strategy at
-        <b>A&amp;M</b>; sourced <b>energy-transition deals</b> in VC; now founding an <b>AI-energy venture</b> for German SMEs
+        MSc Finance at <b>Nova SBE (FT #8)</b>; <b>European Commission</b> thesis on EU renewable-energy funding;
+        <b>Fortune 500</b> restructuring at <b>A&amp;M</b>; founding an <b>AI-energy venture</b> for German SMEs
       </div>
       <div class="visa">No visa sponsorship required</div>
     </div>
@@ -210,8 +218,8 @@ li b{ font-weight:700; }
         <div class="when">08.2025 - 12.2026 (expected)</div>
       </div>
       <ul>
+        <li><b>Master&rsquo;s Thesis</b> with the <b>European Commission</b> on how the EU funds renewable energy across member states</li>
         <li>Ranked <b>top 10%</b> of the class</li>
-        <li><b>Master&rsquo;s Thesis</b> in partnership with the <b>European Commission</b> on how the EU funds renewable energy across member states</li>
         <li><b>Team Lead</b>, Draycott Private Equity Challenge (2026)</li>
       </ul>
     </div>
@@ -247,7 +255,7 @@ li b{ font-weight:700; }
       <ul>
         <li>Mapped <b>25+ DACH competitors</b> to a <b>&euro;600M software-only whitespace</b> in energy-intensive SMEs</li>
         <li>Designed a three-stage model (audit, subscription software, then <b>flexibility trading</b>) grounded in <b>German energy regulation</b></li>
-        <li>Building an <b>AI tool</b> that reads German electricity bills to find savings; applying to Antler and in early talks with TUM Venture Labs</li>
+        <li>Building an <b>AI tool</b> that reads German electricity bills to find savings; in early talks with TUM Venture Labs</li>
       </ul>
     </div>
 
@@ -347,16 +355,16 @@ li b{ font-weight:700; }
   </section>
 
   <section>
-    <h2>Additional Information</h2>
+    <h2>Skills &amp; Additional Information</h2>
     <dl class="grid">
       <dt>Languages</dt>
-      <dd>English (Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
+      <dd>English (Business Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
 
       <dt>Core skills</dt>
-      <dd>Strategy Consulting, Business Case Development, Financial Modelling, Market Sizing, Commercial and Financial Due Diligence, Digital Transformation, Generative AI, Project Management, Stakeholder Management</dd>
+      <dd>Strategy Consulting, Energy Transition, Renewable Energy, Sustainability, Financial Modelling, Market Sizing, Data Analysis, Problem Solving, Project Management, Stakeholder Management</dd>
 
       <dt>Technical</dt>
-      <dd>Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, Large Language Models (LLMs)</dd>
+      <dd>Microsoft Excel, PowerPoint, Power BI, SQL, Python, Generative AI, Large Language Models (LLMs)</dd>
 
       <dt>Interests</dt>
       <dd>Distance running, swimming, hiking, baking</dd>
