@@ -247,31 +247,38 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Check | Result |
 |---|---|
 | Pages | 1 |
-| Em / en dashes | none — the two em dashes in the three-stage bullet became parentheses |
-| Stray quote characters | none |
-| Apostrophes | all curly (`Master’s`, `team’s`, `fund’s`) — `Master’s` was straight |
+| Em / en dashes, stray quotes, tildes | none |
+| Non-ASCII inventory | only `•`, `’` ×2, `×` ×1, `€` ×1 — all intentional |
+| Apostrophes | all curly |
 | Bullets wrapping | 0 of 20 |
-| Tagline | 2 lines |
+| Repeated bullet-opening verbs | none |
 | Left edges | 19.06 mm ×31, 21.89 mm ×20, 25.41 mm ×20, 50.81 mm ×5 — exact |
-| Tilde characters | none — `~` removed from €600M, $170M and 60% |
-| Right-aligned column | 15 lines at 191.90 mm, 3 within ±0.06 mm (italic side-bearing) |
+| Right-aligned column | 18 lines within a 0.08 mm spread (italic side-bearing) |
 | Rules | all 5 span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
-| Date format | `MM.YYYY - MM.YYYY` throughout |
+| Bottom white | 11.07 mm |
+| Currency / plus-suffix / percent | consistent |
+| Dates | `MM.YYYY` throughout |
 | Serial commas | none used, consistently |
+| Verb tense | past for closed roles, present only for the live venture |
 | Placeholders | none |
 
-Two things deliberately left alone:
+Fixed in this pass: `Managed` opened both a SCAILE and an A&M bullet, and
+`Built` opened both an A&M and a Biome bullet. They are now `Owned` and
+`Developed` respectively. No opening verb repeats anywhere on the page.
 
-- **"Specialization"** is US spelling on a page that otherwise uses British forms
-  (Modelling, Organiser, Analysed). It is left as-is because it is part of the
-  degree title as awarded by Shiv Nadar University, and all six source CVs write
-  it that way. Degree titles are quoted, not restyled.
-- **Two verbs repeat across adjacent entries** — *Managed* opens a SCAILE bullet
-  and an A&M bullet; *Built* opens an A&M bullet and a Biome bullet. Within a
-  single entry this would be worth fixing, as it was for Biome's three "S" verbs.
-  Across entries it reads far less strongly, and with 0.2 mm of headroom any
-  reword risks the one-line rule. Flagged rather than changed.
+Three things deliberately left alone:
+
+- **A 12-month gap, 08.2024 to 07.2025.** The bachelor's ends 07.2024 and the
+  master's begins 08.2025; nothing on the page covers between. German recruiters
+  read timelines closely and will ask. Not fixable here — it needs a fact only
+  the candidate has.
+- **"Specialization"** is US spelling among British forms (Modelling, Organiser).
+  It is the degree title as awarded by Shiv Nadar University and all six source
+  CVs write it that way. Degree titles are quoted, not restyled.
+- **The `×` in "MIT Sloan AI Club × TUM"** (U+00D7). A naive ATS could mangle it,
+  but the keywords either side survive independently, and it reads better than
+  `x` or `and`.
 
 ## Before sending
 
