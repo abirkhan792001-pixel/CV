@@ -13,6 +13,8 @@ import pymupdf, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC  = ROOT / "Abir_Khan_CV.pdf"
 OUT  = ROOT / "Abir_Hilal_Khan_CV.pdf"
+# Repo convention for a tailored copy: "Abir Hilal Khan_CV_<target>.pdf".
+NAMED = ROOT / "Abir Hilal Khan_CV_RWE Consulting.pdf"
 
 A4_W, A4_H = 595.276, 841.890          # exact A4 in points
 
@@ -30,10 +32,10 @@ doc.set_metadata({
     "title":    "Abir Hilal Khan - CV",
     "author":   "Abir Hilal Khan",
     "subject":  "Curriculum Vitae",
-    "keywords": ("Strategy Consulting, Business Case Development, Financial Modelling, "
-                 "Market Sizing, Commercial and Financial Due Diligence, Digital "
-                 "Transformation, Generative AI, Project Management, Stakeholder "
-                 "Management, Energy Transition, MSc Finance, Nova SBE"),
+    "keywords": ("Strategy Consulting, Energy Transition, Renewable Energy, "
+                 "Sustainability, Financial Modelling, Market Sizing, Data Analysis, "
+                 "Problem Solving, Project Management, Stakeholder Management, "
+                 "Generative AI, MSc Finance, Nova SBE, RWE Consulting"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })
@@ -41,6 +43,7 @@ doc.set_metadata({
 # streams. Neither touches image data or vector geometry.
 doc.save(OUT, garbage=4, deflate=True, clean=True)
 doc.close()
+NAMED.write_bytes(OUT.read_bytes())
 
 chk = pymupdf.open(OUT)
 p = chk[0]
@@ -59,3 +62,4 @@ for im in p.get_images(full=True):
         dpi = info['width'] / (r.width * 25.4 / 72 / 25.4)
         print(f"  photo    {info['width']}x{info['height']} -> {dpi:.0f} DPI at {r.width*25.4/72:.1f}mm")
 print(f"  text     {len(p.get_text().split())} words selectable (ATS-readable)")
+print(f"  copy     {NAMED.name}")
