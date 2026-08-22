@@ -176,23 +176,35 @@ filenames, one document.
 
 ## The skills block is written for ATS
 
-`Core skills`, `Energy transition` and `Technical` replaced the old
-Focus areas / Tools rows. They are deliberately plain noun phrases —
-*Business Case Development*, *Commercial Due Diligence*, *Operating Model
-Transformation* — because that is what a keyword parser matches on. The old
-rows used house phrasing ("Structured Problem Solving", "LLM APIs & prompt
-engineering") that scores nothing against a consulting job description.
+Checked against what E.ON Inhouse Consulting and RWE Consulting actually publish.
+E.ON's own careers copy names *"shaping the digital energy ecosystem"*, *"unlocking
+flexibility for millions of households"*, *"driving GenAI transformation"* and
+*"smarter grids"*, and asks for outstanding academics in Business Administration,
+Economics, Engineering or STEM plus internships in consulting and/or energy. RWE
+Consulting — the RWE Group's in-house consultancy, working with Corporate Strategy
+& Sustainability — names project management, stakeholder management, data analysis
+and problem solving.
 
-Three notes on it:
+Two changes came out of that check:
 
-- **`Energy Markets` is the one term to be ready to defend.** It is a strong
-  ATS keyword for E.ON, but it rests on Net-Zero coursework and ESG deal
-  sourcing rather than direct market experience. Have an answer prepared.
-- **`Generative AI` replaced the tooling detail.** Git, GitHub and Vercel are
-  engineering signals, not consulting ones, and cost keyword space.
-- **The layout parses cleanly.** Text is real text, not an image, and the
-  photo is a separate element an ATS ignores. The two-column header is the
-  only parser risk, and it is the same header the other five CVs use.
+- **Dropped `Commercial Due Diligence` from Core skills.** CDD is transaction-side
+  vocabulary. Neither in-house consultancy does deal-side diligence; they do
+  strategy, transformation and implementation. It scored nothing here. The term
+  still appears where it is genuinely earned — the Biome bullet.
+- **Added `Digital Transformation` and `Generative AI`.** E.ON explicitly names
+  GenAI transformation and the digital energy ecosystem as current work, and the
+  SCAILE role is real evidence for both. `Generative AI` moved up from the
+  Technical row, where it read as a tool rather than a capability.
+
+`Energy transition` stays as a row but was retrimmed to
+**Climate Finance, Renewable Energy, Decarbonisation, Net Zero Strategy** — every
+term now backed by the Commission thesis or the Biome entry. It previously carried
+*ESG and Sustainable Finance* and *Energy Markets*, neither of which the page
+evidences. The row header itself supplies the exact phrase "energy transition" to a
+parser, so the value list does not repeat it.
+
+The layout parses cleanly: text is real text, the photo is a separate element an
+ATS skips, and the two-column header is the same one the other five CVs use.
 
 ## Before sending
 
