@@ -24,9 +24,9 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **288.7 mm of 297 mm, one page, 8.3 mm headroom.** Not enough to
-restore Impact Consulting (~14.5 mm) — anything sizeable added needs something
-else removed.
+Current state: **296.8 mm of 297 mm, one page, 0.2 mm headroom.** The page is
+full. Anything added from here must be traded against something already on it,
+and `--pad-b` has already been spent (see below).
 
 ## The template
 
@@ -40,6 +40,7 @@ is a number taken from it.
 | Navy | `#0c447c` — measured rgb(12,68,124); top bar, name, section headers and rules |
 | Link | `#0563c1` — measured rgb(5,99,193), underlined |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
+| Bottom margin | `--pad-b: 10.5mm`, reduced from 12 mm to fit the third founder bullet. Not a matched value — the sources' ~14.5 mm of bottom white is a consequence of their shorter content, not a template parameter. Last text now ends at 285.9 mm, leaving 11.1 mm |
 | Photo | `assets/photo.jpg`, **35 × 45 mm**, 700×900 px (~508 dpi at that size). Cropped from `assets/photo-source.png` by `scripts/` steps recorded in the commit — see below |
 | Sizing | One size for everything except the name |
 
@@ -59,7 +60,7 @@ is a number taken from it.
 | Contact separator gaps | 1.70 / 1.68 mm | 1.66 / 1.62 mm |
 | Body size | 9.48 pt | 9.35 pt — see below |
 
-Left edges land exactly: 19.06 mm ×30, 21.89 mm ×17, 25.41 mm ×17, 50.81 mm ×7.
+Left edges land exactly: 19.06 mm ×31, 21.89 mm ×19, 25.41 mm ×19, 50.81 mm ×5.
 
 ### Four deliberate differences
 
@@ -108,7 +109,7 @@ is mapped to a place on the page:
 | What E.ON asks for | Where it lands |
 |---|---|
 | Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
-| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome |
+| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome, Impact Consulting |
 | **Fluent English *and* German** | First row of Additional Information — see the caveat below |
 | **Highly communicative within a team** | Hack-Nation (MIT × TUM), UN Foundation |
 | Curiosity, "ready to transform the energy industry" | Tagline, the Commission thesis, the founder entry, Biome's lead bullet |
@@ -124,16 +125,28 @@ Two deliberate choices carried over from the source CVs:
 ## Where the work-experience copy comes from
 
 Bullets are taken from the source CVs rather than rewritten, so the same claims
-appear the same way everywhere. Two tailoring moves for E.ON:
+appear the same way everywhere. The tailoring moves for E.ON:
 
 - **TCG / Trariti Consulting Group is out**, as briefed. Work experience is
   Stealth → SCAILE → A&M → Biome.
-- **Impact Consulting was cut** to make room for the founder entry. One page is a
-  hard requirement and the new entry costs ~14.5 mm; Impact Consulting was the
-  weakest thing on the page for this application — a 2021–22 student-society
-  engagement benchmarking a micro-fintech, whose consulting signal is already
-  carried far better by A&M. Swapping it back in means dropping UN Foundation
-  instead, which costs the same.
+- **Impact Consulting is back in**, under Extracurricular & Leadership, after
+  being cut to make room for the founder entry. It costs 14.5 mm and there was
+  17.3 mm going spare once the energy-skills row came out, so it fits without
+  dropping anything else. Location is **London, United Kingdom** — three of the
+  source CVs say *London, UK* and two say *United Kingdom*; this takes the city
+  from the majority and spells the country out to match the rest of the page.
+- **The founder entry now carries three bullets, in the candidate's own words.**
+  The middle one went through four versions: an arrow chain that read as a slide,
+  a prose revenue model, a *"Prototyped an AI audit…"* line that fixed the
+  register but claimed a build that does not exist, and finally the supplied
+  wording — *"Designed a three-stage model — audit, subscription software, then
+  flexibility trading — grounded in German energy regulation"*. The third bullet
+  is deliberately present-tense (*"Building…"*, *"applying to…"*, *"in early
+  talks with…"*), which is accurate for a venture still in research.
+  **No bold on that third bullet**: bolding *Antler* and *TUM Venture Labs*
+  widened it past the single-line limit, and the wording matters more than the
+  emphasis.
+
 - **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
   support the fund's energy-transition thesis" is the single strongest genuine
   energy signal in the history, so it goes first rather than third.
@@ -195,24 +208,77 @@ and problem solving.
 
 Two changes came out of that check:
 
-- **Dropped `Commercial Due Diligence` from Core skills.** CDD is transaction-side
-  vocabulary. Neither in-house consultancy does deal-side diligence; they do
-  strategy, transformation and implementation. It scored nothing here. The term
-  still appears where it is genuinely earned — the Biome bullet.
+- **`Commercial and Financial Due Diligence` is in Core skills**, replacing
+  `Operating Model Design`. This reverses an earlier cut of `Commercial Due
+  Diligence` on the grounds that CDD is transaction-side vocabulary in-house
+  consultancies do not use. Reinstated on request, and defensible: the Biome
+  entry is real diligence experience, and both E.ON and RWE run M&A and
+  post-merger work. `Data Analysis` came out to keep the row at two lines.
 - **Added `Digital Transformation` and `Generative AI`.** E.ON explicitly names
   GenAI transformation and the digital energy ecosystem as current work, and the
   SCAILE role is real evidence for both. `Generative AI` moved up from the
   Technical row, where it read as a tool rather than a capability.
 
-`Energy transition` stays as a row but was retrimmed to
-**Climate Finance, Renewable Energy, Decarbonisation, Net Zero Strategy** — every
-term now backed by the Commission thesis or the Biome entry. It previously carried
-*ESG and Sustainable Finance* and *Energy Markets*, neither of which the page
-evidences. The row header itself supplies the exact phrase "energy transition" to a
-parser, so the value list does not repeat it.
+**The `Energy transition` row is gone.** It listed Climate Finance, Renewable
+Energy, Decarbonisation and Net Zero Strategy, but every one of those is asserted
+rather than demonstrated — the page already proves the same interest with evidence
+(the Commission thesis, the founder entry's German energy regulation, Biome's
+energy-transition thesis). A keyword row restating what three entries already show
+is padding, and a reader who spots that discounts the rest of the block.
+
+**`Technical` now carries `Claude Code` and `Large Language Models (LLMs)`.** Both
+are literal-match ATS terms, and E.ON names GenAI transformation as live work. The
+long form is deliberate: parsers match "LLM", "LLMs" and the spelled-out phrase
+differently, and writing it out catches all three.
+
+**`Cost Reduction` was dropped from Core skills** as the least load-bearing term —
+Business Case Development and Operating Model Design already cover that ground.
+`Operating Model Transformation` shortened to `Operating Model Design`, which is
+what brings the row to two lines while keeping all ten remaining terms; it is also
+the more accurate claim at this level.
 
 The layout parses cleanly: text is real text, the photo is a separate element an
 ATS skips, and the two-column header is the same one the other five CVs use.
+
+## Final audit
+
+Run against the rendered PDF, not the source, so it reflects what a reader sees.
+
+| Check | Result |
+|---|---|
+| Pages | 1 |
+| Em / en dashes, stray quotes, tildes | none |
+| Non-ASCII inventory | only `•`, `’` ×2, `×` ×1, `€` ×1 — all intentional |
+| Apostrophes | all curly |
+| Bullets wrapping | 0 of 20 |
+| Repeated bullet-opening verbs | none |
+| Left edges | 19.06 mm ×31, 21.89 mm ×20, 25.41 mm ×20, 50.81 mm ×5 — exact |
+| Right-aligned column | 18 lines within a 0.08 mm spread (italic side-bearing) |
+| Rules | all 5 span 19.05–191.82 mm, identical |
+| Photo right edge | 191.82 mm — on the rules |
+| Bottom white | 11.07 mm |
+| Currency / plus-suffix / percent | consistent |
+| Dates | `MM.YYYY` throughout |
+| Serial commas | none used, consistently |
+| Verb tense | past for closed roles, present only for the live venture |
+| Placeholders | none |
+
+Fixed in this pass: `Managed` opened both a SCAILE and an A&M bullet, and
+`Built` opened both an A&M and a Biome bullet. They are now `Owned` and
+`Developed` respectively. No opening verb repeats anywhere on the page.
+
+Three things deliberately left alone:
+
+- **A 12-month gap, 08.2024 to 07.2025.** The bachelor's ends 07.2024 and the
+  master's begins 08.2025; nothing on the page covers between. German recruiters
+  read timelines closely and will ask. Not fixable here — it needs a fact only
+  the candidate has.
+- **"Specialization"** is US spelling among British forms (Modelling, Organiser).
+  It is the degree title as awarded by Shiv Nadar University and all six source
+  CVs write it that way. Degree titles are quoted, not restyled.
+- **The `×` in "MIT Sloan AI Club × TUM"** (U+00D7). A naive ATS could mangle it,
+  but the keywords either side survive independently, and it reads better than
+  `x` or `and`.
 
 ## Before sending
 
