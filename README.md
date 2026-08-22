@@ -40,7 +40,7 @@ is a number taken from it.
 | Navy | `#0c447c` — measured rgb(12,68,124); top bar, name, section headers and rules |
 | Link | `#0563c1` — measured rgb(5,99,193), underlined |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
-| Photo | `assets/photo.jpg`, **35 × 45 mm**, extracted from the Lio PDF at its native 237×304 — see below |
+| Photo | `assets/photo.jpg`, **35 × 45 mm**, 700×900 px (~508 dpi at that size). Cropped from `assets/photo-source.png` by `scripts/` steps recorded in the commit — see below |
 | Sizing | One size for everything except the name |
 
 ### Measured against the source
