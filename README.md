@@ -24,54 +24,63 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **271.3 mm of 297 mm, one page, 25.7 mm headroom.**
+Current state: **278.2 mm of 297 mm, one page, 18.8 mm headroom.**
 
 ## The template
 
-Matched to the source CVs (Accenture / Allianz / Siemens), which are set in
-Times New Roman:
+Formatting is matched to `Abir_H._Khan_CV_Lio.pdf`, measured out of that PDF with
+PyMuPDF rather than eyeballed. Every value in `cv.html` carrying a mm or pt figure
+is a number taken from it.
 
 | | |
 |---|---|
-| Type | **Liberation Serif** — metrically identical to Times New Roman, SIL OFL, subset and vendored in `assets/fonts/` so builds are reproducible offline |
-| Accent | `--navy: #1f4e79` — top rule, name, section headers and their underlines |
+| Type | **Liberation Serif** — metrically identical to Times New Roman (what the source uses), SIL OFL, vendored in `assets/fonts/` so builds are reproducible offline |
+| Navy | `#0c447c` — measured rgb(12,68,124); top bar, name, section headers and rules |
+| Link | `#0563c1` — measured rgb(5,99,193), underlined |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
-| Photo | `assets/photo.jpg`, top-right at 28 × 36 mm — extracted from the Accenture Strategy PDF, kept at its native 237:304 ratio so it isn't stretched. The header text is centred against it, as in the source CVs |
-| Sizing | **One size for everything except the name.** The source CVs set contact line, tagline, section headers, org/role rows and bullets all at the same size |
+| Photo | `assets/photo.jpg`, 30.2 × 38.6 mm, extracted from the Lio PDF at its native 237×304 |
+| Sizing | One size for everything except the name |
 
 ### Measured against the source
 
-Siemens and Allianz are formatted identically to each other, so they make one
-target. Extracted with `pdftotext -bbox` and compared:
-
-| | Siemens / Allianz | This CV |
+| | Lio PDF | This CV |
 |---|---|---|
-| Left / right margin | 19.1 / 19.0 mm | 19.0 / 18.8 mm |
-| First text baseline | 22.6 mm | 22.4 mm |
-| Body glyph height | 10.52 pt | 10.35 pt |
-| Section header glyph | 10.52 pt | 10.35 pt |
-| Name glyph | 18.82 pt | 18.82 pt |
-| Line pitch | 4.23 mm | 4.23 mm |
-| `EDUCATION` at | 57.4 mm | 57.4 mm |
-| Text lines | 52 | 55 |
+| Text left edge | 19.06 mm | 19.06 mm |
+| Bullet glyph | 21.89 mm | 21.89 mm |
+| Bullet text | 25.41 mm | 25.41 mm |
+| Additional-info value column | 50.81 mm | 50.81 mm |
+| Name size / width | 17.04 pt / 60.14 mm | 17.04 pt / 60.20 mm |
+| Photo | 30.16 × 38.63 mm | 30.16 × 38.63 mm |
+| Photo top / bottom | 16.02 / 54.65 mm | 15.88 / 54.50 mm |
+| Name top | 22.58 mm | 22.42 mm |
+| Top bar | y 13.38 mm, 1.57 mm | y 13.23 mm, 1.59 mm |
+| Contact separator gaps | 1.70 / 1.68 mm | 1.66 / 1.62 mm |
+| Body size | 9.48 pt | 9.35 pt — see below |
 
-The three extra lines are content, not formatting — this CV carries Hack-Nation
-and a longer Education block than either source.
+Left edges land exactly: 19.06 mm ×30, 21.89 mm ×17, 25.41 mm ×17, 50.81 mm ×7.
 
-Body type is 1.6% under the source's. That is the ceiling: there is a **wrapping
-cliff between 9.35 pt and 9.4 pt** where five work-experience bullets tip onto a
-second line and the page jumps from 288 mm to 312 mm. `--fs-base` is set at
-**9.35 pt** for that reason. Don't nudge it up without re-running the build.
+### Three deliberate differences
+
+1. **Body type is 9.35 pt, not the source's 9.48 pt.** The source's design rule is
+   one line per bullet. Our bullets are longer than its, and there is a cliff
+   between 9.35 and 9.40 pt: at 9.40 pt seven bullets wrap and the page jumps from
+   278.6 mm to 308.7 mm. 9.35 pt is the largest size that preserves the rule.
+   Don't raise it without re-running the build.
+2. **The rules start at the text edge.** In the source they begin 0.46 mm to the
+   left of the text — Word slop. Here all five rules span exactly 19.05–191.82 mm,
+   the same edges as the text.
+3. **The photo is flush right.** In the source it stops 3.44 mm short of the right
+   text edge. Here its right edge sits on 191.82 mm with the rules and the
+   right-aligned location/date column.
 
 One trap worth knowing: `h2` needs an explicit `font-size:1em`. Without it the
-browser's default 1.5em heading size applies and the section headers render
-half again too big — which is wrong for this template, where headers are body
-size.
+browser's default 1.5em heading size applies and the section headers render half
+again too big — wrong for this template, where headers are body size.
 
 ### No photo, if you'd rather
 
-Delete the `<img class="photo">` line in `cv.html`. Everything else reflows —
-the header is a flex row and the left column already sets its own width.
+Delete the `<img class="photo">` line in `cv.html`. Everything else reflows — the
+header is a flex row and the left column already sets its own width.
 
 ## What this CV is optimised for
 

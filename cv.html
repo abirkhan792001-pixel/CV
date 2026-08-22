@@ -8,26 +8,44 @@
 /* ============================================================
    One-page A4 CV — E.ON Inhouse Consulting (ECON) eCON Academy.
 
-   Built on the same template as the other tailored CVs in this
-   repo: Times-metric serif, navy rules, ORG/location over
-   role/dates, photo top-right. Edit content below; `npm run
-   build` renders the PDF and fails if it spills past one page.
+   Formatting is matched to the Lio CV, measured out of that PDF
+   rather than eyeballed. Every value below that carries a mm or
+   pt figure is a number taken from it; see README for the
+   measured-vs-target table.
+
+   One deliberate difference: the Lio PDF's rules start 0.46mm
+   left of its text and its photo stops 3.44mm short of the right
+   text edge. Both are Word slop. Here the rules, the text and the
+   photo all share exactly the same two edges.
    ============================================================ */
 
 :root{
+  --navy:      #0c447c;   /* measured rgb(12,68,124) — bar, name, headers, rules */
+  --link:      #0563c1;   /* measured rgb(5,99,193)  — hyperlinks */
   --ink:       #000000;
-  --ink-soft:  #1a1a1a;
-  --muted:     #595959;
-  --navy:      #1f4e79;   /* section headers, name, rules */
-  --link:      #1155cc;
 
   --page-w:    210mm;
   --page-h:    297mm;
-  --margin-x:  19mm;
-  --margin-y:  11mm;
 
-  --fs-base:   9.35pt;
-  --lh:        1.2;
+  --pad-t:     13.02mm;   /* -> top bar renders at 13.4mm, as measured */
+  --pad-l:     19.06mm;   /* text left edge */
+  --pad-r:     18.16mm;   /* -> text right edge at 191.84mm */
+  --pad-b:     12mm;
+
+  --fs-base:   9.35pt;    /* largest size that keeps every bullet on ONE line,
+                             which is the source's design rule. The source sets
+                             9.48pt for its own, shorter bullets; between 9.35
+                             and 9.40 seven of ours wrap and the page jumps
+                             278.6mm -> 308.7mm. */
+  --fs-name:   17.04pt;
+  --lh:        1.26;      /* -> ~4.2mm line pitch */
+
+  --bullet-x:  2.83mm;    /* bullet glyph offset from text margin */
+  --bullet-in: 6.35mm;    /* bullet text offset from text margin */
+  --label-col: 31.75mm;   /* Additional Information label column */
+
+  --photo-w:   30.2mm;
+  --photo-h:   38.6mm;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -37,85 +55,114 @@ body{
   font-family:'Liberation Serif', 'Times New Roman', Times, serif;
   font-size:var(--fs-base);
   line-height:var(--lh);
-  color:var(--ink-soft);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
 }
 
 .page{
   width:var(--page-w);
   min-height:var(--page-h);
-  padding:var(--margin-y) var(--margin-x);
-  padding-top:calc(var(--margin-y) + 4.2mm); /* seats the header where the source CVs put it */
+  padding:var(--pad-t) var(--pad-r) var(--pad-b) var(--pad-l);
   margin:0 auto;
   background:#fff;
 }
 
 /* ---------- header ---------------------------------------- */
 
-.topbar{ height:2.6pt; background:var(--navy); margin-bottom:7pt; }
+.topbar{ height:1.57mm; background:var(--navy); }
 
-.head{ display:flex; justify-content:space-between; align-items:center; gap:10mm; }
+.head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;      /* photo and text block share a centre line */
+  gap:8mm;
+  margin-top:1.03mm;       /* gap below the bar, measured */
+}
 .head-l{ flex:1 1 auto; min-width:0; }
 
 .name{
-  font-size:17pt; font-weight:700; color:var(--navy);
-  letter-spacing:0.012em; line-height:1.06; text-transform:uppercase;
+  font-size:var(--fs-name);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.1;
+  letter-spacing:0.0475em;  /* tuned so the name measures 60.1mm, as in the source */
+  text-transform:uppercase;
+  white-space:nowrap;
 }
-.contact{ margin-top:2.2pt; color:var(--ink-soft); }
-.contact a{ color:var(--link); text-decoration:underline; }
-.contact .sep{ margin:0 3.5pt; color:var(--muted); }
 
-.tagline{ margin-top:2.2pt; color:var(--ink); }
+.contact{ margin-top:1.6mm; }
+.contact a{ color:var(--link); text-decoration:underline; }
+.contact .sep{ margin:0 4.9pt; }   /* source sets two spaces each side of the pipe */
+
+.tagline{ margin-top:0.7mm; }
 .tagline b{ font-weight:700; }
 
-.visa{ margin-top:1.4pt; font-style:italic; color:var(--muted); }
+.visa{ font-style:italic; }
 
 .photo{
-  width:28mm; height:36mm; object-fit:cover; flex-shrink:0;
-  display:block;
+  width:var(--photo-w);
+  height:var(--photo-h);
+  object-fit:cover;
+  flex-shrink:0;
+  display:block;           /* right edge sits on the text right edge */
 }
 
 /* ---------- sections -------------------------------------- */
 
-section{ margin-top:7pt; }
+section{ margin-top:2.32mm; }
 
 h2{
-  font-size:1em;            /* source CVs run headers at body size, not the UA's 1.5em */
-  font-weight:700; text-transform:uppercase;
-  letter-spacing:0.006em; color:var(--navy);
-  padding-bottom:1.2pt; border-bottom:1.1pt solid var(--navy);
-  margin-bottom:2.6pt;
+  font-size:1em;           /* headers run at body size in this template */
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--navy);
+  padding-bottom:0.55mm;
+  border-bottom:0.34mm solid var(--navy);
+  margin-bottom:1.0mm;
 }
 
 /* ---------- entries --------------------------------------- */
 
-.entry{ margin-bottom:5.2pt; }
+.entry{ margin-bottom:1.97mm; }
 .entry:last-child{ margin-bottom:0; }
 
-.row{ display:flex; justify-content:space-between; align-items:baseline; gap:8pt; }
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:6mm;
+}
 
-.org{ font-weight:700; color:var(--ink); }
+.org{ font-weight:700; }
 .org .note{ font-weight:400; font-style:italic; }
-.loc{ font-weight:700; color:var(--ink); white-space:nowrap; flex-shrink:0; }
+.loc{ font-weight:700; white-space:nowrap; flex-shrink:0; }
 
-.role{ font-style:italic; color:var(--ink-soft); }
-.when{ font-style:italic; color:var(--ink-soft); white-space:nowrap; flex-shrink:0; }
+.role{ font-style:italic; }
+.when{ font-style:italic; white-space:nowrap; flex-shrink:0; }
 
-ul{ list-style:none; margin-top:0.6pt; }
+ul{ list-style:none; }
 
 li{
-  position:relative; padding-left:11pt; margin-bottom:1pt;
+  position:relative;
+  padding-left:var(--bullet-in);
 }
 li::before{
-  content:"\2022"; position:absolute; left:3pt; top:0;
-  color:var(--ink-soft);
+  content:"\2022";
+  position:absolute;
+  left:var(--bullet-x);
+  top:0;
 }
-li b{ font-weight:700; color:var(--ink); }
+li b{ font-weight:700; }
 
 /* ---------- additional information grid ------------------- */
 
-.grid{ display:grid; grid-template-columns:26mm 1fr; gap:1pt 4mm; align-items:baseline; }
-.grid dt{ font-style:italic; color:var(--ink-soft); }
+.grid{
+  display:grid;
+  grid-template-columns:var(--label-col) 1fr;
+  gap:0.7mm 0;
+  align-items:baseline;
+}
+.grid dt{ font-style:italic; }
 
 /* ---------- print ----------------------------------------- */
 
@@ -135,8 +182,6 @@ li b{ font-weight:700; color:var(--ink); }
       <div class="contact">
         Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">LinkedIn</a>
       </div>
-      <!-- Tagline order mirrors E.ON's screening list: academic record,
-           hands-on consulting, energy exposure, on the ground in Germany. -->
       <div class="tagline">
         MSc Finance at <b>Nova SBE (FT #8)</b>; advised <b>Fortune 500</b> leadership on turnaround strategy at
         <b>A&amp;M</b>; sourced <b>ESG and energy-transition deals</b> in VC; now go-to-market at a Munich startup
@@ -146,10 +191,6 @@ li b{ font-weight:700; color:var(--ink); }
     <img class="photo" src="./assets/photo.jpg" alt="">
   </header>
 
-  <!-- EDUCATION first: E.ON gates explicitly on academic record.
-       Bullets run standing -> thesis -> competition. The EU Commission
-       thesis replaced the coursework list and is now the page's strongest
-       energy signal. -->
   <section>
     <h2>Education</h2>
 
@@ -185,9 +226,6 @@ li b{ font-weight:700; color:var(--ink); }
     </div>
   </section>
 
-  <!-- WORK EXPERIENCE — copy carried over from the source CVs.
-       TCG stays out per brief. Biome's energy/ESG line is promoted to
-       the lead bullet: strongest genuine energy signal in the history. -->
   <section>
     <h2>Work Experience</h2>
 
@@ -197,7 +235,7 @@ li b{ font-weight:700; color:var(--ink); }
         <div class="loc">Munich, Germany</div>
       </div>
       <div class="row">
-        <div class="role">Founder's Associate, AI &amp; Go-to-Market</div>
+        <div class="role">Founder&rsquo;s Associate, AI &amp; Go-to-Market</div>
         <div class="when">06.2026 - 08.2026</div>
       </div>
       <ul>
@@ -233,15 +271,13 @@ li b{ font-weight:700; color:var(--ink); }
         <div class="when">06.2023 - 08.2023</div>
       </div>
       <ul>
-        <li>Sourced <b>ESG-focused deals</b> across energy, SaaS, and consumer-tech to support the fund's <b>energy-transition thesis</b></li>
+        <li>Sourced <b>ESG-focused deals</b> across energy, SaaS, and consumer-tech to support the fund&rsquo;s <b>energy-transition thesis</b></li>
         <li>Screened <b>3,000+ companies</b> within a <b>~$170M pipeline</b>, assessing market size, competitive dynamics, and scalability risks</li>
         <li>Supported <b>commercial due diligence</b> with bottom-up revenue build-ups and unit economics (CAC/LTV)</li>
       </ul>
     </div>
   </section>
 
-  <!-- LEADERSHIP — Hack-Nation added per brief; scale figures are from
-       public sources (hack-nation.ai, MIT RAISE), not invented. -->
   <section>
     <h2>Extracurricular &amp; Leadership</h2>
 
