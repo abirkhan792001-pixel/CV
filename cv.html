@@ -2,353 +2,323 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Abir Khan — CV</title>
+<title>Abir Hilal Khan — CV</title>
 <link rel="stylesheet" href="./assets/fonts/fonts.css">
 <style>
 /* ============================================================
-   One-page A4 CV — tailored for E.ON Inhouse Consulting (ECON)
-   eCON Academy. Edit content below; run `npm run build` to get
-   the PDF plus an automatic one-page overflow check.
+   One-page A4 CV — E.ON Inhouse Consulting (ECON) eCON Academy.
+
+   Built on the same template as the other tailored CVs in this
+   repo: Times-metric serif, navy rules, ORG/location over
+   role/dates, photo top-right. Edit content below; `npm run
+   build` renders the PDF and fails if it spills past one page.
    ============================================================ */
 
 :root{
-  --ink:        #16191d;   /* primary text                        */
-  --ink-soft:   #454c55;   /* bullets / body                      */
-  --muted:      #6b7480;   /* dates, secondary meta               */
-  --rule:       #c9cfd6;   /* hairlines                           */
-  --accent:     #9b1c24;   /* restrained nod to E.ON red          */
+  --ink:       #000000;
+  --ink-soft:  #1a1a1a;
+  --muted:     #595959;
+  --navy:      #1f4e79;   /* section headers, name, rules */
+  --link:      #1155cc;
 
-  --page-w:     210mm;
-  --page-h:     297mm;
-  --margin-x:   13mm;
-  --margin-y:   12mm;
+  --page-w:    210mm;
+  --page-h:    297mm;
+  --margin-x:  19mm;
+  --margin-y:  11mm;
 
-  --fs-base:    9.6pt;
-  --lh:         1.33;
+  --fs-base:   9.35pt;
+  --lh:        1.2;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
-
 html{ background:#8b9099; }
 
 body{
-  font-family:'Source Sans 3', 'Liberation Sans', Arial, sans-serif;
+  font-family:'Liberation Serif', 'Times New Roman', Times, serif;
   font-size:var(--fs-base);
   line-height:var(--lh);
   color:var(--ink-soft);
   -webkit-font-smoothing:antialiased;
-  font-variant-numeric:oldstyle-nums proportional-nums;
 }
 
 .page{
   width:var(--page-w);
   min-height:var(--page-h);
   padding:var(--margin-y) var(--margin-x);
+  padding-top:calc(var(--margin-y) + 4.2mm); /* seats the header where the source CVs put it */
   margin:0 auto;
   background:#fff;
-  position:relative;
 }
 
 /* ---------- header ---------------------------------------- */
 
+.topbar{ height:2.6pt; background:var(--navy); margin-bottom:7pt; }
+
+.head{ display:flex; justify-content:space-between; align-items:center; gap:10mm; }
+.head-l{ flex:1 1 auto; min-width:0; }
+
 .name{
-  font-size:22pt;
-  font-weight:700;
-  letter-spacing:-0.014em;
-  color:var(--ink);
-  line-height:1.05;
+  font-size:17pt; font-weight:700; color:var(--navy);
+  letter-spacing:0.012em; line-height:1.06; text-transform:uppercase;
 }
+.contact{ margin-top:2.2pt; color:var(--ink-soft); }
+.contact a{ color:var(--link); text-decoration:underline; }
+.contact .sep{ margin:0 3.5pt; color:var(--muted); }
 
-.tagline{
-  margin-top:2.5pt;
-  font-size:9.4pt;
-  font-weight:600;
-  color:var(--accent);
-  letter-spacing:0.005em;
-}
+.tagline{ margin-top:2.2pt; color:var(--ink); }
+.tagline b{ font-weight:700; }
 
-.contact{
-  margin-top:4pt;
-  font-size:8.9pt;
-  color:var(--muted);
-  font-variant-numeric:lining-nums;
+.visa{ margin-top:1.4pt; font-style:italic; color:var(--muted); }
+
+.photo{
+  width:28mm; height:36mm; object-fit:cover; flex-shrink:0;
+  display:block;
 }
-.contact a{ color:inherit; text-decoration:none; }
-.contact .sep{ margin:0 5pt; color:var(--rule); }
 
 /* ---------- sections -------------------------------------- */
 
-section{ margin-top:9.5pt; }
+section{ margin-top:7pt; }
 
 h2{
-  font-size:8.1pt;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.11em;
-  color:var(--accent);
-  padding-bottom:2pt;
-  border-bottom:0.6pt solid var(--rule);
-  margin-bottom:5pt;
-}
-
-.summary{
-  font-size:9.4pt;
-  color:var(--ink-soft);
-  text-align:justify;
-  hyphens:auto;
+  font-size:1em;            /* source CVs run headers at body size, not the UA's 1.5em */
+  font-weight:700; text-transform:uppercase;
+  letter-spacing:0.006em; color:var(--navy);
+  padding-bottom:1.2pt; border-bottom:1.1pt solid var(--navy);
+  margin-bottom:2.6pt;
 }
 
 /* ---------- entries --------------------------------------- */
 
-.entry{ margin-bottom:6.5pt; }
+.entry{ margin-bottom:5.2pt; }
 .entry:last-child{ margin-bottom:0; }
 
-.entry-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:8pt;
-}
+.row{ display:flex; justify-content:space-between; align-items:baseline; gap:8pt; }
 
-.role{
-  font-size:9.9pt;
-  font-weight:700;
-  color:var(--ink);
-  letter-spacing:-0.004em;
-}
+.org{ font-weight:700; color:var(--ink); }
+.org .note{ font-weight:400; font-style:italic; }
+.loc{ font-weight:700; color:var(--ink); white-space:nowrap; flex-shrink:0; }
 
-.org{ font-weight:400; color:var(--ink-soft); }
-.org::before{ content:" — "; color:var(--muted); }
+.role{ font-style:italic; color:var(--ink-soft); }
+.when{ font-style:italic; color:var(--ink-soft); white-space:nowrap; flex-shrink:0; }
 
-.when{
-  font-size:8.7pt;
-  color:var(--muted);
-  white-space:nowrap;
-  font-variant-numeric:lining-nums;
-  flex-shrink:0;
-}
-
-.sub{
-  font-size:8.9pt;
-  font-style:italic;
-  color:var(--muted);
-  margin-top:0.5pt;
-}
-
-ul{ list-style:none; margin-top:2.5pt; }
+ul{ list-style:none; margin-top:0.6pt; }
 
 li{
-  position:relative;
-  padding-left:8.5pt;
-  margin-bottom:1.6pt;
-  text-align:justify;
-  hyphens:auto;
+  position:relative; padding-left:11pt; margin-bottom:1pt;
 }
-
 li::before{
-  content:"";
-  position:absolute;
-  left:1.5pt;
-  top:0.42em;
-  width:2.6pt;
-  height:2.6pt;
-  border-radius:50%;
-  background:var(--rule);
+  content:"\2022"; position:absolute; left:3pt; top:0;
+  color:var(--ink-soft);
 }
+li b{ font-weight:700; color:var(--ink); }
 
-li strong{ font-weight:600; color:var(--ink); }
+/* ---------- additional information grid ------------------- */
 
-/* ---------- skills grid ----------------------------------- */
-
-.grid{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:2.4pt 9pt;
-  align-items:baseline;
-}
-
-.grid dt{
-  font-weight:700;
-  color:var(--ink);
-  font-size:8.9pt;
-  white-space:nowrap;
-}
-
-.grid dd{ color:var(--ink-soft); }
-
-/* ---------- placeholders ---------------------------------- */
-/* Deliberately loud: an unfilled field must never reach a
-   recruiter unnoticed. Remove .todo styling once complete.   */
-
-.todo{
-  background:#fff2a8;
-  box-shadow:0 0 0 1pt #e0c200;
-  border-radius:1.5pt;
-  color:#5c4a00;
-  font-style:normal;
-  padding:0 1.5pt;
-}
+.grid{ display:grid; grid-template-columns:26mm 1fr; gap:1pt 4mm; align-items:baseline; }
+.grid dt{ font-style:italic; color:var(--ink-soft); }
 
 /* ---------- print ----------------------------------------- */
 
 @page{ size:A4; margin:0; }
-
-@media print{
-  html{ background:#fff; }
-  .page{ margin:0; box-shadow:none; }
-}
-
-@media screen{
-  .page{ box-shadow:0 2px 18px rgba(0,0,0,.35); margin:18px auto; }
-}
+@media print{ html{ background:#fff; } .page{ margin:0; box-shadow:none; } }
+@media screen{ .page{ box-shadow:0 2px 18px rgba(0,0,0,.35); margin:18px auto; } }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <header>
-    <div class="name">Abir Khan</div>
-    <!-- Tagline: the single highest-leverage line on the page. It should
-         say "energy + consulting-grade problem solving" in under 90 chars. -->
-    <div class="tagline">Energy SaaS &middot; Founders Associate &middot; <span class="todo">«M.Sc. field, e.g. Management &amp; Technology»</span></div>
-    <div class="contact">
-      <span class="todo">«city, country»</span><span class="sep">|</span><a href="mailto:abir@scaile.tech">abir@scaile.tech</a><span class="sep">|</span><span class="todo">«+49 ...»</span><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">linkedin.com/in/khan-abir</a>
+  <div class="topbar"></div>
+
+  <header class="head">
+    <div class="head-l">
+      <div class="name">Abir Hilal Khan</div>
+      <div class="contact">
+        Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">LinkedIn</a>
+      </div>
+      <!-- Tagline order mirrors E.ON's screening list: academic record,
+           hands-on consulting, energy exposure, on the ground in Germany. -->
+      <div class="tagline">
+        MSc Finance at <b>Nova SBE (FT #8)</b>; advised <b>Fortune 500</b> leadership on turnaround strategy at
+        <b>A&amp;M</b>; sourced <b>ESG and energy-transition deals</b> in VC; now go-to-market at a Munich startup
+      </div>
+      <div class="visa">No visa sponsorship required (Germany)</div>
     </div>
+    <img class="photo" src="./assets/photo.jpg" alt="">
   </header>
 
-  <!-- ============================================================
-       PROFILE — 2 lines maximum. Must land, in this order:
-       (1) final-year M.Sc. / recent grad, (2) hands-on ENERGY
-       experience, (3) structured problem solving, (4) DE + EN.
-       These are the four things E.ON's posting screens on.
-       ============================================================ -->
-  <section>
-    <h2>Profile</h2>
-    <p class="summary">
-      <span class="todo">«Final-year M.Sc. «field» student at «university»»</span> with hands-on operating experience in
-      <span class="todo">«energy SaaS domain — e.g. flexibility, grid, metering, retail energy»</span>, where I
-      <span class="todo">«one concrete, quantified outcome»</span>. Fluent in German and English, and drawn to ECON for the
-      chance to work the commercial and technical sides of the energy transition in one team.
-    </p>
-  </section>
-
-  <!-- ============================================================
-       EDUCATION — first, because E.ON gates on "outstanding
-       academic record". Lead with grade if it is strong.
-       ============================================================ -->
+  <!-- EDUCATION first: E.ON gates explicitly on academic record.
+       Bullets run standing -> thesis -> competition. The EU Commission
+       thesis replaced the coursework list and is now the page's strongest
+       energy signal. -->
   <section>
     <h2>Education</h2>
 
     <div class="entry">
-      <div class="entry-head">
-        <div class="role">M.Sc. <span class="todo">«Programme»</span><span class="org"><span class="todo">«University»</span></span></div>
-        <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
+      <div class="row">
+        <div class="org">Nova School of Business and Economics</div>
+        <div class="loc">Lisbon, Portugal</div>
       </div>
-      <div class="sub">Grade: <span class="todo">«e.g. 1.4 / top 10%»</span> &nbsp;·&nbsp; Focus: <span class="todo">«energy economics, strategy, ...»</span></div>
+      <div class="row">
+        <div class="role">Master of Science in Finance</div>
+        <div class="when">08.2025 - 12.2026 (expected)</div>
+      </div>
       <ul>
-        <li><span class="todo">«Thesis / scholarship / exchange semester — keep only if it signals energy, analytics or international exposure»</span></li>
+        <li>Ranked <b>top 10%</b> of the class</li>
+        <li><b>Master's Thesis</b> with the <b>European Commission</b>: EU climate-finance allocation across member states, renewables focus</li>
+        <li><b>Team Lead</b>, Draycott Private Equity Challenge (2026)</li>
       </ul>
     </div>
 
     <div class="entry">
-      <div class="entry-head">
-        <div class="role">B.Sc. <span class="todo">«Programme»</span><span class="org"><span class="todo">«University»</span></span></div>
-        <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
+      <div class="row">
+        <div class="org">Shiv Nadar University</div>
+        <div class="loc">Delhi, India</div>
       </div>
-      <div class="sub">Grade: <span class="todo">«grade»</span></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       EXPERIENCE — reverse chronological. TCG removed per brief.
-       Bullets: action verb -> what you did -> quantified result.
-       Bias every bullet toward energy-domain judgement, client/
-       stakeholder work, and structured analysis.
-       ============================================================ -->
-  <section>
-    <h2>Professional Experience</h2>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div class="role">Founders Associate<span class="org"><span class="todo">«Company»</span>, energy SaaS</span></div>
-        <div class="when"><span class="todo">«MM/YYYY – present»</span></div>
-      </div>
-      <div class="sub"><span class="todo">«City»</span> &nbsp;·&nbsp; <span class="todo">«stage — e.g. Seed, ~15 FTE»</span></div>
-      <ul>
-        <li><span class="todo">«Own a P&amp;L-adjacent workstream: what you owned, for whom, and the number that moved»</span></li>
-        <li><span class="todo">«A commercial win — pipeline, pricing, GTM or a named utility/industrial customer landed»</span></li>
-        <li><span class="todo">«An analytical piece — market sizing, tariff/flexibility model, build-vs-buy — and the decision it drove»</span></li>
-        <li><span class="todo">«Cross-functional delivery — worked across product/eng/commercial to ship X»</span></li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div class="role"><span class="todo">«Role»</span><span class="org"><span class="todo">«Company»</span></span></div>
-        <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
+      <div class="row">
+        <div class="role">Bachelor of Management Studies; Specialization in Finance &amp; Strategy</div>
+        <div class="when">08.2020 - 07.2024</div>
       </div>
       <ul>
-        <li><span class="todo">«Bullet — prioritise anything consulting-flavoured or energy-adjacent»</span></li>
-        <li><span class="todo">«Bullet with a quantified outcome»</span></li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div class="role"><span class="todo">«Role»</span><span class="org"><span class="todo">«Company»</span></span></div>
-        <div class="when"><span class="todo">«MM/YYYY – MM/YYYY»</span></div>
-      </div>
-      <ul>
-        <li><span class="todo">«Single strongest bullet — compress older roles to one line each»</span></li>
+        <li>Graduated <b>Magna Cum Laude</b>, ranked <b>top 10%</b> of cohort</li>
+        <li><b>Top 3 nationwide</b>, National Case Study Challenge (out of 15,000 participants)</li>
       </ul>
     </div>
   </section>
 
-  <!-- ============================================================
-       LEADERSHIP — HackNation (MIT × TUM) lives here. E.ON asks
-       for "highly communicative within a team"; this is the
-       evidence. Quantify scale: participants, partners, budget.
-       ============================================================ -->
+  <!-- WORK EXPERIENCE — copy carried over from the source CVs.
+       TCG stays out per brief. Biome's energy/ESG line is promoted to
+       the lead bullet: strongest genuine energy signal in the history. -->
   <section>
-    <h2>Leadership &amp; Initiative</h2>
+    <h2>Work Experience</h2>
 
     <div class="entry">
-      <div class="entry-head">
-        <div class="role">Organiser, HackNation<span class="org">MIT &times; Technical University of Munich</span></div>
-        <div class="when"><span class="todo">«MM/YYYY»</span></div>
+      <div class="row">
+        <div class="org">SCAILE Technologies GmbH</div>
+        <div class="loc">Munich, Germany</div>
+      </div>
+      <div class="row">
+        <div class="role">Founder's Associate, AI &amp; Go-to-Market</div>
+        <div class="when">06.2026 - 08.2026</div>
       </div>
       <ul>
-        <li>Co-organised <span class="todo">«MIT-affiliated hackathon»</span> in partnership with TUM, coordinating <span class="todo">«N»</span> participants, <span class="todo">«N»</span> partner organisations and a <span class="todo">«€X»</span> budget across two institutions and time zones.</li>
-        <li><span class="todo">«Second bullet — sponsor/stakeholder management, or an energy/climate track you ran»</span></li>
+        <li>Advised the founders on <b>positioning and go-to-market strategy</b>, based on market sizing of the AI-search (GEO) space</li>
+        <li>Built and shipped <b>AI agent workflows</b> using Claude Code and LLM APIs, cutting manual reporting effort by <b>~60%</b></li>
+        <li>Created <b>KPI dashboards</b> tracking brand visibility across AI assistants (ChatGPT, Gemini, Perplexity) for client reporting</li>
       </ul>
     </div>
 
     <div class="entry">
-      <div class="entry-head">
-        <div class="role"><span class="todo">«Society / volunteering / competition»</span><span class="org"><span class="todo">«Organisation»</span></span></div>
-        <div class="when"><span class="todo">«YYYY»</span></div>
+      <div class="row">
+        <div class="org">Alvarez &amp; Marsal (A&amp;M)</div>
+        <div class="loc">Delhi, India</div>
       </div>
+      <div class="row">
+        <div class="role">Restructuring Intern, North American Commercial Restructuring Team</div>
+        <div class="when">01.2024 - 07.2024</div>
+      </div>
+      <ul>
+        <li>Managed a full <b>turnaround workstream</b> for <b>Fortune 500</b> clients, covering <b>&gt;$100M</b> in debt and leases (U.S. Chapter 11)</li>
+        <li>Built <b>scenario models</b> for a <b>$9.8M</b> cost and risk-mitigation plan, informing <b>board-level decisions</b> on distressed M&amp;A</li>
+        <li>Prepared creditor-negotiation presentations for client leadership, preserving <b>$2.5M in enterprise value</b></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">Biome Venture Studio</div>
+        <div class="loc">Hyderabad, India</div>
+      </div>
+      <div class="row">
+        <div class="role">Venture Capital Analyst (Intern)</div>
+        <div class="when">06.2023 - 08.2023</div>
+      </div>
+      <ul>
+        <li>Sourced <b>ESG-focused deals</b> across energy, SaaS, and consumer-tech to support the fund's <b>energy-transition thesis</b></li>
+        <li>Screened <b>3,000+ companies</b> within a <b>~$170M pipeline</b>, assessing market size, competitive dynamics, and scalability risks</li>
+        <li>Supported <b>commercial due diligence</b> with bottom-up revenue build-ups and unit economics (CAC/LTV)</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ============================================================
-       SKILLS — Languages first: E.ON explicitly requires fluent
-       German AND English. Make it impossible to miss.
-       ============================================================ -->
+  <!-- LEADERSHIP — Hack-Nation added per brief; scale figures are from
+       public sources (hack-nation.ai, MIT RAISE), not invented. -->
   <section>
-    <h2>Skills &amp; Languages</h2>
+    <h2>Extracurricular &amp; Leadership</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">Hack-Nation Global AI Hackathon <span class="note">(MIT Sloan AI Club)</span> &times; TUM</div>
+        <div class="loc">Munich, Germany</div>
+      </div>
+      <div class="row">
+        <div class="role">Organiser</div>
+        <div class="when">2026</div>
+      </div>
+      <ul>
+        <li>Coordinated the TUM side of a <b>24-hour global AI sprint</b> with builders from MIT, Stanford and <b>60+ countries</b></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">FitSure <span class="note">(InsurTech venture, incubated at Shiv Nadar University)</span></div>
+        <div class="loc">Delhi, India</div>
+      </div>
+      <div class="row">
+        <div class="role">Co-Founder</div>
+        <div class="when">01.2023 - 08.2023</div>
+      </div>
+      <ul>
+        <li>Defined the <b>business model and pricing strategy</b> for wearable-based <b>dynamic health premiums</b> in a 3-person team</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">Impact Consulting</div>
+        <div class="loc">London, UK</div>
+      </div>
+      <div class="row">
+        <div class="role">Consultant</div>
+        <div class="when">08.2021 - 05.2022</div>
+      </div>
+      <ul>
+        <li>Created <b>competitive benchmarking</b> and <b>market entry proposals</b> to support fundraising for a micro-fintech B2C startup</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">United Nations Foundation</div>
+        <div class="loc">Delhi, India</div>
+      </div>
+      <div class="row">
+        <div class="role">Associate Member</div>
+        <div class="when">08.2020 - 05.2022</div>
+      </div>
+      <ul>
+        <li>Led donation drives and health campaigns for <b>1,200+ women and children</b> in rural India</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Additional Information</h2>
     <dl class="grid">
       <dt>Languages</dt>
-      <dd><strong>German</strong> <span class="todo">«C1 / fluent»</span> &nbsp;·&nbsp; <strong>English</strong> <span class="todo">«C2 / fluent»</span><span class="todo">« · other languages»</span></dd>
+      <dd>English (Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
 
-      <dt>Analytical</dt>
-      <dd><span class="todo">«Excel/financial modelling, SQL, Python, Power BI/Tableau — strongest first»</span></dd>
+      <dt>Core skills</dt>
+      <dd>Strategy Consulting, Business Case Development, Financial Modelling, Market Sizing, Commercial Due Diligence, Cost Reduction, Operating Model Transformation, Project Management, Stakeholder Management, Data Analysis</dd>
 
-      <dt>Energy domain</dt>
-      <dd><span class="todo">«e.g. flexibility markets, tariff design, grid economics, PPAs, EU energy regulation»</span></dd>
+      <dt>Energy transition</dt>
+      <dd>Decarbonisation, Net Zero Strategy, ESG and Sustainable Finance, Energy Markets</dd>
 
-      <dt>Certifications</dt>
-      <dd><span class="todo">«only if genuinely relevant — otherwise delete this row to buy space»</span></dd>
+      <dt>Technical</dt>
+      <dd>Microsoft Excel, PowerPoint, Power BI, SQL, Python, Generative AI</dd>
+
+      <dt>Interests</dt>
+      <dd>Distance running, swimming, hiking, baking</dd>
     </dl>
   </section>
 
