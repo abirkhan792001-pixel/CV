@@ -24,8 +24,9 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **292.9 mm of 297 mm, one page, 4.1 mm headroom.** Very little
-slack left — anything added now needs something else removed.
+Current state: **288.7 mm of 297 mm, one page, 8.3 mm headroom.** Not enough to
+restore Impact Consulting (~14.5 mm) — anything sizeable added needs something
+else removed.
 
 ## The template
 
