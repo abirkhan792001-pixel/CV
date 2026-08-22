@@ -107,7 +107,7 @@ appear the same way everywhere. Two tailoring moves for E.ON:
 
 Elsewhere on the page:
 
-- **The coursework list is gone**, replaced by the Master's Work Project with
+- **The coursework list is gone**, replaced by the Master's Thesis, run with
   the European Commission. Coursework titles are weak evidence — everyone on
   the programme took them. A Commission-partnered project on EU climate-finance
   allocation with a renewables focus is the strongest energy signal on the
