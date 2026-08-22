@@ -24,7 +24,7 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **288.9 mm of 297 mm, one page, 8.1 mm headroom.**
+Current state: **285.2 mm of 297 mm, one page, 11.8 mm headroom.**
 
 ## The template
 
@@ -109,8 +109,9 @@ Elsewhere on the page:
 
 - **Net-Zero coursework** is pulled to the front of the Nova bullet. It is real —
   it appears in the DHL CV's coursework list.
-- **The M&A competition line** (2nd place, St. Stephen's College, Delhi
-  University, 2022) also comes from the DHL CV.
+- **The M&A competition line** was cut, leaving only *Top 3 nationwide,
+  National Case Study Challenge (out of 15,000 participants)*. The field size
+  does more work than a second, smaller placing.
 - **Hack-Nation** was added on brief. Scale figures — 24-hour sprint, MIT /
   Harvard / Stanford, 60+ countries — are from public sources (hack-nation.ai,
   MIT RAISE), not invented.
@@ -144,6 +145,26 @@ One more, which is a wording difference rather than a fact:
 Also worth knowing: `Abir H. Khan_CV_Siemens Advanta.pdf` and
 `Abir H. Khan_CV_Strategy Consulting.pdf` are **byte-identical** — two
 filenames, one document.
+
+## The skills block is written for ATS
+
+`Core skills`, `Energy transition` and `Technical` replaced the old
+Focus areas / Tools rows. They are deliberately plain noun phrases —
+*Business Case Development*, *Commercial Due Diligence*, *Operating Model
+Transformation* — because that is what a keyword parser matches on. The old
+rows used house phrasing ("Structured Problem Solving", "LLM APIs & prompt
+engineering") that scores nothing against a consulting job description.
+
+Three notes on it:
+
+- **`Energy Markets` is the one term to be ready to defend.** It is a strong
+  ATS keyword for E.ON, but it rests on Net-Zero coursework and ESG deal
+  sourcing rather than direct market experience. Have an answer prepared.
+- **`Generative AI` replaced the tooling detail.** Git, GitHub and Vercel are
+  engineering signals, not consulting ones, and cost keyword space.
+- **The layout parses cleanly.** Text is real text, not an image, and the
+  photo is a separate element an ATS ignores. The two-column header is the
+  only parser risk, and it is the same header the other five CVs use.
 
 ## Before sending
 
