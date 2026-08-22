@@ -24,7 +24,7 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **285.2 mm of 297 mm, one page, 11.8 mm headroom.**
+Current state: **271.3 mm of 297 mm, one page, 25.7 mm headroom.**
 
 ## The template
 
@@ -83,7 +83,7 @@ is mapped to a place on the page:
 | Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
 | **Initial hands-on experience in consulting and/or the energy industry** | A&M restructuring, plus energy-transition deal sourcing at Biome |
 | **Fluent English *and* German** | First row of Additional Information — see the caveat below |
-| **Highly communicative within a team** | Hack-Nation (MIT × TUM), FitSure, Impact Consulting |
+| **Highly communicative within a team** | Hack-Nation (MIT × TUM), Impact Consulting, UN Foundation |
 | Curiosity, "ready to transform the energy industry" | Tagline, Net-Zero coursework, Biome's lead bullet |
 | International experience | MIT × TUM, London, Lisbon, Delhi |
 
