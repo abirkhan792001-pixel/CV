@@ -24,9 +24,8 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **288.7 mm of 297 mm, one page, 8.3 mm headroom.** Not enough to
-restore Impact Consulting (~14.5 mm) — anything sizeable added needs something
-else removed.
+Current state: **279.7 mm of 297 mm, one page, 17.3 mm headroom.** Still short of
+the ~14.5 mm plus margin that restoring Impact Consulting would need comfortably.
 
 ## The template
 
@@ -204,12 +203,23 @@ Two changes came out of that check:
   SCAILE role is real evidence for both. `Generative AI` moved up from the
   Technical row, where it read as a tool rather than a capability.
 
-`Energy transition` stays as a row but was retrimmed to
-**Climate Finance, Renewable Energy, Decarbonisation, Net Zero Strategy** — every
-term now backed by the Commission thesis or the Biome entry. It previously carried
-*ESG and Sustainable Finance* and *Energy Markets*, neither of which the page
-evidences. The row header itself supplies the exact phrase "energy transition" to a
-parser, so the value list does not repeat it.
+**The `Energy transition` row is gone.** It listed Climate Finance, Renewable
+Energy, Decarbonisation and Net Zero Strategy, but every one of those is asserted
+rather than demonstrated — the page already proves the same interest with evidence
+(the Commission thesis, the founder entry's German energy regulation, Biome's
+energy-transition thesis). A keyword row restating what three entries already show
+is padding, and a reader who spots that discounts the rest of the block.
+
+**`Technical` now carries `Claude Code` and `Large Language Models (LLMs)`.** Both
+are literal-match ATS terms, and E.ON names GenAI transformation as live work. The
+long form is deliberate: parsers match "LLM", "LLMs" and the spelled-out phrase
+differently, and writing it out catches all three.
+
+**`Cost Reduction` was dropped from Core skills** as the least load-bearing term —
+Business Case Development and Operating Model Design already cover that ground.
+`Operating Model Transformation` shortened to `Operating Model Design`, which is
+what brings the row to two lines while keeping all ten remaining terms; it is also
+the more accurate claim at this level.
 
 The layout parses cleanly: text is real text, the photo is a separate element an
 ATS skips, and the two-column header is the same one the other five CVs use.
