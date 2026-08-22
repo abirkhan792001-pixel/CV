@@ -24,9 +24,9 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **294.2 mm of 297 mm, one page, 2.8 mm headroom.** Tight — the
-headroom left by restoring Impact Consulting is under one line, so any new text
-has to be traded against something already on the page.
+Current state: **296.8 mm of 297 mm, one page, 0.2 mm headroom.** The page is
+full. Anything added from here must be traded against something already on it,
+and `--pad-b` has already been spent (see below).
 
 ## The template
 
@@ -40,6 +40,7 @@ is a number taken from it.
 | Navy | `#0c447c` — measured rgb(12,68,124); top bar, name, section headers and rules |
 | Link | `#0563c1` — measured rgb(5,99,193), underlined |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
+| Bottom margin | `--pad-b: 10.5mm`, reduced from 12 mm to fit the third founder bullet. Not a matched value — the sources' ~14.5 mm of bottom white is a consequence of their shorter content, not a template parameter. Last text now ends at 285.9 mm, leaving 11.1 mm |
 | Photo | `assets/photo.jpg`, **35 × 45 mm**, 700×900 px (~508 dpi at that size). Cropped from `assets/photo-source.png` by `scripts/` steps recorded in the commit — see below |
 | Sizing | One size for everything except the name |
 
@@ -134,16 +135,17 @@ appear the same way everywhere. The tailoring moves for E.ON:
   dropping anything else. Location is **London, United Kingdom** — three of the
   source CVs say *London, UK* and two say *United Kingdom*; this takes the city
   from the majority and spells the country out to match the rest of the page.
-- **The founder entry's second bullet claims analysis, not a build.** It has been
-  through three versions. An arrow chain (audit → SaaS → flexibility revenue
-  share) read as a slide rather than a CV line. A rewrite to *"Prototyped an AI
-  audit of German electricity bills…"* fixed the register but broke the facts —
-  the venture is in research, nothing is built. It now reads *"Priced a paid
-  audit against the savings German SMEs can claim under **EnEfG and §14a
-  EnWG**, with SaaS and **flexibility upside**"*, which keeps the regulatory
-  grounding and the full commercial model while claiming only the analytical
-  work actually done. Pricing a product against a quantified regulatory saving
-  is what a research-phase founder does; prototyping is not.
+- **The founder entry now carries three bullets, in the candidate's own words.**
+  The middle one went through four versions: an arrow chain that read as a slide,
+  a prose revenue model, a *"Prototyped an AI audit…"* line that fixed the
+  register but claimed a build that does not exist, and finally the supplied
+  wording — *"Designed a three-stage model — audit, subscription software, then
+  flexibility trading — grounded in German energy regulation"*. The third bullet
+  is deliberately present-tense (*"Building…"*, *"applying to…"*, *"in early
+  talks with…"*), which is accurate for a venture still in research.
+  **No bold on that third bullet**: bolding *Antler* and *TUM Venture Labs*
+  widened it past the single-line limit, and the wording matters more than the
+  emphasis.
 
 - **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
   support the fund's energy-transition thesis" is the single strongest genuine
