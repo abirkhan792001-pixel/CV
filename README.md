@@ -208,10 +208,12 @@ and problem solving.
 
 Two changes came out of that check:
 
-- **Dropped `Commercial Due Diligence` from Core skills.** CDD is transaction-side
-  vocabulary. Neither in-house consultancy does deal-side diligence; they do
-  strategy, transformation and implementation. It scored nothing here. The term
-  still appears where it is genuinely earned — the Biome bullet.
+- **`Commercial and Financial Due Diligence` is in Core skills**, replacing
+  `Operating Model Design`. This reverses an earlier cut of `Commercial Due
+  Diligence` on the grounds that CDD is transaction-side vocabulary in-house
+  consultancies do not use. Reinstated on request, and defensible: the Biome
+  entry is real diligence experience, and both E.ON and RWE run M&A and
+  post-merger work. `Data Analysis` came out to keep the row at two lines.
 - **Added `Digital Transformation` and `Generative AI`.** E.ON explicitly names
   GenAI transformation and the digital energy ecosystem as current work, and the
   SCAILE role is real evidence for both. `Generative AI` moved up from the
@@ -251,6 +253,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Bullets wrapping | 0 of 20 |
 | Tagline | 2 lines |
 | Left edges | 19.06 mm ×31, 21.89 mm ×20, 25.41 mm ×20, 50.81 mm ×5 — exact |
+| Tilde characters | none — `~` removed from €600M, $170M and 60% |
 | Right-aligned column | 15 lines at 191.90 mm, 3 within ±0.06 mm (italic side-bearing) |
 | Rules | all 5 span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
