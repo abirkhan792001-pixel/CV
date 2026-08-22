@@ -85,7 +85,7 @@ is mapped to a place on the page:
 | **Fluent English *and* German** | First row of Additional Information — see the caveat below |
 | **Highly communicative within a team** | Hack-Nation (MIT × TUM), Impact Consulting, UN Foundation |
 | Curiosity, "ready to transform the energy industry" | Tagline, Net-Zero coursework, Biome's lead bullet |
-| International experience | MIT × TUM, London, Lisbon, Delhi |
+| International experience | MIT × TUM, United Kingdom, Lisbon, Delhi |
 
 Two deliberate choices carried over from the source CVs:
 
