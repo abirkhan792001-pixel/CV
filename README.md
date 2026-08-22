@@ -238,6 +238,38 @@ the more accurate claim at this level.
 The layout parses cleanly: text is real text, the photo is a separate element an
 ATS skips, and the two-column header is the same one the other five CVs use.
 
+## Final audit
+
+Run against the rendered PDF, not the source, so it reflects what a reader sees.
+
+| Check | Result |
+|---|---|
+| Pages | 1 |
+| Em / en dashes | none — the two em dashes in the three-stage bullet became parentheses |
+| Stray quote characters | none |
+| Apostrophes | all curly (`Master’s`, `team’s`, `fund’s`) — `Master’s` was straight |
+| Bullets wrapping | 0 of 20 |
+| Tagline | 2 lines |
+| Left edges | 19.06 mm ×31, 21.89 mm ×20, 25.41 mm ×20, 50.81 mm ×5 — exact |
+| Right-aligned column | 15 lines at 191.90 mm, 3 within ±0.06 mm (italic side-bearing) |
+| Rules | all 5 span 19.05–191.82 mm, identical |
+| Photo right edge | 191.82 mm — on the rules |
+| Date format | `MM.YYYY - MM.YYYY` throughout |
+| Serial commas | none used, consistently |
+| Placeholders | none |
+
+Two things deliberately left alone:
+
+- **"Specialization"** is US spelling on a page that otherwise uses British forms
+  (Modelling, Organiser, Analysed). It is left as-is because it is part of the
+  degree title as awarded by Shiv Nadar University, and all six source CVs write
+  it that way. Degree titles are quoted, not restyled.
+- **Two verbs repeat across adjacent entries** — *Managed* opens a SCAILE bullet
+  and an A&M bullet; *Built* opens an A&M bullet and a Biome bullet. Within a
+  single entry this would be worth fixing, as it was for Biome's three "S" verbs.
+  Across entries it reads far less strongly, and with 0.2 mm of headroom any
+  reword risks the one-line rule. Flagged rather than changed.
+
 ## Before sending
 
 1. **German is B1.** E.ON's posting asks for *fluent English and German*. The CV
