@@ -23,11 +23,11 @@
 
   --page-w:    210mm;
   --page-h:    297mm;
-  --margin-x:  15mm;
+  --margin-x:  19mm;
   --margin-y:  11mm;
 
-  --fs-base:   10pt;
-  --lh:        1.15;
+  --fs-base:   9.35pt;
+  --lh:        1.2;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -45,6 +45,7 @@ body{
   width:var(--page-w);
   min-height:var(--page-h);
   padding:var(--margin-y) var(--margin-x);
+  padding-top:calc(var(--margin-y) + 4.2mm); /* seats the header where the source CVs put it */
   margin:0 auto;
   background:#fff;
 }
@@ -53,21 +54,21 @@ body{
 
 .topbar{ height:2.6pt; background:var(--navy); margin-bottom:7pt; }
 
-.head{ display:flex; justify-content:space-between; align-items:flex-start; gap:10mm; }
+.head{ display:flex; justify-content:space-between; align-items:center; gap:10mm; }
 .head-l{ flex:1 1 auto; min-width:0; }
 
 .name{
-  font-size:20pt; font-weight:700; color:var(--navy);
+  font-size:17pt; font-weight:700; color:var(--navy);
   letter-spacing:0.012em; line-height:1.06; text-transform:uppercase;
 }
-.contact{ margin-top:2.2pt; font-size:9.9pt; color:var(--ink-soft); }
+.contact{ margin-top:2.2pt; color:var(--ink-soft); }
 .contact a{ color:var(--link); text-decoration:underline; }
 .contact .sep{ margin:0 3.5pt; color:var(--muted); }
 
-.tagline{ margin-top:2.2pt; font-size:10.1pt; color:var(--ink); }
+.tagline{ margin-top:2.2pt; color:var(--ink); }
 .tagline b{ font-weight:700; }
 
-.visa{ margin-top:1.4pt; font-size:9.6pt; font-style:italic; color:var(--muted); }
+.visa{ margin-top:1.4pt; font-style:italic; color:var(--muted); }
 
 .photo{
   width:28mm; height:36mm; object-fit:cover; flex-shrink:0;
@@ -76,10 +77,11 @@ body{
 
 /* ---------- sections -------------------------------------- */
 
-section{ margin-top:6.8pt; }
+section{ margin-top:7pt; }
 
 h2{
-  font-size:10.3pt; font-weight:700; text-transform:uppercase;
+  font-size:1em;            /* source CVs run headers at body size, not the UA's 1.5em */
+  font-weight:700; text-transform:uppercase;
   letter-spacing:0.006em; color:var(--navy);
   padding-bottom:1.2pt; border-bottom:1.1pt solid var(--navy);
   margin-bottom:2.6pt;
@@ -87,7 +89,7 @@ h2{
 
 /* ---------- entries --------------------------------------- */
 
-.entry{ margin-bottom:5pt; }
+.entry{ margin-bottom:5.2pt; }
 .entry:last-child{ margin-bottom:0; }
 
 .row{ display:flex; justify-content:space-between; align-items:baseline; gap:8pt; }
@@ -140,7 +142,7 @@ li b{ font-weight:700; color:var(--ink); }
         strategy at <b>A&amp;M</b>; sourced <b>ESG and energy-transition deals</b> in VC, now driving go-to-market
         strategy at a Munich startup
       </div>
-      <div class="visa">Eligible for visa sponsorship (Germany)</div>
+      <div class="visa">No visa sponsorship required (Germany)</div>
     </div>
     <img class="photo" src="./assets/photo.jpg" alt="">
   </header>
@@ -160,7 +162,7 @@ li b{ font-weight:700; color:var(--ink); }
         <div class="when">08.2025 - 12.2026 (expected)</div>
       </div>
       <ul>
-        <li>Ranked <b>top 15%</b> of the class</li>
+        <li>Ranked <b>top 10%</b> of the class</li>
         <li>Relevant coursework: <b>Finance &amp; the Transition to Net Zero</b>, Risk Management, Corporate Finance, Investments, Introduction to Python</li>
         <li><b>Team Lead</b>, Draycott Private Equity Challenge (2026)</li>
       </ul>
@@ -195,11 +197,11 @@ li b{ font-weight:700; color:var(--ink); }
       </div>
       <div class="row">
         <div class="role">Founder's Associate, AI &amp; Go-to-Market</div>
-        <div class="when">since 06.2026</div>
+        <div class="when">06.2026 - 08.2026</div>
       </div>
       <ul>
-        <li>Advise the founders on <b>positioning and go-to-market strategy</b>, based on market sizing of the AI-search (GEO) space</li>
-        <li>Build and ship <b>AI agent workflows</b> using Claude Code and LLM APIs, cutting manual reporting effort by <b>~60%</b></li>
+        <li>Advised the founders on <b>positioning and go-to-market strategy</b>, based on market sizing of the AI-search (GEO) space</li>
+        <li>Built and shipped <b>AI agent workflows</b> using Claude Code and LLM APIs, cutting manual reporting effort by <b>~60%</b></li>
         <li>Created <b>KPI dashboards</b> tracking brand visibility across AI assistants (ChatGPT, Gemini, Perplexity) for client reporting</li>
       </ul>
     </div>
@@ -309,7 +311,7 @@ li b{ font-weight:700; color:var(--ink); }
       <dd>Corporate &amp; Growth Strategy, Energy Transition &amp; Sustainable Finance, Cost &amp; Operating Model Transformation, Structured Problem Solving, Data &amp; Analytics, Stakeholder Management</dd>
 
       <dt>Tools</dt>
-      <dd>Advanced Excel &amp; PowerPoint; Python, SQL, Power BI; LLM APIs &amp; prompt engineering; Git &amp; GitHub, Vercel</dd>
+      <dd>Advanced Excel &amp; PowerPoint; Python, SQL, Power BI; LLM APIs &amp; prompt engineering; Git &amp; GitHub</dd>
 
       <dt>Interests</dt>
       <dd>Distance running, swimming, hiking, baking</dd>

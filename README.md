@@ -24,9 +24,7 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **293.1 mm of 297 mm, one page, 3.9 mm headroom.** That margin is
-thin on purpose — the page is full. Adding a bullet means taking one out, or
-dropping `--fs-base`.
+Current state: **288.9 mm of 297 mm, one page, 8.1 mm headroom.**
 
 ## The template
 
@@ -38,11 +36,37 @@ Times New Roman:
 | Type | **Liberation Serif** — metrically identical to Times New Roman, SIL OFL, subset and vendored in `assets/fonts/` so builds are reproducible offline |
 | Accent | `--navy: #1f4e79` — top rule, name, section headers and their underlines |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
-| Photo | `assets/photo.jpg`, top-right at 28 × 36 mm — extracted from the Accenture Strategy PDF, kept at its native 237:304 ratio so it isn't stretched |
+| Photo | `assets/photo.jpg`, top-right at 28 × 36 mm — extracted from the Accenture Strategy PDF, kept at its native 237:304 ratio so it isn't stretched. The header text is centred against it, as in the source CVs |
+| Sizing | **One size for everything except the name.** The source CVs set contact line, tagline, section headers, org/role rows and bullets all at the same size |
 
-There is a wrapping cliff between 10.0 pt and 10.2 pt: at 10.2 several bullets
-tip onto a second line and the page jumps from 293 mm to 315 mm. `--fs-base` is
-set at **10 pt** for that reason. Don't nudge it up without re-running the build.
+### Measured against the source
+
+Siemens and Allianz are formatted identically to each other, so they make one
+target. Extracted with `pdftotext -bbox` and compared:
+
+| | Siemens / Allianz | This CV |
+|---|---|---|
+| Left / right margin | 19.1 / 19.0 mm | 19.0 / 18.8 mm |
+| First text baseline | 22.6 mm | 22.4 mm |
+| Body glyph height | 10.52 pt | 10.35 pt |
+| Section header glyph | 10.52 pt | 10.35 pt |
+| Name glyph | 18.82 pt | 18.82 pt |
+| Line pitch | 4.23 mm | 4.23 mm |
+| `EDUCATION` at | 57.4 mm | 57.4 mm |
+| Text lines | 52 | 55 |
+
+The three extra lines are content, not formatting — this CV carries Hack-Nation
+and a longer Education block than either source.
+
+Body type is 1.6% under the source's. That is the ceiling: there is a **wrapping
+cliff between 9.35 pt and 9.4 pt** where five work-experience bullets tip onto a
+second line and the page jumps from 288 mm to 312 mm. `--fs-base` is set at
+**9.35 pt** for that reason. Don't nudge it up without re-running the build.
+
+One trap worth knowing: `h2` needs an explicit `font-size:1em`. Without it the
+browser's default 1.5em heading size applies and the section headers render
+half again too big — which is wrong for this template, where headers are body
+size.
 
 ### No photo, if you'd rather
 
@@ -99,10 +123,14 @@ comparing two of your CVs will see the difference:
 
 | | Says | This CV uses |
 |---|---|---|
-| **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens) | **top 15%** |
-| **Nova end date** | 12.2026 (four CVs) vs 01.2027 (DHL) | **12.2026** |
+| **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens) | **top 10%** — confirmed |
+| **Nova end date** | 12.2026 (four CVs) vs 01.2027 (DHL) | **12.2026** — confirmed |
 | **German** | B1 (Allianz, both Accenture) vs Intermediate (Siemens) vs Basic (DHL) | **B1** |
-| **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens) | **since 06.2026** |
+| **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens) | **06.2026 – 08.2026** — confirmed |
+
+Because SCAILE is a closed role now, its bullets are past tense ("Advised",
+"Built and shipped"), matching how the Siemens CV — the other one that dates it
+to 08.2026 — writes them.
 
 One more, which is a wording difference rather than a fact:
 
@@ -122,7 +150,9 @@ filenames, one document.
 1. **German is B1.** E.ON's posting asks for *fluent English and German*. The CV
    states B1 honestly — do not inflate it, since ECON interviews partly in
    German. Worth addressing directly in the cover letter.
-2. **Confirm the class rank** (15% vs 10%) and fix it across all six CVs, not
-   just this one.
-3. **Confirm SCAILE is still current.** This CV says "since 06.2026"; the
-   Siemens CV has it ending 08.2026.
+2. **Back-port the corrections to the other five CVs.** Class rank is top 10%
+   and SCAILE ended 08.2026; the Allianz and Accenture CVs still say top 15%
+   and "since 06.2026".
+3. **The header now reads "No visa sponsorship required (Germany)"**, replacing
+   "Eligible for visa sponsorship". The other five CVs still carry the old
+   line — worth making consistent.
