@@ -44,8 +44,11 @@
   --bullet-in: 6.35mm;    /* bullet text offset from text margin */
   --label-col: 31.75mm;   /* Additional Information label column */
 
-  --photo-w:   30.2mm;
-  --photo-h:   38.6mm;
+  --photo-w:   35mm;      /* German Bewerbungsfoto standard 35x45. Aspect 0.7778
+                             vs the file's native 237/304 = 0.7796, so it crops
+                             clean. Lio uses 30.2x38.6 (leaves a gap under the
+                             photo), Strategy 37.7x47.1 (overhangs its text edge). */
+  --photo-h:   45mm;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }

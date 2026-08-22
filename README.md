@@ -24,7 +24,7 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **278.2 mm of 297 mm, one page, 18.8 mm headroom.**
+Current state: **284.6 mm of 297 mm, one page, 12.4 mm headroom.**
 
 ## The template
 
@@ -38,7 +38,7 @@ is a number taken from it.
 | Navy | `#0c447c` — measured rgb(12,68,124); top bar, name, section headers and rules |
 | Link | `#0563c1` — measured rgb(5,99,193), underlined |
 | Structure | Bold **organisation** left / bold **location** right, then italic *role* left / italic *dates* right, then bullets |
-| Photo | `assets/photo.jpg`, 30.2 × 38.6 mm, extracted from the Lio PDF at its native 237×304 |
+| Photo | `assets/photo.jpg`, **35 × 45 mm**, extracted from the Lio PDF at its native 237×304 — see below |
 | Sizing | One size for everything except the name |
 
 ### Measured against the source
@@ -50,8 +50,8 @@ is a number taken from it.
 | Bullet text | 25.41 mm | 25.41 mm |
 | Additional-info value column | 50.81 mm | 50.81 mm |
 | Name size / width | 17.04 pt / 60.14 mm | 17.04 pt / 60.20 mm |
-| Photo | 30.16 × 38.63 mm | 30.16 × 38.63 mm |
-| Photo top / bottom | 16.02 / 54.65 mm | 15.88 / 54.50 mm |
+| Photo | 30.16 × 38.63 mm | 34.92 × 44.98 mm — see below |
+| Photo top | 16.02 mm | 15.87 mm |
 | Name top | 22.58 mm | 22.42 mm |
 | Top bar | y 13.38 mm, 1.57 mm | y 13.23 mm, 1.59 mm |
 | Contact separator gaps | 1.70 / 1.68 mm | 1.66 / 1.62 mm |
@@ -59,7 +59,7 @@ is a number taken from it.
 
 Left edges land exactly: 19.06 mm ×30, 21.89 mm ×17, 25.41 mm ×17, 50.81 mm ×7.
 
-### Three deliberate differences
+### Four deliberate differences
 
 1. **Body type is 9.35 pt, not the source's 9.48 pt.** The source's design rule is
    one line per bullet. Our bullets are longer than its, and there is a cliff
@@ -72,6 +72,22 @@ Left edges land exactly: 19.06 mm ×30, 21.89 mm ×17, 25.41 mm ×17, 50.81 mm �
 3. **The photo is flush right.** In the source it stops 3.44 mm short of the right
    text edge. Here its right edge sits on 191.82 mm with the rules and the
    right-aligned location/date column.
+4. **The photo is 35 × 45 mm**, which is neither source's size. The two disagree —
+   Lio uses 30.2 × 38.6, Strategy Consulting 37.7 × 47.1 — so there was no single
+   value to copy. 35 × 45 is the German *Bewerbungsfoto* standard, and its aspect
+   (0.7778) is within 0.2% of the image's native 237/304 = 0.7796, so it crops
+   clean where Strategy's 0.800 would not.
+
+### The Strategy Consulting CV settles the rule question
+
+`Abir H. Khan_CV_Strategy Consulting.pdf` is the same template as Lio — every text
+metric agrees within 0.03 mm (text left 19.09 vs 19.06, name width 60.14 vs 60.14,
+bullet glyph 21.91 vs 21.89, bullet text 25.44 vs 25.41, value column 50.84 vs
+50.81). It differs on one thing that matters: **its rules span 19.05–190.94, sitting
+exactly on its own text edges.** That confirms Lio's 0.46 mm offset is Word slop and
+not intent, which is the basis for difference 2 above. It is a LibreOffice export
+rather than Word, which is also why its top bar is a 4.5 pt stroke rather than a
+filled rectangle — the same 1.59 mm on the page.
 
 One trap worth knowing: `h2` needs an explicit `font-size:1em`. Without it the
 browser's default 1.5em heading size applies and the section headers render half
