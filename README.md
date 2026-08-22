@@ -24,7 +24,8 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **284.6 mm of 297 mm, one page, 12.4 mm headroom.**
+Current state: **292.9 mm of 297 mm, one page, 4.1 mm headroom.** Very little
+slack left — anything added now needs something else removed.
 
 ## The template
 
@@ -125,7 +126,13 @@ Bullets are taken from the source CVs rather than rewritten, so the same claims
 appear the same way everywhere. Two tailoring moves for E.ON:
 
 - **TCG / Trariti Consulting Group is out**, as briefed. Work experience is
-  SCAILE → A&M → Biome.
+  Stealth → SCAILE → A&M → Biome.
+- **Impact Consulting was cut** to make room for the founder entry. One page is a
+  hard requirement and the new entry costs ~14.5 mm; Impact Consulting was the
+  weakest thing on the page for this application — a 2021–22 student-society
+  engagement benchmarking a micro-fintech, whose consulting signal is already
+  carried far better by A&M. Swapping it back in means dropping UN Foundation
+  instead, which costs the same.
 - **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
   support the fund's energy-transition thesis" is the single strongest genuine
   energy signal in the history, so it goes first rather than third.
