@@ -108,11 +108,11 @@ is mapped to a place on the page:
 | What E.ON asks for | Where it lands |
 |---|---|
 | Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
-| **Initial hands-on experience in consulting and/or the energy industry** | A&M restructuring, plus energy-transition deal sourcing at Biome |
+| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome |
 | **Fluent English *and* German** | First row of Additional Information — see the caveat below |
-| **Highly communicative within a team** | Hack-Nation (MIT × TUM), Impact Consulting, UN Foundation |
-| Curiosity, "ready to transform the energy industry" | Tagline, Net-Zero coursework, Biome's lead bullet |
-| International experience | MIT × TUM, United Kingdom, Lisbon, Delhi |
+| **Highly communicative within a team** | Hack-Nation (MIT × TUM), UN Foundation |
+| Curiosity, "ready to transform the energy industry" | Tagline, the Commission thesis, the founder entry, Biome's lead bullet |
+| International experience | MIT × TUM, Lisbon, Delhi, Hyderabad |
 
 Two deliberate choices carried over from the source CVs:
 
