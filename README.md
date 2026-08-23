@@ -59,8 +59,7 @@ fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 Current state: **293.4 mm of 297 mm, one page, 3.6 mm headroom** — two
 millimetres shorter than the last pass. Still short of a line, which is 4.23 mm
 at this size, so anything added to the body has to be traded against something
-already there. The header is the exception: see *The header carries three lines
-now, and it was free*.
+already there.
 
 ## The founder venture stays out; TCG stays in
 
@@ -130,41 +129,47 @@ Four bullets changed or came off the page:
 
 The A&M entry keeps four bullets and the same height; the trade was internal.
 
-### The header carries three lines now, and it was free
+### The header is one line under the contact block
 
-The photo fixes the header at 45 mm while its text block runs about 26 mm, so
-the template already had roughly 19 mm of unused vertical space beside the
-photograph. Two lines went into it at **zero cost to the page**:
+Earlier drafts of this pass ran three lines under the contact block: a
+positioning line, a geography line (*"Studied and worked in India, the United
+Kingdom, Portugal and Germany"*), and an availability line (*"Open to
+relocation to Dubai or Doha | Willing to travel internationally"*). The
+photograph fixes the header at 45 mm while its text runs about 26 mm, so all
+three sat in whitespace the template already had and cost the page nothing.
 
-- **A new opening line.** *MSc Finance at Nova SBE (FT #8); strategy,
-  restructuring and VC/PE diligence for Fortune 500 and investor clients; Top 3
-  of 15,000, National Case Study Challenge.*
-- **A geography line.** *Studied and worked in India, the United Kingdom,
-  Portugal and Germany.* Four countries, each verifiable against an entry
-  further down the page. It answers the question a Dubai recruiter actually has
-  about a Munich-based applicant — will this person move, and have they before.
+**The last two were removed on the candidate's instruction.** What is left is
+the positioning line alone:
 
-An earlier draft folded the geography into the opening line as *"…for Fortune
-500 and investor clients across four countries"*. That reads as a claim about
-where the **clients** were, which is not true — A&M's and SCAILE's clients were
-North American, TCG's were Indian. Splitting it into its own line fixes the
-claim.
+> MSc Finance at **Nova SBE (FT #8)**; **strategy**, restructuring and **VC/PE**
+> diligence for **Fortune 500** and investor clients; **Top 3 of 15,000**,
+> National Case Study Challenge
 
-### The work-authorisation line had to change
+Removing them freed no space — the photo, not the text, sets the header height —
+so the page is the same 293.4 mm either way. What it changed is what the page
+says, and it is worth being explicit about the cost:
 
-The old header carried *"Open to relocation to Luxembourg | No visa sponsorship
-required"*. Both halves are now wrong:
+- **Nothing on this CV now mentions Dubai, Doha, relocation or travel.** The
+  contact line reads *Munich, Germany*, and a reader screening for a Gulf office
+  has no signal that the candidate would move. The posting requires a **cover
+  letter**, which is the conventional home for availability, so this is
+  recoverable — but it has to actually be recovered there.
+- The audit caught the knock-on immediately: `Dubai` and `Doha` were still in
+  the PDF keyword field after the lines came out, and the metadata check failed
+  the build until they were removed. They are no longer indexed either.
 
-- **The relocation target** is Dubai or Doha.
-- **"No visa sponsorship required" cannot be said about the UAE or Qatar.** That
-  line was written for Germany. In both Gulf states a residence permit and work
-  permit are sponsored by the employer for essentially every expatriate hire, so
-  the claim would be false on its face — and it is exactly the kind of claim a
-  recruiter checks on day one.
+Restoring the availability line is a one-line edit that costs the page nothing;
+see *Before sending*.
 
-It now reads *"Open to relocation to Dubai or Doha | Willing to travel
-internationally"*. The second half answers the posting's own line about
-travelling within the home market and internationally.
+### The Luxembourg work-authorisation line is gone for good
+
+The header this pass inherited carried *"Open to relocation to Luxembourg | No
+visa sponsorship required"*. Both halves were wrong for this application, and
+**"No visa sponsorship required" must not come back in any form.** That line was
+written for Germany. In the UAE and Qatar a residence and work permit are
+sponsored by the employer for essentially every expatriate hire, so the claim
+would be false on its face — and it is exactly the kind of claim a recruiter
+checks on day one.
 
 ## What this CV is optimised for
 
@@ -179,14 +184,14 @@ Oliver Wyman's posting screens on a list. Each item is mapped to a place on the 
 | **Structure recommendations that support client decisions** | *"informing board-level decisions on distressed M&A"*; *"to prioritise turnaround initiatives"* |
 | **Client-ready deliverables and presentations** | *"Prepared creditor-negotiation presentations for client leadership"*; `Executive Communication`; PowerPoint in Technical |
 | **Work across industries and capabilities** | Restructuring (A&M), venture capital (Biome), strategy (TCG), fintech (Impact), AI/go-to-market (SCAILE), public sector (EC thesis) |
-| **Travel, home market and international** | *"Willing to travel internationally"*; four countries on the geography line |
+| **Travel, home market and international** | **Not stated** — the availability line was removed. Six cities across four countries appear as entry locations, which implies mobility but does not claim it |
 | **Structure your work, manage your priorities** | *"Managed a turnaround workstream"*; *"prioritise turnaround initiatives"* |
 | **Initiative, intuition, creativity** | Hack-Nation organiser; *"Advised the founders…"*; *"Owned North American clients … >$100k ARR"* |
 | **Strong problem solving and analytical mindset** | **Top 3 of 15,000** nationally — in the header *and* in Education; Draycott PE Challenge Team Lead |
 | **Extracurriculars; an impactful life outside studies** | Three entries — Hack-Nation, Impact Consulting, UN Foundation — plus the `Interests` row |
 | **Fluency in English** | `Languages` row leads with English (Fluent) |
 | **Proficiency in Arabic (advantage)** | `Languages` row, second entry: **Arabic (Basic)** — stated at the level it is |
-| **Office: Dubai / Doha** | *"Open to relocation to Dubai or Doha"*, header line 4 |
+| **Office: Dubai / Doha** | **Not stated.** Neither city appears on the page; the contact line reads *Munich, Germany*. Belongs in the cover letter — see *Before sending* |
 
 Two choices carried over from the source CVs:
 
@@ -217,18 +222,24 @@ something on the page backs it.** The skills grid is split in two.
 | Stakeholder Interviews | TCG: *"Led 90+ stakeholder interviews"* |
 | Executive Communication | A&M: creditor-negotiation presentations for client leadership; board-level decisions |
 
-`Focus areas` are the target domain — Management Consulting, Growth Strategy,
-Market Entry, Operating Model Transformation, Restructuring. Labelling them
-*focus areas* rather than *skills* is deliberate and is the source CVs' own
-label: Restructuring is one internship, Market Entry is one extracurricular
-engagement, and Management Consulting is the direction of travel rather than a
-completed career. Each still has a line on the page behind it.
+`Focus areas` are the target domain — Growth Strategy, Market Entry, Operating
+Model Transformation, Restructuring, Private Capital. Labelling them *focus
+areas* rather than *skills* is deliberate and is the source CVs' own label:
+Restructuring is one internship and Market Entry is one extracurricular
+engagement. Each still has a line on the page behind it — Private Capital by
+four (the TCG bullet, *Venture Capital Intern*, *commercial due diligence*, and
+*Draycott Private Equity Challenge*).
 
-`Private Capital` was in an earlier draft of that row and came out to make room
-for `Management Consulting`, which is the term this application actually turns
-on. Nothing was lost: **VC/PE** appears in the header and in the TCG bullet,
-*Venture Capital Intern* is a role title, *commercial due diligence* is a
-bullet, and *Draycott Private Equity Challenge* is in Education.
+**`Management Consulting` was on this row and came off.** It bought the ATS
+phrase, but it was the least informative term of the five — it says the
+candidate wants to work in management consulting, which is what applying already
+says — and it cost the row its slack: the line ended at **190.67 mm against a
+191.84 mm text edge, 1.17 mm from wrapping**. A wrap there is not cosmetic; the
+page carries 3.6 mm of headroom against a 4.23 mm line, so one extra character
+in that row would have pushed the CV onto a second page. The row now ends at
+177.85 mm with 14 mm of slack, and the page still carries *consulting* three
+times (*Trariti Consulting Group*, *boutique strategy consulting firm*, *Impact
+Consulting*) and *Consultant* twice.
 
 **What is deliberately not claimed:** any Middle East experience, workshop
 facilitation, and survey design. The posting names workshops as part of the job;
@@ -287,7 +298,7 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 
 | Check | Result |
 |---|---|
-| Text is real text, not an image | 537 words selectable |
+| Text is real text, not an image | 515 words selectable |
 | Reading order | every bullet follows its own employer, verified for 6 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
@@ -308,7 +319,7 @@ or the build fails.
 
 It earned its keep immediately: it caught `Private Capital` still sitting in the
 keyword list minutes after that term had been dropped from the `Focus areas`
-row. Current state: **29 keywords, all of them on the page.**
+row. Current state: **27 keywords, all of them on the page.**
 
 An ATS that indexes both fields finds the same words twice either way, and a
 candidate who cannot see a term on their own CV cannot be asked about it in an
@@ -411,13 +422,13 @@ one document.
 | Pages | 1 |
 | Bullets wrapping | 0 of 18 |
 | Bullet text edge | 25.41 mm on all 18, at character level |
-| Left edges | 19.06 mm ×33, 21.89 mm ×18, 167.68 mm ×7, 50.81 mm ×6 — exact |
+| Left edges | 19.06 mm ×31, 21.89 mm ×18, 167.68 mm ×7, 50.81 mm ×6 — exact |
 | Right-aligned column | 18 location/date lines flush on 191.84 mm, an exact count |
 | Nothing crosses the right edge | widest line ends at 191.84 mm |
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
 | Bottom white | 14.78 mm |
-| Metadata keywords on the page | 29 of 29 |
+| Metadata keywords on the page | 27 of 27 |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
@@ -447,13 +458,18 @@ Three things deliberately left alone:
    Fitting it cost `German (B1, improving)` its last word — the row would have
    wrapped to a second line otherwise, and the page has only 3.6 mm of
    headroom against a 4.23 mm line.
-2. **Confirm the relocation line.** *"Open to relocation to Dubai or Doha"* is
-   new and is what makes a Munich address make sense on a Gulf posting. Remove
-   it only if the intention is to ask about a European office.
-3. **The old "No visa sponsorship required" line is gone on purpose.** It was
-   written for Germany and cannot be said about the UAE or Qatar. Do not
-   reinstate it. If a nationality or current-residence line is wanted — some
-   Gulf employers do expect one — add it as a fact, not as a claim about
+2. **Put the relocation intent in the cover letter, or put the line back.**
+   The page no longer says Dubai, Doha, relocation or travel anywhere, and the
+   contact line reads *Munich, Germany*. For a posting whose location is in its
+   title, that is the single largest screening risk left on this CV. The
+   posting requires a cover letter, so the intent can live there — but it has
+   to be stated somewhere. Restoring *"Open to relocation to Dubai or Doha |
+   Willing to travel internationally"* is one line in the header and costs the
+   page nothing, because the photograph, not the text, sets the header height.
+3. **Do not reinstate "No visa sponsorship required."** It was written for
+   Germany and is false for the UAE and Qatar, where the employer sponsors
+   every expatriate hire. If a nationality or current-residence line is wanted —
+   some Gulf employers do expect one — add it as a fact, not as a claim about
    sponsorship.
 4. **The 12-month gap will come up.** Have the answer ready; consulting
    interviews open on the CV.

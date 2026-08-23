@@ -35,14 +35,14 @@ doc.set_metadata({
     # Every term here also appears on the page. Metadata that names things a
     # reader cannot see is keyword stuffing, and an ATS that indexes both will
     # find the same words twice either way.
-    "keywords": ("Management Consulting, Strategy Consulting, Structured Problem Solving, "
+    "keywords": ("Strategy Consulting, Structured Problem Solving, "
                  "Root-Cause Analysis, Market Sizing, Competitive Benchmarking, Market Entry, "
                  "Commercial Due Diligence, Financial Modelling, Scenario Models, "
                  "Stakeholder Interviews, Executive Communication, Growth Strategy, "
                  "Operating Model Transformation, Restructuring, Turnaround, "
-                 "Venture Capital, Private Equity, "
+                 "Venture Capital, Private Equity, Private Capital, "
                  "Advanced Microsoft Excel, PowerPoint, Power BI, SQL, Python, Data Analytics, "
-                 "MSc Finance, Nova SBE, Dubai, Doha, Arabic"),
+                 "MSc Finance, Nova SBE, Arabic"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })
