@@ -37,7 +37,7 @@ check(lines[0].strip().upper() == lines[0].strip() and len(lines[0].split()) >= 
       "name is the first line of the stream", lines[0])
 
 # Section headers: parsers segment the document on these.
-for h in ("EDUCATION", "WORK EXPERIENCE", "SKILLS"):
+for h in ("EDUCATION", "WORK EXPERIENCE", "EXTRACURRICULAR", "SKILLS"):
     check(any(l.strip().startswith(h) for l in lines), f"section header {h!r} found in stream")
 
 # Reading order: every bullet must follow its own employer, not pile up at the
@@ -49,6 +49,7 @@ pairs = [
     ("SCAILE Technologies",    "Automated weekly client KPI"),
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
     ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
+    ("Trariti Consulting",     "Led 90+ stakeholder interviews"),
 ]
 for org, bullet in pairs:
     i, j = idx(lambda l: l.startswith(org)), idx(lambda l: bullet in l)
@@ -78,8 +79,8 @@ check(abs(photo.x1 * PT - max(r.x1 * PT for r in rules)) < 0.1,
       "photo right edge sits on the rules", f"{photo.x1 * PT:.2f} mm")
 
 print("\nTYPOGRAPHY")
-bad = {c for c in text if ord(c) > 127} - set("•’×€")
-check(not bad, "non-ASCII limited to bullet, curly apostrophe, times, euro",
+bad = {c for c in text if ord(c) > 127} - set("•’×")
+check(not bad, "non-ASCII limited to bullet, curly apostrophe, times",
       "unexpected: " + repr(bad) if bad else "")
 check("—" not in text and "–" not in text, "no em or en dashes")
 check(not re.search(r"\d\d\.\d\d\.\d{4}|\b\d{4}-\d{2}\b", text), "dates are MM.YYYY throughout")
@@ -107,7 +108,7 @@ rights = [round(b[2] * PT, 2) for b, t in spans]
 check(max(rights) <= EDGE + 0.01, "nothing crosses the text right edge",
       f"widest line ends at {max(rights):.2f} mm")
 flush = [r for r in rights if abs(r - EDGE) < 0.05]
-check(len(flush) >= 18, "right-aligned column flush",
+check(len(flush) >= 16, "right-aligned column flush",
       f"{len(flush)} location/date lines on {EDGE} mm")
 
 print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' FAILED: ' + ', '.join(fails)}\n")

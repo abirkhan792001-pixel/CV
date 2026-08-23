@@ -14,7 +14,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC  = ROOT / "Abir_Khan_CV.pdf"
 OUT  = ROOT / "Abir_Hilal_Khan_CV.pdf"
 # Repo convention for a tailored copy: "Abir Hilal Khan_CV_<target>.pdf".
-NAMED = ROOT / "Abir Hilal Khan_CV_RWE Consulting.pdf"
+NAMED = ROOT / "Abir Hilal Khan_CV_KPMG Luxembourg.pdf"
 
 A4_W, A4_H = 595.276, 841.890          # exact A4 in points
 
@@ -32,10 +32,15 @@ doc.set_metadata({
     "title":    "Abir Hilal Khan - CV",
     "author":   "Abir Hilal Khan",
     "subject":  "Curriculum Vitae",
-    "keywords": ("Strategy Consulting, Energy Transition, Renewable Energy, "
-                 "Sustainability, Financial Modelling, Market Sizing, Data Analysis, "
-                 "Problem Solving, Project Management, Stakeholder Management, "
-                 "Generative AI, MSc Finance, Nova SBE, RWE Consulting"),
+    # Every term here also appears on the page. Metadata that names things a
+    # reader cannot see is keyword stuffing, and an ATS that indexes both will
+    # find the same words twice either way.
+    "keywords": ("Risk Management, Value at Risk, Sensitivity Analysis, Scenario Analysis, "
+                 "Regulatory Reporting, Portfolio Risk Monitoring, Investment Funds, "
+                 "Asset Management, EU Financial Regulation, Derivatives, Financial Modelling, "
+                 "Commercial Due Diligence, Data Analysis, Process Automation, "
+                 "Stakeholder Management, Advanced Excel, Python, SQL, Power BI, "
+                 "MSc Finance, Nova SBE"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })
