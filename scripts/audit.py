@@ -50,6 +50,7 @@ pairs = [
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
     ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
     ("Trariti Consulting",     "Led 90+ stakeholder interviews"),
+    ("Impact Consulting",      "Created competitive benchmarking"),
 ]
 for org, bullet in pairs:
     i, j = idx(lambda l: l.startswith(org)), idx(lambda l: bullet in l)
@@ -77,6 +78,16 @@ check(len(spanset) <= 2, "section rules share one span", str(sorted(spanset)))
 photo = page.get_image_rects(page.get_images(full=True)[0][0])[0]
 check(abs(photo.x1 * PT - max(r.x1 * PT for r in rules)) < 0.1,
       "photo right edge sits on the rules", f"{photo.x1 * PT:.2f} mm")
+
+# The repo rule is that metadata may only name things the reader can see on the
+# page. Checked here rather than by hand: a keyword a candidate cannot see on
+# their own CV is one they cannot be asked about in an interview.
+flat = " ".join(text.split()).lower()
+missing = [k.strip() for k in doc.metadata.get("keywords", "").split(",")
+           if k.strip() and k.strip().lower() not in flat]
+check(not missing, "every metadata keyword also appears in the visible text",
+      "missing: " + ", ".join(missing) if missing else
+      f"{len(doc.metadata.get('keywords', '').split(','))} keywords, all on the page")
 
 print("\nTYPOGRAPHY")
 bad = {c for c in text if ord(c) > 127} - set("•’×")
@@ -108,7 +119,9 @@ rights = [round(b[2] * PT, 2) for b, t in spans]
 check(max(rights) <= EDGE + 0.01, "nothing crosses the text right edge",
       f"widest line ends at {max(rights):.2f} mm")
 flush = [r for r in rights if abs(r - EDGE) < 0.05]
-check(len(flush) >= 16, "right-aligned column flush",
+# 9 entries x 2 rows (organisation/location, then role/dates). An exact count
+# rather than a floor, so a silently dropped entry fails here too.
+check(len(flush) == 18, "right-aligned column flush",
       f"{len(flush)} location/date lines on {EDGE} mm")
 
 print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' FAILED: ' + ', '.join(fails)}\n")

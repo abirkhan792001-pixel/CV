@@ -1,9 +1,11 @@
-# CV — KPMG Luxembourg, Adviser: Risk Reporting for Investment Funds
+# CV — Oliver Wyman, Consultant (entry level), Dubai / Doha
 
-A one-page A4 CV, tailored to KPMG Luxembourg's **Adviser — Risk Reporting for
-Investment Funds (m/f/d)**, posted 30.06.2026. The role sits in KPMG's Risk
-Advisory practice, which delivers risk monitoring and regulatory reporting to
-funds and asset managers, and screens for 0–3 years in the financial sector.
+A one-page A4 CV, tailored to Oliver Wyman's entry-level consulting intake for
+its **Dubai / Doha** offices. The posting screens for structured problem
+solving, research and interviews, client-ready deliverables, extracurricular
+substance, and fluent English (Arabic an advantage). It explicitly does *not*
+screen for a particular academic major, so this pass trades coursework detail
+for consulting evidence.
 
 Built on the same template as the other tailored CVs in this repo. Work-experience
 copy is lifted from those CVs rather than rewritten, so the same claims appear the
@@ -20,7 +22,7 @@ npm run share        # -> the files to actually send, then audits them
 
 `npm run share` builds, runs `scripts/finalise.py` (needs `pymupdf`), then runs
 `scripts/audit.py`. It writes two identical PDFs: `Abir_Hilal_Khan_CV.pdf` and
-`Abir Hilal Khan_CV_KPMG Luxembourg.pdf`, the latter following this repo's naming
+`Abir Hilal Khan_CV_Oliver Wyman.pdf`, the latter following this repo's naming
 convention for a tailored copy.
 
 If Playwright cannot download its pinned Chromium (sandboxes, offline CI), point
@@ -37,8 +39,8 @@ touch the layout:
   nothing else, so Chromium leaves Author, Subject and Keywords empty and stamps
   itself as Creator. Those fields are what a PDF viewer shows in its title bar,
   what an email client previews, and what some applicant-tracking systems index.
-  Every keyword stamped there also appears on the page — see *Metadata says only
-  what the page says* below.
+  Every keyword stamped there also appears on the page — and that is now
+  **enforced by the audit**, see *Metadata says only what the page says* below.
 - **Exact A4.** Chromium snaps the page to whole device pixels and lands on
   210.23 × 297.35 mm. The finalise step trims the mediabox to a true
   595.276 × 841.890 pt — blank margin only; it asserts the page is at least A4
@@ -54,32 +56,21 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **295.5 mm of 297 mm, one page, 1.5 mm headroom.** Not enough for
-another line; anything added has to be traded against something already there.
+Current state: **293.4 mm of 297 mm, one page, 3.6 mm headroom** — two
+millimetres shorter than the last pass. Still short of a line, which is 4.23 mm
+at this size, so anything added to the body has to be traded against something
+already there. The header is the exception: see *The header carries three lines
+now, and it was free*.
 
-## This pass: the founder venture out, Trariti back in
+## The founder venture stays out; TCG stays in
 
-The brief was to drop the stealth founder entry and restore the consulting
-internship the earlier passes had cut. Both were done, and the rest of the page
-was retuned for a risk-reporting role rather than an energy one.
-
-### The two swaps
-
-- **Out: Stealth AI-Energy Startup, Founder (since 08.2026).** Three bullets on
-  DACH competitor mapping, a three-stage energy business model and an AI tool for
-  German electricity bills. All of it was evidence for renewable energy, which is
-  what the previous target screened on and this one does not.
-- **In: Trariti Consulting Group (TCG), Summer Consultant, Mumbai, 03.2022 –
-  08.2022.** Three bullets, taken verbatim from the source CVs: data-driven models
-  for VC/PE firms, funding levers and investment viability across $100M+ in deal
-  value, and 90+ stakeholder interviews.
-
-The two entries cost the same height, so the swap alone was height-neutral.
-
-Restoring this entry also **closes an open item the last audit raised**: nothing
-on the page demonstrated stakeholder management, and the evidence for it —
-*"Led 90+ stakeholder interviews…"* — lived in exactly the entry that had been
-cut. It is back on the page, so the term in the skills row is now earned.
+The previous pass already dropped the stealth AI-energy founder entry and
+restored **Trariti Consulting Group (TCG)** in its place. That holds here, and
+it holds for a better reason than it did last time: TCG is the one entry on the
+page whose title is literally *Summer Consultant at a strategy consulting firm*,
+and its three bullets are the closest match on the page to what Oliver Wyman's
+posting describes — advising clients, running interviews, turning findings into
+recommendations.
 
 **The organisation is named in full.** Five source CVs write it as
 *"TCG (boutique strategy consulting firm)"*; the DHL CV writes *"Trariti
@@ -87,98 +78,167 @@ Consulting Group"*. This CV uses **Trariti Consulting Group** with *(TCG, boutiq
 strategy consulting firm)* as the italic note, so a parser indexes a real company
 name rather than a three-letter string, and a reader still learns what it is.
 
-### What the rest of the page traded
+## This pass: a risk-reporting CV retuned into a consulting CV
 
-The founder-for-Trariti swap was free, but the risk-reporting retune wanted four
-lines the page did not have. Where they came from:
+The page came from a KPMG risk-reporting application. Every bullet was re-picked
+or re-worded against Oliver Wyman's posting, and one entry came back.
+
+### Impact Consulting is back
+
+The single biggest change. The KPMG pass had cut *Impact Consulting — Consultant,
+London* because its one bullet (competitive benchmarking and market-entry
+proposals for a micro-fintech B2C startup) was the weakest fit for risk
+reporting. For a strategy firm it is the opposite: **market entry and competitive
+benchmarking are the work**, and the entry adds a fourth country and a second
+role literally titled *Consultant*.
+
+It cost 3 lines and one entry margin. Where they came from:
 
 | Change | Lines |
 |---|---|
-| A new `Focus areas` row in the skills grid | −2 |
-| Nova's relevant coursework restored as a bullet (Risk Management, Python) | −1 |
-| A&M regains its creditor-negotiation bullet | −1 |
-| Nova's class rank and Draycott merged onto one bullet | **+1** |
-| **Impact Consulting dropped** from Extracurricular | **+3** |
-| **Net** | **0 lines**, plus 1.3 mm recovered from one fewer entry margin and grid gap |
+| **Impact Consulting restored** to Extracurricular & Leadership | **+3** |
+| Nova's `Relevant coursework` bullet dropped | −1 |
+| Shiv Nadar's two bullets merged onto one line | −1 |
+| Biome's third bullet dropped | −1 |
+| `Focus areas` row cut from two lines to one | −1 |
+| **Net** | **−1 line**, against **+1** entry margin |
 
-Which is why the page came down only from 296.8 mm to 295.5 mm: the line count is
-unchanged, and the 1.3 mm is the whitespace between entries, not text.
+Which is why the page came down 295.5 mm → 293.4 mm: one line (4.23 mm) out,
+one entry margin (1.97 mm) in.
 
-**Impact Consulting was the entry to cut.** With Trariti restored, the page
-already carries a consulting entry doing market and investment analysis, and
-Impact's single bullet — competitive benchmarking and market-entry proposals for
-a B2C fintech — was the weakest fit for a risk-reporting role and the closest
-duplicate of work shown better elsewhere. Its three lines bought back the A&M
-creditor-negotiation bullet, which carries the only hard value figure in that
-entry ($2.5M preserved) and is the page's clearest evidence of preparing
-material for client leadership.
+**Nova's coursework bullet was the cheapest cut.** Oliver Wyman states outright
+that it does *not* require specific academic majors, so a list of finance modules
+buys nothing here — and Python, the one term on that line worth indexing, is
+still in the `Technical` row.
+
+**Shiv Nadar's two bullets became one** — *Magna Cum Laude, top 10% of cohort;
+Top 3 of 15,000 nationally, National Case Study Challenge*. Nothing was lost, and
+the case-competition result is now also in the header line, where a consulting
+recruiter reads it first. A firm that hires through case interviews should see
+that result before anything else on the page.
+
+### Bullets swapped, not just re-ordered
+
+Four bullets changed or came off the page:
+
+| Out | In | Why |
+|---|---|---|
+| A&M: *EBITDA sensitivity analysis across liquidity and supplier scenarios* | A&M: *root-cause analysis of operating and cash-flow inefficiencies to prioritise turnaround initiatives* | Sensitivity analysis was evidence for the risk posting. Root-cause analysis and prioritisation are the consulting method, and the claim is lifted from the DHL CV's fuller A&M entry |
+| SCAILE: *Built KPI dashboards … across ChatGPT, Gemini and Perplexity* | SCAILE: *Advised the founders on positioning and go-to-market strategy, backed by a market sizing of AI search (GEO)* | Dashboards were the reporting-tool evidence KPMG asked for. Advising on strategy off the back of a market sizing is the consulting register, and it is what the Accenture, Allianz and RWE CVs lead that entry with |
+| TCG: *Developed data-driven models for VC/PE firms and founders to evaluate early-stage growth opportunities* | TCG: *Advised VC/PE firms and founders on early-stage growth strategy through data-driven market and investment models* | Same facts, Accenture Strategy's wording. *Advised … on strategy* is the claim; the models are how it was done |
+| Biome: *Assessed business models and go-to-market strategy to inform investment decisions and portfolio prioritisation* | — | Dropped. It restated the two bullets above it, and go-to-market is now claimed at SCAILE |
+
+The A&M entry keeps four bullets and the same height; the trade was internal.
+
+### The header carries three lines now, and it was free
+
+The photo fixes the header at 45 mm while its text block runs about 26 mm, so
+the template already had roughly 19 mm of unused vertical space beside the
+photograph. Two lines went into it at **zero cost to the page**:
+
+- **A new opening line.** *MSc Finance at Nova SBE (FT #8); strategy,
+  restructuring and VC/PE diligence for Fortune 500 and investor clients; Top 3
+  of 15,000, National Case Study Challenge.*
+- **A geography line.** *Studied and worked in India, the United Kingdom,
+  Portugal and Germany.* Four countries, each verifiable against an entry
+  further down the page. It answers the question a Dubai recruiter actually has
+  about a Munich-based applicant — will this person move, and have they before.
+
+An earlier draft folded the geography into the opening line as *"…for Fortune
+500 and investor clients across four countries"*. That reads as a claim about
+where the **clients** were, which is not true — A&M's and SCAILE's clients were
+North American, TCG's were Indian. Splitting it into its own line fixes the
+claim.
+
+### The work-authorisation line had to change
+
+The old header carried *"Open to relocation to Luxembourg | No visa sponsorship
+required"*. Both halves are now wrong:
+
+- **The relocation target** is Dubai or Doha.
+- **"No visa sponsorship required" cannot be said about the UAE or Qatar.** That
+  line was written for Germany. In both Gulf states a residence permit and work
+  permit are sponsored by the employer for essentially every expatriate hire, so
+  the claim would be false on its face — and it is exactly the kind of claim a
+  recruiter checks on day one.
+
+It now reads *"Open to relocation to Dubai or Doha | Willing to travel
+internationally"*. The second half answers the posting's own line about
+travelling within the home market and internationally.
 
 ## What this CV is optimised for
 
-KPMG's posting screens on a list. Each item is mapped to a place on the page:
+Oliver Wyman's posting screens on a list. Each item is mapped to a place on the page:
 
 | What the posting asks for | Where it lands |
 |---|---|
-| **Master's in Finance / Quantitative Finance / related** | Education first, MSc Finance to 12.2026 |
-| **0–3 years in the financial sector** | A&M restructuring, Biome VC, Trariti — all internships, none over 7 months |
-| **Prepare and review risk and regulatory reports** | SCAILE's weekly client KPI reporting and dashboards; `Client Reporting` in Core skills |
-| **Primary point of contact for client inquiries** | *"Owned North American clients as their first point of contact"*; *"Led 90+ stakeholder interviews"*; A&M's creditor-negotiation materials |
-| **Gather and analyse client data for insights** | Biome's 3,000+ company screen; A&M scenario models |
-| **Automate workflows, streamline processes** | *"Automated weekly client KPI reporting … cutting manual effort by 60%"*; `Process Automation` |
-| **Contribute to internal reporting technologies** | SCAILE's KPI dashboards; Power BI, SQL, Python in Technical |
-| **Interest in VaR and sensitivity analysis** | A&M's **EBITDA sensitivity analysis** bullet; Risk Management coursework; `Focus areas` row |
-| **Highly proficient in Excel** | `Advanced Microsoft Excel` leads the Technical row |
-| **Understanding of the investment funds industry** | Biome (VC, $170M pipeline), Trariti (VC/PE clients), Draycott PE Challenge |
-| **VBA, Python, MATLAB or other data analytics** | Python, SQL, Power BI, `Data Analytics` |
-| **European regulatory frameworks** | European Commission thesis; `EU Financial Regulation` |
-| **Fluent English; German/French an advantage** | Languages row leads with English (Fluent), German (B1) |
+| **Bachelor's (and Master's) degree** | Education first: MSc Finance to 12.2026, BMS Magna Cum Laude |
+| **Research, gathering data, running interviews** | *"Led 90+ stakeholder interviews"*; Biome's 3,000+ company screen; European Commission thesis; `Stakeholder Interviews` in Core skills |
+| **Turning information into clear insights** | *"turning insights into recommendations for a $10M+ revenue product"* |
+| **Analyse problems, identify patterns, test hypotheses** | A&M's **root-cause analysis** and **scenario models**; `Structured Problem Solving`, `Root-Cause Analysis` |
+| **Structure recommendations that support client decisions** | *"informing board-level decisions on distressed M&A"*; *"to prioritise turnaround initiatives"* |
+| **Client-ready deliverables and presentations** | *"Prepared creditor-negotiation presentations for client leadership"*; `Executive Communication`; PowerPoint in Technical |
+| **Work across industries and capabilities** | Restructuring (A&M), venture capital (Biome), strategy (TCG), fintech (Impact), AI/go-to-market (SCAILE), public sector (EC thesis) |
+| **Travel, home market and international** | *"Willing to travel internationally"*; four countries on the geography line |
+| **Structure your work, manage your priorities** | *"Managed a turnaround workstream"*; *"prioritise turnaround initiatives"* |
+| **Initiative, intuition, creativity** | Hack-Nation organiser; *"Advised the founders…"*; *"Owned North American clients … >$100k ARR"* |
+| **Strong problem solving and analytical mindset** | **Top 3 of 15,000** nationally — in the header *and* in Education; Draycott PE Challenge Team Lead |
+| **Extracurriculars; an impactful life outside studies** | Three entries — Hack-Nation, Impact Consulting, UN Foundation — plus the `Interests` row |
+| **Fluency in English** | `Languages` row leads with English (Fluent) |
+| **Proficiency in Arabic (advantage)** | **Not claimed.** See *Before sending* |
+| **Office: Dubai / Doha** | *"Open to relocation to Dubai or Doha"*, header line 4 |
 
 Two choices carried over from the source CVs:
 
 - **Education before experience.** Standard for final-year students and recent
-  graduates, and this posting gates on the Master's.
+  graduates, and this posting gates on the degree.
 - **Photo included.** All the source CVs except DHL carry one, and it is normal
-  practice in Luxembourg. It is a separate element that a parser skips — the
+  practice in the Gulf. It is a separate element that a parser skips — the
   five-parser check below runs against the file as shipped, photo and all. To
-  remove it, delete the `<img class="photo">` line; everything reflows.
+  remove it, delete the `<img class="photo">` line; everything reflows. Note
+  that removing it also collapses the free header space the two extra header
+  lines are living in.
 
-## Where the risk vocabulary comes from
+## Where the consulting vocabulary comes from
 
-The posting is full of terms it would be easy to simply assert. The rule applied
-here is the repo's existing one: **a keyword goes on the page only if something
-on the page backs it.** So the skills grid is split in two.
+The rule is the repo's existing one: **a keyword goes on the page only if
+something on the page backs it.** The skills grid is split in two.
 
 `Core skills` are demonstrated by an entry above them:
 
 | Term | Backed by |
 |---|---|
-| Financial Modelling | A&M scenario models, Biome build-ups, Trariti models |
-| Scenario and Sensitivity Analysis | A&M: scenario models, EBITDA sensitivity |
-| Data Analysis | Biome's 3,000+ company screen, SCAILE KPI reporting |
-| Commercial Due Diligence | Biome |
-| Client Reporting | SCAILE's weekly client reporting and dashboards |
-| Process Automation | SCAILE's AI agent workflows, 60% manual effort cut |
-| Stakeholder Management | Trariti's 90+ stakeholder interviews |
-| Problem Solving | Top 3 of 15,000 nationally; Draycott Team Lead |
+| Structured Problem Solving | Top 3 of 15,000 nationally; A&M workstream; Draycott Team Lead |
+| Root-Cause Analysis | A&M: *"Ran root-cause analysis of operating and cash-flow inefficiencies"* |
+| Market Sizing | SCAILE: *"backed by a market sizing of AI search (GEO)"*; Biome's market-size screen |
+| Competitive Benchmarking | Impact Consulting: *"Created competitive benchmarking…"* |
+| Commercial Due Diligence | Biome: *"Built commercial due diligence models…"* |
+| Financial Modelling | A&M scenario models; TCG market and investment models |
+| Stakeholder Interviews | TCG: *"Led 90+ stakeholder interviews"* |
+| Executive Communication | A&M: creditor-negotiation presentations for client leadership; board-level decisions |
 
-`Focus areas` are the target domain — Risk Management, Value at Risk (VaR),
-Derivatives, Regulatory Reporting, Portfolio Risk Monitoring, Investment Funds and
-Asset Management, EU Financial Regulation. Labelling them *focus areas* rather
-than *skills* is deliberate: Risk Management is coursework, EU regulation is the
-thesis, and the fund exposure is Biome and Trariti. It is the honest register for
-a 0–3 years posting that asks for *interest* in these topics, and it is the source
-CVs' own label.
+`Focus areas` are the target domain — Management Consulting, Growth Strategy,
+Market Entry, Operating Model Transformation, Restructuring. Labelling them
+*focus areas* rather than *skills* is deliberate and is the source CVs' own
+label: Restructuring is one internship, Market Entry is one extracurricular
+engagement, and Management Consulting is the direction of travel rather than a
+completed career. Each still has a line on the page behind it.
 
-**What is deliberately not claimed:** CRR, Solvency II, PRIIPs, UCITS, AIFMD,
-VBA and MATLAB. The posting lists the first three as an asset and the last two as
-a plus, and nothing in any source CV evidences any of them. See *Before sending*
-— this is the single highest-value edit available if the candidate has in fact
-studied them.
+`Private Capital` was in an earlier draft of that row and came out to make room
+for `Management Consulting`, which is the term this application actually turns
+on. Nothing was lost: **VC/PE** appears in the header and in the TCG bullet,
+*Venture Capital Intern* is a role title, *commercial due diligence* is a
+bullet, and *Draycott Private Equity Challenge* is in Education.
+
+**What is deliberately not claimed:** Arabic, any Middle East experience,
+workshop facilitation, and survey design. The posting names Arabic as an
+advantage and workshops as part of the job; nothing in any source CV evidences
+any of them. See *Before sending*.
 
 ## Written for the ATS
 
-KPMG Luxembourg recruits through an applicant-tracking system, so the parse is
-the first round. `scripts/audit.py` checks the claims below against the **rendered
+Oliver Wyman recruits through an applicant-tracking system, so the parse is the
+first round. `scripts/audit.py` checks the claims below against the **rendered
 PDF**, not the source, and exits non-zero on any failure.
 
 ### The bullets used to detach from their employers
@@ -195,22 +255,24 @@ to Biome, or to any date range.
 The fix is a hanging indent built from normal flow — `text-indent` plus an
 inline-block `::before` marker — instead of a positioned one. Document order is
 preserved, and the geometry is unchanged: the glyph still sits at 21.89 mm and the
-bullet text still starts at **exactly 25.41 mm** on all 20 bullets, verified at
+bullet text still starts at **exactly 25.41 mm** on all 18 bullets, verified at
 character level.
 
 ### Five parsers, re-run on this version
 
 Extraction was re-run on the shipped file after this pass. The check is stricter
-than a text dump: it asserts the eight organisations appear in page order, and
-that each of five leading bullets falls between its own employer and the next one.
+than a text dump: it asserts that **all nine organisations appear in page order**,
+and that each of five leading bullets falls between its own employer and the next
+one. Impact Consulting was added to both lists this pass, so the extracurricular
+section — the one that grew — is now covered too.
 
-| Extraction mode | Reading order | Email | Phone | LinkedIn |
-|---|---|---|---|---|
-| PyMuPDF `get_text()` — stream order | OK | ✓ | ✓ | ✓ |
-| PyMuPDF `get_text(sort=True)` | OK | ✓ | ✓ | ✓ |
-| pypdf `extract_text()` | OK | ✓ | ✓ | ✓ |
-| pdfminer.six, default layout analysis | OK | ✓ | ✓ | ✓ |
-| pdfminer.six, `laparams=None` | OK | ✓ | ✓ | ✓ |
+| Extraction mode | Reading order | Bullet ownership | Email | Phone | LinkedIn |
+|---|---|---|---|---|---|
+| PyMuPDF `get_text()` — stream order | OK | OK | ✓ | ✓ | ✓ |
+| PyMuPDF `get_text(sort=True)` | OK | OK | ✓ | ✓ | ✓ |
+| pypdf `extract_text()` | OK | OK | ✓ | ✓ | ✓ |
+| pdfminer.six, default layout analysis | OK | OK | ✓ | ✓ | ✓ |
+| pdfminer.six, `laparams=None` | OK | OK | ✓ | ✓ | ✓ |
 
 Stream order is the mode that matters most: Apache PDFBox, which underpins Tika
 and a lot of enterprise résumé parsing, has `sortByPosition` **off** by default.
@@ -220,7 +282,7 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 | Check | Result |
 |---|---|
 | Text is real text, not an image | 536 words selectable |
-| Reading order | every bullet follows its own employer, verified for 5 entries |
+| Reading order | every bullet follows its own employer, verified for 6 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
 | Email, phone | present as plain text, regex-matchable |
@@ -230,16 +292,21 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 | Pages | 1 |
 | Dates | `MM.YYYY` throughout |
 
-`EXTRACURRICULAR` was added to the audit's list of required headers this pass; it
-was rendering correctly but was not being checked.
-
 ### Metadata says only what the page says
 
-The keyword field stamped by `scripts/finalise.py` used to carry `RWE Consulting`,
-a term present nowhere on the page — flagged as an open item last pass, and fixed
-here. **Every term in the metadata now also appears in the visible text.** An ATS
-that indexes both finds the same words twice either way, and a candidate who
-cannot see a term on their own CV cannot be asked about it in an interview.
+The rule was previously enforced by hand and drifted twice — an earlier version
+shipped `RWE Consulting` in the keyword field, a term present nowhere on the
+page. **The audit now checks it.** Every comma-separated keyword stamped by
+`scripts/finalise.py` must appear in the rendered page text, case-insensitively,
+or the build fails.
+
+It earned its keep immediately: it caught `Private Capital` still sitting in the
+keyword list minutes after that term had been dropped from the `Focus areas`
+row. Current state: **28 keywords, all of them on the page.**
+
+An ATS that indexes both fields finds the same words twice either way, and a
+candidate who cannot see a term on their own CV cannot be asked about it in an
+interview.
 
 ## Rebuilding this repo produces a taller page than it used to
 
@@ -251,9 +318,9 @@ type: `--fs-base` is still 9.35 pt, so the page renders the same anywhere.
 
 ## The template
 
-Formatting is matched to `Abir_H._Khan_CV_Lio.pdf`, measured out of that PDF with
-PyMuPDF rather than eyeballed. Every value in `cv.html` carrying a mm or pt figure
-is a number taken from it.
+Formatting is matched to `Abir_H._Khan_CV_Lio.pdf`, measured out of that PDF
+with PyMuPDF rather than eyeballed. Every value in `cv.html` carrying a mm or pt
+figure is a number taken from it.
 
 | | |
 |---|---|
@@ -301,26 +368,26 @@ again too big — wrong for this template, where headers are body size.
 
 ## Where the source CVs disagree
 
-The six PDFs in this repo contradict each other. This CV takes the majority
+The seven distinct CV documents in this repo -- eight files, two of them
+byte-identical -- contradict each other. This CV takes the majority
 reading each time. Worth settling properly, because a recruiter comparing two of
 your CVs will see the difference:
 
 | | Says | This CV uses |
 |---|---|---|
-| **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens) | **top 10%** — confirmed |
+| **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens, RWE) | **top 10%** — confirmed |
 | **Nova end date** | 12.2026 (four CVs) vs 01.2027 (DHL) | **12.2026** — confirmed |
 | **German** | B1 (Allianz, both Accenture) vs Intermediate (Siemens) vs Basic (DHL) | **B1** |
-| **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens) | **06.2026 – 08.2026** — confirmed |
-| **Trariti location** | Mumbai (Siemens, Strategy, Allianz, DHL) vs Delhi (both Accenture) | **Mumbai** |
-| **Trariti's third bullet** | *"a $10M+ revenue product"* (Allianz) vs *"$10M+ ARR product"* (both Accenture) vs *"$10M+ product"* (Siemens, Strategy) | **"$10M+ revenue product"** |
+| **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens, RWE) | **06.2026 – 08.2026** — confirmed |
+| **TCG location** | Mumbai (Siemens, Strategy, Allianz, DHL) vs Delhi (both Accenture) | **Mumbai** |
+| **TCG's third bullet** | *"a $10M+ revenue product"* (Allianz) vs *"$10M+ ARR product"* (both Accenture) vs *"$10M+ product"* (Siemens, Strategy) | **"$10M+ revenue product"** |
+| **Impact Consulting location** | London, UK (Allianz, both Accenture, DHL) vs United Kingdom (Siemens/Strategy) vs London, United Kingdom (RWE) | **London, United Kingdom** |
+| **Impact Consulting's verb** | *Created* (Allianz, both Accenture, RWE) vs *Built* (Siemens/Strategy, DHL) | **Created** — majority, and it varies the three *Built* bullets above it |
 
-Two wording calls settled this pass:
+Two wording calls carried over from the last pass:
 
 - **A&M's plan is a *"$9.8M risk-mitigation plan"***, not a *"cost and
-  risk-mitigation plan"*. Five of six source CVs say the former; only Accenture
-  Strategy adds "cost". The last version carried the minority reading and the
-  audit flagged it. The majority reading is also the one that matters here — this
-  application is about risk.
+  risk-mitigation plan"*. Five of six source CVs say the former.
 - **"Prepared" creditor-negotiation presentations**, not "Advised C-level
   leadership on creditor-negotiation strategy". Three of four CVs say "prepared";
   preparing materials for leadership and advising leadership are different claims.
@@ -336,14 +403,15 @@ one document.
 | Check | Result |
 |---|---|
 | Pages | 1 |
-| Bullets wrapping | 0 of 20 |
-| Bullet text edge | 25.41 mm on all 20, at character level |
-| Left edges | 19.06 mm ×30, 21.89 mm ×20, 50.81 mm ×7 — exact |
-| Right-aligned column | 16 location/date lines flush on 191.84 mm |
+| Bullets wrapping | 0 of 18 |
+| Bullet text edge | 25.41 mm on all 18, at character level |
+| Left edges | 19.06 mm ×33, 21.89 mm ×18, 167.68 mm ×7, 50.81 mm ×6 — exact |
+| Right-aligned column | 18 location/date lines flush on 191.84 mm, an exact count |
 | Nothing crosses the right edge | widest line ends at 191.84 mm |
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
-| Bottom white | 12.40 mm |
+| Bottom white | 14.78 mm |
+| Metadata keywords on the page | 28 of 28 |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
@@ -352,41 +420,54 @@ one document.
 Three things deliberately left alone:
 
 - **A 12-month gap, 08.2024 to 07.2025.** The bachelor's ends 07.2024 and the
-  master's begins 08.2025; nothing on the page covers between. Recruiters read
-  timelines closely and will ask. Not fixable here — it needs a fact only the
-  candidate has.
+  master's begins 08.2025; nothing on the page covers between. Consulting
+  recruiters read timelines closely and will ask, and a case interviewer may open
+  with it. Not fixable here — it needs a fact only the candidate has.
 - **"Specialization"** is US spelling among British forms (Modelling, Organiser,
-  prioritisation). It is the degree title as awarded by Shiv Nadar University and
-  all six source CVs write it that way. Degree titles are quoted, not restyled.
+  prioritise). It is the degree title as awarded by Shiv Nadar University and
+  all seven source CVs write it that way. Degree titles are quoted, not restyled.
 - **The `×` in "MIT Sloan AI Club × TUM"** (U+00D7). A naive ATS could mangle it,
   but the keywords either side survive independently.
 
 ## Before sending
 
-1. **Confirm the work-authorisation line.** The header carries *"No visa
-   sponsorship required"* verbatim from the last CV, where it was written for
-   Germany with the country deliberately dropped. **Luxembourg is a different
-   jurisdiction**, and a German or Portuguese residence permit does not by itself
-   carry the right to work there. If it does not hold for Luxembourg, change or
-   remove the line before sending — this is the one claim on the page that a
-   recruiter can check on day one.
-2. **`Open to relocation to Luxembourg` is new.** It is implied by applying, and
-   it removes the obvious objection to a Munich address on a Luxembourg posting.
-   Remove it if the intention is to ask about remote or Munich-based work.
-3. **If you have studied CRR, Solvency II, PRIIPs, UCITS or AIFMD, say so.**
-   The posting names the first three explicitly as an asset, and they are absent
-   from the page because no source CV evidences them. Adding two or three to the
-   `Focus areas` row is the highest-value keyword edit available. There is 1.5 mm
-   of headroom, so a third line in that row does not fit — a term would have to
-   come out to make room.
-4. **Same for VBA and MATLAB.** Named in the posting as a plus. The page claims
-   Python, SQL and Power BI, which cover *"or other data analytics tools"*.
-5. **The 12-month gap will come up.** Have the answer ready.
-6. **French is not on the page.** The posting treats German and/or French as an
-   advantage; German (B1) is there. Add French only if there is a real level to
-   state.
-7. **Back-port the corrections to the other five CVs.** Class rank is top 10%,
-   SCAILE ended 08.2026, and Trariti's location is Mumbai; the Allianz and
-   Accenture CVs still disagree on the first two. They also still carry "Eligible
-   for visa sponsorship" rather than "No visa sponsorship required", and all of
-   them still have the bullet paint-order defect described above.
+1. **If you have any Arabic, put it on the page.** The posting names it as an
+   advantage, and this is by far the highest-value edit available for a Dubai /
+   Doha application. The `Languages` row is a single line with room on it — a
+   term can be added without costing the page a millimetre. It is absent only
+   because no source CV evidences it. Do not add it otherwise; it is trivially
+   tested in a Gulf interview.
+2. **Confirm the relocation line.** *"Open to relocation to Dubai or Doha"* is
+   new and is what makes a Munich address make sense on a Gulf posting. Remove
+   it only if the intention is to ask about a European office.
+3. **The old "No visa sponsorship required" line is gone on purpose.** It was
+   written for Germany and cannot be said about the UAE or Qatar. Do not
+   reinstate it. If a nationality or current-residence line is wanted — some
+   Gulf employers do expect one — add it as a fact, not as a claim about
+   sponsorship.
+4. **The 12-month gap will come up.** Have the answer ready; consulting
+   interviews open on the CV.
+5. **Consider swapping Impact Consulting for FitSure** if the entrepreneurial
+   signal matters more to you than the consulting one. *FitSure (InsurTech
+   venture, incubated at Shiv Nadar University), Co-Founder, 01.2023 – 08.2023 —
+   "Defined the business model and pricing strategy for wearable-based dynamic
+   health premiums in a 3-person team"* appears in five source CVs and is the
+   same height, so the swap is free. Oliver Wyman's posting asks for *initiative,
+   intuition and creativity* and for *evidence of leading an interesting and
+   impactful life outside of your studies*, which FitSure speaks to directly.
+   Impact Consulting was chosen because it backs `Market Entry` and `Competitive
+   Benchmarking` in the skills grid — swap the entry and those two terms lose
+   their evidence, so retune the row too.
+6. **No industry line.** The page evidences pharmaceuticals, industrials and
+   logistics (A&M), energy, SaaS and consumer tech (Biome) and fintech (Impact)
+   in the *source* CVs, but none of those sectors is named on this page and
+   there is no room for a row that names them. Entry-level consulting hiring does
+   not screen on industry, so this is a deliberate omission rather than a gap.
+7. **Workshops are not claimed.** The posting lists workshops among client-ready
+   deliverables. Nothing in any source CV evidences facilitating one. If you have
+   run one, it is worth a bullet.
+8. **Back-port the corrections to the other six CVs.** Class rank is top 10%,
+   SCAILE ended 08.2026, and TCG's location is Mumbai; the Allianz and Accenture
+   CVs still disagree on the first two. They also still carry "Eligible for visa
+   sponsorship" and all of them still have the bullet paint-order defect
+   described above.
