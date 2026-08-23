@@ -70,6 +70,24 @@ check(bool(kw) and not unseen, "every metadata keyword also appears on the page"
 check(all(l.lstrip().startswith("•") for l in lines if "Ranked top 10%" in l),
       "bullet glyph sits on the same line as its text")
 
+# Skills rows are comma-separated lists, and `.grid dd .t{white-space:nowrap}`
+# exists so a line may break at a comma and nowhere else. A break inside a term
+# splits a keyword phrase in the text stream -- "Regulatory Reporting" over two
+# lines is two words, not a keyword -- so the rule is checked, not eyeballed.
+# Row boundaries come from the labels: a value line sharing a baseline with a
+# label at the text margin is the first line of its row.
+grid = [(round(ln["bbox"][1], 1), round(ln["bbox"][0] * PT, 2),
+         "".join(sp["text"] for sp in ln["spans"]))
+        for b in page.get_text("dict")["blocks"] if b["type"] == 0 for ln in b["lines"]]
+label_y = {y for y, x, t in grid if abs(x - 19.06) < 0.05}
+values = sorted([(y, t) for y, x, t in grid if abs(x - 50.81) < 0.05])
+starts = [i for i, (y, _) in enumerate(values) if y in label_y]
+split = [t for i, (y, t) in enumerate(values)
+         if i + 1 not in starts and i + 1 < len(values) and not t.rstrip().endswith(",")]
+check(bool(values) and not split, "skills rows break only at commas, never mid-term",
+      ("splits after: " + "; ".join(t[-28:] for t in split)) if split
+      else f"{len(values)} lines across {len(starts)} rows")
+
 print("\nLAYOUT")
 spans = [(ln["bbox"], "".join(s["text"] for s in ln["spans"]))
          for b in page.get_text("dict")["blocks"] if b["type"] == 0 for ln in b["lines"]]

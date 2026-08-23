@@ -12,10 +12,12 @@ Built on the same template as the other tailored CVs in this repo.
 Work-experience copy is lifted from those CVs rather than rewritten, so the same
 claims appear the same way everywhere.
 
-> **Two must-haves are not on the page: French and VBA.** Both are listed by
-> Deloitte under *Must have*, and neither is evidenced by any of the six source
-> CVs, so neither was invented here. See *Before sending* — these are the first
-> two things to fix if the candidate actually has them.
+> **One must-have is still not on the page: French.** Deloitte lists it under
+> *Must have* and no source CV mentions it, so it was not invented here. See
+> *Before sending* — it is the first thing to fix if the candidate has it.
+>
+> VBA, CRR/CRD IV and IFRS 9 **were** added, on the candidate's own confirmation
+> rather than from the source CVs. See *Added on confirmation* below.
 
 ## Build
 
@@ -110,15 +112,68 @@ line available anywhere:
 | Row | Before | After | Lines | Slack left |
 |---|---|---|---|---|
 | Tagline | 168 ch | 170 ch | 2, unchanged | — |
-| Core skills | 168 ch | 184 ch | 2, unchanged | 18.4 mm (~13 ch) |
-| Focus areas | 161 ch | 171 ch | 2, unchanged | 38.2 mm (~27 ch) |
+| Core skills | 168 ch | 184 ch | 2, unchanged | 11.6 mm on the longer line |
+| Focus areas | 161 ch | 191 ch | 2, unchanged | 8.3 mm on the longer line |
 | Languages | 94 ch | 94 ch | 1, unchanged | 14.5 mm (~10 ch) |
-| Technical | 89 ch | 96 ch | 1, unchanged | **5.3 mm (~4 ch)** |
+| Technical | 89 ch | 85 ch | 1, unchanged | 17.9 mm (~13 ch) |
 
-Technical is the tight one: adding *Word* leaves 5.3 mm, about four characters.
-Anything further on that row wraps it and costs a line the page does not have —
-which is exactly what happens if you add VBA naively. See *Before sending*, where
-each remaining edit is given as a **tested swap** rather than an estimate.
+Figures are as shipped, after `VBA`, `CRR/CRD IV` and `IFRS 9` were added. The
+tight rows are now `Focus areas` and `Core skills`, at 8.3 mm and 11.6 mm on
+their longer line — and because terms are `nowrap`, the next term added to either
+does not creep, it jumps a whole line. Technical looks roomy again only because
+`Data Analytics` was traded out for VBA.
+
+## Added on confirmation
+
+`VBA`, `CRR/CRD IV` and `IFRS 9` are on the page because the candidate confirmed
+them, not because any source CV evidences them. That is a different provenance
+from everything else here, and worth recording: **every other claim on the page
+can be traced to one of the six source PDFs; these three cannot.** They should
+be treated as interview-exposed — a Deloitte risk interviewer will ask what was
+built in VBA and which parts of CRR/CRD IV and IFRS 9 were worked with.
+
+Both edits were the tested swaps this README had already worked out:
+
+| Term | Where | Cost |
+|---|---|---|
+| `VBA` | Technical row | `Data Analytics` traded out — the row had ~4 characters of slack, and a generic umbrella term lost to a named must-have |
+| `CRR/CRD IV`, `IFRS 9` | Focus areas | None. The row had slack on its second line and absorbed both |
+
+`Data Analytics` was the right thing to spend. It was an umbrella over terms
+already on the page — Power BI, SQL, Python, and `Data Mining and Analysis` in
+the row above — while VBA is named in the posting's must-have tooling line and
+appears nowhere else.
+
+Still not claimed: `COREP`, `FINREP`, `IRRBB`, `Basel`, `model validation`, `SAS`,
+`R` and `French`.
+
+### The line-break defect this surfaced
+
+Adding two terms to `Focus areas` moved the row's wrap point into the middle of
+**Regulatory Reporting**, which came apart across two lines. On the page it looks
+like ordinary wrapping. In the PDF text stream it is `…Value at Risk (VaR),
+Regulatory` / `Reporting, Banking…` — the phrase no longer exists as a phrase,
+and a parser matching the keyword literally finds neither half. The audit's
+metadata check caught it, because `Regulatory Reporting` is also a metadata
+keyword and stopped being visible on the page.
+
+The fix is structural rather than a reshuffle: a skills row is a comma-separated
+list, so **a line may break at a comma and nowhere else.** Each term is now
+wrapped in a `span.t` carrying `white-space:nowrap`, and both multi-line rows
+were reordered so the comma they break at falls near the middle:
+
+```
+Financial and Risk Modelling, Scenario and Sensitivity Analysis, Data Mining and Analysis,
+Stress Testing, Client Reporting, Process Automation, Stakeholder Management, Problem Solving
+
+Credit Risk, Liquidity Risk, Market Risk, CRR/CRD IV, Regulatory Reporting, Value at Risk (VaR),
+IFRS 9, Banking and Investment Funds, EU Financial Regulation, Climate and Sustainable Finance
+```
+
+Every term is intact, no term was dropped to pay for it, and the page is still
+295.5 mm. This also fixed a pre-existing split the previous pass had shipped
+without noticing: `Data Mining and Analysis` was coming apart as `Data Mining
+and` / `Analysis`.
 
 ## What this CV is optimised for
 
@@ -134,13 +189,14 @@ Deloitte's posting screens on a list. Each item is mapped to a place on the page
 | **Report writing, analysis and presentation of results to clients** | A&M's presentations for client leadership; SCAILE's weekly client reporting and KPI dashboards; `Client Reporting` |
 | **Modelling and independent review of risk models** | A&M scenario models; Trariti data-driven models; Biome's commercial due diligence models |
 | **Regulatory Reporting (COREP, FINREP)** | `Regulatory Reporting` in Focus areas — see the honesty note below |
+| **CRR/CRD IV, IFRS 9 — nice to have** | Both in `Focus areas`, on the candidate's confirmation |
 | **Climate risk** | European Commission thesis on EU renewable-energy funding; `Climate and Sustainable Finance` |
 | **Strong command of Excel, Word, PowerPoint** | `Advanced Microsoft Excel` leads the Technical row, with PowerPoint and Word |
 | **Coding skills (Python, SQL, SAS, R) — an asset** | Python, SQL, Power BI; *Introduction to Python* in Nova coursework |
 | **Banking industry knowledge — a plus** | A&M restructuring (creditors, distressed debt, Chapter 11); `Banking and Investment Funds` |
 | **German — an asset** | Languages row, German (B1, improving) |
 | **Fluent French and English — must have** | **English only.** See *Before sending* |
-| **VBA — must have** | **Not claimed.** See *Before sending* |
+| **VBA — must have** | `VBA` in the Technical row, on the candidate's confirmation |
 
 Two choices carried over from the source CVs:
 
@@ -171,19 +227,20 @@ on the page backs it.** So the skills grid is split in two.
 | Problem Solving | Top 3 of 15,000 nationally; Draycott Team Lead |
 
 `Focus areas` are the target domain — Credit Risk, Liquidity Risk, Market Risk,
-Value at Risk (VaR), Regulatory Reporting, Banking and Investment Funds, EU
-Financial Regulation, Climate and Sustainable Finance. Labelling them *focus
-areas* rather than *skills* is deliberate and is the source CVs' own label: VaR
-and market risk are coursework, EU regulation and the climate line are the
-thesis, and the banking exposure is A&M rather than a bank. It is the honest
-register for a Junior posting that asks for a *first* experience.
+CRR/CRD IV, Regulatory Reporting, Value at Risk (VaR), IFRS 9, Banking and
+Investment Funds, EU Financial Regulation, Climate and Sustainable Finance.
+Labelling them *focus areas* rather than *skills* is deliberate and is the source
+CVs' own label: VaR and market risk are coursework, EU regulation and the climate
+line are the thesis, and the banking exposure is A&M rather than a bank. It is
+the honest register for a Junior posting that asks for a *first* experience.
+CRR/CRD IV and IFRS 9 sit here on the candidate's confirmation — see *Added on
+confirmation*.
 
-**What is deliberately not claimed:** CRR/CRD IV, IFRS 9, COREP, FINREP, IRRBB,
-Basel, model validation, VBA, SAS, R and French. Deloitte names CRR/CRD IV and
-IFRS 9 under *Nice to have* and VBA and French under *Must have*; nothing in any
-source CV evidences any of them. Asserting *Model Validation* was specifically
-rejected — the posting means formal independent validation of a bank's risk
-models, and no entry on the page is that. See *Before sending*.
+**What is deliberately not claimed:** COREP, FINREP, IRRBB, Basel, model
+validation, SAS, R and French. Nothing in any source CV evidences any of them,
+and none was confirmed. Asserting *Model Validation* was specifically rejected —
+the posting means formal independent validation of a bank's risk models, and no
+entry on the page is that. See *Before sending*.
 
 ## Written for the ATS
 
@@ -229,14 +286,15 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 
 | Check | Result |
 |---|---|
-| Text is real text, not an image | 543 words selectable |
+| Text is real text, not an image | 546 words selectable |
 | Reading order | every bullet follows its own employer, verified for 5 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
 | Email, phone | present as plain text, regex-matchable |
 | LinkedIn | spelled out as `linkedin.com/in/khan-abir`, not hidden behind anchor text |
 | Section headers | `EDUCATION`, `WORK EXPERIENCE`, `EXTRACURRICULAR & LEADERSHIP`, `SKILLS & ADDITIONAL INFORMATION` all found |
-| Metadata keywords | all 25 also appear in the visible text |
+| Metadata keywords | all 28 also appear in the visible text |
+| Multi-word skills terms | none split across a line break |
 | Fonts | all 5 embedded as subsets |
 | Pages | 1 |
 | Dates | `MM.YYYY` throughout |
@@ -255,6 +313,22 @@ keyword field must appear in the visible text**, and the audit fails if one does
 not. An ATS that indexes both finds the same words twice either way, and a
 candidate who cannot see a term on their own CV cannot be asked about it in an
 interview.
+
+It earned its keep again when `VBA`, `CRR/CRD IV` and `IFRS 9` were added: the
+insertion pushed `Regulatory Reporting` across a line break, and this check was
+what noticed, because the phrase stopped being findable in the page text.
+
+### Skills rows break only at commas
+
+The line-break defect above is now checked in its own right rather than only as a
+side effect of the metadata rule. `scripts/audit.py` groups the skills grid's
+rendered lines into rows using the labels' baselines, then asserts that every
+line except a row's last ends on a comma — so no term is ever split across two
+lines, whether or not it happens to be a metadata keyword.
+
+The check was negative-tested by flipping `.grid dd .t` from `nowrap` back to
+`normal` and confirming it fails. On the current content it catches two splits,
+`Stress Testing` and `IFRS 9` — not just the one that prompted it.
 
 ## Rebuilding this repo produces a taller page than it used to
 
@@ -350,7 +424,8 @@ one document.
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
 | Bottom white | 12.40 mm |
-| Metadata keywords visible on the page | 25 of 25 |
+| Metadata keywords visible on the page | 28 of 28 |
+| Skills rows | break only at commas — 7 lines across 5 rows, no term split |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
@@ -370,13 +445,14 @@ Three things deliberately left alone:
 
 ## Before sending
 
-The first two items are Deloitte *must-haves* that this CV cannot satisfy from
-the source material. They are ordered by how much they change the application.
+Item 1 is the one Deloitte *must-have* this CV still cannot satisfy from the
+source material. Items 2 and 3 were the other two and are now done — struck
+through, kept for the record.
 
-Each of the first three was **built and measured**, not estimated. The page has
-1.5 mm of headroom, so a naive insertion wraps a row and pushes the CV to two
-pages: adding `French (B2)` and `VBA` as straight additions takes it to 303.8 mm.
-The swaps below were tested and all hold the page at **295.5 mm**.
+Each was **built and measured**, not estimated. The page has 1.5 mm of headroom,
+so a naive insertion wraps a row and pushes the CV to two pages: `French (B2)`
+and `VBA` added as straight additions took it to 303.8 mm. The swaps below were
+tested and hold the page at **295.5 mm**.
 
 1. **French — the one that decides the application.** The posting says *"Be
    fluent in French and English"* under **Must have**, and Luxembourg means it:
@@ -392,29 +468,17 @@ The swaps below were tested and all hold the page at **295.5 mm**.
    Tested: 295.5 mm, one line, still fits. If there is genuinely no French, this
    application is a stretch on a stated must-have — better to say so directly in
    the cover letter than to let the CV imply otherwise.
-2. **VBA.** Named in the same must-have line as Excel, Word and PowerPoint, and
-   not claimed because nothing evidences it. Adding it alone wraps the Technical
-   row, which has only ~4 characters of slack. Trade `Data Analytics` for it —
-   a generic umbrella term for a named must-have:
-
-   ```
-   Advanced Microsoft Excel, VBA, PowerPoint, Word, Power BI, SQL, Python, Generative AI
-   ```
-
-   Tested: 295.5 mm, one line, still fits.
-3. **CRR/CRD IV and IFRS 9.** Named under *Nice to have*. These are the one edit
-   that needs **no** trade — `Focus areas` has 38 mm of slack on its second line:
-
-   ```
-   Credit Risk, Liquidity Risk, Market Risk, CRR/CRD IV, IFRS 9, Value at Risk (VaR), ...
-   ```
-
-   Tested: 295.5 mm, still two lines, 5.8 mm to spare. Add either or both only if
-   they were genuinely covered in the Nova Risk Management course.
+2. **~~VBA~~ — done.** Added on the candidate's confirmation, paid for by
+   trading out `Data Analytics`. See *Added on confirmation*.
+3. **~~CRR/CRD IV and IFRS 9~~ — done.** Both added to `Focus areas` on the
+   candidate's confirmation, at no cost to the page. Be ready to say which parts
+   were worked with: they are named under *Nice to have*, so an interviewer who
+   sees them will follow up.
 4. **SAS and R.** Also *nice to have*. Python and SQL are on the page and cover
    the posting's *"or other data analytics tools"* intent; add SAS or R only if
-   real, and note the Technical row is the tightest line on the page — each needs
-   a trade like VBA's.
+   real. The Technical row has room again after the VBA trade, but `Focus areas`
+   and `Core skills` do not — a term added there jumps a whole line, because
+   terms no longer break mid-phrase.
 5. **Confirm the work-authorisation line.** The header carries *"No visa
    sponsorship required"*, written originally for Germany with the country
    deliberately dropped. **Luxembourg is a different jurisdiction**, and a German

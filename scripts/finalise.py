@@ -40,7 +40,8 @@ doc.set_metadata({
                  "Risk Modelling, Regulatory Reporting, Banking, Investment Funds, "
                  "EU Financial Regulation, Climate and Sustainable Finance, "
                  "Commercial Due Diligence, Data Mining, Process Automation, "
-                 "Stakeholder Management, Advanced Microsoft Excel, Word, PowerPoint, "
+                 "Stakeholder Management, CRR/CRD IV, IFRS 9, "
+                 "Advanced Microsoft Excel, VBA, Word, PowerPoint, "
                  "Python, SQL, Power BI, MSc Finance, Nova SBE"),
     "creator":  "Abir Hilal Khan",
     "producer": "",

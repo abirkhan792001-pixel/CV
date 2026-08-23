@@ -178,6 +178,11 @@ li b{ font-weight:700; }
   align-items:baseline;
 }
 .grid dt{ font-style:italic; }
+/* Skills rows are comma-separated lists: a line may break at a comma and nowhere
+   else. Without this Chromium breaks inside a term, and a parser reading the
+   text stream no longer sees the phrase -- "Regulatory Reporting" split across
+   two lines is two words, not a keyword. */
+.grid dd .t{ white-space:nowrap; }
 
 /* ---------- print ----------------------------------------- */
 
@@ -349,13 +354,13 @@ li b{ font-weight:700; }
       <dd>English (Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
 
       <dt>Core skills</dt>
-      <dd>Financial and Risk Modelling, Scenario and Sensitivity Analysis, Stress Testing, Data Mining and Analysis, Client Reporting, Process Automation, Stakeholder Management, Problem Solving</dd>
+      <dd><span class="t">Financial and Risk Modelling</span>, <span class="t">Scenario and Sensitivity Analysis</span>, <span class="t">Data Mining and Analysis</span>, <span class="t">Stress Testing</span>, <span class="t">Client Reporting</span>, <span class="t">Process Automation</span>, <span class="t">Stakeholder Management</span>, <span class="t">Problem Solving</span></dd>
 
       <dt>Focus areas</dt>
-      <dd>Credit Risk, Liquidity Risk, Market Risk, Value at Risk (VaR), Regulatory Reporting, Banking and Investment Funds, EU Financial Regulation, Climate and Sustainable Finance</dd>
+      <dd><span class="t">Credit Risk</span>, <span class="t">Liquidity Risk</span>, <span class="t">Market Risk</span>, <span class="t">CRR/CRD IV</span>, <span class="t">Regulatory Reporting</span>, <span class="t">Value at Risk (VaR)</span>, <span class="t">IFRS 9</span>, <span class="t">Banking and Investment Funds</span>, <span class="t">EU Financial Regulation</span>, <span class="t">Climate and Sustainable Finance</span></dd>
 
       <dt>Technical</dt>
-      <dd>Advanced Microsoft Excel, PowerPoint, Word, Power BI, SQL, Python, Data Analytics, Generative AI</dd>
+      <dd>Advanced Microsoft Excel, VBA, PowerPoint, Word, Power BI, SQL, Python, Generative AI</dd>
 
       <dt>Interests</dt>
       <dd>Distance running, swimming, hiking, baking</dd>
