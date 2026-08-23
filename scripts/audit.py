@@ -48,7 +48,7 @@ pairs = [
     ("Nova School",            "Ranked top 10%"),
     ("SCAILE Technologies",    "Automated weekly client KPI"),
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
-    ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
+    ("Biome Venture Studio",   "Screened 3,000+ companies"),
     ("Trariti Consulting",     "Led 90+ stakeholder interviews"),
 ]
 for org, bullet in pairs:
@@ -58,6 +58,15 @@ for org, bullet in pairs:
     check(i != -1 and i < j < nxt, f"bullets stay with {org!r}", f"org line {i}, bullet line {j}")
 
 check(not any(l.strip() == "•" for l in lines), "no orphan bullet glyphs on their own line")
+
+# Metadata says only what the page says. A term stamped in the keyword field but
+# absent from the visible text is keyword stuffing, and a candidate who cannot
+# see a term on their own CV cannot be asked about it in an interview.
+low = text.lower()
+kw = [k.strip() for k in (doc.metadata["keywords"] or "").split(",") if k.strip()]
+unseen = [k for k in kw if k.lower() not in low]
+check(bool(kw) and not unseen, "every metadata keyword also appears on the page",
+      ("not visible: " + ", ".join(unseen)) if unseen else f"{len(kw)} terms")
 check(all(l.lstrip().startswith("•") for l in lines if "Ranked top 10%" in l),
       "bullet glyph sits on the same line as its text")
 

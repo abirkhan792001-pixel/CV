@@ -1,13 +1,21 @@
-# CV — KPMG Luxembourg, Adviser: Risk Reporting for Investment Funds
+# CV — Deloitte Luxembourg, Analyst: Financial Risk Management
 
-A one-page A4 CV, tailored to KPMG Luxembourg's **Adviser — Risk Reporting for
-Investment Funds (m/f/d)**, posted 30.06.2026. The role sits in KPMG's Risk
-Advisory practice, which delivers risk monitoring and regulatory reporting to
-funds and asset managers, and screens for 0–3 years in the financial sector.
+A one-page A4 CV, tailored to Deloitte Luxembourg's **Analyst — Financial Risk
+Management**, posted 20.08.2026. The role sits in Deloitte's Risk & Regulatory
+practice, which delivers risk and capital management services to banks and
+(alternative) investment funds: risk modelling and model validation, CRR/CRD IV
+and IFRS 9 compliance work, and regulatory reporting (COREP, FINREP). Seniority
+is Junior; the posting asks for a *first* experience in financial risk
+management and modelling.
 
-Built on the same template as the other tailored CVs in this repo. Work-experience
-copy is lifted from those CVs rather than rewritten, so the same claims appear the
-same way everywhere.
+Built on the same template as the other tailored CVs in this repo.
+Work-experience copy is lifted from those CVs rather than rewritten, so the same
+claims appear the same way everywhere.
+
+> **Two must-haves are not on the page: French and VBA.** Both are listed by
+> Deloitte under *Must have*, and neither is evidenced by any of the six source
+> CVs, so neither was invented here. See *Before sending* — these are the first
+> two things to fix if the candidate actually has them.
 
 ## Build
 
@@ -20,8 +28,8 @@ npm run share        # -> the files to actually send, then audits them
 
 `npm run share` builds, runs `scripts/finalise.py` (needs `pymupdf`), then runs
 `scripts/audit.py`. It writes two identical PDFs: `Abir_Hilal_Khan_CV.pdf` and
-`Abir Hilal Khan_CV_KPMG Luxembourg.pdf`, the latter following this repo's naming
-convention for a tailored copy.
+`Abir Hilal Khan_CV_Deloitte Luxembourg.pdf`, the latter following this repo's
+naming convention for a tailored copy.
 
 If Playwright cannot download its pinned Chromium (sandboxes, offline CI), point
 the build at one already on the machine:
@@ -37,8 +45,8 @@ touch the layout:
   nothing else, so Chromium leaves Author, Subject and Keywords empty and stamps
   itself as Creator. Those fields are what a PDF viewer shows in its title bar,
   what an email client previews, and what some applicant-tracking systems index.
-  Every keyword stamped there also appears on the page — see *Metadata says only
-  what the page says* below.
+  Every keyword stamped there also appears on the page — now enforced, see
+  *Metadata says only what the page says* below.
 - **Exact A4.** Chromium snaps the page to whole device pixels and lands on
   210.23 × 297.35 mm. The finalise step trims the mediabox to a true
   595.276 × 841.890 pt — blank margin only; it asserts the page is at least A4
@@ -57,81 +65,82 @@ fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 Current state: **295.5 mm of 297 mm, one page, 1.5 mm headroom.** Not enough for
 another line; anything added has to be traded against something already there.
 
-## This pass: the founder venture out, Trariti back in
+## This pass: from fund reporting to bank risk modelling
 
-The brief was to drop the stealth founder entry and restore the consulting
-internship the earlier passes had cut. Both were done, and the rest of the page
-was retuned for a risk-reporting role rather than an energy one.
+The previous target was KPMG's *Risk Reporting for Investment Funds*. Deloitte's
+posting is a different animal in the same practice area, and the difference
+drove every edit here:
 
-### The two swaps
+|  | KPMG (last pass) | Deloitte (this pass) |
+|---|---|---|
+| Client base | investment funds and asset managers | **banks** and investment funds |
+| Core activity | preparing and reviewing risk reports | **modelling and validating risk models** |
+| Named risks | portfolio risk, VaR, derivatives | **credit, liquidity, market, climate, IRRBB** |
+| Named regulation | UCITS/AIFMD-adjacent, general EU | **CRR/CRD IV, IFRS 9, COREP, FINREP** |
+| Named languages | English; German/French an advantage | **French *and* English fluent — must have** |
 
-- **Out: Stealth AI-Energy Startup, Founder (since 08.2026).** Three bullets on
-  DACH competitor mapping, a three-stage energy business model and an AI tool for
-  German electricity bills. All of it was evidence for renewable energy, which is
-  what the previous target screened on and this one does not.
-- **In: Trariti Consulting Group (TCG), Summer Consultant, Mumbai, 03.2022 –
-  08.2022.** Three bullets, taken verbatim from the source CVs: data-driven models
-  for VC/PE firms, funding levers and investment viability across $100M+ in deal
-  value, and 90+ stakeholder interviews.
+**No structural change was made.** The entries, their order, the photo and the
+section layout are as they were; the page was already the right shape for a
+junior risk role. What changed is vocabulary and emphasis, at a constant line
+count — the page is still 295.5 mm.
 
-The two entries cost the same height, so the swap alone was height-neutral.
+### The eight edits
 
-Restoring this entry also **closes an open item the last audit raised**: nothing
-on the page demonstrated stakeholder management, and the evidence for it —
-*"Led 90+ stakeholder interviews…"* — lived in exactly the entry that had been
-cut. It is back on the page, so the term in the skills row is now earned.
+| # | Where | Change | Why |
+|---|---|---|---|
+| 1 | Tagline | *"scenario and sensitivity modelling … fund diligence across a $170M pipeline"* → *"**credit and liquidity** scenario modelling … **>$100M** in distressed debt exposure"* | The posting names credit and liquidity first. The fund-pipeline claim is still on the page, in the Biome entry |
+| 2 | A&M bullet 2 | *"across liquidity and supplier scenarios to test operational resilience"* → *"across **liquidity** and supplier **stress scenarios** to test resilience"* | Puts *stress* on the page, where the underlying work is stress testing in substance. Two words traded out to hold the one-line rule |
+| 3 | A&M bullet 4 | *creditor-negotiation* set in bold | The only occurrence of "credit" in the work section; bold makes it survive a six-second skim |
+| 4 | Biome bullet 1 | *"Evaluated 3,000+ companies"* → *"**Screened** 3,000+ companies"* | Deloitte asks for *"excellent data mining skills"*. Screening 3,000 companies is data mining; evaluating them is not, quite |
+| 5 | Core skills | *Data Analysis* → **Data Mining and Analysis**; *Financial Modelling* → **Financial and Risk Modelling**; **Stress Testing** added; *Commercial Due Diligence* removed | Three of the posting's own terms in, one corporate-finance term out |
+| 6 | Focus areas | Rebuilt: **Credit Risk, Liquidity Risk, Market Risk**, VaR, Regulatory Reporting, **Banking and** Investment Funds, EU Financial Regulation, **Climate and Sustainable Finance** | *Risk Management*, *Derivatives*, *Portfolio Risk Monitoring* and *Asset Management* were the fund-monitoring set; the four named risk types replace them |
+| 7 | Technical | **Word** added | Named explicitly in the posting's must-have tooling line |
+| 8 | `finalise.py` | Keyword field rebuilt around the new terms | Metadata tracks the page |
 
-**The organisation is named in full.** Five source CVs write it as
-*"TCG (boutique strategy consulting firm)"*; the DHL CV writes *"Trariti
-Consulting Group"*. This CV uses **Trariti Consulting Group** with *(TCG, boutique
-strategy consulting firm)* as the italic note, so a parser indexes a real company
-name rather than a three-letter string, and a reader still learns what it is.
+**Dropping *Commercial Due Diligence* from the skills row costs nothing.** The
+phrase still appears verbatim in the Biome bullet — *"Built commercial due
+diligence models…"* — so an ATS searching for it still matches. The skills row
+is the scarce space; the bullet is not.
 
-### What the rest of the page traded
+### The line arithmetic
 
-The founder-for-Trariti swap was free, but the risk-reporting retune wanted four
-lines the page did not have. Where they came from:
+Every row had to stay at its existing line count, because there is no fourth
+line available anywhere:
 
-| Change | Lines |
-|---|---|
-| A new `Focus areas` row in the skills grid | −2 |
-| Nova's relevant coursework restored as a bullet (Risk Management, Python) | −1 |
-| A&M regains its creditor-negotiation bullet | −1 |
-| Nova's class rank and Draycott merged onto one bullet | **+1** |
-| **Impact Consulting dropped** from Extracurricular | **+3** |
-| **Net** | **0 lines**, plus 1.3 mm recovered from one fewer entry margin and grid gap |
+| Row | Before | After | Lines | Slack left |
+|---|---|---|---|---|
+| Tagline | 168 ch | 170 ch | 2, unchanged | — |
+| Core skills | 168 ch | 184 ch | 2, unchanged | 18.4 mm (~13 ch) |
+| Focus areas | 161 ch | 171 ch | 2, unchanged | 38.2 mm (~27 ch) |
+| Languages | 94 ch | 94 ch | 1, unchanged | 14.5 mm (~10 ch) |
+| Technical | 89 ch | 96 ch | 1, unchanged | **5.3 mm (~4 ch)** |
 
-Which is why the page came down only from 296.8 mm to 295.5 mm: the line count is
-unchanged, and the 1.3 mm is the whitespace between entries, not text.
-
-**Impact Consulting was the entry to cut.** With Trariti restored, the page
-already carries a consulting entry doing market and investment analysis, and
-Impact's single bullet — competitive benchmarking and market-entry proposals for
-a B2C fintech — was the weakest fit for a risk-reporting role and the closest
-duplicate of work shown better elsewhere. Its three lines bought back the A&M
-creditor-negotiation bullet, which carries the only hard value figure in that
-entry ($2.5M preserved) and is the page's clearest evidence of preparing
-material for client leadership.
+Technical is the tight one: adding *Word* leaves 5.3 mm, about four characters.
+Anything further on that row wraps it and costs a line the page does not have —
+which is exactly what happens if you add VBA naively. See *Before sending*, where
+each remaining edit is given as a **tested swap** rather than an estimate.
 
 ## What this CV is optimised for
 
-KPMG's posting screens on a list. Each item is mapped to a place on the page:
+Deloitte's posting screens on a list. Each item is mapped to a place on the page:
 
 | What the posting asks for | Where it lands |
 |---|---|
-| **Master's in Finance / Quantitative Finance / related** | Education first, MSc Finance to 12.2026 |
-| **0–3 years in the financial sector** | A&M restructuring, Biome VC, Trariti — all internships, none over 7 months |
-| **Prepare and review risk and regulatory reports** | SCAILE's weekly client KPI reporting and dashboards; `Client Reporting` in Core skills |
-| **Primary point of contact for client inquiries** | *"Owned North American clients as their first point of contact"*; *"Led 90+ stakeholder interviews"*; A&M's creditor-negotiation materials |
-| **Gather and analyse client data for insights** | Biome's 3,000+ company screen; A&M scenario models |
-| **Automate workflows, streamline processes** | *"Automated weekly client KPI reporting … cutting manual effort by 60%"*; `Process Automation` |
-| **Contribute to internal reporting technologies** | SCAILE's KPI dashboards; Power BI, SQL, Python in Technical |
-| **Interest in VaR and sensitivity analysis** | A&M's **EBITDA sensitivity analysis** bullet; Risk Management coursework; `Focus areas` row |
-| **Highly proficient in Excel** | `Advanced Microsoft Excel` leads the Technical row |
-| **Understanding of the investment funds industry** | Biome (VC, $170M pipeline), Trariti (VC/PE clients), Draycott PE Challenge |
-| **VBA, Python, MATLAB or other data analytics** | Python, SQL, Power BI, `Data Analytics` |
-| **European regulatory frameworks** | European Commission thesis; `EU Financial Regulation` |
-| **Fluent English; German/French an advantage** | Languages row leads with English (Fluent), German (B1) |
+| **Master's in business administration, quantitative finance, engineering, econometrics** | Education first, MSc Finance to 12.2026; BMS Finance & Strategy |
+| **First experience in financial risk management and modelling (credit, liquidity, IRRBB)** | A&M: scenario models for a $9.8M risk-mitigation plan, EBITDA sensitivity across liquidity stress scenarios, >$100M in debt under Chapter 11 |
+| **Excellent analytical and logical problem-solving** | Top 3 of 15,000 nationally; Magna Cum Laude; top 10% at Nova |
+| **Rigorous, quality driven, result-oriented, excellent data mining** | Biome's 3,000+ company screen; `Data Mining and Analysis` |
+| **Strong interpersonal and communication skills** | *"Led 90+ stakeholder interviews"*; *"Owned North American clients as their first point of contact"*; A&M's creditor-negotiation materials |
+| **Report writing, analysis and presentation of results to clients** | A&M's presentations for client leadership; SCAILE's weekly client reporting and KPI dashboards; `Client Reporting` |
+| **Modelling and independent review of risk models** | A&M scenario models; Trariti data-driven models; Biome's commercial due diligence models |
+| **Regulatory Reporting (COREP, FINREP)** | `Regulatory Reporting` in Focus areas — see the honesty note below |
+| **Climate risk** | European Commission thesis on EU renewable-energy funding; `Climate and Sustainable Finance` |
+| **Strong command of Excel, Word, PowerPoint** | `Advanced Microsoft Excel` leads the Technical row, with PowerPoint and Word |
+| **Coding skills (Python, SQL, SAS, R) — an asset** | Python, SQL, Power BI; *Introduction to Python* in Nova coursework |
+| **Banking industry knowledge — a plus** | A&M restructuring (creditors, distressed debt, Chapter 11); `Banking and Investment Funds` |
+| **German — an asset** | Languages row, German (B1, improving) |
+| **Fluent French and English — must have** | **English only.** See *Before sending* |
+| **VBA — must have** | **Not claimed.** See *Before sending* |
 
 Two choices carried over from the source CVs:
 
@@ -152,34 +161,35 @@ on the page backs it.** So the skills grid is split in two.
 
 | Term | Backed by |
 |---|---|
-| Financial Modelling | A&M scenario models, Biome build-ups, Trariti models |
+| Financial and Risk Modelling | A&M scenario models for a risk-mitigation plan; Biome build-ups; Trariti models |
 | Scenario and Sensitivity Analysis | A&M: scenario models, EBITDA sensitivity |
-| Data Analysis | Biome's 3,000+ company screen, SCAILE KPI reporting |
-| Commercial Due Diligence | Biome |
-| Client Reporting | SCAILE's weekly client reporting and dashboards |
+| Stress Testing | A&M: liquidity and supplier stress scenarios, tested for resilience |
+| Data Mining and Analysis | Biome's 3,000+ company screen; SCAILE KPI reporting |
+| Client Reporting | SCAILE's weekly client reporting and dashboards; A&M's presentations for client leadership |
 | Process Automation | SCAILE's AI agent workflows, 60% manual effort cut |
 | Stakeholder Management | Trariti's 90+ stakeholder interviews |
 | Problem Solving | Top 3 of 15,000 nationally; Draycott Team Lead |
 
-`Focus areas` are the target domain — Risk Management, Value at Risk (VaR),
-Derivatives, Regulatory Reporting, Portfolio Risk Monitoring, Investment Funds and
-Asset Management, EU Financial Regulation. Labelling them *focus areas* rather
-than *skills* is deliberate: Risk Management is coursework, EU regulation is the
-thesis, and the fund exposure is Biome and Trariti. It is the honest register for
-a 0–3 years posting that asks for *interest* in these topics, and it is the source
-CVs' own label.
+`Focus areas` are the target domain — Credit Risk, Liquidity Risk, Market Risk,
+Value at Risk (VaR), Regulatory Reporting, Banking and Investment Funds, EU
+Financial Regulation, Climate and Sustainable Finance. Labelling them *focus
+areas* rather than *skills* is deliberate and is the source CVs' own label: VaR
+and market risk are coursework, EU regulation and the climate line are the
+thesis, and the banking exposure is A&M rather than a bank. It is the honest
+register for a Junior posting that asks for a *first* experience.
 
-**What is deliberately not claimed:** CRR, Solvency II, PRIIPs, UCITS, AIFMD,
-VBA and MATLAB. The posting lists the first three as an asset and the last two as
-a plus, and nothing in any source CV evidences any of them. See *Before sending*
-— this is the single highest-value edit available if the candidate has in fact
-studied them.
+**What is deliberately not claimed:** CRR/CRD IV, IFRS 9, COREP, FINREP, IRRBB,
+Basel, model validation, VBA, SAS, R and French. Deloitte names CRR/CRD IV and
+IFRS 9 under *Nice to have* and VBA and French under *Must have*; nothing in any
+source CV evidences any of them. Asserting *Model Validation* was specifically
+rejected — the posting means formal independent validation of a bank's risk
+models, and no entry on the page is that. See *Before sending*.
 
 ## Written for the ATS
 
-KPMG Luxembourg recruits through an applicant-tracking system, so the parse is
-the first round. `scripts/audit.py` checks the claims below against the **rendered
-PDF**, not the source, and exits non-zero on any failure.
+Deloitte Luxembourg recruits through an applicant-tracking system, so the parse
+is the first round. `scripts/audit.py` checks the claims below against the
+**rendered PDF**, not the source, and exits non-zero on any failure.
 
 ### The bullets used to detach from their employers
 
@@ -204,13 +214,13 @@ Extraction was re-run on the shipped file after this pass. The check is stricter
 than a text dump: it asserts the eight organisations appear in page order, and
 that each of five leading bullets falls between its own employer and the next one.
 
-| Extraction mode | Reading order | Email | Phone | LinkedIn |
-|---|---|---|---|---|
-| PyMuPDF `get_text()` — stream order | OK | ✓ | ✓ | ✓ |
-| PyMuPDF `get_text(sort=True)` | OK | ✓ | ✓ | ✓ |
-| pypdf `extract_text()` | OK | ✓ | ✓ | ✓ |
-| pdfminer.six, default layout analysis | OK | ✓ | ✓ | ✓ |
-| pdfminer.six, `laparams=None` | OK | ✓ | ✓ | ✓ |
+| Extraction mode | Reading order | Bullets with employer | Email | Phone | LinkedIn |
+|---|---|---|---|---|---|
+| PyMuPDF `get_text()` — stream order | OK | OK | ✓ | ✓ | ✓ |
+| PyMuPDF `get_text(sort=True)` | OK | OK | ✓ | ✓ | ✓ |
+| pypdf `extract_text()` | OK | OK | ✓ | ✓ | ✓ |
+| pdfminer.six, default layout analysis | OK | OK | ✓ | ✓ | ✓ |
+| pdfminer.six, `laparams=None` | OK | OK | ✓ | ✓ | ✓ |
 
 Stream order is the mode that matters most: Apache PDFBox, which underpins Tika
 and a lot of enterprise résumé parsing, has `sortByPosition` **off** by default.
@@ -219,27 +229,32 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 
 | Check | Result |
 |---|---|
-| Text is real text, not an image | 536 words selectable |
+| Text is real text, not an image | 543 words selectable |
 | Reading order | every bullet follows its own employer, verified for 5 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
 | Email, phone | present as plain text, regex-matchable |
 | LinkedIn | spelled out as `linkedin.com/in/khan-abir`, not hidden behind anchor text |
 | Section headers | `EDUCATION`, `WORK EXPERIENCE`, `EXTRACURRICULAR & LEADERSHIP`, `SKILLS & ADDITIONAL INFORMATION` all found |
+| Metadata keywords | all 25 also appear in the visible text |
 | Fonts | all 5 embedded as subsets |
 | Pages | 1 |
 | Dates | `MM.YYYY` throughout |
 
-`EXTRACURRICULAR` was added to the audit's list of required headers this pass; it
-was rendering correctly but was not being checked.
-
 ### Metadata says only what the page says
 
-The keyword field stamped by `scripts/finalise.py` used to carry `RWE Consulting`,
-a term present nowhere on the page — flagged as an open item last pass, and fixed
-here. **Every term in the metadata now also appears in the visible text.** An ATS
-that indexes both finds the same words twice either way, and a candidate who
-cannot see a term on their own CV cannot be asked about it in an interview.
+The rule was stated last pass but nothing enforced it, and this pass it caught
+three violations on the first run: the keyword field carried `Financial Risk
+Management`, `Scenario Analysis` and `Advanced Excel`, none of which appear
+verbatim on the page — which reads as *Risk Management*, *Scenario and
+Sensitivity Analysis* and *Advanced Microsoft Excel*. All three were corrected to
+the page's own wording.
+
+`scripts/audit.py` now asserts it: **every comma-separated term in the PDF's
+keyword field must appear in the visible text**, and the audit fails if one does
+not. An ATS that indexes both finds the same words twice either way, and a
+candidate who cannot see a term on their own CV cannot be asked about it in an
+interview.
 
 ## Rebuilding this repo produces a taller page than it used to
 
@@ -313,17 +328,8 @@ your CVs will see the difference:
 | **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens) | **06.2026 – 08.2026** — confirmed |
 | **Trariti location** | Mumbai (Siemens, Strategy, Allianz, DHL) vs Delhi (both Accenture) | **Mumbai** |
 | **Trariti's third bullet** | *"a $10M+ revenue product"* (Allianz) vs *"$10M+ ARR product"* (both Accenture) vs *"$10M+ product"* (Siemens, Strategy) | **"$10M+ revenue product"** |
-
-Two wording calls settled this pass:
-
-- **A&M's plan is a *"$9.8M risk-mitigation plan"***, not a *"cost and
-  risk-mitigation plan"*. Five of six source CVs say the former; only Accenture
-  Strategy adds "cost". The last version carried the minority reading and the
-  audit flagged it. The majority reading is also the one that matters here — this
-  application is about risk.
-- **"Prepared" creditor-negotiation presentations**, not "Advised C-level
-  leadership on creditor-negotiation strategy". Three of four CVs say "prepared";
-  preparing materials for leadership and advising leadership are different claims.
+| **A&M's plan** | *"$9.8M risk-mitigation plan"* (five of six) vs *"cost and risk-mitigation plan"* (Accenture Strategy) | **"risk-mitigation plan"** — the majority reading, and the one that matters for a risk role |
+| **A&M's creditor work** | *"prepared"* (three of four) vs *"advised C-level leadership on strategy"* | **"prepared"** — preparing material for leadership and advising leadership are different claims |
 
 Also worth knowing: `Abir H. Khan_CV_Siemens Advanta.pdf` and
 `Abir H. Khan_CV_Strategy Consulting.pdf` are **byte-identical** — two filenames,
@@ -344,6 +350,7 @@ one document.
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
 | Bottom white | 12.40 mm |
+| Metadata keywords visible on the page | 25 of 25 |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
@@ -363,29 +370,62 @@ Three things deliberately left alone:
 
 ## Before sending
 
-1. **Confirm the work-authorisation line.** The header carries *"No visa
-   sponsorship required"* verbatim from the last CV, where it was written for
-   Germany with the country deliberately dropped. **Luxembourg is a different
-   jurisdiction**, and a German or Portuguese residence permit does not by itself
-   carry the right to work there. If it does not hold for Luxembourg, change or
-   remove the line before sending — this is the one claim on the page that a
-   recruiter can check on day one.
-2. **`Open to relocation to Luxembourg` is new.** It is implied by applying, and
-   it removes the obvious objection to a Munich address on a Luxembourg posting.
-   Remove it if the intention is to ask about remote or Munich-based work.
-3. **If you have studied CRR, Solvency II, PRIIPs, UCITS or AIFMD, say so.**
-   The posting names the first three explicitly as an asset, and they are absent
-   from the page because no source CV evidences them. Adding two or three to the
-   `Focus areas` row is the highest-value keyword edit available. There is 1.5 mm
-   of headroom, so a third line in that row does not fit — a term would have to
-   come out to make room.
-4. **Same for VBA and MATLAB.** Named in the posting as a plus. The page claims
-   Python, SQL and Power BI, which cover *"or other data analytics tools"*.
-5. **The 12-month gap will come up.** Have the answer ready.
-6. **French is not on the page.** The posting treats German and/or French as an
-   advantage; German (B1) is there. Add French only if there is a real level to
-   state.
-7. **Back-port the corrections to the other five CVs.** Class rank is top 10%,
+The first two items are Deloitte *must-haves* that this CV cannot satisfy from
+the source material. They are ordered by how much they change the application.
+
+Each of the first three was **built and measured**, not estimated. The page has
+1.5 mm of headroom, so a naive insertion wraps a row and pushes the CV to two
+pages: adding `French (B2)` and `VBA` as straight additions takes it to 303.8 mm.
+The swaps below were tested and all hold the page at **295.5 mm**.
+
+1. **French — the one that decides the application.** The posting says *"Be
+   fluent in French and English"* under **Must have**, and Luxembourg means it:
+   French is a working language of the country and of Deloitte's local client
+   base. **No source CV mentions French at all**, so none was invented here.
+   If there is a real level, make this swap in the Languages row — drop
+   `Portuguese (Basic)`, which is the least useful entry for a Luxembourg role:
+
+   ```
+   English (Fluent), French (B2), German (B1, improving), Hindi (Fluent), Bengali (Fluent)
+   ```
+
+   Tested: 295.5 mm, one line, still fits. If there is genuinely no French, this
+   application is a stretch on a stated must-have — better to say so directly in
+   the cover letter than to let the CV imply otherwise.
+2. **VBA.** Named in the same must-have line as Excel, Word and PowerPoint, and
+   not claimed because nothing evidences it. Adding it alone wraps the Technical
+   row, which has only ~4 characters of slack. Trade `Data Analytics` for it —
+   a generic umbrella term for a named must-have:
+
+   ```
+   Advanced Microsoft Excel, VBA, PowerPoint, Word, Power BI, SQL, Python, Generative AI
+   ```
+
+   Tested: 295.5 mm, one line, still fits.
+3. **CRR/CRD IV and IFRS 9.** Named under *Nice to have*. These are the one edit
+   that needs **no** trade — `Focus areas` has 38 mm of slack on its second line:
+
+   ```
+   Credit Risk, Liquidity Risk, Market Risk, CRR/CRD IV, IFRS 9, Value at Risk (VaR), ...
+   ```
+
+   Tested: 295.5 mm, still two lines, 5.8 mm to spare. Add either or both only if
+   they were genuinely covered in the Nova Risk Management course.
+4. **SAS and R.** Also *nice to have*. Python and SQL are on the page and cover
+   the posting's *"or other data analytics tools"* intent; add SAS or R only if
+   real, and note the Technical row is the tightest line on the page — each needs
+   a trade like VBA's.
+5. **Confirm the work-authorisation line.** The header carries *"No visa
+   sponsorship required"*, written originally for Germany with the country
+   deliberately dropped. **Luxembourg is a different jurisdiction**, and a German
+   or Portuguese residence permit does not by itself carry the right to work
+   there. If it does not hold for Luxembourg, change or remove the line before
+   sending — this is the one claim on the page a recruiter can check on day one.
+6. **`Open to relocation to Luxembourg`** is implied by applying and removes the
+   obvious objection to a Munich address. Remove it only if the intention is to
+   ask about remote or Munich-based work.
+7. **The 12-month gap will come up.** 08.2024 to 07.2025. Have the answer ready.
+8. **Back-port the corrections to the other five CVs.** Class rank is top 10%,
    SCAILE ended 08.2026, and Trariti's location is Mumbai; the Allianz and
    Accenture CVs still disagree on the first two. They also still carry "Eligible
    for visa sponsorship" rather than "No visa sponsorship required", and all of
