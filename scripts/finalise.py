@@ -42,7 +42,7 @@ doc.set_metadata({
                  "Operating Model Transformation, Restructuring, Turnaround, "
                  "Venture Capital, Private Equity, "
                  "Advanced Microsoft Excel, PowerPoint, Power BI, SQL, Python, Data Analytics, "
-                 "MSc Finance, Nova SBE, Dubai, Doha"),
+                 "MSc Finance, Nova SBE, Dubai, Doha, Arabic"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })

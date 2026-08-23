@@ -185,7 +185,7 @@ Oliver Wyman's posting screens on a list. Each item is mapped to a place on the 
 | **Strong problem solving and analytical mindset** | **Top 3 of 15,000** nationally — in the header *and* in Education; Draycott PE Challenge Team Lead |
 | **Extracurriculars; an impactful life outside studies** | Three entries — Hack-Nation, Impact Consulting, UN Foundation — plus the `Interests` row |
 | **Fluency in English** | `Languages` row leads with English (Fluent) |
-| **Proficiency in Arabic (advantage)** | **Not claimed.** See *Before sending* |
+| **Proficiency in Arabic (advantage)** | `Languages` row, second entry: **Arabic (Basic)** — stated at the level it is |
 | **Office: Dubai / Doha** | *"Open to relocation to Dubai or Doha"*, header line 4 |
 
 Two choices carried over from the source CVs:
@@ -230,10 +230,16 @@ on. Nothing was lost: **VC/PE** appears in the header and in the TCG bullet,
 *Venture Capital Intern* is a role title, *commercial due diligence* is a
 bullet, and *Draycott Private Equity Challenge* is in Education.
 
-**What is deliberately not claimed:** Arabic, any Middle East experience,
-workshop facilitation, and survey design. The posting names Arabic as an
-advantage and workshops as part of the job; nothing in any source CV evidences
-any of them. See *Before sending*.
+**What is deliberately not claimed:** any Middle East experience, workshop
+facilitation, and survey design. The posting names workshops as part of the job;
+nothing in any source CV evidences them. See *Before sending*.
+
+**Arabic is on the page at Basic**, added on the candidate's instruction and
+placed second in the `Languages` row, straight after English — it is the term
+this posting names as an advantage, so it should be where a recruiter's eye
+lands. The level is written next to it rather than left to inference: the
+posting asks for *proficiency*, Basic is not proficiency, and a Gulf interview
+tests it in the first minute.
 
 ## Written for the ATS
 
@@ -281,7 +287,7 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 
 | Check | Result |
 |---|---|
-| Text is real text, not an image | 536 words selectable |
+| Text is real text, not an image | 537 words selectable |
 | Reading order | every bullet follows its own employer, verified for 6 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
@@ -302,7 +308,7 @@ or the build fails.
 
 It earned its keep immediately: it caught `Private Capital` still sitting in the
 keyword list minutes after that term had been dropped from the `Focus areas`
-row. Current state: **28 keywords, all of them on the page.**
+row. Current state: **29 keywords, all of them on the page.**
 
 An ATS that indexes both fields finds the same words twice either way, and a
 candidate who cannot see a term on their own CV cannot be asked about it in an
@@ -377,7 +383,7 @@ your CVs will see the difference:
 |---|---|---|
 | **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens, RWE) | **top 10%** — confirmed |
 | **Nova end date** | 12.2026 (four CVs) vs 01.2027 (DHL) | **12.2026** — confirmed |
-| **German** | B1 (Allianz, both Accenture) vs Intermediate (Siemens) vs Basic (DHL) | **B1** |
+| **German** | B1 (Allianz, both Accenture) vs Intermediate (Siemens) vs Basic (DHL) | **B1** — the *"improving"* the source CVs append was dropped to fit Arabic on the line; the claim is unchanged |
 | **SCAILE** | since 06.2026 (Allianz, both Accenture) vs 06.2026 – 08.2026 (Siemens, RWE) | **06.2026 – 08.2026** — confirmed |
 | **TCG location** | Mumbai (Siemens, Strategy, Allianz, DHL) vs Delhi (both Accenture) | **Mumbai** |
 | **TCG's third bullet** | *"a $10M+ revenue product"* (Allianz) vs *"$10M+ ARR product"* (both Accenture) vs *"$10M+ product"* (Siemens, Strategy) | **"$10M+ revenue product"** |
@@ -411,7 +417,7 @@ one document.
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
 | Bottom white | 14.78 mm |
-| Metadata keywords on the page | 28 of 28 |
+| Metadata keywords on the page | 29 of 29 |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
@@ -431,12 +437,16 @@ Three things deliberately left alone:
 
 ## Before sending
 
-1. **If you have any Arabic, put it on the page.** The posting names it as an
-   advantage, and this is by far the highest-value edit available for a Dubai /
-   Doha application. The `Languages` row is a single line with room on it — a
-   term can be added without costing the page a millimetre. It is absent only
-   because no source CV evidences it. Do not add it otherwise; it is trivially
-   tested in a Gulf interview.
+1. **Arabic (Basic) is now on the page, and no source CV evidences it.** It was
+   added on instruction, so the level stated has to be one you can defend: a
+   Gulf interviewer may open in Arabic to see what *Basic* means. If it
+   overstates where you actually are, say so and it comes off — the row has
+   9 mm of slack and the page does not move either way. If it understates you,
+   raise it: *proficiency* is what the posting asks for, and `Arabic
+   (Conversational)` or a CEFR level would read stronger than `(Basic)`.
+   Fitting it cost `German (B1, improving)` its last word — the row would have
+   wrapped to a second line otherwise, and the page has only 3.6 mm of
+   headroom against a 4.23 mm line.
 2. **Confirm the relocation line.** *"Open to relocation to Dubai or Doha"* is
    new and is what makes a Munich address make sense on a Gulf posting. Remove
    it only if the intention is to ask about a European office.
