@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Renders cv.html -> Abir_Khan_CV.pdf (A4) and verifies it fits ONE page.
+ * With --src/--out, renders any other page in this repo the same way.
  *
  * The one-page rule is a hard requirement for this application, so it is
  * enforced here rather than eyeballed: the script measures the natural
@@ -9,6 +10,7 @@
  *
  *   node build.mjs            build + check
  *   node build.mjs --png      also write a preview PNG for visual QA
+ *   node build.mjs --src=cover-letter.html --out=Abir_Khan_Cover_Letter.pdf
  */
 
 import { chromium } from 'playwright';
@@ -16,10 +18,17 @@ import { pathToFileURL } from 'node:url';
 import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const ROOT     = path.dirname(new URL(import.meta.url).pathname);
-const SRC      = path.join(ROOT, 'cv.html');
-const PDF_OUT  = path.join(ROOT, 'Abir_Khan_CV.pdf');
-const PNG_OUT  = path.join(ROOT, 'preview.png');
+const ROOT = path.dirname(new URL(import.meta.url).pathname);
+
+// Defaults build the CV. --src/--out point the same pipeline at the cover
+// letter, which shares the template and so wants the same one-page check.
+const arg = (name, fallback) => {
+  const hit = process.argv.find((a) => a.startsWith(`--${name}=`));
+  return hit ? hit.slice(name.length + 3) : fallback;
+};
+const SRC     = path.join(ROOT, arg('src', 'cv.html'));
+const PDF_OUT = path.join(ROOT, arg('out', 'Abir_Khan_CV.pdf'));
+const PNG_OUT = path.join(ROOT, arg('png', 'preview.png'));
 
 const A4_H_MM  = 297;
 const MM_PER_PX = 25.4 / 96;          // CSS px -> mm at the 96dpi print base

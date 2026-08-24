@@ -11,10 +11,46 @@ recruiters.
 import pymupdf, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SRC  = ROOT / "Abir_Khan_CV.pdf"
-OUT  = ROOT / "Abir_Hilal_Khan_CV.pdf"
-# Repo convention for a tailored copy: "Abir Hilal Khan_CV_<target>.pdf".
-NAMED = ROOT / "Abir Hilal Khan_CV_Oliver Wyman.pdf"
+
+# Two documents go out with this application, and both want the same
+# treatment: real metadata, an exact A4 mediabox, and a copy named by the
+# repo convention "Abir Hilal Khan_<kind>_<target>.pdf".
+#
+# Every keyword below also appears in the document's own visible text; that
+# is asserted at the bottom rather than trusted, so a keyword cannot outlive
+# the line on the page that justified it.
+CV = {
+    "src":   "Abir_Khan_CV.pdf",
+    "out":   "Abir_Hilal_Khan_CV.pdf",
+    "named": "Abir Hilal Khan_CV_Oliver Wyman.pdf",
+    "title": "Abir Hilal Khan - CV",
+    "subject": "Curriculum Vitae",
+    "keywords": ("Strategy Consulting, Structured Problem Solving, "
+                 "Root-Cause Analysis, Market Sizing, Competitive Benchmarking, Market Entry, "
+                 "Commercial Due Diligence, Financial Modelling, Scenario Models, "
+                 "Stakeholder Interviews, Executive Communication, Growth Strategy, "
+                 "Operating Model Transformation, Restructuring, Turnaround, "
+                 "Venture Capital, Private Equity, Private Capital, "
+                 "Advanced Microsoft Excel, PowerPoint, Power BI, SQL, Python, Data Analytics, "
+                 "MSc Finance, Nova SBE, Arabic"),
+}
+LETTER = {
+    "src":   "Abir_Khan_Cover_Letter.pdf",
+    "out":   "Abir_Hilal_Khan_Cover_Letter.pdf",
+    "named": "Abir Hilal Khan_Cover Letter_Oliver Wyman.pdf",
+    "title": "Abir Hilal Khan - Cover Letter",
+    "subject": "Cover Letter",
+    "keywords": ("Oliver Wyman, Consultant, Dubai, Doha, Nova SBE, "
+                 "Alvarez & Marsal, Trariti Consulting Group, Biome Venture Studio, "
+                 "turnaround, Fortune 500, Chapter 11, scenario models, "
+                 "creditor-negotiation, growth strategy, stakeholder interviews, "
+                 "National Case Study Challenge, Draycott Private Equity Challenge"),
+}
+spec = LETTER if len(sys.argv) > 1 and sys.argv[1] == "letter" else CV
+
+SRC   = ROOT / spec["src"]
+OUT   = ROOT / spec["out"]
+NAMED = ROOT / spec["named"]
 
 A4_W, A4_H = 595.276, 841.890          # exact A4 in points
 
@@ -29,20 +65,10 @@ for page in doc:
     assert r.width >= A4_W - 0.01 and r.height >= A4_H - 0.01, "page smaller than A4"
     page.set_mediabox(pymupdf.Rect(0, 0, A4_W, A4_H))
 doc.set_metadata({
-    "title":    "Abir Hilal Khan - CV",
+    "title":    spec["title"],
     "author":   "Abir Hilal Khan",
-    "subject":  "Curriculum Vitae",
-    # Every term here also appears on the page. Metadata that names things a
-    # reader cannot see is keyword stuffing, and an ATS that indexes both will
-    # find the same words twice either way.
-    "keywords": ("Strategy Consulting, Structured Problem Solving, "
-                 "Root-Cause Analysis, Market Sizing, Competitive Benchmarking, Market Entry, "
-                 "Commercial Due Diligence, Financial Modelling, Scenario Models, "
-                 "Stakeholder Interviews, Executive Communication, Growth Strategy, "
-                 "Operating Model Transformation, Restructuring, Turnaround, "
-                 "Venture Capital, Private Equity, Private Capital, "
-                 "Advanced Microsoft Excel, PowerPoint, Power BI, SQL, Python, Data Analytics, "
-                 "MSc Finance, Nova SBE, Arabic"),
+    "subject":  spec["subject"],
+    "keywords": spec["keywords"],
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })
@@ -69,4 +95,12 @@ for im in p.get_images(full=True):
         dpi = info['width'] / (r.width * 25.4 / 72 / 25.4)
         print(f"  photo    {info['width']}x{info['height']} -> {dpi:.0f} DPI at {r.width*25.4/72:.1f}mm")
 print(f"  text     {len(p.get_text().split())} words selectable (ATS-readable)")
+
+# Metadata may only name what the reader can see. Asserted here so it holds
+# for the cover letter too, not just for the CV that audit.py checks.
+flat = " ".join(p.get_text().split()).lower()
+missing = [k.strip() for k in spec["keywords"].split(",")
+           if k.strip() and k.strip().lower() not in flat]
+assert not missing, f"keywords absent from the visible text: {missing}"
+print(f"  keywords {len(spec['keywords'].split(','))} stamped, all present in the visible text")
 print(f"  copy     {NAMED.name}")

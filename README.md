@@ -1,4 +1,4 @@
-# CV — Oliver Wyman, Consultant (entry level), Dubai / Doha
+# CV and cover letter — Oliver Wyman, Consultant (entry level), Dubai / Doha
 
 A one-page A4 CV, tailored to Oliver Wyman's entry-level consulting intake for
 its **Dubai / Doha** offices. The posting screens for structured problem
@@ -18,6 +18,10 @@ npm install          # installs playwright
 npm run build        # -> Abir_Khan_CV.pdf, with a one-page check
 npm run preview      # also writes preview.png for visual QA
 npm run share        # -> the files to actually send, then audits them
+```
+
+```bash
+npm run letter       # -> Abir Hilal Khan_Cover Letter_Oliver Wyman.pdf
 ```
 
 `npm run share` builds, runs `scripts/finalise.py` (needs `pymupdf`), then runs
@@ -60,6 +64,60 @@ Current state: **293.4 mm of 297 mm, one page, 3.6 mm headroom** — two
 millimetres shorter than the last pass. Still short of a line, which is 4.23 mm
 at this size, so anything added to the body has to be traded against something
 already there.
+
+## The cover letter
+
+Oliver Wyman asks for a CV, a cover letter and transcripts. `cover-letter.html`
+is the second of those, built by the same pipeline: `npm run letter` renders it,
+checks it fits one page, counts unfilled placeholders, then stamps metadata and
+writes `Abir Hilal Khan_Cover Letter_Oliver Wyman.pdf`.
+
+It shares the CV's letterhead, so the two documents read as one application:
+same navy, same top bar, same margins, same face. Body type is **10.5 pt, not
+the CV's 9.35 pt** — the CV is squeezed by its one-line-per-bullet rule, and
+running prose at 9.35 pt reads cramped. The letter has no photograph and lands
+at 239.8 mm of 297 mm, so length is not a constraint on it.
+
+### Written against Clay's AI writing policy
+
+Drafted to the policy at `clay.com/blog/ai-writing-policy`, whose four
+principles are: **stand behind every sentence** (you cannot disown a line by
+saying an AI wrote it), **writing is thinking**, **a document should take longer
+to write than to read**, and **length is no virtue**. What that changed:
+
+| Principle | What it did to the draft |
+|---|---|
+| Length is no virtue | **240 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
+| Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
+| Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
+
+The house style follows the CV's: **no em or en dashes**, no *delve*, *leverage*,
+*robust*, *landscape*, *passionate*, *resonate*, *thrilled*; no paragraph opening
+with *Moreover*, *Furthermore* or *Additionally*.
+
+### The two placeholders are the point
+
+They are written as `«...»`, the repo's existing convention, so `build.mjs`
+counts them and reports **"2 unfilled — not ready to send"** until they are
+replaced. The build does not fail on them; it just refuses to call the document
+ready.
+
+1. **Why Dubai or Doha.** This is the gap the CV itself has, since the
+   availability line came out of the header: the page gives a Munich address and
+   no Gulf connection. The letter is now the only place that question gets an
+   answer.
+2. **Why Oliver Wyman rather than another firm.** Needs something specific — a
+   piece of their work, a person spoken to, an event attended. A generic answer
+   here is worse than none, and it is exactly the sentence a first-round
+   interviewer follows up on.
+
+Two other lines to check before sending: the **date** is hardcoded as
+*24 August 2026*, and *"I can start from January 2027"* is inferred from the
+MSc finishing in 12.2026 rather than stated by any source. The 12-month gap
+(08.2024 to 07.2025) is deliberately **not** raised in the letter — the space is
+better spent on the affirmative case — but it is a paragraph's worth of material
+if there is a good answer for it.
 
 ## The founder venture stays out; TCG stays in
 
@@ -458,14 +516,15 @@ Three things deliberately left alone:
    Fitting it cost `German (B1, improving)` its last word — the row would have
    wrapped to a second line otherwise, and the page has only 3.6 mm of
    headroom against a 4.23 mm line.
-2. **Put the relocation intent in the cover letter, or put the line back.**
-   The page no longer says Dubai, Doha, relocation or travel anywhere, and the
-   contact line reads *Munich, Germany*. For a posting whose location is in its
-   title, that is the single largest screening risk left on this CV. The
-   posting requires a cover letter, so the intent can live there — but it has
-   to be stated somewhere. Restoring *"Open to relocation to Dubai or Doha |
-   Willing to travel internationally"* is one line in the header and costs the
-   page nothing, because the photograph, not the text, sets the header height.
+2. **Fill the cover letter's two placeholders.** `npm run letter` reports
+   *"2 unfilled — not ready to send"* until they are. The first of them is
+   load-bearing: the CV no longer says Dubai, Doha, relocation or travel
+   anywhere, and its contact line reads *Munich, Germany*, so for a posting
+   whose location is in its title the letter is now the only place that
+   question gets answered. If you would rather it were on the CV as well,
+   restoring *"Open to relocation to Dubai or Doha | Willing to travel
+   internationally"* is one line in the header and costs the page nothing,
+   because the photograph, not the text, sets the header height.
 3. **Do not reinstate "No visa sponsorship required."** It was written for
    Germany and is false for the UAE and Qatar, where the employer sponsors
    every expatriate hire. If a nationality or current-residence line is wanted —

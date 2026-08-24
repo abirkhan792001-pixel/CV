@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abir Hilal Khan - Cover Letter</title>
+<link rel="stylesheet" href="./assets/fonts/fonts.css">
+<style>
+/* ============================================================
+   One-page A4 cover letter - Oliver Wyman, Consultant,
+   Dubai / Doha.
+
+   Shares the CV's letterhead so the two documents read as one
+   application: same navy, same margins, same face, same top bar.
+   Only the subset of the CV's CSS that a letter needs is copied
+   here; there are no entries, bullets, grid or photo.
+
+   Body type is 10.5pt, not the CV's 9.35pt. The CV is squeezed by
+   its one-line-per-bullet rule; a letter has no such constraint
+   and 9.35pt would read as cramped in running prose.
+   ============================================================ */
+
+:root{
+  --navy:    #0c447c;
+  --link:    #0563c1;
+  --ink:     #000000;
+
+  --page-w:  210mm;
+  --page-h:  297mm;
+
+  --pad-t:   13.02mm;
+  --pad-l:   19.06mm;
+  --pad-r:   18.16mm;
+  --pad-b:   14mm;
+
+  --fs-base: 10.5pt;
+  --fs-name: 17.04pt;
+  --lh:      1.42;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ background:#8b9099; }
+
+body{
+  font-family:'Liberation Serif', 'Times New Roman', Times, serif;
+  font-size:var(--fs-base);
+  line-height:var(--lh);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  width:var(--page-w);
+  min-height:var(--page-h);
+  padding:var(--pad-t) var(--pad-r) var(--pad-b) var(--pad-l);
+  margin:0 auto;
+  background:#fff;
+}
+
+.topbar{ height:1.57mm; background:var(--navy); }
+
+.name{
+  font-size:var(--fs-name);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.1;
+  letter-spacing:0.0589em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  margin-top:1.03mm;
+}
+
+.contact{ margin-top:1.6mm; font-size:9.35pt; }
+.contact a{ color:var(--link); text-decoration:underline; }
+.contact .sep{ margin:0 4.9pt; }
+
+.rule{ height:0.34mm; background:var(--navy); margin-top:2.6mm; }
+
+.date{ margin-top:6mm; }
+.to{ margin-top:5mm; }
+.subject{ margin-top:5mm; font-weight:700; }
+
+p{ margin-top:4.2mm; }
+p.salutation{ margin-top:5.5mm; }
+
+.gap{ margin-top:4.2mm; font-style:italic; color:#444; }
+
+.sign{ margin-top:6.5mm; }
+.sign .who{ font-weight:700; margin-top:5.5mm; }
+
+@page{ size:A4; margin:0; }
+@media print{ html{ background:#fff; } .page{ margin:0; box-shadow:none; } }
+@media screen{ .page{ box-shadow:0 2px 18px rgba(0,0,0,.35); margin:18px auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar"></div>
+  <div class="name">Abir Hilal Khan</div>
+  <div class="contact">
+    Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">linkedin.com/in/khan-abir</a>
+  </div>
+  <div class="rule"></div>
+
+  <div class="date">24 August 2026</div>
+
+  <div class="to">Oliver Wyman<br>Graduate Recruiting, Middle East</div>
+
+  <div class="subject">Application: Consultant, Dubai / Doha</div>
+
+  <p class="salutation">Dear Oliver Wyman Recruiting Team,</p>
+
+  <p>I am applying to join Oliver Wyman as a consultant in Dubai or Doha. I finish an
+  MSc in Finance at Nova SBE in December 2026. The work in this posting is a larger
+  version of what I have been doing since 2022: structure the problem, gather the
+  data to test it, and put the answer in front of the person who has to decide.</p>
+
+  <p>At Alvarez &amp; Marsal I ran a turnaround workstream for Fortune 500 clients in
+  U.S. Chapter 11 proceedings, covering over $100M in debt and leases. I built the
+  scenario models behind a $9.8M risk-mitigation plan that informed board-level
+  decisions, traced operating and cash-flow problems back to their root causes, and
+  prepared the creditor-negotiation materials that preserved $2.5M in enterprise
+  value.</p>
+
+  <p>At Trariti Consulting Group I advised VC and PE firms on early-stage growth
+  strategy and ran more than 90 stakeholder interviews, turning what I heard into
+  recommendations for a product doing over $10M in revenue. At Biome Venture Studio
+  I screened 3,000+ companies against a $170M investment pipeline on market size,
+  competition and scalability risk.</p>
+
+  <p>I also test myself against a clock. I placed top three of 15,000 nationally in
+  India&rsquo;s National Case Study Challenge, and led my team at the Draycott Private
+  Equity Challenge this year.</p>
+
+  <p class="gap">«Why Dubai or Doha. One or two sentences, in your own words. Your CV
+  gives a Munich address and no Gulf connection, so this paragraph is the only place
+  the question gets answered.»</p>
+
+  <p class="gap">«Why Oliver Wyman and not another firm. Name something specific: a
+  piece of their work you have read, someone there you have spoken to, an event you
+  attended.»</p>
+
+  <p>I can start from January 2027 and would move to either office. My CV and
+  transcripts are attached.</p>
+
+  <div class="sign">
+    Yours sincerely,
+    <div class="who">Abir Hilal Khan</div>
+  </div>
+
+</div>
+</body>
+</html>
