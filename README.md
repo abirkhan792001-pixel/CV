@@ -87,7 +87,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **240 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **255 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -95,6 +95,21 @@ to write than to read**, and **length is no virtue**. What that changed:
 The house style follows the CV's: **no em or en dashes**, no *delve*, *leverage*,
 *robust*, *landscape*, *passionate*, *resonate*, *thrilled*; no paragraph opening
 with *Moreover*, *Furthermore* or *Additionally*.
+
+The letter was then rewritten once end to end, on request, under the
+`remove-ai-marks` skill's Layer B paraphrase brief: change wording at the token
+level, reorder clauses, vary sentence boundaries, and keep every fact, figure
+and name. The second draft shares **59% of its vocabulary** with the first and
+introduces 47 words the first did not use; all eighteen figures and proper nouns
+were checked to survive. Two caveats are recorded rather than glossed:
+
+- **Layer A never ran.** The skill's cleaning service was unreachable in that
+  environment, and the skill forbids falling back to local cleaning, so no
+  invisible-Unicode or metadata pass was performed. Nothing here should be read
+  as a claim that the file has been scanned or cleared.
+- **A rewrite by the same model family as the draft is not what Layer B
+  prescribes** (it calls for a model other than the suspected origin), so this
+  is an editorial rewrite, not an anti-detection result.
 
 ### The two placeholders are the point
 
@@ -378,6 +393,13 @@ or the build fails.
 It earned its keep immediately: it caught `Private Capital` still sitting in the
 keyword list minutes after that term had been dropped from the `Focus areas`
 row. Current state: **27 keywords, all of them on the page.**
+
+The same assertion runs in `finalise.py`, so the cover letter is held to it too.
+One bug surfaced there and is fixed: a hyphenated compound can take its line
+break **at its own hyphen**, so the flattened text stream holds
+*"creditor- negotiation"* for a word the reader sees whole, and a naive
+substring check fails on layout rather than on content. Both checks now also
+test the rejoined variant.
 
 An ATS that indexes both fields finds the same words twice either way, and a
 candidate who cannot see a term on their own CV cannot be asked about it in an

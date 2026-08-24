@@ -83,8 +83,12 @@ check(abs(photo.x1 * PT - max(r.x1 * PT for r in rules)) < 0.1,
 # page. Checked here rather than by hand: a keyword a candidate cannot see on
 # their own CV is one they cannot be asked about in an interview.
 flat = " ".join(text.split()).lower()
+# A hyphenated compound can take the line break at its own hyphen, leaving
+# "creditor- negotiation" in the stream for a word the reader sees whole.
+rejoined = flat.replace("- ", "-")
 missing = [k.strip() for k in doc.metadata.get("keywords", "").split(",")
-           if k.strip() and k.strip().lower() not in flat]
+           if k.strip() and k.strip().lower() not in flat
+           and k.strip().lower() not in rejoined]
 check(not missing, "every metadata keyword also appears in the visible text",
       "missing: " + ", ".join(missing) if missing else
       f"{len(doc.metadata.get('keywords', '').split(','))} keywords, all on the page")

@@ -99,8 +99,13 @@ print(f"  text     {len(p.get_text().split())} words selectable (ATS-readable)")
 # Metadata may only name what the reader can see. Asserted here so it holds
 # for the cover letter too, not just for the CV that audit.py checks.
 flat = " ".join(p.get_text().split()).lower()
+# A hyphenated compound can take the line break at its own hyphen, so the
+# flattened stream holds "creditor- negotiation" for a word the reader sees
+# whole. Check the rejoined variant too, or the assertion fails on layout.
+rejoined = flat.replace("- ", "-")
 missing = [k.strip() for k in spec["keywords"].split(",")
-           if k.strip() and k.strip().lower() not in flat]
+           if k.strip() and k.strip().lower() not in flat
+           and k.strip().lower() not in rejoined]
 assert not missing, f"keywords absent from the visible text: {missing}"
 print(f"  keywords {len(spec['keywords'].split(','))} stamped, all present in the visible text")
 print(f"  copy     {NAMED.name}")
