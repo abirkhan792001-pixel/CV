@@ -87,7 +87,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **290 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **442 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -131,40 +131,51 @@ result rather than of the brief:
   is gone, and the paragraph now opens on a plain *"Earlier, at ..."*, which is
   also nine words shorter.
 
-### The three placeholders are the point
+### The placeholders, and what filled them
 
-They are written as `«...»`, the repo's existing convention, so `build.mjs`
-counts them and reports **"3 unfilled — not ready to send"** until they are
-replaced. The build does not fail on them; it just refuses to call the document
-ready.
+The letter shipped with three `«...»` placeholders, counted by `build.mjs` and
+reported as *"not ready to send"*. All three are now filled, from three earlier
+cover letters the candidate wrote himself (Hilti Outperformer, E.ON Inhouse
+Consulting, DHL Consulting). The rule stayed the same as for the CV: **claims
+come from the sources, not from the drafter.**
 
-1. **Why Dubai or Doha.** This is the gap the CV itself has, since the
-   availability line came out of the header: the page gives a Munich address and
-   no Gulf connection. The letter is now the only place that question gets an
-   answer.
-2. **Why Oliver Wyman rather than another firm.** Needs something specific — a
-   piece of their work, a person spoken to, an event attended. A generic answer
-   here is worse than none, and it is exactly the sentence a first-round
-   interviewer follows up on.
-3. **The date.** It was hardcoded as *24 August 2026*, which is wrong the moment
-   the letter is not sent that day, and wrong silently. Making it a placeholder
-   puts it in the same "not ready to send" count as the other two, so the three
-   get filled together on the day it actually goes out.
+- **Why Dubai or Doha.** The mobility half is his own: *"I don't just relocate;
+  I integrate"* is lifted from the Hilti letter, and the four countries and the
+  New York / Chicago collaboration are in the Hilti and E.ON letters and on the
+  CV. **The regional half is not sourced** — none of the three letters mentions
+  the Gulf, the Middle East, Dubai or Doha even once. The sentence about
+  diversification being an operating agenda is an argument built for him, and it
+  is the one line in this letter he should confirm or replace before sending.
+- **Why Oliver Wyman.** Argued from the posting's own distinctive offer — the
+  choice to *"specialize early or explore different areas before choosing a
+  path"* — against a record that is deliberately cross-domain. The opening,
+  *"My interest in Oliver Wyman is specific"*, is his own construction from the
+  DHL letter.
+- **The date.** Set to the build date.
 
-Two claims were also pulled back to what the sources support:
+One further change came out of reading the sources. **Biome's bullet was
+volume; now it is initiative.** It read *"took 3,000+ companies through a $170M
+pipeline, judging each on market size, competition and how far it could scale"*.
+The DHL letter carries a far better version of the same job: given a sector
+brief, he argued the fund's thesis was underweight on decarbonisation, rebuilt
+the evaluation framework, and took a revised case to the VP. Oliver Wyman screens
+explicitly for *initiative, intuition, and creativity*, and that is the best
+evidence of it in any of the source documents.
 
-- ***"I placed in the top three of 15,000"*** now reads **15,000
-  participants**. Without the noun the figure is ambiguous about what it counts.
-- ***"I am available from January 2027"*** is gone. No source states a start
-  date; it was inferred from the MSc finishing in 12.2026. The close now reads
-  *"I would move to either city and can start once Nova finishes"*, which asserts
-  only the sourced fact and drops a second mention of December 2026 that the
-  first sentence already makes. **If a specific start date is true, say it** —
-  a real date is stronger than a derived one.
+### What the three letters disagree about
 
-The 12-month gap (08.2024 to 07.2025) is deliberately **not** raised in the
-letter — the space is better spent on the affirmative case — but it is a
-paragraph's worth of material if there is a good answer for it.
+Worth settling, because a recruiter comparing two of his applications will see it:
+
+| | Says | Note |
+|---|---|---|
+| **A&M deal scale** | *"multibillion-dollar restructuring deals"* (E.ON) vs *"over $100M in debt and lease obligations"* (Hilti, DHL) | The CV and this letter use **$100M**, the majority and conservative reading. The E.ON figure is an order of magnitude out and is the one to stop using |
+| **Nova FT rank** | **#5** (DHL, 05.2025) vs **#8** (this repo's CV) | Rankings move, but pick one and use it everywhere |
+| **German** | **A1** (Hilti, 01.2026) vs **B1** (CV) | Seven months apart, so plausible progression. Confirm it is current |
+| **Consulting Club** | *"Associate Secretary of the Consulting Club"* (Hilti) | **Not on the CV at all.** A consulting-club office is directly relevant to this application and is missing from the page |
+| **Biome's name** | *"my VC Fellowship"* (Hilti) vs *"Biome Venture Studio, Venture Capital Intern"* (CV) | If these are the same thing, name it the same way twice |
+
+The 12-month gap (08.2024 to 07.2025) is still deliberately **not** raised in the
+letter, and none of the three source letters accounts for it either.
 
 ## The founder venture stays out; TCG stays in
 
@@ -570,15 +581,15 @@ Three things deliberately left alone:
    Fitting it cost `German (B1, improving)` its last word — the row would have
    wrapped to a second line otherwise, and the page has only 3.6 mm of
    headroom against a 4.23 mm line.
-2. **Fill the cover letter's three placeholders.** `npm run letter` reports
-   *"3 unfilled — not ready to send"* until they are. The first of them is
-   load-bearing: the CV no longer says Dubai, Doha, relocation or travel
-   anywhere, and its contact line reads *Munich, Germany*, so for a posting
-   whose location is in its title the letter is now the only place that
-   question gets answered. If you would rather it were on the CV as well,
-   restoring *"Open to relocation to Dubai or Doha | Willing to travel
-   internationally"* is one line in the header and costs the page nothing,
-   because the photograph, not the text, sets the header height.
+2. **Confirm one sentence in the cover letter.** *"The Gulf interests me because
+   diversification there is an operating agenda rather than a slide"* is the only
+   claim in either document that no source supports — none of the three earlier
+   cover letters mentions the region at all. Everything else traces to something
+   he wrote or did. Confirm it, or replace it with the real reason. If you would
+   rather the CV carried the relocation signal too, restoring *"Open to
+   relocation to Dubai or Doha | Willing to travel internationally"* is one line
+   in the header and costs the page nothing, because the photograph, not the
+   text, sets the header height.
 3. **Do not reinstate "No visa sponsorship required."** It was written for
    Germany and is false for the UAE and Qatar, where the employer sponsors
    every expatriate hire. If a nationality or current-residence line is wanted —
