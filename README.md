@@ -192,21 +192,51 @@ reading-order marker to that exact phrase, so both markers were retargeted to
 *"Top 10% of the class"*; the second one is a bare `all()` over matching lines,
 which would have passed **vacuously** on an empty match set rather than failing.
 
-### A possible answer to the 12-month gap
+### The 12-month gap is closed
 
-The E.ON letter, dated 28.09.2025, says: *"I supported an energy startup as a
+The E.ON letter, dated 28.09.2025, said: *"I supported an energy startup as a
 Founder's Associate, leading digital transformation and customer-centric
-innovation in the sector."* That cannot be SCAILE, which began 06.2026. It
-describes a role held **before September 2025**, which lands inside the
-unexplained **08.2024 to 07.2025** window this CV has carried through every pass
-as unfixable without a fact only the candidate has.
+innovation in the sector."* That could not be SCAILE, which began 06.2026, so it
+described a role held before September 2025 — inside the unexplained **08.2024
+to 07.2025** window this CV had carried through every pass as unfixable without
+a fact only the candidate had.
 
-It needs a company name and dates before it can go on the page. If they exist,
-this is the highest-value edit left in the repo: it closes the one gap a
-consulting interviewer is most likely to open on.
+He has now supplied it: **a stealth energy venture backed by Antler.** It is on
+the page as a work entry between SCAILE and A&M, named *Stealth Energy Venture
+(backed by Antler)*. Naming the backer is the point — a bare *"stealth"* entry
+asks the reader to take an unverifiable claim on trust, while Antler is a
+recognisable early-stage investor, so the entry carries its own credibility.
 
-The 12-month gap (08.2024 to 07.2025) is still deliberately **not** raised in the
-letter, and none of the three source letters accounts for it either.
+**It still needs a location and a date range.** Both are `«placeholders»`, so
+`build.mjs` reports *"2 unfilled"* and `audit.py` now **fails** until they are
+filled. Do not send this version.
+
+### What the entry cost
+
+3 lines and an entry margin, 14.66 mm, against 3.6 mm of headroom. It was paid
+for by **dropping the United Nations Foundation entry**, which costs exactly the
+same, so the page did not move: 293.4 mm before and after, with no other line
+touched.
+
+That was the trade, and it is a real loss worth stating. UN Foundation was the
+only entry on the page with no commercial content, and Oliver Wyman's posting
+talks explicitly about *"impact for clients, colleagues, and communities"*. What
+argued against it: it is the oldest item on the page (08.2020 to 05.2022, during
+the bachelor's), and closing a twelve-month employment gap is worth more to this
+application than a community-impact line that two other extracurricular entries
+and the `Interests` row partly cover. **It is reversible** — the two entries are
+the same height, so swapping them back is a straight exchange.
+
+Two smaller things went with it:
+
+- **`Founder's Associate`, with the apostrophe, in both places.** SCAILE read
+  *Founders Associate* and the new entry reads *Founder's Associate* (the E.ON
+  letter's spelling). Two spellings of one title on one page reads as a typo, so
+  both now use the apostrophe, which is also the majority reading across the
+  source CVs.
+- **`audit.py` gained a named placeholder check.** Unfilled `«...»` used to
+  surface as an unexplained *"unexpected non-ASCII: {'«', '»'}"* failure three
+  checks later. It is now reported by name, with the offending text quoted.
 
 ## The founder venture stays out; TCG stays in
 
@@ -445,7 +475,7 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 
 | Check | Result |
 |---|---|
-| Text is real text, not an image | 515 words selectable |
+| Text is real text, not an image | 520 words selectable |
 | Reading order | every bullet follows its own employer, verified for 6 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
@@ -569,20 +599,21 @@ one document.
 
 ## Final audit
 
-`python3 scripts/audit.py`, run against the rendered PDF. All checks pass.
+`python3 scripts/audit.py`, run against the rendered PDF. **One check fails: the
+Antler entry's location and dates are still unfilled.** Everything else passes.
 
 | Check | Result |
 |---|---|
 | Pages | 1 |
 | Bullets wrapping | 0 of 18 |
 | Bullet text edge | 25.41 mm on all 18, at character level |
-| Left edges | 19.06 mm ×31, 21.89 mm ×18, 167.68 mm ×7, 50.81 mm ×6 — exact |
+| Left edges | 19.06 mm ×31, 21.89 mm ×18, 167.68 mm ×6, 50.81 mm ×6 — exact |
 | Right-aligned column | 18 location/date lines flush on 191.84 mm, an exact count |
 | Nothing crosses the right edge | widest line ends at 191.84 mm |
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
 | Bottom white | 14.78 mm |
-| Metadata keywords on the page | 27 of 27 |
+| Metadata keywords on the page | 30 of 30 |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |

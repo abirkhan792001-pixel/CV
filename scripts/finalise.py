@@ -32,6 +32,7 @@ CV = {
                  "Operating Model Transformation, Restructuring, Turnaround, "
                  "Venture Capital, Private Equity, Private Capital, "
                  "Advanced Microsoft Excel, PowerPoint, Power BI, SQL, Python, Data Analytics, "
+                 "Digital Transformation, Energy Transition, Antler, "
                  "MSc Finance, Nova SBE, Arabic"),
 }
 LETTER = {

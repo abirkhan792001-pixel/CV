@@ -47,6 +47,7 @@ def idx(pred):
 pairs = [
     ("Nova School",            "Top 10% of the class"),
     ("SCAILE Technologies",    "Automated weekly client KPI"),
+    ("Stealth Energy Venture", "Led digital transformation"),
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
     ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
     ("Trariti Consulting",     "Led 90+ stakeholder interviews"),
@@ -94,7 +95,12 @@ check(not missing, "every metadata keyword also appears in the visible text",
       f"{len(doc.metadata.get('keywords', '').split(','))} keywords, all on the page")
 
 print("\nTYPOGRAPHY")
-bad = {c for c in text if ord(c) > 127} - set("•’×")
+# Placeholders own the guillemets, so they are reported here by name rather than
+# surfacing downstream as an unexplained non-ASCII failure.
+holes = re.findall(r"\u00ab[^\u00bb]*\u00bb", " ".join(text.split()))
+check(not holes, "no unfilled placeholders",
+      "; ".join(holes) if holes else "none")
+bad = {c for c in text if ord(c) > 127} - set("\u2022\u2019\u00d7\u00ab\u00bb")
 check(not bad, "non-ASCII limited to bullet, curly apostrophe, times",
       "unexpected: " + repr(bad) if bad else "")
 check("—" not in text and "–" not in text, "no em or en dashes")
