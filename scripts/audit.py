@@ -45,7 +45,7 @@ for h in ("EDUCATION", "WORK EXPERIENCE", "EXTRACURRICULAR", "SKILLS"):
 def idx(pred):
     return next((i for i, l in enumerate(lines) if pred(l)), -1)
 pairs = [
-    ("Nova School",            "Ranked top 10%"),
+    ("Nova School",            "Top 10% of the class"),
     ("SCAILE Technologies",    "Automated weekly client KPI"),
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
     ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
@@ -59,7 +59,7 @@ for org, bullet in pairs:
     check(i != -1 and i < j < nxt, f"bullets stay with {org!r}", f"org line {i}, bullet line {j}")
 
 check(not any(l.strip() == "•" for l in lines), "no orphan bullet glyphs on their own line")
-check(all(l.lstrip().startswith("•") for l in lines if "Ranked top 10%" in l),
+check(all(l.lstrip().startswith("•") for l in lines if "Top 10% of the class" in l),
       "bullet glyph sits on the same line as its text")
 
 print("\nLAYOUT")

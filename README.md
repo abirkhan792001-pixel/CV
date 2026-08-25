@@ -87,7 +87,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **442 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **444 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -164,15 +164,46 @@ evidence of it in any of the source documents.
 
 ### What the three letters disagree about
 
-Worth settling, because a recruiter comparing two of his applications will see it:
+The candidate has confirmed that **everything in all three letters is true**, so
+these are not errors to pick between; they are the same facts measured
+differently, and the fix is to say which measurement is which.
 
-| | Says | Note |
+| | Says | Resolution |
 |---|---|---|
-| **A&M deal scale** | *"multibillion-dollar restructuring deals"* (E.ON) vs *"over $100M in debt and lease obligations"* (Hilti, DHL) | The CV and this letter use **$100M**, the majority and conservative reading. The E.ON figure is an order of magnitude out and is the one to stop using |
-| **Nova FT rank** | **#5** (DHL, 05.2025) vs **#8** (this repo's CV) | Rankings move, but pick one and use it everywhere |
-| **German** | **A1** (Hilti, 01.2026) vs **B1** (CV) | Seven months apart, so plausible progression. Confirm it is current |
-| **Consulting Club** | *"Associate Secretary of the Consulting Club"* (Hilti) | **Not on the CV at all.** A consulting-club office is directly relevant to this application and is missing from the page |
-| **Biome's name** | *"my VC Fellowship"* (Hilti) vs *"Biome Venture Studio, Venture Capital Intern"* (CV) | If these are the same thing, name it the same way twice |
+| **A&M deal scale** | *"multibillion-dollar restructuring deals"* (E.ON) vs *"over $100M in debt and lease obligations"* (Hilti, DHL) | **Both, and now both are on the page.** They measure different things: the size of the engagement, and the size of his own workstream. The letter now reads *"worked on multibillion-dollar U.S. Chapter 11 restructurings for Fortune 500 clients, running a turnaround workstream across more than $100M of debt and lease obligations"* — which is stronger than either figure alone and cannot be read as inflating one into the other |
+| **Nova FT rank** | **#5** (DHL, 05.2025) vs **#8** (CV) | A time series, not a contradiction. The CV keeps **#8** as the later figure. Do not quote #5 again |
+| **German** | **A1** (Hilti, 01.2026) vs **B1** (CV) | Seven months apart; progression. B1 stands |
+| **Consulting Club** | *"Associate Secretary of the Consulting Club"* (Hilti) | **Now on the CV.** See below |
+| **Biome's name** | *"my VC Fellowship"* (Hilti) vs *"Biome Venture Studio, Venture Capital Intern"* (CV) | Left alone. The Hilti sentence reads *"my VC Fellowship **and** work at Trariti"*, which may name a third role rather than Biome. Not assumed either way |
+
+### The Consulting Club office is now on the CV
+
+*Associate Secretary, Consulting Club* appears in the Hilti letter and on no
+version of this CV. For a consulting application it is a directly relevant
+office, so it went onto the Nova entry's second bullet, which had 53.7 mm of
+slack on its line.
+
+It did not fit as written. The bullet ran to **190.69 mm against a 191.84 mm
+edge, 1.15 mm from wrapping** — the same fragility the `Focus areas` row had
+before it was trimmed, and a wrap costs 4.23 mm against 3.6 mm of headroom, so
+it would have pushed the CV to two pages. Dropping the redundant *"Ranked"* from
+*"Ranked top 10% of the class"* bought back 11.2 mm. `audit.py` keyed its Nova
+reading-order marker to that exact phrase, so both markers were retargeted to
+*"Top 10% of the class"*; the second one is a bare `all()` over matching lines,
+which would have passed **vacuously** on an empty match set rather than failing.
+
+### A possible answer to the 12-month gap
+
+The E.ON letter, dated 28.09.2025, says: *"I supported an energy startup as a
+Founder's Associate, leading digital transformation and customer-centric
+innovation in the sector."* That cannot be SCAILE, which began 06.2026. It
+describes a role held **before September 2025**, which lands inside the
+unexplained **08.2024 to 07.2025** window this CV has carried through every pass
+as unfixable without a fact only the candidate has.
+
+It needs a company name and dates before it can go on the page. If they exist,
+this is the highest-value edit left in the repo: it closes the one gap a
+consulting interviewer is most likely to open on.
 
 The 12-month gap (08.2024 to 07.2025) is still deliberately **not** raised in the
 letter, and none of the three source letters accounts for it either.
