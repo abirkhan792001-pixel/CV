@@ -74,8 +74,8 @@ writes `Abir Hilal Khan_Cover Letter_Oliver Wyman.pdf`.
 It shares the CV's letterhead, so the two documents read as one application:
 same navy, same top bar, same margins, same face. Body type is **10.5 pt, not
 the CV's 9.35 pt** — the CV is squeezed by its one-line-per-bullet rule, and
-running prose at 9.35 pt reads cramped. The letter has no photograph and lands
-at 239.8 mm of 297 mm, so length is not a constraint on it.
+running prose at 9.35 pt reads cramped. It has no photograph, and it now lands at
+**295.8 mm of 297 mm**: the letter used to have room to spare and no longer does.
 
 ### Written against Clay's AI writing policy
 
@@ -86,7 +86,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **444 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **490 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -160,6 +160,46 @@ brief, he argued the fund's thesis was underweight on decarbonisation, rebuilt
 the evaluation framework, and took a revised case to the VP. Oliver Wyman screens
 explicitly for *initiative, intuition, and creativity*, and that is the best
 evidence of it in any of the source documents.
+
+### Reviewed against the finished CV, and two fixes
+
+Once the Antler entry went onto the CV, the letter had a hole in it.
+
+- **The venture was missing entirely.** The letter opens *"Since 2022 my work has
+  run to one pattern"* and then covers Trariti (2022), Biome (2023), A&M (2024)
+  and *"most recently"* SCAILE (2026) — leaving **09.2024 to 06.2025 unaccounted
+  for in the letter's own chronology**, the exact stretch the CV had just been
+  fixed to explain. A reader holding both documents sees the letter skip a
+  ten-month, second-most-recent role. It now has its own paragraph, placed after
+  the earlier roles so the tail runs forward: Antler (2024–25), SCAILE (2026),
+  Draycott (this year), start date.
+- **The closing argument read as indecision.** It ended *"I have not yet met the
+  one I want to spend a decade on"*, which to someone ranking candidates says *I
+  do not know what I want* — and it sat in flat contradiction with the letter's
+  own opening claim of *one pattern*. It now names the tension and resolves it:
+  five different jobs, **one method, which is the pattern I opened with**, and the
+  breadth was deliberate. The Antler paragraph is what earns *energy* a place in
+  that list.
+
+Both fixes overflowed the page by 9 mm, which `build.mjs` caught. Three things
+paid for them, in order of honesty:
+
+1. **A redundant clause, cut.** The close read *"I would move to either city and
+   can start once Nova finishes"* — the third time the letter claimed willingness
+   to move, after the opening names both cities and the mobility paragraph says
+   moving is not the hard part. That is a real cut, not a space-saving one.
+2. **Line height 1.42 to 1.36.** 1.42 was an arbitrary choice for this document;
+   Word's default at 10.5 pt lands nearer 1.2, so 1.36 is still generous.
+3. **Bottom margin 14 mm to 12 mm.** A normal letter margin either way.
+
+The letter is now **490 words with 1.2 mm of headroom**. It is full: anything
+added has to be traded, exactly like the CV.
+
+Three things from that review were raised and **not** fixed, because they were
+not part of what was asked: *"worked on"* is the vaguest verb in the letter and
+opens its strongest paragraph; *"this year led my team at the Draycott…"* goes
+stale the same way the hardcoded date did; and *"I don't just relocate; I
+integrate"* stacks an assertion on top of the evidence that precedes it.
 
 ### What the three letters disagree about
 

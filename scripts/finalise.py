@@ -43,7 +43,7 @@ LETTER = {
     "subject": "Cover Letter",
     "keywords": ("Oliver Wyman, Consultant, Dubai, Doha, Nova SBE, "
                  "Alvarez & Marsal, Trariti Consulting Group, Biome Venture Studio, "
-                 "SCAILE Technologies, go-to-market, "
+                 "SCAILE Technologies, go-to-market, Antler, digital transformation, "
                  "turnaround, Fortune 500, Chapter 11, scenario models, "
                  "creditor-negotiation, growth strategy, stakeholder interviews, "
                  "National Case Study Challenge, Draycott Private Equity Challenge"),
