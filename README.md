@@ -87,7 +87,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **289 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **290 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -131,10 +131,10 @@ result rather than of the brief:
   is gone, and the paragraph now opens on a plain *"Earlier, at ..."*, which is
   also nine words shorter.
 
-### The two placeholders are the point
+### The three placeholders are the point
 
 They are written as `«...»`, the repo's existing convention, so `build.mjs`
-counts them and reports **"2 unfilled — not ready to send"** until they are
+counts them and reports **"3 unfilled — not ready to send"** until they are
 replaced. The build does not fail on them; it just refuses to call the document
 ready.
 
@@ -146,13 +146,25 @@ ready.
    piece of their work, a person spoken to, an event attended. A generic answer
    here is worse than none, and it is exactly the sentence a first-round
    interviewer follows up on.
+3. **The date.** It was hardcoded as *24 August 2026*, which is wrong the moment
+   the letter is not sent that day, and wrong silently. Making it a placeholder
+   puts it in the same "not ready to send" count as the other two, so the three
+   get filled together on the day it actually goes out.
 
-Two other lines to check before sending: the **date** is hardcoded as
-*24 August 2026*, and *"I can start from January 2027"* is inferred from the
-MSc finishing in 12.2026 rather than stated by any source. The 12-month gap
-(08.2024 to 07.2025) is deliberately **not** raised in the letter — the space is
-better spent on the affirmative case — but it is a paragraph's worth of material
-if there is a good answer for it.
+Two claims were also pulled back to what the sources support:
+
+- ***"I placed in the top three of 15,000"*** now reads **15,000
+  participants**. Without the noun the figure is ambiguous about what it counts.
+- ***"I am available from January 2027"*** is gone. No source states a start
+  date; it was inferred from the MSc finishing in 12.2026. The close now reads
+  *"I would move to either city and can start once Nova finishes"*, which asserts
+  only the sourced fact and drops a second mention of December 2026 that the
+  first sentence already makes. **If a specific start date is true, say it** —
+  a real date is stronger than a derived one.
+
+The 12-month gap (08.2024 to 07.2025) is deliberately **not** raised in the
+letter — the space is better spent on the affirmative case — but it is a
+paragraph's worth of material if there is a good answer for it.
 
 ## The founder venture stays out; TCG stays in
 
@@ -558,8 +570,8 @@ Three things deliberately left alone:
    Fitting it cost `German (B1, improving)` its last word — the row would have
    wrapped to a second line otherwise, and the page has only 3.6 mm of
    headroom against a 4.23 mm line.
-2. **Fill the cover letter's two placeholders.** `npm run letter` reports
-   *"2 unfilled — not ready to send"* until they are. The first of them is
+2. **Fill the cover letter's three placeholders.** `npm run letter` reports
+   *"3 unfilled — not ready to send"* until they are. The first of them is
    load-bearing: the CV no longer says Dubai, Doha, relocation or travel
    anywhere, and its contact line reads *Munich, Germany*, so for a posting
    whose location is in its title the letter is now the only place that
