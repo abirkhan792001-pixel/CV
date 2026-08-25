@@ -46,7 +46,7 @@ def idx(pred):
     return next((i for i, l in enumerate(lines) if pred(l)), -1)
 pairs = [
     ("Nova School",            "Top 10% of the class"),
-    ("SCAILE Technologies",    "Automated weekly client KPI"),
+    ("SCAILE Technologies",    "Owned North American clients"),
     ("Stealth Energy Venture", "Led digital transformation"),
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
     ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
@@ -129,9 +129,9 @@ rights = [round(b[2] * PT, 2) for b, t in spans]
 check(max(rights) <= EDGE + 0.01, "nothing crosses the text right edge",
       f"widest line ends at {max(rights):.2f} mm")
 flush = [r for r in rights if abs(r - EDGE) < 0.05]
-# 9 entries x 2 rows (organisation/location, then role/dates). An exact count
+# 10 entries x 2 rows (organisation/location, then role/dates). An exact count
 # rather than a floor, so a silently dropped entry fails here too.
-check(len(flush) == 18, "right-aligned column flush",
+check(len(flush) == 20, "right-aligned column flush",
       f"{len(flush)} location/date lines on {EDGE} mm")
 
 print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' FAILED: ' + ', '.join(fails)}\n")

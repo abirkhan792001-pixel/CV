@@ -60,8 +60,7 @@ Edit `cv.html` only — content and styling both live there. The tuning knobs fo
 fitting content are the CSS variables at the top: `--fs-base`, `--lh`,
 `--margin-x`, `--margin-y`.
 
-Current state: **293.4 mm of 297 mm, one page, 3.6 mm headroom** — two
-millimetres shorter than the last pass. Still short of a line, which is 4.23 mm
+Current state: **294.6 mm of 297 mm, one page, 2.4 mm headroom**. Still short of a line, which is 4.23 mm
 at this size, so anything added to the body has to be traded against something
 already there.
 
@@ -228,142 +227,42 @@ exactly that range — it would have plugged the hole perfectly and been **wrong
 both ends**, on a CV where every other date is right and where an interviewer can
 check.
 
-### What the entry cost
+### What the Antler entry cost, and what buying UN Foundation back cost
 
-3 lines and an entry margin, 14.66 mm, against 3.6 mm of headroom. It was paid
-for by **dropping the United Nations Foundation entry**, which costs exactly the
-same, so the page did not move: 293.4 mm before and after, with no other line
-touched.
+The Antler entry needed 3 lines and an entry margin, **14.66 mm**, against 3.6 mm
+of headroom. It was first paid for by dropping the **United Nations Foundation**
+entry, which costs exactly the same — the page did not move.
 
-That was the trade, and it is a real loss worth stating. UN Foundation was the
-only entry on the page with no commercial content, and Oliver Wyman's posting
-talks explicitly about *"impact for clients, colleagues, and communities"*. What
-argued against it: it is the oldest item on the page (08.2020 to 05.2022, during
-the bachelor's), and closing a twelve-month employment gap is worth more to this
-application than a community-impact line that two other extracurricular entries
-and the `Interests` row partly cover. **It is reversible** — the two entries are
-the same height, so swapping them back is a straight exchange.
+That trade has since been reversed on request: **UN Foundation is back**, and
+both entries are now on the page. Paying for it a second time took three cuts:
 
-Two smaller things went with it:
-
-- **`Founder's Associate`, with the apostrophe, in both places.** SCAILE read
-  *Founders Associate* and the new entry reads *Founder's Associate* (the E.ON
-  letter's spelling). Two spellings of one title on one page reads as a typo, so
-  both now use the apostrophe, which is also the majority reading across the
-  source CVs.
-- **`audit.py` gained a named placeholder check.** Unfilled `«...»` used to
-  surface as an unexplained *"unexpected non-ASCII: {'«', '»'}"* failure three
-  checks later. It is now reported by name, with the offending text quoted.
-
-## The founder venture stays out; TCG stays in
-
-The previous pass already dropped the stealth AI-energy founder entry and
-restored **Trariti Consulting Group (TCG)** in its place. That holds here, and
-it holds for a better reason than it did last time: TCG is the one entry on the
-page whose title is literally *Summer Consultant at a strategy consulting firm*,
-and its three bullets are the closest match on the page to what Oliver Wyman's
-posting describes — advising clients, running interviews, turning findings into
-recommendations.
-
-**The organisation is named in full.** Five source CVs write it as
-*"TCG (boutique strategy consulting firm)"*; the DHL CV writes *"Trariti
-Consulting Group"*. This CV uses **Trariti Consulting Group** with *(TCG, boutique
-strategy consulting firm)* as the italic note, so a parser indexes a real company
-name rather than a three-letter string, and a reader still learns what it is.
-
-## This pass: a risk-reporting CV retuned into a consulting CV
-
-The page came from a KPMG risk-reporting application. Every bullet was re-picked
-or re-worded against Oliver Wyman's posting, and one entry came back.
-
-### Impact Consulting is back
-
-The single biggest change. The KPMG pass had cut *Impact Consulting — Consultant,
-London* because its one bullet (competitive benchmarking and market-entry
-proposals for a micro-fintech B2C startup) was the weakest fit for risk
-reporting. For a strategy firm it is the opposite: **market entry and competitive
-benchmarking are the work**, and the entry adds a fourth country and a second
-role literally titled *Consultant*.
-
-It cost 3 lines and one entry margin. Where they came from:
-
-| Change | Lines |
+| Out | Lines |
 |---|---|
-| **Impact Consulting restored** to Extracurricular & Leadership | **+3** |
-| Nova's `Relevant coursework` bullet dropped | −1 |
-| Shiv Nadar's two bullets merged onto one line | −1 |
-| Biome's third bullet dropped | −1 |
-| `Focus areas` row cut from two lines to one | −1 |
-| **Net** | **−1 line**, against **+1** entry margin |
+| SCAILE: *"Automated weekly client KPI reporting … cutting manual effort by 60%"* | −1 |
+| Trariti: *"Quantified critical funding levers and investment viability across $100M+ in deal value"* | −1 |
+| The whole `Interests` row (*distance running, swimming, hiking, baking*) | −1, plus a 0.7 mm grid gap |
+| **In: United Nations Foundation** | **+3**, plus an entry margin |
 
-Which is why the page came down 295.5 mm → 293.4 mm: one line (4.23 mm) out,
-one entry margin (1.97 mm) in.
+Net **+1.2 mm**: 293.4 mm to 294.6 mm, and headroom down from 3.6 mm to 2.4 mm.
 
-**Nova's coursework bullet was the cheapest cut.** Oliver Wyman states outright
-that it does *not* require specific academic majors, so a list of finance modules
-buys nothing here — and Python, the one term on that line worth indexing, is
-still in the `Technical` row.
+**Why those three.** The two bullets were each the third of their entry and the
+most redundant: SCAILE still claims strategy and client ownership, Trariti still
+claims growth-strategy advice and 90+ interviews, and no term in the skills grid
+or the metadata lost its backing. `Interests` was the softest line on the page,
+and the argument for cutting it is that UN Foundation is a **better** version of
+the same signal — Oliver Wyman asks for *"evidence of leading an interesting and
+impactful life outside of your studies"*, and *"1,200+ women and children in
+rural India"* answers that harder than four hobbies do.
 
-**Shiv Nadar's two bullets became one** — *Magna Cum Laude, top 10% of cohort;
-Top 3 of 15,000 nationally, National Case Study Challenge*. Nothing was lost, and
-the case-competition result is now also in the header line, where a consulting
-recruiter reads it first. A firm that hires through case interviews should see
-that result before anything else on the page.
+**What was actually lost:** two figures, the **60%** manual-effort cut and
+Trariti's **$100M+ in deal value**, and the personality hook a consulting
+interviewer sometimes opens on. At 2.4 mm the page is now tight; anything else
+added has to be traded.
 
-### Bullets swapped, not just re-ordered
-
-Four bullets changed or came off the page:
-
-| Out | In | Why |
-|---|---|---|
-| A&M: *EBITDA sensitivity analysis across liquidity and supplier scenarios* | A&M: *root-cause analysis of operating and cash-flow inefficiencies to prioritise turnaround initiatives* | Sensitivity analysis was evidence for the risk posting. Root-cause analysis and prioritisation are the consulting method, and the claim is lifted from the DHL CV's fuller A&M entry |
-| SCAILE: *Built KPI dashboards … across ChatGPT, Gemini and Perplexity* | SCAILE: *Advised the founders on positioning and go-to-market strategy, backed by a market sizing of AI search (GEO)* | Dashboards were the reporting-tool evidence KPMG asked for. Advising on strategy off the back of a market sizing is the consulting register, and it is what the Accenture, Allianz and RWE CVs lead that entry with |
-| TCG: *Developed data-driven models for VC/PE firms and founders to evaluate early-stage growth opportunities* | TCG: *Advised VC/PE firms and founders on early-stage growth strategy through data-driven market and investment models* | Same facts, Accenture Strategy's wording. *Advised … on strategy* is the claim; the models are how it was done |
-| Biome: *Assessed business models and go-to-market strategy to inform investment decisions and portfolio prioritisation* | — | Dropped. It restated the two bullets above it, and go-to-market is now claimed at SCAILE |
-
-The A&M entry keeps four bullets and the same height; the trade was internal.
-
-### The header is one line under the contact block
-
-Earlier drafts of this pass ran three lines under the contact block: a
-positioning line, a geography line (*"Studied and worked in India, the United
-Kingdom, Portugal and Germany"*), and an availability line (*"Open to
-relocation to Dubai or Doha | Willing to travel internationally"*). The
-photograph fixes the header at 45 mm while its text runs about 26 mm, so all
-three sat in whitespace the template already had and cost the page nothing.
-
-**The last two were removed on the candidate's instruction.** What is left is
-the positioning line alone:
-
-> MSc Finance at **Nova SBE (FT #8)**; **strategy**, restructuring and **VC/PE**
-> diligence for **Fortune 500** and investor clients; **Top 3 of 15,000**,
-> National Case Study Challenge
-
-Removing them freed no space — the photo, not the text, sets the header height —
-so the page is the same 293.4 mm either way. What it changed is what the page
-says, and it is worth being explicit about the cost:
-
-- **Nothing on this CV now mentions Dubai, Doha, relocation or travel.** The
-  contact line reads *Munich, Germany*, and a reader screening for a Gulf office
-  has no signal that the candidate would move. The posting requires a **cover
-  letter**, which is the conventional home for availability, so this is
-  recoverable — but it has to actually be recovered there.
-- The audit caught the knock-on immediately: `Dubai` and `Doha` were still in
-  the PDF keyword field after the lines came out, and the metadata check failed
-  the build until they were removed. They are no longer indexed either.
-
-Restoring the availability line is a one-line edit that costs the page nothing;
-see *Before sending*.
-
-### The Luxembourg work-authorisation line is gone for good
-
-The header this pass inherited carried *"Open to relocation to Luxembourg | No
-visa sponsorship required"*. Both halves were wrong for this application, and
-**"No visa sponsorship required" must not come back in any form.** That line was
-written for Germany. In the UAE and Qatar a residence and work permit are
-sponsored by the employer for essentially every expatriate hire, so the claim
-would be false on its face — and it is exactly the kind of claim a recruiter
-checks on day one.
+`audit.py` moved with it: the SCAILE reading-order marker was keyed to the
+deleted automation bullet and now points at *"Owned North American clients"*, and
+the right-aligned column count went from 18 to **20**, ten entries at two rows
+each.
 
 ## What this CV is optimised for
 
@@ -466,7 +365,7 @@ to Biome, or to any date range.
 The fix is a hanging indent built from normal flow — `text-indent` plus an
 inline-block `::before` marker — instead of a positioned one. Document order is
 preserved, and the geometry is unchanged: the glyph still sits at 21.89 mm and the
-bullet text still starts at **exactly 25.41 mm** on all 18 bullets, verified at
+bullet text still starts at **exactly 25.41 mm** on all 17 bullets, verified at
 character level.
 
 ### Five parsers, re-run on this version
@@ -492,7 +391,7 @@ and a lot of enterprise résumé parsing, has `sortByPosition` **off** by defaul
 
 | Check | Result |
 |---|---|
-| Text is real text, not an image | 520 words selectable |
+| Text is real text, not an image | 511 words selectable |
 | Reading order | every bullet follows its own employer, verified for 6 entries |
 | Orphan bullet glyphs | none |
 | Name | first line of the stream |
@@ -621,14 +520,14 @@ one document.
 | Check | Result |
 |---|---|
 | Pages | 1 |
-| Bullets wrapping | 0 of 18 |
-| Bullet text edge | 25.41 mm on all 18, at character level |
-| Left edges | 19.06 mm ×31, 21.89 mm ×18, 167.68 mm ×6, 50.81 mm ×6 — exact |
-| Right-aligned column | 18 location/date lines flush on 191.84 mm, an exact count |
+| Bullets wrapping | 0 of 17 |
+| Bullet text edge | 25.41 mm on all 17, at character level |
+| Left edges | 19.06 mm ×32, 21.89 mm ×17, 167.68 mm ×8, 50.81 mm ×5 — exact |
+| Right-aligned column | 20 location/date lines flush on 191.84 mm, an exact count |
 | Nothing crosses the right edge | widest line ends at 191.84 mm |
 | Rules | all 4 section rules span 19.05–191.82 mm, identical |
 | Photo right edge | 191.82 mm — on the rules |
-| Bottom white | 14.78 mm |
+| Bottom white | 13.46 mm |
 | Metadata keywords on the page | 30 of 30 |
 | Em / en dashes | none |
 | Non-ASCII inventory | only `•`, `’`, `×` — all intentional |
