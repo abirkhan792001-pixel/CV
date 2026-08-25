@@ -201,15 +201,32 @@ described a role held before September 2025 — inside the unexplained **08.2024
 to 07.2025** window this CV had carried through every pass as unfixable without
 a fact only the candidate had.
 
-He has now supplied it: **a stealth energy venture backed by Antler.** It is on
-the page as a work entry between SCAILE and A&M, named *Stealth Energy Venture
-(backed by Antler)*. Naming the backer is the point — a bare *"stealth"* entry
-asks the reader to take an unverifiable claim on trust, while Antler is a
-recognisable early-stage investor, so the entry carries its own credibility.
+He has now supplied it: **Stealth Energy Venture (backed by Antler), Founder's
+Associate, Munich, 09.2024 - 06.2025.** It sits between SCAILE and A&M in Work
+Experience. Naming the backer is the point — a bare *"stealth"* entry asks the
+reader to take an unverifiable claim on trust, while Antler is a recognisable
+early-stage investor, so the entry carries its own credibility. The Munich
+location also explains the header address, which until now had no entry behind it
+earlier than 06.2026.
 
-**It still needs a location and a date range.** Both are `«placeholders»`, so
-`build.mjs` reports *"2 unfilled"* and `audit.py` now **fails** until they are
-filled. Do not send this version.
+**What the twelve-month gap actually was: ten months, plus a month either side.**
+
+| | |
+|---|---|
+| Shiv Nadar, BMS | 08.2020 - 07.2024 |
+| *gap* | **1 month** |
+| Stealth Energy Venture | 09.2024 - 06.2025 |
+| *gap* | **1 month** |
+| Nova SBE, MSc | 08.2025 - 12.2026 |
+
+Two single months between a degree and a job, and a job and a degree. Nothing a
+recruiter asks about.
+
+This is also why the dates were left as a placeholder rather than inferred. The
+gap ran 08.2024 to 07.2025 and it would have been tempting to fill the entry with
+exactly that range — it would have plugged the hole perfectly and been **wrong at
+both ends**, on a CV where every other date is right and where an interviewer can
+check.
 
 ### What the entry cost
 
@@ -599,8 +616,7 @@ one document.
 
 ## Final audit
 
-`python3 scripts/audit.py`, run against the rendered PDF. **One check fails: the
-Antler entry's location and dates are still unfilled.** Everything else passes.
+`python3 scripts/audit.py`, run against the rendered PDF. All checks pass.
 
 | Check | Result |
 |---|---|
