@@ -86,7 +86,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **481 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **494 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -145,14 +145,26 @@ come from the sources, not from the drafter.**
   Middle East, Dubai or Doha once, so the sentence there argued from a general
   proposition about regional diversification that nothing backed.
 
-  It is now sourced. He has spoken to **Ignacio, a senior consultant in the Dubai
-  office**, and the paragraph says so: *"What made the Gulf specific rather than
-  one option among several was a conversation with Ignacio, a senior consultant in
-  your Dubai office."* That is checkable, human, and the same move his E.ON letter
-  made by naming Isabel, Sindhuja and Florian. **What it still does not say is
-  what Ignacio told him**, which is what would make it land — the E.ON letter
-  quotes Isabel on curiosity, empathy and authenticity, and that is the register
-  to match. There is 6.3 mm of headroom for one more sentence.
+  It is now sourced twice over. **He is building a freight-forwarding venture that
+  reads supply-chain risk early and automates the response with AI agents**, and the
+  markets where that is worth most are the volatile ones — which is a commercial
+  reason for the region rather than a romantic one, and it is his. It is also not a
+  new enthusiasm: the DHL letter, written in 05.2025, opens *"Somewhere between the
+  pandemic freight crisis and the war in Ukraine, I stopped seeing supply chains as a
+  background function and started seeing them as the actual architecture of global
+  business."* The same paragraph then names **Ignacio, a senior consultant in the
+  Dubai office**, as the conversation that turned the interest into an application —
+  checkable, and the same move the E.ON letter made by naming Isabel, Sindhuja and
+  Florian.
+
+  **One thing to weigh before sending.** Telling a consulting firm you are actively
+  building a company cuts both ways. Oliver Wyman's posting asks for *initiative,
+  intuition, and creativity*, and a venture in the exact domain they would consult on
+  is strong evidence of all three. It also invites the question of whether you would
+  leave. The letter frames it as the origin of a regional interest rather than as a
+  competing commitment, which is the honest framing and the least exposed one, but
+  the judgement is the candidate's.
+
 - **Why Oliver Wyman.** Argued from the posting's own distinctive offer — the
   choice to *"specialize early or explore different areas before choosing a
   path"* — against a record that is deliberately cross-domain. The opening,
@@ -200,7 +212,7 @@ paid for them, in order of honesty:
    Word's default at 10.5 pt lands nearer 1.2, so 1.36 is still generous.
 3. **Bottom margin 14 mm to 12 mm.** A normal letter margin either way.
 
-The letter is now **481 words with 6.3 mm of headroom**. It is full: anything
+The letter is now **494 words with 3.2 mm of headroom**. It is full: anything
 added has to be traded, exactly like the CV.
 
 Three smaller findings from the same review were then fixed too:
@@ -622,13 +634,12 @@ Three things deliberately left alone:
    Fitting it cost `German (B1, improving)` its last word — the row would have
    wrapped to a second line otherwise, and the page has only 3.6 mm of
    headroom against a 4.23 mm line.
-2. **Add what Ignacio said.** The letter now names him — a senior consultant in
-   the Dubai office — as the reason the Gulf is specific rather than one option
-   among several, which replaced the last unsourced claim in either document.
-   One more sentence on **what he actually said** is the difference between a
-   named contact and a name-drop; the E.ON letter's version of this quotes
-   Isabel on curiosity, empathy and authenticity. There is 6.3 mm of headroom,
-   about one line. If you would also rather the CV carried the relocation signal,
+2. **Decide whether the venture belongs on the CV too.** The letter names the
+   freight-forwarding venture as the reason the Gulf is specific; the CV does not
+   mention it. It is deliberately not there — the first instruction of this pass
+   was to take a founder entry *off* the page — but it is current work in the
+   domain the letter argues from, and leaving it off is now a choice rather than
+   an omission. If you would also rather the CV carried the relocation signal,
    restoring *"Open to relocation to Dubai or Doha | Willing to travel
    internationally"* is one line in the header and costs the page nothing,
    because the photograph, not the text, sets the header height.

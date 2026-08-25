@@ -44,6 +44,7 @@ LETTER = {
     "keywords": ("Oliver Wyman, Consultant, Dubai, Doha, Nova SBE, "
                  "Alvarez & Marsal, Trariti Consulting Group, Biome Venture Studio, "
                  "SCAILE Technologies, go-to-market, Antler, digital transformation, "
+                 "freight-forwarding, supply-chain risk, AI agents, "
                  "turnaround, Fortune 500, Chapter 11, scenario models, "
                  "creditor-negotiation, growth strategy, stakeholder interviews, "
                  "National Case Study Challenge, Draycott Private Equity Challenge"),
