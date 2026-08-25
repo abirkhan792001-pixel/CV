@@ -45,11 +45,13 @@ for h in ("EDUCATION", "WORK EXPERIENCE", "EXTRACURRICULAR", "SKILLS"):
 def idx(pred):
     return next((i for i, l in enumerate(lines) if pred(l)), -1)
 pairs = [
-    ("Nova School",            "Ranked top 10%"),
-    ("SCAILE Technologies",    "Automated weekly client KPI"),
+    ("Nova School",            "Top 10% of the class"),
+    ("SCAILE Technologies",    "Owned North American clients"),
+    ("Stealth Energy Venture", "Led digital transformation"),
     ("Alvarez & Marsal",       "Prepared creditor-negotiation"),
     ("Biome Venture Studio",   "Evaluated 3,000+ companies"),
     ("Trariti Consulting",     "Led 90+ stakeholder interviews"),
+    ("Impact Consulting",      "Created competitive benchmarking"),
 ]
 for org, bullet in pairs:
     i, j = idx(lambda l: l.startswith(org)), idx(lambda l: bullet in l)
@@ -58,7 +60,7 @@ for org, bullet in pairs:
     check(i != -1 and i < j < nxt, f"bullets stay with {org!r}", f"org line {i}, bullet line {j}")
 
 check(not any(l.strip() == "•" for l in lines), "no orphan bullet glyphs on their own line")
-check(all(l.lstrip().startswith("•") for l in lines if "Ranked top 10%" in l),
+check(all(l.lstrip().startswith("•") for l in lines if "Top 10% of the class" in l),
       "bullet glyph sits on the same line as its text")
 
 print("\nLAYOUT")
@@ -78,8 +80,27 @@ photo = page.get_image_rects(page.get_images(full=True)[0][0])[0]
 check(abs(photo.x1 * PT - max(r.x1 * PT for r in rules)) < 0.1,
       "photo right edge sits on the rules", f"{photo.x1 * PT:.2f} mm")
 
+# The repo rule is that metadata may only name things the reader can see on the
+# page. Checked here rather than by hand: a keyword a candidate cannot see on
+# their own CV is one they cannot be asked about in an interview.
+flat = " ".join(text.split()).lower()
+# A hyphenated compound can take the line break at its own hyphen, leaving
+# "creditor- negotiation" in the stream for a word the reader sees whole.
+rejoined = flat.replace("- ", "-")
+missing = [k.strip() for k in doc.metadata.get("keywords", "").split(",")
+           if k.strip() and k.strip().lower() not in flat
+           and k.strip().lower() not in rejoined]
+check(not missing, "every metadata keyword also appears in the visible text",
+      "missing: " + ", ".join(missing) if missing else
+      f"{len(doc.metadata.get('keywords', '').split(','))} keywords, all on the page")
+
 print("\nTYPOGRAPHY")
-bad = {c for c in text if ord(c) > 127} - set("•’×")
+# Placeholders own the guillemets, so they are reported here by name rather than
+# surfacing downstream as an unexplained non-ASCII failure.
+holes = re.findall(r"\u00ab[^\u00bb]*\u00bb", " ".join(text.split()))
+check(not holes, "no unfilled placeholders",
+      "; ".join(holes) if holes else "none")
+bad = {c for c in text if ord(c) > 127} - set("\u2022\u2019\u00d7\u00ab\u00bb")
 check(not bad, "non-ASCII limited to bullet, curly apostrophe, times",
       "unexpected: " + repr(bad) if bad else "")
 check("—" not in text and "–" not in text, "no em or en dashes")
@@ -108,7 +129,9 @@ rights = [round(b[2] * PT, 2) for b, t in spans]
 check(max(rights) <= EDGE + 0.01, "nothing crosses the text right edge",
       f"widest line ends at {max(rights):.2f} mm")
 flush = [r for r in rights if abs(r - EDGE) < 0.05]
-check(len(flush) >= 16, "right-aligned column flush",
+# 10 entries x 2 rows (organisation/location, then role/dates). An exact count
+# rather than a floor, so a silently dropped entry fails here too.
+check(len(flush) == 20, "right-aligned column flush",
       f"{len(flush)} location/date lines on {EDGE} mm")
 
 print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' FAILED: ' + ', '.join(fails)}\n")

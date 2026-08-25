@@ -2,12 +2,13 @@
   "name": "cv",
   "version": "1.0.0",
   "private": true,
-  "description": "One-page CV, tailored for KPMG Luxembourg risk reporting",
+  "description": "One-page CV and cover letter, tailored for Oliver Wyman (Dubai/Doha)",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
     "preview": "node build.mjs --png",
-    "share": "node build.mjs && python3 scripts/finalise.py && python3 scripts/audit.py"
+    "share": "node build.mjs && python3 scripts/finalise.py && python3 scripts/audit.py",
+    "letter": "node build.mjs --src=cover-letter.html --out=Abir_Khan_Cover_Letter.pdf && python3 scripts/finalise.py letter"
   },
   "devDependencies": {
     "playwright": "^1.56.1"
