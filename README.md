@@ -87,7 +87,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **255 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **289 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -110,6 +110,26 @@ were checked to survive. Two caveats are recorded rather than glossed:
 - **A rewrite by the same model family as the draft is not what Layer B
   prescribes** (it calls for a model other than the suspected origin), so this
   is an editorial rewrite, not an anti-detection result.
+
+Three things the rewrite itself got wrong were then fixed, on a read-back of the
+result rather than of the brief:
+
+- **SCAILE Technologies was missing from the letter entirely.** It ran *"since
+  2022"* and then jumped to A&M in 01.2024, leaving the most recent entry on the
+  CV unmentioned and dropping the one credential that speaks to Oliver Wyman's
+  AI and digital work. It now has two sentences, placed **after** the earlier
+  roles rather than in strict reverse chronology: A&M leads because it is the
+  strongest evidence, and closing the evidence on *most recently* runs forward
+  into *this year* (Draycott) and then into the January start date.
+- ***"Trariti Consulting Group had me advising VC and PE firms"*** made the
+  employer the subject and the candidate the object. The first draft's
+  *"I advised"* was stronger and is back. Churning wording for its own sake
+  costs something, and this is where it cost the most.
+- ***"The front half of that pattern I learned earlier"*** mis-described its own
+  evidence: at Trariti he ran the interviews **and** turned them into
+  recommendations, which is the whole pattern, not its front half. The sentence
+  is gone, and the paragraph now opens on a plain *"Earlier, at ..."*, which is
+  also nine words shorter.
 
 ### The two placeholders are the point
 
