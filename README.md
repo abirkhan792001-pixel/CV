@@ -86,7 +86,7 @@ to write than to read**, and **length is no virtue**. What that changed:
 
 | Principle | What it did to the draft |
 |---|---|
-| Length is no virtue | **490 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
+| Length is no virtue | **485 words**, excluding placeholders. Every opener that says nothing is gone: no *"I am writing to express my strong interest"*, no *"I believe my skills align"*, no *"I would welcome the opportunity to discuss"*. One summary sentence was cut in drafting because it only restated the paragraph above it |
 | Respect the reader's time | A subject line (*Application: Consultant, Dubai / Doha*) so the reader knows what this is in one glance. Four short paragraphs, one claim each, each carrying a figure |
 | Stand behind every sentence | Every factual claim traces to the CV, which traces to the source CVs. Nothing about motivation is asserted on the candidate's behalf |
 | Writing is thinking | The two things only the candidate can think — why the Gulf, why this firm — are **left as placeholders**, not guessed at |
@@ -192,14 +192,30 @@ paid for them, in order of honesty:
    Word's default at 10.5 pt lands nearer 1.2, so 1.36 is still generous.
 3. **Bottom margin 14 mm to 12 mm.** A normal letter margin either way.
 
-The letter is now **490 words with 1.2 mm of headroom**. It is full: anything
+The letter is now **485 words with 1.2 mm of headroom**. It is full: anything
 added has to be traded, exactly like the CV.
 
-Three things from that review were raised and **not** fixed, because they were
-not part of what was asked: *"worked on"* is the vaguest verb in the letter and
-opens its strongest paragraph; *"this year led my team at the Draycott…"* goes
-stale the same way the hardcoded date did; and *"I don't just relocate; I
-integrate"* stacks an assertion on top of the evidence that precedes it.
+Three smaller findings from the same review were then fixed too:
+
+- ***"I worked on multibillion-dollar…"*** was the vaguest verb in the letter and
+  it opened the letter's strongest paragraph, every other sentence of which uses
+  *ran, built, traced, wrote*. Leading with the strong verb instead also sharpens
+  the point the sentence exists to make: *"I ran a turnaround workstream for
+  Fortune 500 clients **in** multibillion-dollar U.S. Chapter 11 restructurings,
+  covering more than $100M"* puts his workstream inside the engagement rather
+  than alongside it.
+- ***"this year led my team at the Draycott…"*** would go stale exactly as the
+  hardcoded date would have. Both results are now dated — *"In 2021 I placed in
+  the top three of 15,000 … in 2026 I led my team at the Draycott"* — which also
+  stops the undated case result reading as recent when it is five years old.
+- ***"I don't just relocate; I integrate"*** is his own line, carried over from
+  the Hilti letter, and it is gone. The sentence before it already proves
+  mobility with four countries and the New York / Chicago work; the slogan only
+  asserted the same thing again, and in the Hilti letter it sat in a bulleted
+  *Global Mobility* section where that register fitted. In flowing prose it read
+  as a boast. If an integration claim is wanted, the evidence to use is the
+  German going A1 (Hilti, 01.2026) to B1 (the CV) — but that needs the timeline
+  confirmed before it goes on a page.
 
 ### What the three letters disagree about
 
