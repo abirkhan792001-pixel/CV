@@ -26,10 +26,12 @@ Current state: **296.1 mm of 297 mm, one page, 0.9 mm headroom.** 546 selectable
 words, 5 fonts embedded, photo at 655 DPI, 310 KB.
 
 > One build note, environment-specific rather than a project setting: `package.json`
-> asks for `playwright ^1.56.1`, which resolves to 1.62.1 and then wants a Chromium
-> newer than the one preinstalled here. This build pinned `playwright@1.56.1` with
-> `--no-save` to match. No lockfile is committed, so nothing about that pin leaks
-> into a normal `npm install` on your own machine.
+> asks for `playwright ^1.56.1`, which resolves to 1.62.1 — the version the committed
+> `package-lock.json` records, matching the other branches in this repo. That release
+> wants a newer Chromium than the one preinstalled in this build container, so the
+> build here additionally pinned `playwright@1.56.1` with `--no-save`. That pin
+> touched `node_modules` only and left the lockfile alone, so `npm install` on your
+> own machine behaves exactly as it does on every other branch.
 
 ## What changed from the trawa CV
 
