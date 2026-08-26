@@ -24,7 +24,7 @@ checks ATS parseability, layout, typography and
 [provenance](#provenance-is-gated-too) — and it
 [found a real defect](#the-audit-found-a-real-defect) on its first run.
 
-Current state: **296.1 mm of 297 mm, one page, 0.9 mm headroom.** 526 selectable
+Current state: **292.0 mm of 297 mm, one page, 5.0 mm headroom.** 524 selectable
 words, 5 fonts embedded, photo at 655 DPI, 312 KB.
 
 > One build note, environment-specific rather than a project setting: `package.json`
@@ -44,13 +44,13 @@ Five content edits and one structural fix. Nothing else on the page moved.
 | **Founder entry** | Stealth AI-Energy Startup — DACH whitespace, three-stage energy model, electricity-bill AI tool | **SQRlane** *(AI agents for freight forwarding)* — one shipped-product bullet plus two research findings |
 | **Tagline** | "advised Fortune 500 leadership on turnaround strategy at A&M; sourced energy-transition deals in VC; now founding an AI-energy venture for German SMEs" | "**A&M** restructuring, **VC** diligence and **go-to-market** at an early-stage startup; now founding an **AI-agent venture** in logistics, built on **open-weight models**" |
 | **Core skills** | Strategy Consulting, Financial Modelling, Commercial and Financial Due Diligence, Digital Transformation … | Go-to-Market Strategy, Sales Enablement, Process Automation, AI Agent Workflows, Generative AI … |
-| **Technical** | Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, LLMs | Python, SQL, Claude Code, LLMs, **Open-Weight Models**, Excel, PowerPoint, Power BI — reordered so the AI terms lead |
+| **Technical** | Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, LLMs | Python, SQL, Claude Code, LLMs, **Open-Weight Models**, Excel, PowerPoint — reordered so the AI terms lead |
 | **Interests** | Distance running, swimming, hiking, baking | **cut** — see below |
 | **Bullet rendering** | `position:absolute` glyph | normal-flow hanging indent |
 
-### How the page got back to full
+### Where the page stands
 
-The trawa CV sits at 296.8 mm of 297 — full. Three moves since, in order:
+The trawa CV sits at 296.8 mm of 297 — full. Four moves since, in order:
 
 1. The SQRlane entry arrived with **four** bullets, paid for by cutting `Interests`
    (−4.9 mm: one line plus its grid gap) and trimming the Technical row back to one
@@ -59,16 +59,21 @@ The trawa CV sits at 296.8 mm of 297 — full. Three moves since, in order:
 2. The fourth bullet — the code/model-boundary finding — was **cut on request**,
    handing 4.2 mm back. 296.1 → 292.0 mm.
 3. **`PowerPoint` was restored on request**, which re-wrapped the Technical row to
-   two lines and spent exactly that 4.2 mm. 292.0 → **296.1 mm, 0.9 mm headroom.**
+   two lines and spent exactly that 4.2 mm. 292.0 → 296.1 mm.
+4. **`Power BI` was removed on request**, which took the Technical row back to one
+   line and handed the 4.2 mm straight back. 296.1 → **292.0 mm, 5.0 mm headroom.**
 
-So the page is full again, and `Interests` is the one thing still out. Restoring it
-costs 4.9 mm and there is 0.9 mm going spare, so it would need something else to
-come out — it is not a free add.
+`Interests` is the one thing still out, and at 5.0 mm of headroom against its
+4.9 mm cost it is now — just — a free add. Left out rather than restored, because
+nothing was asked for.
 
-**One template addition came out of this.** With `PowerPoint` back, the Technical
+**One template addition came out of step 3.** With `PowerPoint` back the Technical
 row wrapped mid-name and left `BI` orphaned on the second line, and the Core skills
-row split `Market Sizing` the same way. Both are now wrapped in a `.nb`
-(`white-space:nowrap`) span, so each breaks at a comma instead of through a term.
+row split `Market Sizing` the same way. Both got a `.nb` (`white-space:nowrap`)
+span so each row breaks at a comma instead of through a term. Removing `Power BI`
+in step 4 took its span with it, but the class stays: `Market Sizing` still needs
+it, and the Core skills row is long enough that it always will.
+
 Deliberately a CSS class and **not** `&nbsp;` — U+00A0 is one of the invisible
 carriers `scripts/audit.py` refuses, so the entity would fail our own gate.
 
@@ -221,9 +226,9 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 |---|---|
 | Pages | 1 |
 | Exact A4 | 595.28 × 841.89 pt = 210.00 × 297.00 mm |
-| Content height | 296.1 mm — 0.9 mm headroom |
-| Bottom white | 11.87 mm |
-| Text is text | 526 words selectable; 5 fonts, all embedded |
+| Content height | 292.0 mm — 5.0 mm headroom |
+| Bottom white | 16.10 mm |
+| Text is text | 524 words selectable; 5 fonts, all embedded |
 | Bullets with their employer | 9 of 9 entries |
 | Bullets wrapping | 0 of 20 |
 | Bullet text left edge | 25.41 mm, all 20 |
@@ -235,7 +240,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 | Em / en dashes, placeholders | none |
 | Non-ASCII | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout; every section in reverse chronological order |
-| Compound terms split across a line break | none — `Power BI` and `Market Sizing` held by `.nb` |
+| Compound terms split across a line break | none — `Market Sizing` held by `.nb` |
 | Repeated bullet-opening verbs | none across all 20 |
 | XMP packet / C2PA manifest | neither present |
 | Producer / tool fingerprints | Producer blank; none of 11 byte markers; nothing in creator, title or subject |
