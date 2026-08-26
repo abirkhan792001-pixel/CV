@@ -24,7 +24,7 @@ checks ATS parseability, layout, typography and
 [provenance](#provenance-is-gated-too) — and it
 [found a real defect](#the-audit-found-a-real-defect) on its first run.
 
-Current state: **292.0 mm of 297 mm, one page, 5.0 mm headroom.** 525 selectable
+Current state: **296.1 mm of 297 mm, one page, 0.9 mm headroom.** 526 selectable
 words, 5 fonts embedded, photo at 655 DPI, 312 KB.
 
 > One build note, environment-specific rather than a project setting: `package.json`
@@ -44,30 +44,33 @@ Five content edits and one structural fix. Nothing else on the page moved.
 | **Founder entry** | Stealth AI-Energy Startup — DACH whitespace, three-stage energy model, electricity-bill AI tool | **SQRlane** *(AI agents for freight forwarding)* — one shipped-product bullet plus two research findings |
 | **Tagline** | "advised Fortune 500 leadership on turnaround strategy at A&M; sourced energy-transition deals in VC; now founding an AI-energy venture for German SMEs" | "**A&M** restructuring, **VC** diligence and **go-to-market** at an early-stage startup; now founding an **AI-agent venture** in logistics, built on **open-weight models**" |
 | **Core skills** | Strategy Consulting, Financial Modelling, Commercial and Financial Due Diligence, Digital Transformation … | Go-to-Market Strategy, Sales Enablement, Process Automation, AI Agent Workflows, Generative AI … |
-| **Technical** | Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, LLMs | Python, SQL, Claude Code, LLMs, **Open-Weight Models**, Excel, Power BI |
+| **Technical** | Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, LLMs | Python, SQL, Claude Code, LLMs, **Open-Weight Models**, Excel, PowerPoint, Power BI — reordered so the AI terms lead |
 | **Interests** | Distance running, swimming, hiking, baking | **cut** — see below |
 | **Bullet rendering** | `position:absolute` glyph | normal-flow hanging indent |
 
-### The page has 5 mm spare, and that is a live choice
+### How the page got back to full
 
-The trawa CV sits at 296.8 mm of 297 — full. The SQRlane entry first carried four
-bullets, and two cuts were made to pay for the fourth:
+The trawa CV sits at 296.8 mm of 297 — full. Three moves since, in order:
 
-- **Interests came out** (−4.9 mm: one line plus its grid gap). It is the only row
-  on the page the posting says nothing about.
-- **The Technical row was trimmed to one line** (−4.2 mm). Adding `Open-Weight
-  Models` had wrapped it to two, and `FastAPI` and `PowerPoint` came out to pay for
-  it: for a lab whose own posting says *"same team, mission, and open-weights
-  models"*, the open-weight term is worth more than either.
+1. The SQRlane entry arrived with **four** bullets, paid for by cutting `Interests`
+   (−4.9 mm: one line plus its grid gap) and trimming the Technical row back to one
+   line (−4.2 mm, dropping `FastAPI` and `PowerPoint` to make room for
+   `Open-Weight Models`). 296.8 → 296.1 mm.
+2. The fourth bullet — the code/model-boundary finding — was **cut on request**,
+   handing 4.2 mm back. 296.1 → 292.0 mm.
+3. **`PowerPoint` was restored on request**, which re-wrapped the Technical row to
+   two lines and spent exactly that 4.2 mm. 292.0 → **296.1 mm, 0.9 mm headroom.**
 
-The fourth bullet was then **removed on request** (the code/model-boundary finding —
-see the table below), which handed 4.2 mm back without undoing either cut. The page
-now sits at **292.0 mm with 5.0 mm of headroom**, the most it has ever had.
+So the page is full again, and `Interests` is the one thing still out. Restoring it
+costs 4.9 mm and there is 0.9 mm going spare, so it would need something else to
+come out — it is not a free add.
 
-That headroom will buy back exactly one of the two things above — `Interests`
-(4.9 mm) or a two-line Technical row carrying `PowerPoint` and `FastAPI` again
-(4.2 mm) — or it can stay as white space, which a full page does not otherwise get.
-Left as headroom deliberately rather than refilled, because nothing was asked for.
+**One template addition came out of this.** With `PowerPoint` back, the Technical
+row wrapped mid-name and left `BI` orphaned on the second line, and the Core skills
+row split `Market Sizing` the same way. Both are now wrapped in a `.nb`
+(`white-space:nowrap`) span, so each breaks at a comma instead of through a term.
+Deliberately a CSS class and **not** `&nbsp;` — U+00A0 is one of the invisible
+carriers `scripts/audit.py` refuses, so the entity would fail our own gate.
 
 ## The SQRlane entry
 
@@ -218,9 +221,9 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 |---|---|
 | Pages | 1 |
 | Exact A4 | 595.28 × 841.89 pt = 210.00 × 297.00 mm |
-| Content height | 292.0 mm — 5.0 mm headroom |
-| Bottom white | 16.10 mm |
-| Text is text | 525 words selectable; 5 fonts, all embedded |
+| Content height | 296.1 mm — 0.9 mm headroom |
+| Bottom white | 11.87 mm |
+| Text is text | 526 words selectable; 5 fonts, all embedded |
 | Bullets with their employer | 9 of 9 entries |
 | Bullets wrapping | 0 of 20 |
 | Bullet text left edge | 25.41 mm, all 20 |
@@ -231,7 +234,8 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 | Metadata keywords visible on the page | 15 of 15 |
 | Em / en dashes, placeholders | none |
 | Non-ASCII | only `•`, `’`, `×` — all intentional |
-| Dates | `MM.YYYY` throughout |
+| Dates | `MM.YYYY` throughout; every section in reverse chronological order |
+| Compound terms split across a line break | none — `Power BI` and `Market Sizing` held by `.nb` |
 | Repeated bullet-opening verbs | none across all 20 |
 | XMP packet / C2PA manifest | neither present |
 | Producer / tool fingerprints | Producer blank; none of 11 byte markers; nothing in creator, title or subject |

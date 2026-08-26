@@ -175,6 +175,9 @@ li b{ font-weight:700; }
   align-items:baseline;
 }
 .grid dt{ font-style:italic; }
+/* Keeps a two-word product name off a line break. Not &nbsp; -- U+00A0 is one
+   of the invisible carriers scripts/audit.py refuses. */
+.nb{ white-space:nowrap; }
 
 /* ---------- print ----------------------------------------- */
 
@@ -359,10 +362,10 @@ li b{ font-weight:700; }
       <dd>English (Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
 
       <dt>Core skills</dt>
-      <dd>Go-to-Market Strategy, Sales Enablement, Process Automation, AI Agent Workflows, Generative AI, Market Sizing, Business Case Development, Project Management, Stakeholder Management</dd>
+      <dd>Go-to-Market Strategy, Sales Enablement, Process Automation, AI Agent Workflows, Generative AI, <span class="nb">Market Sizing</span>, Business Case Development, Project Management, Stakeholder Management</dd>
 
       <dt>Technical</dt>
-      <dd>Python, SQL, Claude Code, Large Language Models (LLMs), Open-Weight Models, Excel, Power BI</dd>
+      <dd>Python, SQL, Claude Code, Large Language Models (LLMs), Open-Weight Models, Excel, PowerPoint, <span class="nb">Power BI</span></dd>
 
     </dl>
   </section>
