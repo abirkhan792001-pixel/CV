@@ -24,8 +24,9 @@ checks ATS parseability, layout, typography and
 [provenance](#provenance-is-gated-too) — and it
 [found a real defect](#the-audit-found-a-real-defect) on its first run.
 
-Current state: **292.0 mm of 297 mm, one page, 5.0 mm headroom.** 524 selectable
-words, 5 fonts embedded, photo at 655 DPI, 312 KB.
+Current state: **296.8 mm of 297 mm, one page, 0.2 mm headroom.** 530 selectable
+words, 5 fonts embedded, photo at 655 DPI, 312 KB. The page is full — anything
+added from here has to be traded against something already on it.
 
 > One build note, environment-specific rather than a project setting: `package.json`
 > asks for `playwright ^1.56.1`, which resolves to 1.62.1 — the version the committed
@@ -45,7 +46,7 @@ Five content edits and one structural fix. Nothing else on the page moved.
 | **Tagline** | "advised Fortune 500 leadership on turnaround strategy at A&M; sourced energy-transition deals in VC; now founding an AI-energy venture for German SMEs" | "**A&M** restructuring, **VC** diligence and **go-to-market** at an early-stage startup; now founding an **AI-agent venture** in logistics, built on **open-weight models**" |
 | **Core skills** | Strategy Consulting, Financial Modelling, Commercial and Financial Due Diligence, Digital Transformation … | Go-to-Market Strategy, Sales Enablement, Process Automation, AI Agent Workflows, Generative AI … |
 | **Technical** | Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, LLMs | Python, SQL, Claude Code, LLMs, **Open-Weight Models**, Excel, PowerPoint — reordered so the AI terms lead |
-| **Interests** | Distance running, swimming, hiking, baking | **cut** — see below |
+| **Interests** | Distance running, swimming, hiking, baking | unchanged — cut, then restored |
 | **Bullet rendering** | `position:absolute` glyph | normal-flow hanging indent |
 
 ### Where the page stands
@@ -61,11 +62,13 @@ The trawa CV sits at 296.8 mm of 297 — full. Four moves since, in order:
 3. **`PowerPoint` was restored on request**, which re-wrapped the Technical row to
    two lines and spent exactly that 4.2 mm. 292.0 → 296.1 mm.
 4. **`Power BI` was removed on request**, which took the Technical row back to one
-   line and handed the 4.2 mm straight back. 296.1 → **292.0 mm, 5.0 mm headroom.**
+   line and handed the 4.2 mm straight back. 296.1 → 292.0 mm.
+5. **`Interests` was restored on request**, spending 4.9 mm of that 5.0 mm.
+   292.0 → **296.8 mm, 0.2 mm headroom.**
 
-`Interests` is the one thing still out, and at 5.0 mm of headroom against its
-4.9 mm cost it is now — just — a free add. Left out rather than restored, because
-nothing was asked for.
+That lands on 296.8 mm — the trawa CV's own height, to the tenth of a millimetre.
+Every cut made along the way has now been paid back, and the page is full again on
+the same terms it started: one line per bullet, nothing wrapping, 0.2 mm spare.
 
 **One template addition came out of step 3.** With `PowerPoint` back the Technical
 row wrapped mid-name and left `BI` orphaned on the second line, and the Core skills
@@ -226,9 +229,9 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 |---|---|
 | Pages | 1 |
 | Exact A4 | 595.28 × 841.89 pt = 210.00 × 297.00 mm |
-| Content height | 292.0 mm — 5.0 mm headroom |
-| Bottom white | 16.10 mm |
-| Text is text | 524 words selectable; 5 fonts, all embedded |
+| Content height | 296.8 mm — 0.2 mm headroom |
+| Bottom white | 11.34 mm |
+| Text is text | 530 words selectable; 5 fonts, all embedded |
 | Bullets with their employer | 9 of 9 entries |
 | Bullets wrapping | 0 of 20 |
 | Bullet text left edge | 25.41 mm, all 20 |
