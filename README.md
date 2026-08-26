@@ -24,8 +24,8 @@ checks ATS parseability, layout, typography and
 [provenance](#provenance-is-gated-too) — and it
 [found a real defect](#the-audit-found-a-real-defect) on its first run.
 
-Current state: **296.1 mm of 297 mm, one page, 0.9 mm headroom.** 546 selectable
-words, 5 fonts embedded, photo at 655 DPI, 310 KB.
+Current state: **292.0 mm of 297 mm, one page, 5.0 mm headroom.** 525 selectable
+words, 5 fonts embedded, photo at 655 DPI, 312 KB.
 
 > One build note, environment-specific rather than a project setting: `package.json`
 > asks for `playwright ^1.56.1`, which resolves to 1.62.1 — the version the committed
@@ -41,33 +41,40 @@ Five content edits and one structural fix. Nothing else on the page moved.
 
 | | trawa CV | This CV |
 |---|---|---|
-| **Founder entry** | Stealth AI-Energy Startup — DACH whitespace, three-stage energy model, electricity-bill AI tool | **SQRlane** *(AI agents for freight forwarding)* — one shipped-product bullet plus the three research findings |
+| **Founder entry** | Stealth AI-Energy Startup — DACH whitespace, three-stage energy model, electricity-bill AI tool | **SQRlane** *(AI agents for freight forwarding)* — one shipped-product bullet plus two research findings |
 | **Tagline** | "advised Fortune 500 leadership on turnaround strategy at A&M; sourced energy-transition deals in VC; now founding an AI-energy venture for German SMEs" | "**A&M** restructuring, **VC** diligence and **go-to-market** at an early-stage startup; now founding an **AI-agent venture** in logistics, built on **open-weight models**" |
 | **Core skills** | Strategy Consulting, Financial Modelling, Commercial and Financial Due Diligence, Digital Transformation … | Go-to-Market Strategy, Sales Enablement, Process Automation, AI Agent Workflows, Generative AI … |
 | **Technical** | Microsoft Excel, PowerPoint, Power BI, SQL, Python, Claude Code, LLMs | Python, SQL, Claude Code, LLMs, **Open-Weight Models**, Excel, Power BI |
 | **Interests** | Distance running, swimming, hiking, baking | **cut** — see below |
 | **Bullet rendering** | `position:absolute` glyph | normal-flow hanging indent |
 
-### What the fourth bullet cost
+### The page has 5 mm spare, and that is a live choice
 
-The trawa CV sits at 296.8 mm of 297 — the page is full, so a fourth bullet on the
-founder entry had to be paid for. The trade was made twice:
+The trawa CV sits at 296.8 mm of 297 — full. The SQRlane entry first carried four
+bullets, and two cuts were made to pay for the fourth:
 
 - **Interests came out** (−4.9 mm: one line plus its grid gap). It is the only row
-  on the page the posting says nothing about, and the four SQRlane bullets are the
-  reason this CV is worth reading at Prior Labs.
+  on the page the posting says nothing about.
 - **The Technical row was trimmed to one line** (−4.2 mm). Adding `Open-Weight
-  Models` had wrapped it to two. `FastAPI` and `PowerPoint` came out to pay for it:
-  for a lab whose own posting says *"same team, mission, and open-weights models"*,
-  the open-weight term is worth more than either, and decks are already claimed by
-  `Sales Enablement` in Core skills and by the A&M creditor-presentation bullet.
+  Models` had wrapped it to two, and `FastAPI` and `PowerPoint` came out to pay for
+  it: for a lab whose own posting says *"same team, mission, and open-weights
+  models"*, the open-weight term is worth more than either.
 
-Net: 296.8 → 296.1 mm.
+The fourth bullet was then **removed on request** (the code/model-boundary finding —
+see the table below), which handed 4.2 mm back without undoing either cut. The page
+now sits at **292.0 mm with 5.0 mm of headroom**, the most it has ever had.
+
+That headroom will buy back exactly one of the two things above — `Interests`
+(4.9 mm) or a two-line Technical row carrying `PowerPoint` and `FastAPI` again
+(4.2 mm) — or it can stay as white space, which a full page does not otherwise get.
+Left as headroom deliberately rather than refilled, because nothing was asked for.
 
 ## The SQRlane entry
 
-Four bullets: what was shipped, then the three research findings, which are the
-answer to *"highlight the top 3 most relevant research we have done"*.
+Three bullets: what was shipped, then two of the three research findings. The
+third — the code/model boundary — was cut on request after the first pass; it is
+kept in the table below, struck through, so the record shows why the page has two
+rather than the three that were originally selected.
 
 ```
 SQRlane (AI agents for freight forwarding)            Munich, Germany
@@ -77,13 +84,14 @@ Founder                                                 since 08.2026
 | Bullet | What it is | Where it comes from |
 |---|---|---|
 | Shipped a working prototype: agents screen **42 live risk sources**, decide **reroute or hold** per booking, and draft the emails | The product | 42 free keyless sources across six families; Risk Monitor, Route Advisor and Comms Agent are the three that genuinely run |
-| Cut inference cost **~10x** by sizing each model to its task (screening, judgement, drafting) against measured token counts | **Research 1 — per-task model routing** | Measured 12,800 in / 3,700 out per cycle over 14 calls: $0.0034 against $0.0355 for a frontier model everywhere. 10.4x |
-| Split code from model: code computes routes, days and cost; the model only judges, so **no customer-facing number is invented** | **Research 2 — the code/model boundary** | Dates and sums never reach a model; no probability is applied anywhere, on the grounds that an invented number is worse than none |
-| Designed for **EU-hosted open-weight inference**, with recorded reasoning and human approval before anything is sent | **Research 3 — residency vs provenance** | Open-weight throughout so the host is a choice; data residency and model provenance kept as separate claims |
+| Cut inference cost **~10x** by sizing each model to its task (screening, judgement, drafting) against measured token counts | **Research — per-task model routing** | Measured 12,800 in / 3,700 out per cycle over 14 calls: $0.0034 against $0.0355 for a frontier model everywhere. 10.4x |
+| ~~Split code from model: code computes routes, days and cost; the model only judges, so no customer-facing number is invented~~ | ~~the code/model boundary~~ — **cut on request** | Still true of the system: dates and sums never reach a model, and no probability is applied anywhere. Off the page, not off the record — worth having ready if it comes up |
+| Designed for **EU-hosted open-weight inference**, with recorded reasoning and human approval before anything is sent | **Research — residency vs provenance** | Open-weight throughout so the host is a choice; data residency and model provenance kept as separate claims |
 
-Each of the three maps onto a line in the posting's *What Makes You Special*:
-built automations and agents that people used; a technical background; familiarity
-with open source and foundation models.
+The two that remain map onto the posting's *What Makes You Special*: built
+automations and agents that people used, and familiarity with open source and
+foundation models. The cut bullet was the one carrying the technical-judgement
+signal, so that now rests on the shipped-prototype bullet alone.
 
 **"Designed for" in the fourth bullet is load-bearing and must stay.** The prototype
 currently calls a US inference provider — it was built against a free tier for speed
@@ -157,8 +165,8 @@ than eyeballed.
 | Photo | `assets/photo.jpg`, **35 × 45 mm** (German *Bewerbungsfoto* standard), 900×1157 px = 655 DPI |
 | Sizing | One size for everything except the name. `--fs-base: 9.35pt` is the largest that keeps every bullet on one line — don't raise it without re-running the build |
 
-Left edges land exactly: text at 19.06 mm ×30, bullet glyph at 21.89 mm ×21,
-bullet text at 25.41 mm ×21 (measured at character level), value column at
+Left edges land exactly: text at 19.06 mm ×30, bullet glyph at 21.89 mm ×20,
+bullet text at 25.41 mm ×20 (measured at character level), value column at
 50.81 mm ×4.
 
 Edit `cv.html` only — content and styling both live there. The tuning knobs are the
@@ -210,12 +218,12 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 |---|---|
 | Pages | 1 |
 | Exact A4 | 595.28 × 841.89 pt = 210.00 × 297.00 mm |
-| Content height | 296.1 mm — 0.9 mm headroom |
-| Bottom white | 11.87 mm |
-| Text is text | 546 words selectable; 5 fonts, all embedded |
+| Content height | 292.0 mm — 5.0 mm headroom |
+| Bottom white | 16.10 mm |
+| Text is text | 525 words selectable; 5 fonts, all embedded |
 | Bullets with their employer | 9 of 9 entries |
-| Bullets wrapping | 0 of 21 |
-| Bullet text left edge | 25.41 mm, all 21 |
+| Bullets wrapping | 0 of 20 |
+| Bullet text left edge | 25.41 mm, all 20 |
 | Right-aligned column | 18 lines, 0.083 mm spread (italic side-bearing) |
 | Rules | one span, 19.05–191.82 mm |
 | Photo right edge | 191.82 mm — on the rules |
@@ -224,7 +232,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 | Em / en dashes, placeholders | none |
 | Non-ASCII | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
-| Repeated bullet-opening verbs | none across all 21 |
+| Repeated bullet-opening verbs | none across all 20 |
 | XMP packet / C2PA manifest | neither present |
 | Producer / tool fingerprints | Producer blank; none of 11 byte markers; nothing in creator, title or subject |
 | Invisible, bidi, variation-selector carriers | none of 23 |
