@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Audit the share-ready PDF: ATS parseability first, then layout.
+"""Audit the share-ready PDF: ATS parseability, layout, typography, provenance.
 
 Run after `npm run share`. Everything here is measured out of the rendered
 PDF rather than the source, so it reflects what a reader -- and a parser --
 actually receives.
+
+The provenance section asserts the file names no tool that touched it and
+carries no AI-provenance metadata -- no XMP packet, no C2PA manifest, no
+invisible-Unicode carriers, and nothing hiding inside the embedded photo.
 """
 import pymupdf, pathlib, re, sys
 from collections import Counter
@@ -141,6 +145,87 @@ flush = [r for r in rights if r > EDGE - 0.10]
 # the side-bearing, not misalignment -- it is reported so it stays small.
 check(len(flush) == 18, "right-aligned column flush",
       f"{len(flush)} location/date lines, {max(flush) - min(flush):.3f} mm spread")
+
+print("\nPROVENANCE")
+# Nothing in this file should name what produced it. The page is hand-authored
+# HTML rendered through Chromium, and finalise.py then overwrites the info dict
+# and blanks Producer -- so a fingerprint surfacing here means one of those
+# steps started leaking again. Worth a gate rather than a spot check: a CV is a
+# document you send, and the leak would ship with it.
+raw = PDF.read_bytes()
+
+check(not doc.xref_xml_metadata(), "no XMP metadata packet",
+      "absent" if not doc.xref_xml_metadata() else "present")
+
+# C2PA / Content Credentials ride in a JUMBF box. Nothing in this pipeline
+# writes one; an editor opened on the output would.
+c2pa = [n.decode() for n in (b"c2pa", b"C2PA", b"jumbf", b"jumd",
+                             b"contentcredentials") if n in raw]
+check(not c2pa, "no C2PA / Content Credentials manifest", ", ".join(c2pa) or "absent")
+
+check(doc.metadata.get("producer", "") == "", "Producer is blank",
+      repr(doc.metadata.get("producer", "")))
+
+# Two passes, because they fail differently.
+#
+# The metadata pass reads producer, creator, title and subject only. Keywords
+# are deliberately excluded: the check above already requires every keyword to
+# be visible on the page, so "Claude Code" there is a skill the candidate has,
+# not a tool that touched the file. Scoping it this way is what lets that
+# keyword be added without tripping this.
+TOOLS = ("chromium", "chrome", "skia", "adobe", "acrobat", "photoshop", "gimp",
+         "microsoft word", "libreoffice", "openoffice", "quartz", "cairo",
+         "itext", "tcpdf", "wkhtmltopdf", "synthid", "anthropic", "claude",
+         "openai", "gpt", "gemini", "copilot")
+fields = " ".join(str(doc.metadata.get(k, ""))
+                  for k in ("producer", "creator", "title", "subject")).lower()
+leaked = sorted(t for t in TOOLS if t in fields)
+check(not leaked, "no tool name in producer, creator, title or subject",
+      ", ".join(leaked) or "clean")
+
+# The raw-byte pass is a backstop, and best-effort by nature: content streams
+# are compressed, so this reads object headers and uncompressed strings. Its
+# list has to stay narrow for the opposite reason the list above is broad --
+# "Adobe" appears in every CID font's /Registry, so matching it here would fail
+# on the embedded Liberation Serif subsets rather than on a real leak.
+BYTES_TOOLS = (b"Chromium", b"Skia", b"Photoshop", b"GIMP", b"SynthID",
+               b"wkhtmltopdf", b"LibreOffice", b"iTextSharp", b"TCPDF",
+               b"Anthropic", b"OpenAI")
+found = sorted(n.decode() for n in BYTES_TOOLS if n in raw)
+check(not found, "no generator fingerprint in the file bytes",
+      ", ".join(found) or f"none of {len(BYTES_TOOLS)} markers")
+
+# Overlaps the non-ASCII inventory above, deliberately. That one is an allowlist
+# somebody will eventually widen for a legitimate character, and widening it
+# would silently re-admit these; this one is a denylist of the carriers used to
+# hide a payload in text, and it names the class so a failure is diagnosable.
+CARRIERS = {0x200B: "ZWSP", 0x200C: "ZWNJ", 0x200D: "ZWJ", 0x2060: "WORD-JOINER",
+            0xFEFF: "ZWNBSP", 0x00AD: "SOFT-HYPHEN", 0x180E: "MONGOLIAN-VS",
+            0x061C: "ARABIC-LETTER-MARK", 0x200E: "LRM", 0x200F: "RLM",
+            0x202A: "LRE", 0x202B: "RLE", 0x202C: "POP-DIR", 0x202D: "LRO",
+            0x202E: "RLO", 0x2066: "LRI", 0x2067: "RLI", 0x2068: "FSI",
+            0x2069: "PDI", 0x00A0: "NBSP", 0x202F: "NNBSP",
+            0x2007: "FIGURE-SPACE", 0x2008: "PUNCT-SPACE"}
+carried = Counter(CARRIERS[ord(c)] for c in text if ord(c) in CARRIERS)
+carried += Counter(f"U+{ord(c):04X}" for c in text
+                   if 0xFE00 <= ord(c) <= 0xFE0F or 0xE0000 <= ord(c) <= 0xE007F)
+check(not carried, "no invisible, bidi or variation-selector carriers",
+      str(dict(carried)) if carried else f"none of {len(CARRIERS)} carriers")
+
+# The photo is the one raster object on the page, and a document-level metadata
+# strip routinely misses what is carried inside an image. Chromium re-encodes on
+# embed, which drops the source EXIF; this asserts that keeps happening.
+IMG_MARKS = (b"Exif", b"http://ns.adobe.com/xap", b"jumbf", b"c2pa", b"C2PA",
+             b"Photoshop", b"SynthID", b"GIMP")
+# xref_stream_raw, NOT extract_image: extract_image re-encodes the picture and
+# drops the very segments this is looking for, so scanning its output would pass
+# a photo whose APP1 EXIF is still sitting in the file. Verified by splicing an
+# Exif segment in -- raw sees it, extracted does not.
+images = page.get_images(full=True)
+dirty = [f"{n.decode('latin1')} in xref {x}" for x, *_ in images
+         for n in IMG_MARKS if n in doc.xref_stream_raw(x)]
+check(not dirty, "embedded images carry no EXIF, XMP or C2PA",
+      ", ".join(dirty) or f"{len(images)} image(s), metadata-free")
 
 print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' FAILED: ' + ', '.join(fails)}\n")
 sys.exit(1 if fails else 0)

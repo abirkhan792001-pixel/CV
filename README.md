@@ -19,8 +19,10 @@ npm run share        # -> Abir_Hilal_Khan_CV.pdf, then finalise + audit
 ```
 
 `npm run share` now runs three steps, not two: build, `scripts/finalise.py` (exact
-A4 + document metadata), then `scripts/audit.py`, which is new on this branch —
-see [The audit found a real defect](#the-audit-found-a-real-defect).
+A4 + document metadata), then `scripts/audit.py`, which is new on this branch. It
+checks ATS parseability, layout, typography and
+[provenance](#provenance-is-gated-too) — and it
+[found a real defect](#the-audit-found-a-real-defect) on its first run.
 
 Current state: **296.1 mm of 297 mm, one page, 0.9 mm headroom.** 546 selectable
 words, 5 fonts embedded, photo at 655 DPI, 310 KB.
@@ -162,6 +164,43 @@ bullet text at 25.41 mm ×21 (measured at character level), value column at
 Edit `cv.html` only — content and styling both live there. The tuning knobs are the
 CSS variables at the top: `--fs-base`, `--lh`, `--pad-*`.
 
+## Provenance is gated too
+
+A CV is a document you send, so `scripts/audit.py` also asserts that the file names
+nothing about what produced it. Seven checks: no XMP packet, no C2PA manifest,
+Producer blank, no tool name in producer/creator/title/subject, no generator
+fingerprint in the file bytes, no invisible or bidi carriers in the text, and no
+EXIF/XMP/C2PA inside the embedded photo.
+
+All seven pass, and they pass because the pipeline earns it rather than by luck:
+Chromium renders hand-authored HTML, `finalise.py` overwrites the info dict and
+blanks Producer, and Chromium re-encodes the photo on embed, which drops its EXIF.
+
+Three notes on how these are written, because each is a way the check could have
+been useless:
+
+- **The metadata scan reads producer, creator, title and subject — not keywords.**
+  Keywords are already required to appear in the visible text, so `Claude Code`
+  there is a skill the candidate has, not a tool that touched the file. Scoping it
+  this way is what lets that keyword be added without a false failure.
+- **The byte-level fingerprint list is deliberately narrow, and excludes `Adobe`.**
+  Every CID font carries `/Registry(Adobe)/Ordering(Identity)`, so matching it would
+  fail on the five embedded Liberation Serif subsets rather than on a real leak.
+- **The image check reads `xref_stream_raw`, not `extract_image`.** This one was a
+  bug, caught by testing it: `extract_image()` re-encodes the picture and drops the
+  APP1 segment the check is looking for, so the first version would have passed a
+  photo whose EXIF was still sitting in the file. Splicing an `Exif` segment in
+  proves it — raw sees it, extracted does not.
+
+Each of the seven was verified by poisoning a copy of the PDF and confirming it
+fails: a `Skia/PDF` Producer, an injected XMP packet, an embedded `c2pa`/`jumbf`
+stub, a spliced `Exif` segment, and a `U+200B`/`U+200F` pair put through the real
+build. A gate that cannot fail is not a gate.
+
+The one thing none of this covers is a statistical or sampling-level watermark in
+the *wording*, which is a different class of mark and needs a rewrite pass and a
+detector, not a file check.
+
 ## Final audit
 
 Run against the rendered PDF, not the source, so it reflects what a reader receives.
@@ -186,6 +225,10 @@ Run against the rendered PDF, not the source, so it reflects what a reader recei
 | Non-ASCII | only `•`, `’`, `×` — all intentional |
 | Dates | `MM.YYYY` throughout |
 | Repeated bullet-opening verbs | none across all 21 |
+| XMP packet / C2PA manifest | neither present |
+| Producer / tool fingerprints | Producer blank; none of 11 byte markers; nothing in creator, title or subject |
+| Invisible, bidi, variation-selector carriers | none of 23 |
+| Embedded photo | no EXIF, XMP or C2PA in the raw stream |
 
 ## Before sending
 
