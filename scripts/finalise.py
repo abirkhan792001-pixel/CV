@@ -30,10 +30,11 @@ doc.set_metadata({
     "title":    "Abir Hilal Khan - CV",
     "author":   "Abir Hilal Khan",
     "subject":  "Curriculum Vitae",
-    "keywords": ("Strategy Consulting, Business Case Development, Financial Modelling, "
-                 "Market Sizing, Commercial and Financial Due Diligence, Digital "
-                 "Transformation, Generative AI, Project Management, Stakeholder "
-                 "Management, Energy Transition, MSc Finance, Nova SBE"),
+    "keywords": ("AI Adoption, Generative AI, GenAI, Agentic AI Workflows, AI Agents, "
+                 "Large Language Models, Digital Transformation, Operational Excellence, "
+                 "Management Consulting, Project Management, Change Management, "
+                 "Stakeholder Management, Insurance, InsurTech, Financial Services, "
+                 "Excel, PowerPoint, MSc Finance, Nova SBE"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })

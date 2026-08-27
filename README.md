@@ -1,11 +1,13 @@
-# CV — E.ON Inhouse Consulting (ECON) eCON Academy
+# CV — Allianz Consulting (Allianz Services)
 
-A one-page A4 CV, tailored to the [eCON Academy](https://www.eon.com/en/about-us/business-units/eon-inhouse-consulting/econ-academy.html)
-recruiting event run by E.ON Inhouse Consulting.
+A one-page A4 CV, tailored to the **Consultant** opening at
+[Allianz Consulting](https://careers.allianz.com/), the Allianz Group's internal
+consulting unit, which partners with operating entities worldwide on digital,
+sustainability and operational-excellence transformation.
 
-Rebuilt on the **same template as the other tailored CVs in this repo**, rather
-than the standalone design it used to carry. Work-experience copy is lifted from
-those CVs.
+Same template as the other tailored CVs in this repo. Work-experience copy is
+lifted from those CVs and from `Abir_Hilal_Khan_CV_Prior_Labs.pdf`, which is
+where the founder entry comes from.
 
 ## Build
 
@@ -15,6 +17,10 @@ npm run build        # -> Abir_Khan_CV.pdf, with a one-page check
 npm run preview      # also writes preview.png for visual QA
 npm run share        # -> Abir_Hilal_Khan_CV.pdf, the file to actually send
 ```
+
+`Abir Hilal Khan_CV_Allianz Consulting.pdf` is a copy of that share output under
+the naming convention the other tailored CVs in this repo use. It is the file to
+attach to this application.
 
 `npm run share` builds, then runs `scripts/finalise.py` (needs `pymupdf`) to
 produce the copy you hand to a recruiter. It differs from the build output in
@@ -131,67 +137,73 @@ header is a flex row and the left column already sets its own width.
 
 ## What this CV is optimised for
 
-E.ON's own posting for the Academy screens on a short, specific list. Each one
-is mapped to a place on the page:
+Allianz Consulting's posting screens on a short, specific list. Each one is
+mapped to a place on the page:
 
-| What E.ON asks for | Where it lands |
+| What Allianz asks for | Where it lands |
 |---|---|
-| Enrolled Master's in final year / PhD / recent grad, **outstanding academic record** | Education placed **first**, class rank on its own bullet |
-| **Initial hands-on experience in consulting and/or the energy industry** | Founder entry (German energy regulation, flexibility), A&M restructuring, energy-transition deal sourcing at Biome, Impact Consulting |
-| **Fluent English *and* German** | First row of Additional Information — see the caveat below |
-| **Highly communicative within a team** | Hack-Nation (MIT × TUM), UN Foundation |
-| Curiosity, "ready to transform the energy industry" | Tagline, the Commission thesis, the founder entry, Biome's lead bullet |
-| International experience | MIT × TUM, Lisbon, Delhi, Hyderabad |
+| **Expert knowledge of AI frameworks; leverage AI tools in everyday tasks; consult clients on AI adoption** | The founder entry (all three bullets), SCAILE's agent-workflow and KPI-automation bullets, and the first half of Core skills. This is the posting's loudest requirement and it gets the most page. |
+| Minimum **1 year in operational business or management consulting** as an FTE | Work experience: Founder, SCAILE, A&M, Biome. See the caveat in **Before sending** — this is the one line the page does not clear outright. |
+| **Analytical thinking**, affinity for solving problems | A&M scenario models, Biome's 3,000+ company screen and CDD build-ups, SCAILE's GEO market sizing |
+| Responsibility for **deliverable quality and project milestones** | A&M's "full turnaround workstream", SCAILE's "owned North American clients end to end" |
+| **Business development and client pitches** | SCAILE's >$100k ARR signed and onboarded; Impact Consulting's fundraising proposals |
+| **Excellent English**, used for presentations and reports | Languages row; A&M's creditor-negotiation presentations |
+| **PowerPoint and Excel (complex functions)** | Technical row, deliberately placed first in it |
+| **Curiosity for or knowledge of insurance and financial services** | FitSure (InsurTech), MSc Finance, A&M restructuring, Biome |
+| **Project or change management** tools and techniques | A&M turnaround workstream; `Project and Change Management` in Core skills |
+| International experience, German or other languages | Munich, Lisbon, Delhi, Hyderabad, London; North American clients; five languages |
+| Affinity for **IT and GenAI** | Technical row (Claude Code, LLMs, open-weight models, Python, SQL) |
+| Digital / sustainability / operational-excellence transformation | AI entries (digital), the Commission thesis (sustainability), SCAILE's 60% effort cut (operational excellence) |
 
 Two deliberate choices carried over from the source CVs:
 
 - **Education before experience.** Standard for final-year students and recent
-  grads, and E.ON gates explicitly on academic record.
-- **Photo included.** All the source CVs except DHL carry one, and E.ON Inhouse
-  Consulting is a German employer, where the photo CV is still the convention.
+  grads.
+- **Photo included.** All the source CVs except DHL carry one, and this is a
+  German employer, where the photo CV is still the convention.
 
 ## Where the work-experience copy comes from
 
 Bullets are taken from the source CVs rather than rewritten, so the same claims
-appear the same way everywhere. The tailoring moves for E.ON:
+appear the same way everywhere. The tailoring moves for Allianz Consulting:
 
-- **TCG / Trariti Consulting Group is out**, as briefed. Work experience is
-  Stealth → SCAILE → A&M → Biome.
-- **Impact Consulting is back in**, under Extracurricular & Leadership, after
-  being cut to make room for the founder entry. It costs 14.5 mm and there was
-  17.3 mm going spare once the energy-skills row came out, so it fits without
-  dropping anything else. Location is **London, United Kingdom** — three of the
-  source CVs say *London, UK* and two say *United Kingdom*; this takes the city
-  from the majority and spells the country out to match the rest of the page.
-- **The founder entry now carries three bullets, in the candidate's own words.**
-  The middle one went through four versions: an arrow chain that read as a slide,
-  a prose revenue model, a *"Prototyped an AI audit…"* line that fixed the
-  register but claimed a build that does not exist, and finally the supplied
-  wording — *"Designed a three-stage model — audit, subscription software, then
-  flexibility trading — grounded in German energy regulation"*. The third bullet
-  is deliberately present-tense (*"Building…"*, *"applying to…"*, *"in early
-  talks with…"*), which is accurate for a venture still in research.
-  **No bold on that third bullet**: bolding *Antler* and *TUM Venture Labs*
-  widened it past the single-line limit, and the wording matters more than the
-  emphasis.
-
-- **Biome's ESG line leads its entry.** "Sourced ESG-focused deals ... to
-  support the fund's energy-transition thesis" is the single strongest genuine
-  energy signal in the history, so it goes first rather than third.
-
-Elsewhere on the page:
-
-- **The coursework list is gone**, replaced by the Master's Thesis, run with
-  the European Commission. Coursework titles are weak evidence — everyone on
-  the programme took them. A Commission-partnered project on EU climate-finance
-  allocation with a renewables focus is the strongest energy signal on the
-  page, and it is work only this candidate did.
-- **The M&A competition line** was cut, leaving only *Top 3 nationwide,
-  National Case Study Challenge (out of 15,000 participants)*. The field size
-  does more work than a second, smaller placing.
-- **Hack-Nation** was added on brief. Scale figures — 24-hour sprint, MIT /
-  Harvard / Stanford, 60+ countries — are from public sources (hack-nation.ai,
-  MIT RAISE), not invented.
+- **TCG / Trariti Consulting Group is out**, as briefed. It was on the older
+  `Abir Hilal Khan_CV_Allianz Technology.pdf` but not on the current source;
+  the audit below confirms it does not appear in the rendered PDF. Work
+  experience is Stealth → SCAILE → A&M → Biome.
+- **The founder entry is now the freight-forwarding venture**, replacing the
+  AI-energy one, with the three bullets taken verbatim in substance from
+  `Abir_Hilal_Khan_CV_Prior_Labs.pdf`. Two changes: the `~` on *~10x* is
+  dropped, per the repo's no-tildes rule, and *EU-hosted* and *recorded
+  reasoning* are bolded. That third bullet is the strongest line on the page
+  for an insurer — EU-hosted inference, a recorded reasoning trail and a human
+  in the loop before anything is sent is exactly the governance posture a
+  regulated financial institution has to be able to evidence. The venture is
+  titled **Stealth AI Venture** rather than by name, which is how the candidate
+  described it.
+- **FitSure is back in**, under Extracurricular & Leadership. It is the only
+  insurance experience in the history, and the posting asks for curiosity for
+  or knowledge of insurance. Its verb was changed from *Designed* to
+  **Modelled**, because *Designed* already opens the third founder bullet.
+- **United Nations Foundation is out.** Something had to go to pay for FitSure
+  (~14.5 mm) and the two extra skills lines. Of the three extracurriculars it
+  is the weakest against this posting: Impact Consulting carries a consulting
+  title plus fintech and fundraising, FitSure carries insurance, and the UN
+  entry carries neither.
+- **Biome leads with scale and drops its energy bullet.** *Evaluated 3,000+
+  companies within a $170M pipeline* now goes first, because analytical volume
+  is what this posting screens on. The energy-transition origination line came
+  out: the Commission thesis already carries sustainability, with more weight
+  behind it, so the bullet was paying rent twice.
+- **A&M, SCAILE and Impact Consulting are unchanged.** All three already read
+  the way this posting wants — client ownership, business development,
+  presentations for leadership, a quantified automation result — so nothing was
+  gained by touching them.
+- **The tagline is rebuilt as four noun phrases** (*MSc Finance at Nova SBE
+  (FT #8); Fortune 500 turnaround strategy at A&M; AI agent workflows and
+  go-to-market at SCAILE; now founding an AI venture in freight forwarding*).
+  The previous version opened its third clause with *advised*, which collided
+  with the verb opening SCAILE's first bullet.
 
 ## Where the source CVs disagree
 
@@ -225,48 +237,39 @@ filenames, one document.
 
 ## The skills block is written for ATS
 
-Checked against what E.ON Inhouse Consulting and RWE Consulting actually publish.
-E.ON's own careers copy names *"shaping the digital energy ecosystem"*, *"unlocking
-flexibility for millions of households"*, *"driving GenAI transformation"* and
-*"smarter grids"*, and asks for outstanding academics in Business Administration,
-Economics, Engineering or STEM plus internships in consulting and/or energy. RWE
-Consulting — the RWE Group's in-house consultancy, working with Corporate Strategy
-& Sustainability — names project management, stakeholder management, data analysis
-and problem solving.
+Written against the posting's own vocabulary rather than generic consulting
+terms, because this posting is unusually specific about what it wants.
 
-Two changes came out of that check:
+**Core skills** opens with `AI Adoption`, `Generative AI (GenAI)` and
+`Agentic AI Workflows`. The posting names *AI frameworks*, *AI tools in
+everyday tasks* and *consult clients on AI adoption* in a single bullet, and
+separately calls GenAI a valuable asset — so the AI terms lead, and both the
+spelled-out and abbreviated forms of GenAI are present because parsers match
+them differently. `Digital Transformation` and `Operational Excellence` are
+Allianz Consulting's own words for two of its three transformation pillars.
+`Project and Change Management` is a literal match for *project or change
+management tools and techniques*.
 
-- **`Commercial and Financial Due Diligence` is in Core skills**, replacing
-  `Operating Model Design`. This reverses an earlier cut of `Commercial Due
-  Diligence` on the grounds that CDD is transaction-side vocabulary in-house
-  consultancies do not use. Reinstated on request, and defensible: the Biome
-  entry is real diligence experience, and both E.ON and RWE run M&A and
-  post-merger work. `Data Analysis` came out to keep the row at two lines.
-- **Added `Digital Transformation` and `Generative AI`.** E.ON explicitly names
-  GenAI transformation and the digital energy ecosystem as current work, and the
-  SCAILE role is real evidence for both. `Generative AI` moved up from the
-  Technical row, where it read as a tool rather than a capability.
+Three terms came out of the previous version of this row to keep it at two lines:
+`Financial Modelling` (now inside the Technical row, where it qualifies Excel),
+`Commercial and Financial Due Diligence` and `Market Sizing` (both demonstrated
+by the Biome and SCAILE bullets), and `Business Case Development`. The rule
+applied is the repo's existing one: a keyword row that restates what an entry
+already proves is padding, and a reader who spots that discounts the rest.
 
-**The `Energy transition` row is gone.** It listed Climate Finance, Renewable
-Energy, Decarbonisation and Net Zero Strategy, but every one of those is asserted
-rather than demonstrated — the page already proves the same interest with evidence
-(the Commission thesis, the founder entry's German energy regulation, Biome's
-energy-transition thesis). A keyword row restating what three entries already show
-is padding, and a reader who spots that discounts the rest of the block.
+**Technical leads with Excel and PowerPoint**, which is unusual placement for a
+technical row and deliberate here — the posting asks for them by name and
+specifies *can perform complex functions*, so the parenthetical says
+`(financial modelling, complex functions)`. `Open-Weight Models` was added
+alongside `Large Language Models (LLMs)` and `Claude Code`, since the founder
+entry is evidence for it.
 
-**`Technical` now carries `Claude Code` and `Large Language Models (LLMs)`.** Both
-are literal-match ATS terms, and E.ON names GenAI transformation as live work. The
-long form is deliberate: parsers match "LLM", "LLMs" and the spelled-out phrase
-differently, and writing it out catches all three.
+**No insurance keyword row was added.** FitSure, the MSc Finance, A&M and Biome
+demonstrate the financial-services interest; asserting it again in a keyword row
+would be the same padding the energy-transition row was cut for.
 
-**`Cost Reduction` was dropped from Core skills** as the least load-bearing term —
-Business Case Development and Operating Model Design already cover that ground.
-`Operating Model Transformation` shortened to `Operating Model Design`, which is
-what brings the row to two lines while keeping all ten remaining terms; it is also
-the more accurate claim at this level.
-
-The layout parses cleanly: text is real text, the photo is a separate element an
-ATS skips, and the two-column header is the same one the other five CVs use.
+`scripts/finalise.py` stamps a matching keyword list into the PDF metadata,
+which is what some applicant-tracking systems index.
 
 ## Final audit
 
@@ -275,27 +278,21 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Check | Result |
 |---|---|
 | Pages | 1 |
+| Content height | 296.8 mm of 297 mm — 0.2 mm headroom |
+| TCG / Trariti | absent |
 | Em / en dashes, stray quotes, tildes | none |
-| Non-ASCII inventory | only `•`, `’` ×2, `×` ×1, `€` ×1 — all intentional |
-| Apostrophes | all curly |
-| Bullets wrapping | 0 of 20 |
-| Repeated bullet-opening verbs | none |
-| Left edges | 19.06 mm ×31, 21.89 mm ×20, 25.41 mm ×20, 50.81 mm ×5 — exact |
-| Right-aligned column | 18 lines within a 0.08 mm spread (italic side-bearing) |
-| Rules | all 5 span 19.05–191.82 mm, identical |
-| Photo right edge | 191.82 mm — on the rules |
-| Bottom white | 11.07 mm |
-| Currency / plus-suffix / percent | consistent |
+| Non-ASCII inventory | only `•` ×19, `’` ×1, `×` ×1 — all intentional |
+| Bullets wrapping | 0 of 19 |
+| Repeated bullet-opening verbs | none — Ranked, Graduated, Shipped, Cut, Designed, Advised, Automated, Owned, Managed, Built, Prepared, Evaluated, Developed, Coordinated, Modelled, Created |
 | Dates | `MM.YYYY` throughout |
-| Serial commas | none used, consistently |
 | Verb tense | past for closed roles, present only for the live venture |
+| Fonts | all 5 embedded as subsets |
+| Page size | 595.28 × 841.89 pt = exact A4 |
+| Photo | 900 × 1157 px in a 35 × 45 mm frame = 655 DPI |
+| Selectable text | 533 words |
 | Placeholders | none |
 
-Fixed in this pass: `Managed` opened both a SCAILE and an A&M bullet, and
-`Built` opened both an A&M and a Biome bullet. They are now `Owned` and
-`Developed` respectively. No opening verb repeats anywhere on the page.
-
-Three things deliberately left alone:
+Three things deliberately left alone, carried over from the previous pass:
 
 - **A 12-month gap, 08.2024 to 07.2025.** The bachelor's ends 07.2024 and the
   master's begins 08.2025; nothing on the page covers between. German recruiters
@@ -305,17 +302,28 @@ Three things deliberately left alone:
   It is the degree title as awarded by Shiv Nadar University and all six source
   CVs write it that way. Degree titles are quoted, not restyled.
 - **The `×` in "MIT Sloan AI Club × TUM"** (U+00D7). A naive ATS could mangle it,
-  but the keywords either side survive independently, and it reads better than
-  `x` or `and`.
+  but the keywords either side survive independently.
 
 ## Before sending
 
-1. **German is B1.** E.ON's posting asks for *fluent English and German*. The CV
-   states B1 honestly — do not inflate it, since ECON interviews partly in
-   German. Worth addressing directly in the cover letter.
-2. **Back-port the corrections to the other five CVs.** Class rank is top 10%
-   and SCAILE ended 08.2026; the Allianz and Accenture CVs still say top 15%
-   and "since 06.2026".
-3. **The header now reads "No visa sponsorship required (Germany)"**, replacing
-   "Eligible for visa sponsorship". The other five CVs still carry the old
-   line — worth making consistent.
+1. **The one-year FTE bar is the real risk.** The posting asks for a minimum of
+   one year in operational business or management consulting **as a full-time
+   employee**. SCAILE ran 06.2026–08.2026, A&M and Biome were internships, and
+   the founder role started 08.2026. Read strictly, the page does not clear that
+   bar, and no wording on a CV fixes it. Address it directly in the cover
+   letter — the honest case is continuous operating work since 2023 across four
+   organisations, plus a venture being run now.
+2. **German is B1.** The posting treats German as a bonus rather than a
+   requirement, so B1 is not disqualifying — but do not inflate it.
+3. **Allianz Consulting is not Allianz Technology.** This CV is for the
+   consulting unit inside Allianz Services. `Abir Hilal Khan_CV_Allianz
+   Technology.pdf` in this repo is an older, different application and still
+   carries TCG, "top 15%", "since 06.2026" and "Eligible for visa sponsorship".
+   Do not send that one by mistake.
+4. **Back-port the corrections to the other five CVs.** Class rank is top 10%,
+   SCAILE ended 08.2026, and the header line is now "No visa sponsorship
+   required (Germany)".
+5. **The founder entry names a live prototype.** Be ready to demo or describe
+   the 42 risk sources, the model-sizing decision and the approval step in
+   interview — an internal consultancy at an insurer will ask about the human-
+   in-the-loop design specifically.

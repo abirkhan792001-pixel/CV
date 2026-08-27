@@ -2,7 +2,7 @@
   "name": "cv",
   "version": "1.0.0",
   "private": true,
-  "description": "One-page CV, tailored for the E.ON Inhouse Consulting eCON Academy",
+  "description": "One-page CV, tailored for Allianz Consulting (Allianz Services)",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
