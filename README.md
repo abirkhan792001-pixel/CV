@@ -151,7 +151,7 @@ mapped to a place on the page:
 | **PowerPoint and Excel (complex functions)** | Technical row, deliberately placed first in it |
 | **Curiosity for or knowledge of insurance and financial services** | FitSure (InsurTech), MSc Finance, A&M restructuring, Biome |
 | **Project or change management** tools and techniques | A&M turnaround workstream; `Project and Change Management` in Core skills |
-| International experience, German or other languages | Munich, Lisbon, Delhi, Hyderabad, London; North American clients; five languages |
+| International experience, German or other languages | Munich, Lisbon, Delhi, Hyderabad; North American clients; five languages |
 | Affinity for **IT and GenAI** | Technical row (Claude Code, LLMs, open-weight models, Python, SQL) |
 | Digital / sustainability / operational-excellence transformation | AI entries (digital), the Commission thesis (sustainability), SCAILE's 60% effort cut (operational excellence) |
 
@@ -293,7 +293,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Fonts | all 5 embedded as subsets |
 | Page size | 595.28 × 841.89 pt = exact A4 |
 | Photo | 900 × 1157 px in a 35 × 45 mm frame = 655 DPI |
-| Selectable text | 530 words |
+| Selectable text | 528 words |
 | Placeholders | none |
 
 Three things deliberately left alone, carried over from the previous pass:
@@ -310,13 +310,20 @@ Three things deliberately left alone, carried over from the previous pass:
 
 ## Before sending
 
-1. **The one-year FTE bar is the real risk.** The posting asks for a minimum of
-   one year in operational business or management consulting **as a full-time
-   employee**. SCAILE ran 06.2026–08.2026, A&M and Biome were internships, and
-   the founder role started 08.2026. Read strictly, the page does not clear that
-   bar, and no wording on a CV fixes it. Address it directly in the cover
-   letter — the honest case is continuous operating work since 2023 across four
-   organisations, plus a venture being run now.
+1. **The one-year bar, and what the page now says about it.** The posting asks
+   for a minimum of one year in operational business or management consulting
+   **as a full-time employee**. By duration the page clears it: SQRlane 1 month,
+   SCAILE 3, A&M 7, Biome 3 — **14 months**, or **19** counting the FitSure
+   venture and netting its overlap with Biome. What the page no longer states is
+   the employment basis. *Intern* was dropped from both titles on request, so
+   A&M reads *North American Commercial Restructuring Team* and Biome reads
+   *Venture Capital Analyst* — the latter is the title six of the source CVs
+   already use, minus its *(Intern)* qualifier. Neither line claims full-time
+   employment, and neither denies it; the dates carry the duration.
+   **Do not assert full-time employment for A&M or Biome** on an application
+   form or in interview. Both firms will confirm the actual basis on a reference
+   check, and a stated claim that fails that check is a different problem from a
+   title that simply omits a qualifier.
 2. **German is B1.** The posting treats German as a bonus rather than a
    requirement, so B1 is not disqualifying — but do not inflate it.
 3. **Allianz Consulting is not Allianz Technology.** This CV is for the
