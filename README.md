@@ -146,7 +146,7 @@ mapped to a place on the page:
 | Minimum **1 year in operational business or management consulting** as an FTE | Work experience: Founder, SCAILE, A&M, Biome. See the caveat in **Before sending** — this is the one line the page does not clear outright. |
 | **Analytical thinking**, affinity for solving problems | A&M scenario models, Biome's 3,000+ company screen and CDD build-ups, SCAILE's GEO market sizing |
 | Responsibility for **deliverable quality and project milestones** | A&M's "full turnaround workstream", SCAILE's "owned North American clients end to end" |
-| **Business development and client pitches** | SCAILE's >$100k ARR signed and onboarded; Impact Consulting's fundraising proposals |
+| **Business development and client pitches** | SCAILE's >$100k ARR signed and onboarded end to end |
 | **Excellent English**, used for presentations and reports | Languages row; A&M's creditor-negotiation presentations |
 | **PowerPoint and Excel (complex functions)** | Technical row, deliberately placed first in it |
 | **Curiosity for or knowledge of insurance and financial services** | FitSure (InsurTech), MSc Finance, A&M restructuring, Biome |
@@ -179,26 +179,30 @@ appear the same way everywhere. The tailoring moves for Allianz Consulting:
   for an insurer — EU-hosted inference, a recorded reasoning trail and a human
   in the loop before anything is sent is exactly the governance posture a
   regulated financial institution has to be able to evidence. The venture is
-  titled **Stealth AI Venture** rather than by name, which is how the candidate
-  described it.
+  named: **SQRlane**.
+- **The first founder bullet names the three agents** rather than counting risk
+  sources. *Screening reads live risk feeds, judgement calls reroute or hold,
+  drafting writes the emails* says what was actually built; *42 live risk
+  sources* only said how wide one input was. It also matches the second bullet,
+  which already sizes a model per agent. Held to one line, which is this
+  template's design rule.
 - **FitSure is back in**, under Extracurricular & Leadership. It is the only
   insurance experience in the history, and the posting asks for curiosity for
   or knowledge of insurance. Its verb was changed from *Designed* to
   **Modelled**, because *Designed* already opens the third founder bullet.
-- **United Nations Foundation is out.** Something had to go to pay for FitSure
-  (~14.5 mm) and the two extra skills lines. Of the three extracurriculars it
-  is the weakest against this posting: Impact Consulting carries a consulting
-  title plus fintech and fundraising, FitSure carries insurance, and the UN
-  entry carries neither.
+- **Impact Consulting is out, United Nations Foundation is in**, on request.
+  The two entries are the same height, so this is a straight swap and the page
+  did not move. It trades a consulting title plus a fintech fundraising claim
+  for the clearest *desire to make a difference* evidence in the history, which
+  the posting asks for by name.
 - **Biome leads with scale and drops its energy bullet.** *Evaluated 3,000+
   companies within a $170M pipeline* now goes first, because analytical volume
   is what this posting screens on. The energy-transition origination line came
   out: the Commission thesis already carries sustainability, with more weight
   behind it, so the bullet was paying rent twice.
-- **A&M, SCAILE and Impact Consulting are unchanged.** All three already read
-  the way this posting wants — client ownership, business development,
-  presentations for leadership, a quantified automation result — so nothing was
-  gained by touching them.
+- **A&M and SCAILE are unchanged.** Both already read the way this posting
+  wants — client ownership, business development, presentations for leadership,
+  a quantified automation result — so nothing was gained by touching them.
 - **The tagline is rebuilt as four noun phrases** (*MSc Finance at Nova SBE
   (FT #8); Fortune 500 turnaround strategy at A&M; AI agent workflows and
   go-to-market at SCAILE; now founding an AI venture in freight forwarding*).
@@ -289,7 +293,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Fonts | all 5 embedded as subsets |
 | Page size | 595.28 × 841.89 pt = exact A4 |
 | Photo | 900 × 1157 px in a 35 × 45 mm frame = 655 DPI |
-| Selectable text | 533 words |
+| Selectable text | 530 words |
 | Placeholders | none |
 
 Three things deliberately left alone, carried over from the previous pass:
@@ -322,8 +326,8 @@ Three things deliberately left alone, carried over from the previous pass:
    Do not send that one by mistake.
 4. **Back-port the corrections to the other five CVs.** Class rank is top 10%,
    SCAILE ended 08.2026, and the header line is now "No visa sponsorship
-   required (Germany)".
+   required", with the country qualifier dropped.
 5. **The founder entry names a live prototype.** Be ready to demo or describe
-   the 42 risk sources, the model-sizing decision and the approval step in
+   the three agents, the model-sizing decision and the approval step in
    interview — an internal consultancy at an insurer will ask about the human-
    in-the-loop design specifically.
