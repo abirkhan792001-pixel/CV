@@ -209,6 +209,32 @@ appear the same way everywhere. The tailoring moves for Allianz Consulting:
   The previous version opened its third clause with *advised*, which collided
   with the verb opening SCAILE's first bullet.
 
+## The outcome pass
+
+The first draft of this CV had nine bullets that ended without a result — they
+named an activity, a topic or a volume and stopped. That is the single biggest
+thing separating a good CV from a strong one, so five of the nine were closed
+with facts supplied by the candidate:
+
+| Bullet | Was | Now |
+|---|---|---|
+| Master's Thesis | the topic only | scaled to the EU's **€662B climate budget** — 34% of the 2021-2027 MFF plus NextGenerationEU, against a 30% target |
+| SCAILE advisory | that he advised | positioning adopted, **80% MoM MRR growth** |
+| Hack-Nation | that he coordinated | **120 TUM participants** |
+| SQRlane | what was built | a **pilot blueprint** for a mid-market forwarder, plus **Y Combinator** and **a16z Speedrun** applications |
+| Draycott PE Challenge | Team Lead, no placing | **cut** — the team did not place, so the bullet had no result to give. Its line paid for the SQRlane one. |
+
+Four remain open, and each needs a fact only the candidate has: Biome's 3,000+
+company screen and its due-diligence models (did anything get funded?), FitSure
+(any users or pilot?), and SQRlane's governance bullet, which is design intent
+rather than an outcome and is kept anyway because it is the strongest line on
+the page for an insurer.
+
+The **€662B** figure is the European Commission's own: the 2021-2027 MFF plus
+NextGenerationEU is projected to contribute €662 billion to climate objectives,
+34% of the envelope against a 30% mainstreaming target. It is the scale of the
+thing the thesis studies, not a figure the candidate claims to have moved.
+
 ## Where the source CVs disagree
 
 The six PDFs in this repo contradict each other in four places. This CV takes
@@ -285,7 +311,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Content height | 296.8 mm of 297 mm — 0.2 mm headroom |
 | TCG / Trariti | absent |
 | Em / en dashes, stray quotes, tildes | none |
-| Non-ASCII inventory | only `•` ×19, `’` ×1, `×` ×1 — all intentional |
+| Non-ASCII inventory | only `•` ×19, `’` ×2, `×` ×1, `€` ×1 — all intentional |
 | Bullets wrapping | 0 of 19 |
 | Repeated bullet-opening verbs | none — Ranked, Graduated, Shipped, Cut, Designed, Advised, Automated, Owned, Managed, Built, Prepared, Evaluated, Developed, Coordinated, Modelled, Created |
 | Dates | `MM.YYYY` throughout |
@@ -293,7 +319,7 @@ Run against the rendered PDF, not the source, so it reflects what a reader sees.
 | Fonts | all 5 embedded as subsets |
 | Page size | 595.28 × 841.89 pt = exact A4 |
 | Photo | 900 × 1157 px in a 35 × 45 mm frame = 655 DPI |
-| Selectable text | 528 words |
+| Selectable text | 539 words |
 | Placeholders | none |
 
 Three things deliberately left alone, carried over from the previous pass:
