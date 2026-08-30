@@ -7,7 +7,9 @@
   "scripts": {
     "build": "node build.mjs",
     "preview": "node build.mjs --png",
-    "share": "node build.mjs && python3 scripts/finalise.py"
+    "share": "node build.mjs && python3 scripts/finalise.py",
+    "letter": "node build-letter.mjs",
+    "letter:preview": "node build-letter.mjs --png"
   },
   "devDependencies": {
     "playwright": "^1.56.1"

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abir Hilal Khan — Cover Letter</title>
+<link rel="stylesheet" href="./assets/fonts/fonts.css">
+<style>
+/* ============================================================
+   One-page A4 cover letter — Allianz Consulting.
+
+   Deliberately the same template as cv.html: same navy, same
+   Liberation Serif, same text edges (19.06mm left, 191.84mm
+   right), same 1.57mm top bar. Sent together the two documents
+   read as one set, which is the point.
+
+   Body type runs larger than the CV's 9.35pt because this is
+   prose rather than scannable bullets.
+   ============================================================ */
+
+:root{
+  --navy:      #0c447c;   /* as cv.html — bar, name, subject rule */
+  --link:      #0563c1;
+  --ink:       #000000;
+
+  --page-w:    210mm;
+  --page-h:    297mm;
+
+  --pad-t:     13.02mm;
+  --pad-l:     19.06mm;
+  --pad-r:     18.16mm;
+  --pad-b:     11mm;
+
+  --fs-base:   9.9pt;    /* set by the one-page check in build-letter.mjs */
+  --fs-name:   17.04pt;
+  --lh:        1.35;      /* looser than the CV's 1.26; this is prose */
+
+  --logo-h:    9mm;       /* cap height for the letterhead marks */
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ background:#8b9099; }
+
+body{
+  font-family:'Liberation Serif', 'Times New Roman', Times, serif;
+  font-size:var(--fs-base);
+  line-height:var(--lh);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  width:var(--page-w);
+  min-height:var(--page-h);
+  padding:var(--pad-t) var(--pad-r) var(--pad-b) var(--pad-l);
+  margin:0 auto;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ---------- letterhead ------------------------------------ */
+
+.topbar{ height:1.57mm; background:var(--navy); }
+
+.head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:8mm;
+  margin-top:1.03mm;
+}
+
+.name{
+  font-size:var(--fs-name);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.1;
+  letter-spacing:0.0475em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.contact{ margin-top:1.6mm; }
+.contact a{ color:var(--link); text-decoration:underline; }
+.contact .sep{ margin:0 4.9pt; }
+
+/* Logo strip. build-letter.mjs drops any <img> whose file is
+   missing and hides the whole strip if none survive, so the
+   letter renders correctly with no logos, one, or both. */
+.logos{
+  display:flex;
+  align-items:center;
+  gap:6mm;
+  flex-shrink:0;
+}
+.logos img{
+  height:var(--logo-h);
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+/* ---------- letter body ----------------------------------- */
+
+.meta{ margin-top:7.5mm; }
+.meta .to{ margin-top:5mm; }
+
+.subject{
+  margin-top:6mm;
+  font-weight:700;
+  color:var(--navy);
+  padding-bottom:0.55mm;
+  border-bottom:0.34mm solid var(--navy);
+}
+
+.salutation{ margin-top:6mm; }
+
+p.body{ margin-top:3.2mm; text-align:justify; }
+p.body:first-of-type{ margin-top:4.4mm; }
+
+b{ font-weight:700; }
+
+.close{ margin-top:6mm; }
+.sign{ margin-top:8mm; font-weight:700; }
+
+/* ---------- print ----------------------------------------- */
+
+@page{ size:A4; margin:0; }
+@media print{ html{ background:#fff; } .page{ margin:0; box-shadow:none; } }
+@media screen{ .page{ box-shadow:0 2px 18px rgba(0,0,0,.35); margin:18px auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar"></div>
+
+  <header class="head">
+    <div class="head-l">
+      <div class="name">Abir Hilal Khan</div>
+      <div class="contact">
+        Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">LinkedIn</a>
+      </div>
+    </div>
+    <div class="logos">
+      <img src="./assets/logo-nova.png" alt="Nova SBE">
+      <img src="./assets/logo-allianz.png" alt="Allianz">
+    </div>
+  </header>
+
+  <div class="meta">
+    <div class="date">«DATE»</div>
+    <div class="to">
+      Allianz Consulting, Allianz Services<br>
+      «OFFICE CITY»
+    </div>
+  </div>
+
+  <div class="subject">Re: Consultant (m/f/d), Allianz Consulting</div>
+
+  <div class="salutation">Dear Allianz Consulting team,</div>
+
+  <p class="body">I am building <b>SQRlane</b>, an AI agent system for freight
+  forwarding. Three agents run the workflow: one reads live risk feeds, one
+  decides whether to reroute or hold, one drafts the emails. A predictive layer
+  over the same data surfaces disruption while there is still time to route
+  around it. I cut the cost of running it <b>tenfold</b> by sizing each model to
+  the job it actually does rather than using the largest one everywhere. It runs
+  on EU-hosted open-weight models, records its reasoning step by step, and sends
+  nothing without a human approving it, because no regulated business will deploy
+  an agent it cannot audit. That constraint, not model quality, is what stops
+  GenAI adoption in practice.</p>
+
+  <p class="body">My consulting work was at <b>Alvarez &amp; Marsal</b>, on the
+  North American commercial restructuring team. I ran a turnaround workstream for
+  a <b>Fortune 500</b> client covering more than <b>$100M</b> of debt and leases
+  in a US Chapter 11. I built the scenario models behind a <b>$9.8M</b> cost and
+  risk-mitigation plan that went to the board, and prepared the creditor
+  negotiation materials, which preserved <b>$2.5M</b> in enterprise value. All of
+  it was built in Excel and delivered in PowerPoint, to people who had to act on
+  it that week. I now work in <b>Claude Code and Codex</b> daily and move between
+  them and PowerPoint and Excel without friction: the tooling has changed, the
+  job of handing someone a decision they can act on has not.</p>
+
+  <p class="body">At <b>SCAILE</b>, a Munich AI startup, I was a Founders
+  Associate. I automated the weekly client KPI reporting with agent workflows and
+  cut manual effort on it by <b>60%</b>. I ran the market sizing behind our
+  positioning, we rebuilt the pitch and the roadmap around it, and MRR grew
+  <b>80% month on month</b>. I pitched that positioning at <b>VivaTech</b> in
+  Paris, Europe's largest technology event, to enterprises including
+  <b>Siemens</b> and <b>Audi</b>, and I owned our North American clients end to
+  end, signing and onboarding over <b>$100k</b> of new ARR.</p>
+
+  <p class="body">I want to do this inside Allianz Consulting rather than at an
+  external firm. An internal consultancy stays with the operating entity that has
+  to live with the change, instead of handing over a recommendation and leaving.
+  Adoption is the part I care about, and it is where AI projects actually fail.</p>
+
+  <p class="body">Insurance is also where I have been heading for a while. I
+  spent two years with the <b>United Nations Foundation</b> running donation
+  drives and health campaigns for over <b>1,200 women and children</b> in rural
+  India, and in 2023 I co-founded <b>FitSure</b>, which priced health premiums
+  from wearable data so that people were rewarded for staying well rather than
+  for claiming. Insurance is one of the few industries where the commercial
+  incentive and the social one point the same way, because prevention costs less
+  than the claim.</p>
+
+  <p class="body">I finish my <b>MSc in Finance at Nova SBE</b> in December 2026,
+  ranked in the <b>top 10%</b> of my class. My thesis was selected for
+  partnership with the <b>European Commission</b>, one of <b>400</b> chosen
+  through a competitive application, and examines how the EU's <b>&euro;662B
+  climate budget</b> reaches renewable energy across member states and why the
+  same instruments produce very different outcomes depending on where they land.
+  I can start «START DATE». I need no visa sponsorship, I work in English, and my
+  German is B1 and improving.</p>
+
+  <p class="body close">Thank you for your time. I would be glad to talk.</p>
+
+  <div class="close">Yours sincerely,</div>
+  <div class="sign">Abir Hilal Khan</div>
+
+</div>
+</body>
+</html>
