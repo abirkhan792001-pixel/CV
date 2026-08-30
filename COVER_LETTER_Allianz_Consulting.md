@@ -1,14 +1,7 @@
-# Cover letter draft - Allianz Consulting
+# Cover letter - Allianz Consulting
 
-Edit freely and send it back to me. Swap everything in [BRACKETS].
-
-**You must fill in:** date, addressee, role title, start date, and the gap-year
-sentence. Everything else is already true and comes from your CV.
-
-**On the missing numbers:** deliberate. The CV carries $100M, $9.8M, $2.5M,
-80% MoM, $100k ARR and 60%. A reader who wants figures has them one page away.
-The letter's job is to show how you think, so repeating them here wastes the
-space. Add one back only if a specific sentence collapses without it.
+**Fill in:** date, addressee, req number, [N] for the thesis selection, start
+date, and the gap-year sentence.
 
 ---
 
@@ -20,65 +13,62 @@ Munich, Germany | +351 920 066 532 | khan.abirhilal@gmail.com | linkedin.com/in/
 Allianz Consulting, Allianz Services
 [OFFICE / CITY]
 
-**Re: [EXACT ROLE TITLE], Allianz Consulting [REQ NUMBER IF ANY]**
+**Re: Consultant (m/f/d), Allianz Consulting [REQ NUMBER IF ANY]**
 
 Dear [HIRING MANAGER NAME, or "Allianz Consulting team"],
 
-I am applying for the [ROLE] position at Allianz Consulting. I finish an MSc in
-Finance at Nova SBE in December, after a management degree at Shiv Nadar
-University in Delhi. My work has moved between advisory and operating roles:
-seven months at Alvarez & Marsal on North American commercial restructuring, a
-summer screening deals at a venture studio in Hyderabad, and most recently
-go-to-market and AI automation at a Munich startup, alongside the
-freight-forwarding agent product I started this year. Allianz Consulting is the
-first role I have seen where both sides of that are useful at the same time.
+I am strongly motivated to apply for the Consultant (m/f/d) position at Allianz
+Consulting. I complete my MSc in Finance in December 2026. My thesis, one of [N]
+selected for partnership with the European Commission, looks at how the EU's
+€662B climate budget reaches renewable energy across member states, and why the
+same instruments produce very different outcomes depending on the country they
+land in. Alongside it I am building SQRlane, an AI agent system for freight
+forwarding. It automates the repetitive workflow around each booking and runs a
+predictive layer over the same live data, so a forwarder sees disruption forming
+while there is still time to route around it rather than after it has landed.
 
-**What I have delivered**
+**What I have done**
 
-At Alvarez & Marsal I ran the scenario modelling behind a cost and
-risk-mitigation plan for a Fortune 500 client in Chapter 11. The modelling was
-not the lesson. In a restructuring nobody argues about arithmetic; they argue
-about which future they are willing to accept, and the model's job was to narrow
-that to a few options a board could choose between. I now build analysis
-backwards from the decision it has to support. The creditor materials worked for
-the same reason: the other side's objections were already answered inside them.
+At Alvarez & Marsal I worked on restructuring engagements for Fortune 500
+clients, building the scenario models that tested which way out was right:
+distressed M&A, an operational turnaround, or renegotiating debt and leases to
+free up cash. The modelling matters less to me than what it taught me. I learned
+to think the way the people at the table think, and to hold a room where
+creditors and shareholders are each protecting their own outcome and still move
+the conversation somewhere useful. The analysis only helps if it gives everyone
+the same facts to argue from. As a venture capital analyst I screened more than
+3,000 startups and spent over 100 hours with founders, which taught me to reach
+the real problem rather than the one someone walks in describing.
 
-At SCAILE I advised the founders on positioning. I sized the market first, not
-for a slide but because I could not argue for a segment I had not checked. They
-adopted it and revenue compounded from there. The lesson was adoption, not
-analysis. A recommendation gets acted on once it has survived the objections of
-the people who have to live with it, so I spent more time on their
-counterarguments than on the deck. Our client reporting had the same shape of
-problem: it was slow, but the real issue was trust, so I rebuilt it as agent
-workflows and people stopped re-checking by hand.
+I joined SCAILE, a Munich-based AI-native startup, as a Founders Associate. I ran
+the competitor analysis and market positioning, found the gap we could reach
+before anyone else, and turned it into both the investor pitch deck and the
+feature set we built to get there first. I took that positioning to market at
+VivaTech in Paris, Europe's largest technology event, pitching SCAILE to
+enterprises including Siemens and Audi. I owned client onboarding end to end, and
+inside the company I built AI agents that absorbed the repetitive housekeeping
+work and cut manual effort on it by 60%.
 
-**Why my AI work is relevant to an insurer**
+**Why consulting, and why an insurer**
 
-I am building SQRlane, an agent system for freight forwarding, and the design
-decisions are the part worth mentioning. It runs on EU-hosted open-weight
-models, records its reasoning, and will not send anything without human
-approval. I built it that way because no regulated business will deploy an agent
-it cannot audit. That constraint is where most insurers are stuck with GenAI
-right now, and working inside it has taught me more than the model building did.
-
-**Why I want to move into consulting**
-
-That is the thread I want to keep pulling. Building my own product confirmed it:
-the technology is rarely the hard part, and getting an organisation to trust
-something and change how it works is. I want to do that across many businesses
-instead of one, with people more experienced than me to learn from. One venture
-is one problem. Allianz Consulting is dozens.
+Building my own product taught me that the technology is rarely the hard part.
+SQRlane runs on EU-hosted models, records its reasoning, and will not send
+anything without human approval, because no regulated business will deploy an
+agent it cannot audit. That constraint, not the model work, is where most
+insurers are stuck with GenAI today. Getting an organisation to trust something
+and change how it works is the real problem, and I would rather work on it across
+many businesses than one, with people more experienced than me to learn from.
 
 **What I care about**
 
 There is an older reason I am aiming at insurance specifically. Between 2020 and
 2022 I led donation drives and health campaigns reaching over 1,200 women and
-children in rural India with the United Nations Foundation. In 2023 I
-co-founded FitSure, which priced health premiums from wearable data so that
-people were rewarded for staying well rather than for claiming. Insurance is one
-of the few industries where the commercial incentive and the social one can
-point the same way, because prevention costs less than the claim. That is worth
-building a career around.
+children in rural India with the United Nations Foundation. In 2023 I co-founded
+FitSure, which priced health premiums from wearable data so that people were
+rewarded for staying well rather than for claiming. Insurance is one of the few
+industries where the commercial incentive and the social one point the same way,
+because prevention costs less than the claim. That is worth building a career
+around.
 
 **Practical details**
 
@@ -94,26 +84,39 @@ Abir Hilal Khan
 
 ---
 
-## Notes before you send
+## What changed, and why
 
-1. **Address a person if you can find one.** "Dear Allianz Consulting team" is
-   the fallback, not the target.
-2. **The gap line is not optional.** German recruiters read timelines closely
-   and will notice 08.2024 to 07.2025. One plain sentence closes it. Do not
-   apologise and do not pad it.
-3. **Do not mention the YC or a16z applications.** They are on the CV. In a
-   letter they read as "I may leave", which is the one doubt a hiring manager
-   already has about a founder applicant.
-4. **Do not claim full-time employment for A&M or Biome.** The letter does not,
-   and neither does the CV. Keep it that way in interview.
-5. **If you learn the practice or project team**, add one concrete sentence
-   about their work to the opening. Generic praise for Allianz adds nothing; a
-   specific reference to what the team does adds a lot.
-6. **Read it aloud before sending.** Anything you would not say out loud to a
-   person is the thing to rewrite. That test will catch more than I can.
+**Structure.** Opening (what you are doing now), then what you have done, then
+why consulting, then what you care about, then practicalities. The opening is
+yours; everything after it is built from the material you sent over the last few
+rounds.
 
-## When you send it back
+**The VC block shrank to one sentence.** You wrote a full paragraph on it, and
+the letter could not carry four experience blocks plus purpose and stay on one
+page. Biome ranks lowest against this posting of the four, so it gave up the
+space. The founder-hours insight survives because it is the part a consulting
+reader values.
 
-Tell me what you changed and why, and whether you want me to keep your voice or
-push back on it. I will also flag anything that reads as overclaiming, since you
-are closer to the facts than I am.
+**The SQRlane governance argument moved.** It used to have its own section, which
+repeated the opening. It now opens "Why consulting, and why an insurer", where it
+does real work: it is the bridge between what you built and why Allianz
+specifically.
+
+**Three claims I did not write, and why.** Your draft said *consultant at
+Alvarez & Marsal* (your title was Restructuring Intern, so the letter describes
+the work instead), *saving more than $10M* (your CV says a $9.8M plan, which is
+the size of the plan, not banked savings), and *shaped the fund's investment
+philosophy* (your CV implies the thesis pre-dated you). If any of the three is
+genuinely yours to claim, tell me and I will put the stronger version back.
+
+## Before you send
+
+1. **Address a person if you can find one.**
+2. **Fill in [N].** A number cannot be argued with; "highly selective" can.
+3. **The gap sentence is not optional.** One plain line, no apology, no padding.
+4. **Do not mention the YC or a16z applications.** They are on the CV. Here they
+   read as "I may leave", which is the doubt a hiring manager already has about
+   a founder applicant.
+5. **Have specifics ready for VivaTech.** "Who did you speak to at Audi?" is a
+   natural follow-up and a vague answer would undercut a strong line.
+6. **Read it aloud.** Anything you would not say to a person is the thing to fix.
