@@ -147,10 +147,11 @@ rarely, the ability to think in structures."* Two paragraphs also opened with
 
 **Missing space** at "they land in.Alongside it".
 
-## 3. Length: 660 words, which is about 1.5 pages
+## 3. Length: 792 words, which is about two pages
 
-A German Anschreiben is conventionally one page and recruiters notice. You need
-to lose roughly 100 words. Ranked by what it costs you:
+A German Anschreiben is conventionally one page and recruiters notice. One page
+is roughly 550 words once the address block and signature are in, so about 240
+words have to go. That is a real cut, not a trim. Ranked by what it costs you:
 
 1. **The VC paragraph, down to one sentence** (-35). Biome is the weakest entry
    against this posting. Keep *"I screened more than 3,000 startups and spent
@@ -162,9 +163,25 @@ to lose roughly 100 words. Ranked by what it costs you:
 3. **"That is the part of the work I care about, and the part I am least likely
    to learn on my own."** (-20)
 4. **"That is worth building a career around."** (-8)
+5. **The whole VC sentence, not just the paragraph** (-25 more on top of 1).
+   Restructuring, SCAILE and SQRlane already show range; Biome adds a fourth
+   employer to a letter that cannot afford one.
+6. **"What connects all of it is a preference for the hardest problem in the
+   room. Six years of study and work have trained me..."** down to one sentence
+   (-30). The claim is good but it asserts rather than shows, and the three
+   paragraphs above it already demonstrated the same thing.
+7. **The FitSure or the UN sentence, not both** (-35). Painful, because this
+   section is your most distinctive. But one example carries the thread; two is
+   a luxury at this length.
 
-All four gets you to roughly 570 and one clean page. I would take 1, 2 and 4 and
-keep 3, since it answers the coachability point the posting asks about.
+Items 1 to 4 get you to about 700, still over. Adding 5 and 6 gets you near 645.
+You need 7 as well, or you accept a second page.
+
+**My honest read:** this letter is now carrying four employers, a thesis, a
+venture, a philosophy of consulting and a purpose story. That is more than one
+page holds. The strongest one-page version keeps A&M, SCAILE, SQRlane, and one
+purpose example, and drops Biome entirely. Tell me to cut it that way and I
+will.
 
 ## 4. Still open from earlier
 
