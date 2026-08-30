@@ -84,9 +84,12 @@ body{
 .contact a{ color:var(--link); text-decoration:underline; }
 .contact .sep{ margin:0 4.9pt; }
 
-/* Logo strip. build-letter.mjs drops any <img> whose file is
-   missing and hides the whole strip if none survive, so the
-   letter renders correctly with no logos, one, or both. */
+/* Logo strip, Nova SBE only. Allianz's own mark is deliberately
+   not here: it is their trademark, and putting it on a document
+   you author and send to them reads as claiming an affiliation
+   you do not have yet. build-letter.mjs drops the img if the file
+   is missing and removes the strip, so the letterhead is correct
+   either way. */
 .logos{
   display:flex;
   align-items:center;
@@ -144,7 +147,6 @@ b{ font-weight:700; }
     </div>
     <div class="logos">
       <img src="./assets/logo-nova.png" alt="Nova SBE">
-      <img src="./assets/logo-allianz.png" alt="Allianz">
     </div>
   </header>
 

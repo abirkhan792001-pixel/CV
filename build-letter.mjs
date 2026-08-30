@@ -3,10 +3,9 @@
  * Renders cover-letter.html -> Abir_Hilal_Khan_Cover_Letter.pdf (A4),
  * verifies it fits ONE page, and counts unfilled «placeholders».
  *
- * Logos are optional. Any <img> in .logos whose file is missing is
- * removed before render, and the strip is hidden if none survive, so
- * the letterhead is correct with two logos, one, or none. Drop
- * assets/logo-nova.png and/or assets/logo-allianz.png in and rerun.
+ * The Nova SBE logo is optional. If assets/logo-nova.png is missing it
+ * is removed before render and the strip goes with it, so the
+ * letterhead is correct either way. Drop the file in and rerun.
  *
  *   node build-letter.mjs          build + check
  *   node build-letter.mjs --png    also write a preview PNG
@@ -103,7 +102,7 @@ if (fits) {
 }
 
 console.log(`  ${pad('logos')} ${present.length ? present.map(s => path.basename(s)).join(', ')
-                                                : '\x1b[33mnone found\x1b[0m — add assets/logo-nova.png, assets/logo-allianz.png'}`);
+                                                : '\x1b[33mnone found\x1b[0m — add assets/logo-nova.png'}`);
 
 if (metrics.todos > 0) {
   console.log(`  ${pad('placeholders')} \x1b[33m${metrics.todos} unfilled\x1b[0m — not ready to send`);
