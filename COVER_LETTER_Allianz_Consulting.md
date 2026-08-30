@@ -1,12 +1,14 @@
-# Cover letter template - Allianz Consulting
+# Cover letter draft - Allianz Consulting
 
-Swap everything in [BRACKETS]. Delete this header block before sending.
+Edit freely and send it back to me. Swap everything in [BRACKETS].
 
-**What you must fill in:** date, addressee, start date, residence status, and the
-gap-year line. Everything else is already true and comes from your CV.
+**You must fill in:** date, addressee, role title, start date, and the gap-year
+sentence. Everything else is already true and comes from your CV.
 
-**Length:** 547 words, which sets one page at 11pt with normal margins once the
-address block and signature are in. If you add, cut something else.
+**On the missing numbers:** deliberate. The CV carries $100M, $9.8M, $2.5M,
+80% MoM, $100k ARR and 60%. A reader who wants figures has them one page away.
+The letter's job is to show how you think, so repeating them here wastes the
+space. Add one back only if a specific sentence collapses without it.
 
 ---
 
@@ -22,56 +24,61 @@ Allianz Consulting, Allianz Services
 
 Dear [HIRING MANAGER NAME, or "Allianz Consulting team"],
 
-I am applying for the [ROLE] position. For the last three years I have done two
-things: delivered client work to deadline at Alvarez & Marsal, and built AI
-systems that people use every day. Your posting asks for both, which is not a
-common pairing.
+I am applying for the [ROLE] position at Allianz Consulting. I finish an MSc in
+Finance at Nova SBE in December, after a management degree at Shiv Nadar
+University in Delhi. My work has moved between advisory and operating roles:
+seven months at Alvarez & Marsal on North American commercial restructuring, a
+summer screening deals at a venture studio in Hyderabad, and most recently
+go-to-market and AI automation at a Munich startup, alongside the
+freight-forwarding agent product I started this year. Allianz Consulting is the
+first role I have seen where both sides of that are useful at the same time.
 
 **What I have delivered**
 
-At A&M I ran a turnaround workstream for Fortune 500 clients covering more than
-$100M in debt and lease obligations under U.S. Chapter 11. I built the scenario
-models behind a $9.8M cost and risk-mitigation plan that went to the board, and
-prepared the creditor-negotiation materials that preserved $2.5M in enterprise
-value.
+At Alvarez & Marsal I ran the scenario modelling behind a cost and
+risk-mitigation plan for a Fortune 500 client in Chapter 11. The modelling was
+not the lesson. In a restructuring nobody argues about arithmetic; they argue
+about which future they are willing to accept, and the model's job was to narrow
+that to a few options a board could choose between. I now build analysis
+backwards from the decision it has to support. The creditor materials worked for
+the same reason: the other side's objections were already answered inside them.
 
-At SCAILE I advised the founders on positioning, backed by my own sizing of the
-AI search visibility market. They adopted it and MRR grew 80% month on month. I
-also owned our North American clients end to end, signing and onboarding over
-$100k in new ARR, and automated the weekly client reporting with AI agent
-workflows, cutting manual effort by 60%.
+At SCAILE I advised the founders on positioning. I sized the market first, not
+for a slide but because I could not argue for a segment I had not checked. They
+adopted it and revenue compounded from there. The lesson was adoption, not
+analysis. A recommendation gets acted on once it has survived the objections of
+the people who have to live with it, so I spent more time on their
+counterarguments than on the deck. Our client reporting had the same shape of
+problem: it was slow, but the real issue was trust, so I rebuilt it as agent
+workflows and people stopped re-checking by hand.
 
 **Why my AI work is relevant to an insurer**
 
-I am building SQRlane, an agent system for freight forwarding. One agent screens
-live risk feeds, one calls reroute or hold on each booking, one drafts the
-customer emails. Sizing each model to its own task cut inference cost tenfold.
-
-The design constraint is the part that matters here. It runs on EU-hosted
-open-weight models, records its reasoning, and requires human approval before
-anything leaves the system. I built it that way because no regulated business
-will deploy an agent it cannot audit. That is the blocker between most insurers
-and GenAI today, and I have already worked through a version of it.
+I am building SQRlane, an agent system for freight forwarding, and the design
+decisions are the part worth mentioning. It runs on EU-hosted open-weight
+models, records its reasoning, and will not send anything without human
+approval. I built it that way because no regulated business will deploy an agent
+it cannot audit. That constraint is where most insurers are stuck with GenAI
+right now, and working inside it has taught me more than the model building did.
 
 **Why I want to move into consulting**
 
-Building my own product taught me that the technology is rarely the hard part.
-Getting an organisation to trust it, adopt it and change how it works is the
-hard part. I want to work on that at scale rather than on one product, and I
-want to be coached while I do it. One venture is one problem. Allianz Consulting
-is dozens of them, inside operating entities across eight countries.
+That is the thread I want to keep pulling. Building my own product confirmed it:
+the technology is rarely the hard part, and getting an organisation to trust
+something and change how it works is. I want to do that across many businesses
+instead of one, with people more experienced than me to learn from. One venture
+is one problem. Allianz Consulting is dozens.
 
 **What I care about**
 
-One thread runs through all of it. Between 2020 and 2022 I led donation drives
-and health campaigns reaching over 1,200 women and children in rural India with
-the United Nations Foundation. In 2023 I co-founded FitSure, which priced health
-premiums from wearable data so people were rewarded for staying well instead of
-for making claims.
-
-That is why insurance interests me rather than being where I happened to apply.
-It is one of the few industries where the commercial incentive and the social
-one can point the same way: prevention costs less than the claim.
+There is an older reason I am aiming at insurance specifically. Between 2020 and
+2022 I led donation drives and health campaigns reaching over 1,200 women and
+children in rural India with the United Nations Foundation. In 2023 I
+co-founded FitSure, which priced health premiums from wearable data so that
+people were rewarded for staying well rather than for claiming. Insurance is one
+of the few industries where the commercial incentive and the social one can
+point the same way, because prevention costs less than the claim. That is worth
+building a career around.
 
 **Practical details**
 
@@ -93,12 +100,20 @@ Abir Hilal Khan
    the fallback, not the target.
 2. **The gap line is not optional.** German recruiters read timelines closely
    and will notice 08.2024 to 07.2025. One plain sentence closes it. Do not
-   apologise for it and do not pad it.
+   apologise and do not pad it.
 3. **Do not mention the YC or a16z applications.** They are on the CV. In a
    letter they read as "I may leave", which is the one doubt a hiring manager
    already has about a founder applicant.
 4. **Do not claim full-time employment for A&M or Biome.** The letter does not,
    and neither does the CV. Keep it that way in interview.
 5. **If you learn the practice or project team**, add one concrete sentence
-   about their work to the opening. Generic praise for Allianz adds nothing;
-   a specific reference to what the team does adds a lot.
+   about their work to the opening. Generic praise for Allianz adds nothing; a
+   specific reference to what the team does adds a lot.
+6. **Read it aloud before sending.** Anything you would not say out loud to a
+   person is the thing to rewrite. That test will catch more than I can.
+
+## When you send it back
+
+Tell me what you changed and why, and whether you want me to keep your voice or
+push back on it. I will also flag anything that reads as overclaiming, since you
+are closer to the facts than I am.
