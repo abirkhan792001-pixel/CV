@@ -196,7 +196,7 @@ appear the same way everywhere. The tailoring moves for Allianz Consulting:
   for the clearest *desire to make a difference* evidence in the history, which
   the posting asks for by name.
 - **Biome leads with scale and drops its energy bullet.** *Evaluated 3,000+
-  companies within a $170M pipeline* now goes first, because analytical volume
+  companies within a $70M pipeline* now goes first, because analytical volume
   is what this posting screens on. The energy-transition origination line came
   out: the Commission thesis already carries sustainability, with more weight
   behind it, so the bullet was paying rent twice.
