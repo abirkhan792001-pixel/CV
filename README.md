@@ -20,12 +20,22 @@ The page is tuned for the two postings that fit the profile:
   master's, 6–30 months of initial experience, ≥6 months international
   experience, fluent English plus another language, and global mobility.
 
+The candidate's own six-role list arrived the same day and is merged into
+the companion `Hilti_Roles_Tracker.xlsx`: Outperformer programs in Schaan
+(finance and operations tracks), Germany (business track), Copenhagen, a
+finance-track posting whose region is still unidentified (17676-en), and
+CFO Austria — an executive appointment tracked as the destination the CFO
+track feeds, not as an entry application. The two roles above stay in the
+tracker as suggested add-ons. The CV stays anchored on finance: the FP&A
+vocabulary serves every finance-track application, and the SCAILE
+commercial and automation bullets carry the business and operations tracks.
+
 Posting details were compiled from search results and Stepstone on
-31.08.2026 — careers.hilti.group itself was unreachable from the build
-environment — so **verify the live postings before sending**. The companion
-`Hilti_Roles_Tracker.xlsx` in this repo carries the full role research, a
-criterion-by-criterion fit map, and the caveats; it is a draft until the
-candidate's own role list is pasted in.
+31.08.2026 — careers.hilti.group and hilti.com were both unreachable from
+the build environment — so **verify the live postings before sending**. The
+tracker carries the full role research, a criterion-by-criterion fit map,
+and the caveats, including the Swiss/Liechtenstein work-permit warning
+Hilti prints on its Schaan trainee postings.
 
 Built on the same template as the other tailored CVs in this repo.
 Work-experience copy is lifted from those CVs rather than rewritten, so the
@@ -96,10 +106,15 @@ is untouched: the page still measures 295.5 mm.
 | Core skills | *Client Reporting* | *KPI Reporting* — the same SCAILE evidence, in the controlling register |
 | Focus areas | VaR, Derivatives, Regulatory Reporting, Investment Funds, EU Financial Regulation… | FP&A, Controlling and Reporting, Forecasting, Cost Controlling, Business Partnering, Performance Management, International Finance |
 
-`No visa sponsorship required` stays: it was written for Germany (the country
-was deliberately dropped from the line two passes ago), and both target roles
-are with Hilti Deutschland AG. If the target ever becomes HQ Schaan
-(Liechtenstein), the line needs re-checking — that is a different jurisdiction.
+The visa line now reads **"No visa sponsorship required in Germany"** — the
+country is back. It was dropped two passes ago when every target was German;
+the candidate's actual list spans Liechtenstein, Denmark and Austria, where
+the unscoped claim would be false (Hilti's own Schaan postings warn that
+non-EU/EFTA citizens must state their Swiss/Liechtenstein work eligibility
+and that employment cannot be guaranteed without a permit). Scoping the claim
+keeps it true on every application while still selling the German advantage.
+The underlying facts — citizenship and current permit type — are the
+candidate's to confirm before anything is forwarded.
 
 ## What this CV is optimised for
 
