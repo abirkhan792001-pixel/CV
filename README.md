@@ -204,7 +204,7 @@ appear the same way everywhere. The tailoring moves for Allianz Consulting:
   wants — client ownership, business development, presentations for leadership,
   a quantified automation result — so nothing was gained by touching them.
 - **The tagline is rebuilt as four noun phrases** (*MSc Finance at Nova SBE
-  (FT #8); Fortune 500 turnaround strategy at A&M; AI agent workflows and
+  (FT #6); Fortune 500 turnaround strategy at A&M; AI agent workflows and
   go-to-market at SCAILE; now founding an AI venture in freight forwarding*).
   The previous version opened its third clause with *advised*, which collided
   with the verb opening SCAILE's first bullet.
@@ -243,6 +243,7 @@ comparing two of your CVs will see the difference:
 
 | | Says | This CV uses |
 |---|---|---|
+| **Nova SBE FT rank** | FT #8 across the older CVs | **FT #6** — Nova SBE's International Master's in Finance placed 6th worldwide and 5th in Europe in the 2025 Financial Times ranking, up from 7th and 11th in the two years before. #8 was stale |
 | **Nova class rank** | top 15% (Allianz, both Accenture) vs top 10% (Siemens) | **top 10%** — confirmed |
 | **Nova end date** | 12.2026 (four CVs) vs 01.2027 (DHL) | **12.2026** — confirmed |
 | **German** | B1 (Allianz, both Accenture) vs Intermediate (Siemens) vs Basic (DHL) | **B1** |
