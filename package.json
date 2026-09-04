@@ -2,7 +2,7 @@
   "name": "cv",
   "version": "1.0.0",
   "private": true,
-  "description": "One-page CV, tailored for KPMG Luxembourg risk reporting",
+  "description": "One-page CV, tailored for the Hilti CFO track",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
