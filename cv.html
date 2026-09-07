@@ -149,15 +149,21 @@ h2{
 
 ul{ list-style:none; }
 
+/* Hanging indent built from normal flow, NOT position:absolute. A positioned
+   li paints in a later phase, so Chromium emits every bullet AFTER the rest
+   of the page in the PDF's text stream -- an ATS reading stream order then
+   sees all achievements orphaned at the end, detached from their employer.
+   text-indent + an inline-block marker keeps document order and lands on the
+   same two edges: glyph at --bullet-x, text at --bullet-in. */
 li{
-  position:relative;
   padding-left:var(--bullet-in);
+  text-indent:calc(var(--bullet-x) - var(--bullet-in));
 }
 li::before{
   content:"\2022";
-  position:absolute;
-  left:var(--bullet-x);
-  top:0;
+  display:inline-block;
+  width:calc(var(--bullet-in) - var(--bullet-x));
+  text-indent:0;
 }
 li b{ font-weight:700; }
 
