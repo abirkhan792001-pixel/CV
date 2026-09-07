@@ -31,7 +31,7 @@
   --pad-t:     13.02mm;   /* -> top bar renders at 13.4mm, as measured */
   --pad-l:     19.06mm;   /* text left edge */
   --pad-r:     18.16mm;   /* -> text right edge at 191.84mm */
-  --pad-b:     10.5mm;   /* was 12mm. Not a matched value - the sources' bottom
+  --pad-b:     8mm;   /* was 12mm. Not a matched value - the sources' bottom
                              white is a consequence of their content length, not
                              a template parameter. 10.5mm is a normal print
                              margin and buys the third founder bullet. */
@@ -42,7 +42,7 @@
                              and 9.40 seven of ours wrap and the page jumps
                              278.6mm -> 308.7mm. */
   --fs-name:   17.04pt;
-  --lh:        1.26;      /* -> ~4.2mm line pitch */
+  --lh:        1.19;      /* -> ~4.2mm line pitch */
 
   --bullet-x:  2.83mm;    /* bullet glyph offset from text margin */
   --bullet-in: 6.35mm;    /* bullet text offset from text margin */
@@ -118,7 +118,7 @@ body{
 
 /* ---------- sections -------------------------------------- */
 
-section{ margin-top:2.32mm; }
+section{ margin-top:1.6mm; }
 
 h2{
   font-size:1em;           /* headers run at body size in this template */
@@ -132,7 +132,7 @@ h2{
 
 /* ---------- entries --------------------------------------- */
 
-.entry{ margin-bottom:1.97mm; }
+.entry{ margin-bottom:1.4mm; }
 .entry:last-child{ margin-bottom:0; }
 
 .row{
@@ -198,10 +198,10 @@ li b{ font-weight:700; }
         Munich, Germany<span class="sep">|</span>+351 920 066 532<span class="sep">|</span><a href="mailto:khan.abirhilal@gmail.com">khan.abirhilal@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/khan-abir/">linkedin.com/in/khan-abir</a>
       </div>
       <div class="tagline">
-        MSc Finance at <b>Nova SBE (FT #8)</b>; <b>scenario and sensitivity modelling</b> for <b>Fortune 500</b>
-        clients at <b>A&amp;M</b>; owned client <b>KPI reporting</b> and <b>&gt;$100k ARR</b> at a Munich tech startup
+        MSc Finance at <b>Nova SBE (FT #6)</b>; <b>Fortune 500</b> turnaround strategy at <b>A&amp;M</b>; AI agent workflows
+        and go-to-market at <b>SCAILE</b>; now founding an AI venture in freight forwarding
       </div>
-      <div class="visa">Internationally mobile | No visa sponsorship required in Germany</div>
+      <div class="visa">No visa sponsorship required</div>
     </div>
     <img class="photo" src="./assets/photo.jpg" alt="">
   </header>
@@ -219,9 +219,8 @@ li b{ font-weight:700; }
         <div class="when">08.2025 - 12.2026 (expected)</div>
       </div>
       <ul>
-        <li>Relevant coursework: <b>Corporate Finance</b>, Investments, Risk Management, Introduction to <b>Python</b></li>
-        <li><b>Master&rsquo;s Thesis</b> with the <b>European Commission</b> on how the EU funds renewable energy across member states</li>
-        <li>Ranked <b>top 10%</b> of the class; <b>Team Lead</b>, Draycott Private Equity Challenge (2026)</li>
+        <li>Ranked <b>top 10%</b> of the class</li>
+        <li><b>Master&rsquo;s Thesis</b> with the <b>European Commission</b> on how the EU&rsquo;s <b>&euro;662B climate budget</b> funds renewables across member states</li>
       </ul>
     </div>
 
@@ -246,6 +245,23 @@ li b{ font-weight:700; }
 
     <div class="entry">
       <div class="row">
+        <div class="org">SQRlane <span class="note">(AI agents for logistics and freight forwarding)</span></div>
+        <div class="loc">Munich, Germany</div>
+      </div>
+      <div class="row">
+        <div class="role">Founder</div>
+        <div class="when">since 08.2026</div>
+      </div>
+      <ul>
+        <li>Shipped a prototype of <b>three agents</b>: screening reads live risk feeds, judgement calls reroute or hold, drafting writes the emails</li>
+        <li>Cut <b>inference cost 10x</b> by sizing each model to its task (screening, judgement, drafting) against measured token counts</li>
+        <li>Designed for <b>EU-hosted open-weight inference</b>, with recorded reasoning and human approval before anything is sent</li>
+        <li>Scoped a pilot blueprint for a mid-market forwarder; applying to <b>Y Combinator</b> and <b>a16z Speedrun</b></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
         <div class="org">SCAILE Technologies GmbH</div>
         <div class="loc">Munich, Germany</div>
       </div>
@@ -254,9 +270,9 @@ li b{ font-weight:700; }
         <div class="when">06.2026 - 08.2026</div>
       </div>
       <ul>
+        <li>Advised the founders on positioning, backed by a market sizing of AI search visibility (GEO); drove <b>80% MoM MRR growth</b></li>
         <li>Automated <b>weekly client KPI reporting</b> with AI agent workflows, cutting manual effort by <b>60%</b></li>
-        <li>Built <b>KPI dashboards</b> for client reporting, tracking brand visibility across ChatGPT, Gemini and Perplexity</li>
-        <li>Owned <b>North American clients</b> as their first point of contact, signing and onboarding <b>&gt;$100k ARR</b></li>
+        <li>Owned <b>North American clients</b> end to end, signing and onboarding <b>&gt;$100k ARR</b> in new contracts</li>
       </ul>
     </div>
 
@@ -266,13 +282,12 @@ li b{ font-weight:700; }
         <div class="loc">Delhi, India</div>
       </div>
       <div class="row">
-        <div class="role">Restructuring Intern, North American Commercial Restructuring Team</div>
+        <div class="role">North American Commercial Restructuring Team</div>
         <div class="when">01.2024 - 07.2024</div>
       </div>
       <ul>
-        <li>Built <b>scenario models</b> for a <b>$9.8M risk-mitigation plan</b>, informing <b>board-level decisions</b> on distressed M&amp;A</li>
-        <li>Ran <b>EBITDA sensitivity analysis</b> across liquidity and supplier scenarios to test operational resilience</li>
-        <li>Managed a <b>turnaround workstream</b> for <b>Fortune 500</b> clients, covering <b>&gt;$100M</b> in debt and leases (U.S. Chapter 11)</li>
+        <li>Managed a full <b>turnaround workstream</b> for <b>Fortune 500</b> clients, covering <b>&gt;$100M</b> in debt and leases (U.S. Chapter 11)</li>
+        <li>Built <b>scenario models</b> for a <b>$9.8M</b> cost and risk-mitigation plan, informing <b>board-level decisions</b> on distressed M&amp;A</li>
         <li>Prepared creditor-negotiation presentations for client leadership, preserving <b>$2.5M in enterprise value</b></li>
       </ul>
     </div>
@@ -283,29 +298,12 @@ li b{ font-weight:700; }
         <div class="loc">Hyderabad, India</div>
       </div>
       <div class="row">
-        <div class="role">Venture Capital Intern</div>
+        <div class="role">Venture Capital Analyst</div>
         <div class="when">06.2023 - 08.2023</div>
       </div>
       <ul>
-        <li>Evaluated <b>3,000+ companies</b> within a <b>$170M</b> investment pipeline on market size, competition and <b>scalability risk</b></li>
-        <li>Built <b>commercial due diligence</b> models with bottom-up revenue build-ups and unit economics (CAC/LTV)</li>
-        <li>Assessed business models and go-to-market strategy to inform <b>investment decisions</b> and <b>portfolio prioritisation</b></li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row">
-        <div class="org">Trariti Consulting Group <span class="note">(TCG, boutique strategy consulting firm)</span></div>
-        <div class="loc">Mumbai, India</div>
-      </div>
-      <div class="row">
-        <div class="role">Summer Consultant</div>
-        <div class="when">03.2022 - 08.2022</div>
-      </div>
-      <ul>
-        <li>Developed <b>data-driven models</b> for <b>VC/PE firms</b> and founders to evaluate early-stage growth opportunities</li>
-        <li>Quantified critical <b>funding levers</b> and <b>investment viability</b> across <b>$100M+</b> in deal value</li>
-        <li>Led <b>90+ stakeholder interviews</b>, turning insights into recommendations for a <b>$10M+ revenue product</b></li>
+        <li>Evaluated <b>3,000+ companies</b> within a <b>$170M</b> pipeline on market size, competitive dynamics and <b>scalability risk</b></li>
+        <li>Developed <b>commercial due diligence</b> models with bottom-up revenue build-ups and unit economics (CAC/LTV)</li>
       </ul>
     </div>
   </section>
@@ -323,7 +321,21 @@ li b{ font-weight:700; }
         <div class="when">2026</div>
       </div>
       <ul>
-        <li>Coordinated the TUM side of a <b>24-hour global AI sprint</b> with builders from MIT, Stanford and <b>60+ countries</b></li>
+        <li>Coordinated the TUM side of a <b>24-hour global AI sprint</b>, drawing <b>120 participants</b> alongside MIT, Stanford and <b>60+ countries</b></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div class="org">FitSure <span class="note">(InsurTech venture, incubated at Shiv Nadar University)</span></div>
+        <div class="loc">Delhi, India</div>
+      </div>
+      <div class="row">
+        <div class="role">Co-Founder</div>
+        <div class="when">01.2023 - 08.2023</div>
+      </div>
+      <ul>
+        <li>Modelled <b>dynamic health premiums</b> from wearable data to reward prevention, leading strategy in a three-person team</li>
       </ul>
     </div>
 
@@ -333,7 +345,7 @@ li b{ font-weight:700; }
         <div class="loc">Delhi, India</div>
       </div>
       <div class="row">
-        <div class="role">Associate Member</div>
+        <div class="role">Lead Volunteer</div>
         <div class="when">08.2020 - 05.2022</div>
       </div>
       <ul>
@@ -343,19 +355,16 @@ li b{ font-weight:700; }
   </section>
 
   <section>
-    <h2>Skills &amp; Additional Information</h2>
+    <h2>Additional Information</h2>
     <dl class="grid">
       <dt>Languages</dt>
       <dd>English (Fluent), German (B1, improving), Portuguese (Basic), Hindi (Fluent), Bengali (Fluent)</dd>
 
       <dt>Core skills</dt>
-      <dd>Financial Modelling, Scenario and Sensitivity Analysis, Data Analysis, Commercial Due Diligence, KPI Reporting, Process Automation, Stakeholder Management, Problem Solving</dd>
-
-      <dt>Focus areas</dt>
-      <dd>Financial Planning &amp; Analysis (FP&amp;A), Controlling and Reporting, Forecasting, Cost Controlling, Business Partnering, Performance Management, International Finance</dd>
+      <dd>AI Adoption, Generative AI (GenAI), Agentic AI Workflows, Digital Transformation, Operational Excellence, Management Consulting, Project and Change Management, Stakeholder Management</dd>
 
       <dt>Technical</dt>
-      <dd>Advanced Microsoft Excel, PowerPoint, Power BI, SQL, Python, Data Analytics, Generative AI</dd>
+      <dd>Advanced Excel (financial modelling, complex functions), PowerPoint, Power BI, SQL, Python, Claude Code, Large Language Models (LLMs), Open-Weight Models</dd>
 
       <dt>Interests</dt>
       <dd>Distance running, swimming, hiking, baking</dd>
