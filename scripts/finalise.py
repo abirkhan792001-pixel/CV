@@ -30,10 +30,11 @@ doc.set_metadata({
     "title":    "Abir Hilal Khan - CV",
     "author":   "Abir Hilal Khan",
     "subject":  "Curriculum Vitae",
-    "keywords": ("AI Adoption, Generative AI, GenAI, Agentic AI Workflows, AI Agents, "
-                 "Large Language Models, Digital Transformation, Operational Excellence, "
-                 "Management Consulting, Project Management, Change Management, "
-                 "Stakeholder Management, Insurance, InsurTech, Financial Services, "
+    "keywords": ("AI Transformation, AI Adoption, Generative AI, GenAI, Agentic AI Workflows, "
+                 "AI Agents, Large Language Models, Predictive Models, Automation, "
+                 "Business Analysis, Requirements Definition, Use Cases, User Stories, "
+                 "Business Case Development, Process Design, Change Management, "
+                 "Stakeholder Management, IT Infrastructure, Information Security, "
                  "Excel, PowerPoint, MSc Finance, Nova SBE"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
