@@ -14,7 +14,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC  = ROOT / "Abir_Khan_CV.pdf"
 OUT  = ROOT / "Abir_Hilal_Khan_CV.pdf"
 # Repo convention for a tailored copy: "Abir Hilal Khan_CV_<target>.pdf".
-NAMED = ROOT / "Abir Hilal Khan_CV_Hilti.pdf"
+NAMED = ROOT / "Abir Hilal Khan_CV_Allianz Consulting.pdf"
 
 A4_W, A4_H = 595.276, 841.890          # exact A4 in points
 
@@ -35,12 +35,11 @@ doc.set_metadata({
     # Every term here also appears on the page. Metadata that names things a
     # reader cannot see is keyword stuffing, and an ATS that indexes both will
     # find the same words twice either way.
-    "keywords": ("Financial Planning & Analysis, FP&A, Controlling, Reporting, Forecasting, "
-                 "Cost Controlling, Business Partnering, Performance Management, "
-                 "Scenario Analysis, Sensitivity Analysis, Financial Modelling, "
-                 "Commercial Due Diligence, KPI Reporting, Data Analysis, Process Automation, "
-                 "Stakeholder Management, Advanced Excel, Python, SQL, Power BI, "
-                 "MSc Finance, Nova SBE"),
+    "keywords": ("AI Adoption, Generative AI, GenAI, Agentic AI Workflows, AI Agents, "
+                 "Large Language Models, Digital Transformation, Operational Excellence, "
+                 "Management Consulting, Project Management, Change Management, "
+                 "Stakeholder Management, Insurance, InsurTech, Financial Services, "
+                 "Excel, PowerPoint, MSc Finance, Nova SBE"),
     "creator":  "Abir Hilal Khan",
     "producer": "",
 })
